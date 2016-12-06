@@ -1,4 +1,3 @@
-
 #aBSREL Glossary
 
 ####Summary Statistics
@@ -12,7 +11,7 @@ number of branches - the number of branches in the phylogeny
 
 LRT - likelihood ratio test [[add in what exactly is being tested/compared]]
 
-multiple testing correction - as the number of multiple statistical inferences or comparisons that are considered simultaneously increase, by chance, an increasing number of comparisons will result in a significant p-value that represent false positives. To offset this problem, multiple test corrections such as the Benjamini-Hochberg correction (Benjaminin and Hochberg, 1994, J. R. Statist. Soc. B, 57(1):289) are applied.
+multiple testing correction - as the number of multiple statistical inferences or comparisons that are considered simultaneously increase, by chance, an increasing number of comparisons will result in a significant p-value that represent false positives. To offset this problem, multiple test corrections such as the Benjamini-Hochberg correction (Benjaminin and Hochberg, 1994, J. R. Statist. Soc. B, 57(1):289) are applied. [[is this the method being applied or is it Holm-Bonferroni?]]
 
 ####Model Fits Table
 
@@ -31,13 +30,13 @@ L<sub>tree</sub> - [[add in definition]]
 
 ####Tree Table
 
-ω rate classes - the number of inferred rate classes 
+ω rate classes - the number of inferred rate classes. ω represents the ratio of nonsynonymous to synonymous substitution
 
 \# of branches - the number of branches inferred to have the respective number of ω rate classes 
 
-% of branches - the percent of branches in the phylogeny inferred to have the respective number of ω rate classes 
+% of branches - the proportion of branches in the phylogeny inferred to have the respective number of ω rate classes 
 
-% of tree length - the proportion of tree length inferred to have the respective number of ω rate classes 
+% of tree length - the proportion of the total tree length inferred to have the respective number of ω rate classes 
 
  \# under selection - the number of branches inferred to have a non neutral ω rate class at the designated p-value threshold
  
@@ -46,7 +45,7 @@ L<sub>tree</sub> - [[add in definition]]
 
 B LRT - branch length likelihood ratio test statistic
 
-Test p-value - multiple testing corrected p-value using  Benjamini-Hochberg (Benjaminin and Hochberg, 1994, J. R. Statist. Soc. B, 57(1):289) 
+Test p-value - multiple testing corrected p-value using  Benjamini-Hochberg (Benjaminin and Hochberg, 1994, J. R. Statist. Soc. B, 57(1):289)  [[is this the method being applied or is it Holm-Bonferroni?]]
 
 Uncorrected p-value - raw p-value
  
