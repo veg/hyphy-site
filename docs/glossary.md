@@ -11,7 +11,7 @@ number of branches - the number of branches in the phylogeny
 
 LRT - likelihood ratio test implemented as described in Smith et al., 2015 (Mol. Biol. Evol. 32:1342).
 
-multiple testing correction - as the number of multiple statistical inferences or comparisons that are considered simultaneously increase, by chance, an increasing number of comparisons will result in a significant p-value that represent false positives. To offset this problem, multiple test corrections such as the Holm-Bonferroni correction (Holm, 1978, Scand. J. Statist., 6:65) are applied.
+multiple testing correction - as the number of multiple statistical inferences or comparisons that are considered simultaneously increase, by chance, an increasing number of comparisons will result in a significant p-value that represent false positives. To offset this problem, multiple test corrections such as the Holm-Bonferroni correction (Holm, 1979, Scand. J. Statist., 6:65) are applied.
 
 ####Model Fits Table
 
@@ -45,7 +45,7 @@ L<sub>tree</sub> - [[add in definition]]
 
 B LRT - branch length likelihood ratio test statistic
 
-Test p-value - multiple testing corrected p-value (Holm, 1978, Scand. J. Statist., 6:65)
+Test p-value - multiple testing corrected p-value (Holm, 1979, Scand. J. Statist., 6:65)
 
 Uncorrected p-value - raw p-value
  
