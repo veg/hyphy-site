@@ -28,7 +28,6 @@ node_modules
 # Build files
 build
 MANIFEST
-site
 
 # Distribution files
 dist
