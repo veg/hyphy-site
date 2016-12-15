@@ -8,16 +8,15 @@ header .button .icon {
 ---------------------------*/
 @media only screen and (max-width: 960px) {
   .header-title {
-    padding: 0px 0px 0px 20px;
+    padding: 2px 0px 0px 20px;
     margin: 0px;
   }
   .mobile-header-title {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
-    text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
-    padding: 0px 0px 0px 10px;
+    padding: 1px 0px 0px 10px;
     margin: 0px 0px 0px 0px;
   }
   
