@@ -1,19 +1,19 @@
 #aBSREL Glossary
 
-####Summary Statistics
+##Summary Statistics
 number of sequences - the number of sequences present in the input file
 
 number of variants - the number of variants present in the input file
 
 number of branches - the number of branches in the phylogeny
 
-####aBSREL results summary
+##aBSREL results summary
 
 LRT - likelihood ratio test implemented as described in Smith et al., 2015 (Mol. Biol. Evol. 32:1342).
 
 multiple testing correction - as the number of multiple statistical inferences or comparisons that are considered simultaneously increase, by chance, an increasing number of comparisons will result in a significant p-value that represent false positives. To offset this problem, multiple test corrections such as the Holm-Bonferroni correction (Holm, 1979, Scand. J. Statist., 6:65) are applied.
 
-####Model Fits Table
+##Model Fits Table
 
 MG94 - the standard Muse-Gaut 94 model estimates a single ω for each branch 
 
@@ -28,7 +28,7 @@ AIC<sub>c</sub>  - small-sample Akaike Information Criterion (Sigiura, 1978, Com
 L<sub>tree</sub> - [[add in definition]]
 
 
-####Tree Table
+##Tree Table
 
 ω rate classes - the number of inferred rate classes. ω represents the ratio of nonsynonymous to synonymous substitution
 
@@ -41,7 +41,7 @@ L<sub>tree</sub> - [[add in definition]]
  \# under selection - the number of branches inferred to have a non neutral ω rate class at the designated p-value threshold
  
  
-####Full Table
+##Full Table
 
 B LRT - branch length likelihood ratio test statistic
 
