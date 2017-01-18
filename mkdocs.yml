@@ -57,6 +57,8 @@ pages:
   - Home: 'index.html'
   - Download: 'download.md'
   - Installation: 'installation.md'
-  - Tutorials: 'tutorials/selection/README.md'
   - Glossary: 'glossary.md'
   - Support: 'support.md'
+  - Tutorials: 
+    - v2.3 Quick Start : 'tutorials/quickstart.md'
+    - Selection : 'tutorials/selection/README.md'
