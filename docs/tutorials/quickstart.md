@@ -2,7 +2,7 @@ HyPhy v2.3 Quick Start
 ====================
 
 > If you do not have a dataset to work with, you might find it convenient to
-> download the [zip file](https://github.com/veg/hyphy-tutorials/blob/master/selection/data/files.zip?raw=true)
+> download the [zip file](https://github.com/veg/hyphy-tutorials/blob/master/docs/selection/data/files.zip?raw=true)
 
 ------------------------------------------------------------------
 Installation
