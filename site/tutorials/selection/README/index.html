@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Tutorials - HyPhy</title>
+        <title>Selection - HyPhy</title>
       
       
       
@@ -180,9 +180,56 @@
             <!-- Render sections -->
 
   <li>
+    <a class=""
+      title="Glossary" href="../../../glossary/" >
+      Glossary
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+          
+            <!-- Render sections -->
+
+  <li>
+    <a class=""
+      title="Support" href="../../../support/" >
+      Support
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+          
+            <!-- Render sections -->
+
+  <li>
+    <span class="section">Tutorials</span>
+    <ul>
+
+      <!-- Render pages of section -->
+      
+        <!-- Render sections -->
+
+  <li>
+    <a class=""
+      title="v2.3 Quick Start" href="../../quickstart/" >
+      v2.3 Quick Start
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+      
+        <!-- Render sections -->
+
+  <li>
     <a class="current"
-      title="Tutorials" href="./" >
-      Tutorials
+      title="Selection" href="./" >
+      Selection
     </a>
 
     <!-- Expand active pages -->
@@ -255,31 +302,11 @@
     
   </li>
 
-          
-            <!-- Render sections -->
-
-  <li>
-    <a class=""
-      title="Glossary" href="../../../glossary/" >
-      Glossary
-    </a>
-
-    <!-- Expand active pages -->
-    
+      
+    </ul>
   </li>
 
-          
-            <!-- Render sections -->
-
-  <li>
-    <a class=""
-      title="Support" href="../../../support/" >
-      Support
-    </a>
-
-    <!-- Expand active pages -->
-    
-  </li>
+<!-- Render page link -->
 
           
         </ul>
@@ -290,10 +317,10 @@
       </div>
       <article class="article">
         <div class="wrapper">
-          <h1 id="selection-detection">Selection detection<a class="headerlink" href="#selection-detection" title="Permanent link">#</a></h1>
+          <h1 id="selection-detection">Selection detection.<a class="headerlink" href="#selection-detection" title="Permanent link">#</a></h1>
 <p><strong>Data files</strong></p>
 <p>All the example alignment files used here are available in this <a href="../data">data directory</a>.
-You may find it convenient to download the <a href="https://github.com/veg/hyphy-tutorials/blob/master/selection/data/files.zip?raw=true">zip file</a>
+You may find it convenient to download the <a href="https://github.com/veg/hyphy-tutorials/blob/master/docs/selection/data/files.zip?raw=true">zip file</a>
 with all the files from that directory, and unpack it on your machine.</p>
 <p><strong>Notation</strong></p>
 <p>We will use the following notation.</p>
@@ -312,7 +339,6 @@ or a command line you will supply in terminal with the command line version of H
 </pre></div>
 
 
-<hr />
 <h2 id="estimate-alignment-wide">Estimate alignment-wide &omega;.<a class="headerlink" href="#estimate-alignment-wide" title="Permanent link">#</a></h2>
 <ol>
 <li>Select the appropriate analysis to run</li>
@@ -356,7 +382,6 @@ or a command line you will supply in terminal with the command line version of H
 
 
 <p>The <tt>R</tt> parameter denotes the global &omega; (dN/dS) ratio and is the object of this analysis.</p>
-<hr />
 <h2 id="run-alignment-wide-tests-for-episodic-diversification-busted">Run alignment-wide tests for episodic diversification (BUSTED).<a class="headerlink" href="#run-alignment-wide-tests-for-episodic-diversification-busted" title="Permanent link">#</a></h2>
 <blockquote>
 <p>BUSTED is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25701167">Murrell et al</a>. It has been extensively tested and shows better power and accuracy than either <a href="http://mbe.oxfordjournals.org/content/24/5/1219.short">"branch-site" models in PAML</a>, or the <a href="http://mbe.oxfordjournals.org/content/early/2013/10/16/molbev.mst198">"covarion" style models</a></p>
@@ -395,7 +420,7 @@ The data set in we are using includes partial clonal HIV-1 env sequences from ep
 <li>A proportion of sites (~0.02) is evolving with dN/dS &gt; 1 (~105) along a subset of the branches (it is not known which).</li>
 <li>Forcing dN/dS = 1 provides a significantly worse (p ~ 10<sup>-16</sup>) fit to the data, i.e. rejects the hypothesis of no positive selection in the alignment.</li>
 </ol>
-<p>In addition to this output, HyPhy will also generate a <a href="http://json.org">JSON</a> file with a more detailed analysis output. The JSON will be written to same directory as the input alignment file, with <code>BUSTED.json</code> appended to the file name, e.g. <code>/Users/sergei/Coding/hyphy-tutorials/selection/data/HIV.nex.BUSTED.json</code>  This JSON file can be visualized and explored with this <a href="http://veg.github.io/hyphy-vision/busted/">web app</a>, e.g., to obtain plots like those shown in the lecture slides.</p>
+<p>In addition to this output, HyPhy will also generate a <a href="http://json.org">JSON</a> file with a more detailed analysis output. The JSON will be written to same directory as the input alignment file, with <code>BUSTED.json</code> appended to the file name, e.g. <code>/Users/sergei/Coding/hyphy-tutorials/selection/data/HIV.nex.BUSTED.json</code>  This JSON file can be visualized and explored with this <a href="http://veg.github.io/hyphy-vision/pages/busted/">web app</a>, e.g., to obtain plots like those shown in the lecture slides.</p>
 <h3 id="run-busted-using-datamonkeyorg">Run BUSTED using datamonkey.org<a class="headerlink" href="#run-busted-using-datamonkeyorg" title="Permanent link">#</a></h3>
 <ol>
 <li>Navigate to http://test.datamonkey.org, selected <em>BUSTED</em> from the <em>Methods and Tools</em> menu.</li>
@@ -436,14 +461,13 @@ Note that you could also manually select the set of branches to test in the same
 
 <h4 id="questions">Questions.<a class="headerlink" href="#questions" title="Permanent link">#</a></h4>
 <ol>
-<li>Use the <a href="http://veg.github.io/hyphy-vision/busted/">web app</a> to visualize the JSON result file from this analysis and
+<li>Use the <a href="http://veg.github.io/hyphy-vision/pages/busted/">web app</a> to visualize the JSON result file from this analysis and
 compare the inferred &omega; distributions for the foreground and background branches.</li>
 <li>Explain why the log-likelihood for the unconstrained model is higher for the case when <em>a priori</em> branches are tested?</li>
 <li>Do these results suggest that the transmission branch is evolving differently from the rest of the tree?</li>
 <li>If the <em>a priori</em> analysis had a negative result (no selection along the transmission branch), might it still be possible to
 find evidence of selection in the <strong>All</strong> branches analysis?</li>
 </ol>
-<hr />
 <h2 id="use-absrel-to-find-lineages-which-have-experienced-episodic-diversification">Use aBSREL to find lineages which have experienced episodic diversification.<a class="headerlink" href="#use-absrel-to-find-lineages-which-have-experienced-episodic-diversification" title="Permanent link">#</a></h2>
 <blockquote>
 <p>aBSREL is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25697341">Smith et al</a>. It is an extension of our popular <a href="http://www.ncbi.nlm.nih.gov/pubmed/21670087">BS-REL model</a>, which performs a complexity analysis and model selection prior to doing hypothesis testing. It runs much faster than BS-REL and has better statistical properies.</p>
@@ -559,7 +583,7 @@ Branch omega values
 
 
 <p>Note that only a few branches support 2 &omega; classes, and the majority are well-explained without any site-to-site variation.
-In the next phase, aBSREL optimizes all parameters in the just inferred model model</p>
+In the next phase, aBSREL optimizes all parameters in the just inferred model</p>
 <div class="code"><pre><span></span>[PHASE 2] Fitting the full LOCAL alternative model (no constraints)
 
 Log L = -2010.471450731734 with 76 degrees of freedom, IC = 4175.52599570315
@@ -613,16 +637,15 @@ applying the <a href="http://en.wikipedia.org/wiki/Holm–Bonferroni_method">Hol
 <ul>
 <li><code>PREFIX.mglocal.fit</code> : a HyPhy batch file containing the model fit (including all parameter estimates) of PHASE 0 (only branch variation). This is a NEXUS file with a private NEXUS HYPHY block.</li>
 <li><code>PREFIX.fit</code> : a HyPhy batch file containing the model fit (including all parameter estimates) of PHASE 2 (unconstrained branch-site model). This is a NEXUS file with a private NEXUS HYPHY block.</li>
-<li><code>PREFIX.json</code>: a JSON file storing all the relevant analysis output, it can be visualized with this <a href="http://veg.github.io/hyphy-vision/absrel/">web app</a></li>
+<li><code>PREFIX.json</code>: a JSON file storing all the relevant analysis output, it can be visualized with this <a href="http://veg.github.io/hyphy-vision/pages/absrel/">web app</a></li>
 <li><code>PREFIX</code>: a CSV file containing branch-by-branch output (similar to what is shown in the <em>Table</em> tab of the web app)</li>
 </ul>
 <h3 id="questions_1">Questions.<a class="headerlink" href="#questions_1" title="Permanent link">#</a></h3>
 <ol>
 <li>Which model (aBSREL or BUSTED) provides a better fit to the data, based on AIC<sub>c</sub> (the web apps report AIC<sub>c</sub> in the summary table)? </li>
 <li>Compare the &omega; distributions inferred for Node1 (the transmission branch) by BUSTED with the <em>a priori</em> branch selection, and by aBSREL. If they differ, can you identify some of the key differences between the models that could explain the difference?</li>
-<li>Use the <a href="http://veg.github.io/hyphy-vision/absrel/">web app</a> to compare the list of branches which would have p-values &le; 0.05 without the multiple test correction. Are the lists notably different?</li>
+<li>Use the <a href="http://veg.github.io/hyphy-vision/pages/absrel/">web app</a> to compare the list of branches which would have p-values &le; 0.05 without the multiple test correction. Are the lists notably different?</li>
 </ol>
-<hr />
 <h2 id="use-fubar-to-find-sites-which-have-experienced-pervasive-diversification">Use FUBAR to find sites which have experienced pervasive diversification.<a class="headerlink" href="#use-fubar-to-find-sites-which-have-experienced-pervasive-diversification" title="Permanent link">#</a></h2>
 <blockquote>
 <p>FUBAR is described in <a href="http://mbe.oxfordjournals.org/content/30/5/1196">Murrell et al</a> which is intended to supersede (by dint of its speed and statistical performance), previous REL and FEL methods.</p>
@@ -649,7 +672,7 @@ found a single site (249) subject to positive selection.</p>
 <li><strong>[GUI]</strong> Type <strong>3</strong> into the bottom box of the console window and hit Enter</li>
 <li><strong>[CLI]</strong> Type <strong>3</strong> and hit Enter</li>
 </ol>
-<p><strong>Output after Step 5</strong></p>
+<p>Output after Step 5</p>
 <div class="code"><pre><span></span>FUBAR will write intermediate and result files to
 /Users/sergei/Coding/hyphy-tutorials/selection/data/WestNileVirus_NS3.fas.extension
 
@@ -660,7 +683,7 @@ found a single site (249) subject to positive selection.</p>
 </pre></div>
 
 
-<p><strong>Output after Step 6</strong></p>
+<p>Output after Step 6</p>
 <div class="code"><pre><span></span>[DIAGNOSTIC] FUBAR will use a 20X20 grid
 [FUBAR PHASE 2] Determining appropriate branch scaling using the 20X20 grid points.
 Computing the likelihood function on grid points 400/400 00:00:02   Best scaling achieved for dN/dS =  0.03.
@@ -671,7 +694,7 @@ Computing the likelihood function on grid points 400/400 00:00:03   Finished wit
 </pre></div>
 
 
-<p><strong>Output after Step 8</strong></p>
+<p>Output after Step 8</p>
 <div class="code"><pre><span></span>[FUBAR PHASE 3] Running an MCMC chain (ID 0) to obtain a posterior sample of grid point weights: 2000000 total steps, of which 1000000 will be discarded as burn-in, and sampling every 10000 steps. Dirichlet prior concentration parameter = 0.5.
 Running MCMC chain ID 0. Current step: 2000000/2000000. Mean sampled log(L) = -6619.31564200728. Acceptance rate = 0.03111951555975778
 [FUBAR PHASE 3] Running an MCMC chain (ID 1) to obtain a posterior sample of grid point weights: 2000000 total steps, of which 1000000 will be discarded as burn-in, and sampling every 10000 steps. Dirichlet prior concentration parameter = 0.5.
@@ -688,7 +711,7 @@ Tabulating results for site 618/619 00:00:01
 </pre></div>
 
 
-<p><strong>Final results</strong></p>
+<p>Final results</p>
 <div class="code"><pre><span></span>[RESULTS] At posterior probability &gt;= 0.9 there were 1 sites under diversifying positive selection, of which  0.01 [0 - 0] are expected to be false positives.
 
 Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
@@ -707,7 +730,6 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
 <li>And with the list of sites known for their as resistance associated for <a href="http://hivdb.stanford.edu/DR/NNRTIResiNote.html">NNRTI</a> and <a href="http://hivdb.stanford.edu/DR/NRTIResiNote.html">NRTI</a>?</li>
 <li>Explore the effect of correcting for recombination with partitioning, by running FUBAR on <code>CVV_G.fas</code> [no partitioning] and <code>CVV_G_GARD.nex</code> [partitioning into non-recombinant fragments using GARD]. How different are the lists of sites produced by the analyses?</li>
 </ol>
-<hr />
 <h2 id="use-meme-to-find-sites-which-have-experienced-episodic-diversification">Use MEME to find sites which have experienced episodic diversification.<a class="headerlink" href="#use-meme-to-find-sites-which-have-experienced-episodic-diversification" title="Permanent link">#</a></h2>
 <blockquote>
 <p>MEME is a <a href="http://www.plosgenetics.org/article/info%3Adoi%2F10.1371%2Fjournal.pgen.1002764">published method</a> which is our default recommendation for finding individual sites under selection. It is MUCH slower than FUBAR, however, so there's room for both.</p>
@@ -734,7 +756,7 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
 <li><strong>N</strong> (do not save fit files for individual codons)</li>
 <li>[This prompt will appear <strong>after</strong> the analysis is finished] Save the CSV file with analysis results to <code>PREFIX.csv</code>, e.g., <code>/Users/sergei/Coding/hyphy-tutorials/selection/data/WestNileVirus_NS3_meme</code></li>
 </ol>
-<p><strong>Output after step 8</strong></p>
+<p>Output after step 8</p>
 <div class="code"><pre><span></span><span class="nv">Phase</span> <span class="mi">1</span><span class="s s-Atom">:</span><span class="nv">Nucleotide</span> <span class="nv">Model</span> <span class="p">(</span><span class="mi">012345</span><span class="p">)</span> <span class="nv">Model</span> <span class="nv">Fit</span>
 
 
@@ -779,7 +801,6 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
 <li>Using R (or another data analysis package), plot how LRT (or p-value) varies over sites.</li>
 <li>Is <code>(1-p)</code> [p-value] of MEME correlated with the posterior probability of positive selection derived by FUBAR (use a non-parametric association test, e.g. rank correlation)? Use the CSV files generated by each analysis to import the results into a statistical package for analysis.</li>
 </ol>
-<hr />
 <h2 id="use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree">Use RELAX to compare selective pressures on different parts of the tree<a class="headerlink" href="#use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree" title="Permanent link">#</a></h2>
 <blockquote>
 <p>RELAX is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25540451">Wertheim et al</a>. It is based on the <a href="http://www.ncbi.nlm.nih.gov/pubmed/21670087">BS-REL model</a> branch site framework, but the tree is partitioned (a priori) into non-overlapping sets of branches, and the separate distributions of &omega; are fitted to each set and compared for relative <em>relaxation</em> (&omega; values contract to 1) or <em>intensification</em> (&omega; values move away from 1).</p>
@@ -809,7 +830,7 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
 <li><strong>[GUI]</strong> Choose <em>Minimal</em> </li>
 <li><strong>[CLI]</strong> Choose option 2 (<em>Minimal</em>)</li>
 </ol>
-<p><strong>The output of the analysis will look like</strong> </p>
+<p>The output of the analysis will look like </p>
 <div class="code"><pre><span></span>[RELAX] Obtaining branch lengths under the GTR model 
 [RELAX] Log(L) = -2114.132338088236 
 [RELAX] Obtaining omega and branch length estimates under the partitioned MG94xGTR model 
@@ -823,7 +844,7 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
 
 
 <p>The result of the analysis is that "Test" (recipient) branches have &omega; that scales like &omega; <sup>K</sup>, where <strong>K</strong> is 0.4389, i.e., shrink towards 1 (selection is weaker). The likelihood ratio test is to reject <strong>K=1</strong> (no difference is selective pressure), which yields a highly significant p = 0.00016 here.</p>
-<p>Like in other analyses, HyPhy will generate a JSON file (e.g., <code>HIV.nex.RELAX.json</code>) storing all the relevant analysis output, which can be visualized with this <a href="http://veg.github.io/hyphy-vision/relax/">web app</a>. For example, you can see the fitted rate distributions.</p>
+<p>Like in other analyses, HyPhy will generate a JSON file (e.g., <code>HIV.nex.RELAX.json</code>) storing all the relevant analysis output, which can be visualized with this <a href="http://veg.github.io/hyphy-vision/pages/relax/">web app</a>. For example, you can see the fitted rate distributions.</p>
 			 <!--
           <aside class="copyright" role="note">
             
@@ -842,7 +863,7 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../../../installation/" title="Installation">
+        <a href="../../quickstart/" title="v2.3 Quick Start">
           <span class="direction">
             Previous
           </span>
@@ -852,7 +873,7 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
             </div>
             <div class="stretch">
               <div class="title">
-                Installation
+                v2.3 Quick Start
               </div>
             </div>
           </div>
@@ -860,22 +881,6 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
       
     </div>
     <div class="next">
-      
-        <a href="../../../glossary/" title="Glossary">
-          <span class="direction">
-            Next
-          </span>
-          <div class="page">
-            <div class="stretch">
-              <div class="title">
-                Glossary
-              </div>
-            </div>
-            <div class="button button-next" role="button" aria-label="Next">
-              <i class="icon icon-forward"></i>
-            </div>
-          </div>
-        </a>
       
     </div>
   </nav>
