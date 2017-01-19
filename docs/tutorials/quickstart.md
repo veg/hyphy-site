@@ -16,7 +16,7 @@ Installation
 ### Commands
 
 ```
-git clone git@github.com:veg/hyphy.git
+git clone https://github.com/veg/hyphy.git
 cd hyphy
 git checkout v2.3-dev
 cmake .
