@@ -1,7 +1,4 @@
 # HYPHY WEBSITE
-Kind of uses mkdocs
-
-Uses MkDocs
 
 ## Development Workflow
 * `pip install mkdocs`
