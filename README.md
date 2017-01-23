@@ -1,6 +1,8 @@
 # HYPHY WEBSITE
 Kind of uses mkdocs
 
+Uses MkDocs
+
 ## Development Workflow
 * `pip install mkdocs`
 * `git clone git@github.com:veg/hyphy-site.git`
