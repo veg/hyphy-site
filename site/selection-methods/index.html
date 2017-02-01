@@ -9,19 +9,19 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Download - HyPhy</title>
+        <title>Selection Methods - HyPhy</title>
       
       
       
-        <link rel="canonical" href="http://squidfunk.github.io/mkdocs-material/download/">
+        <link rel="canonical" href="http://squidfunk.github.io/mkdocs-material/selection-methods/">
       
       
         <meta name="author" content="Michael Li">
       
     
-    <meta property="og:url" content="http://squidfunk.github.io/mkdocs-material/download/">
+    <meta property="og:url" content="http://squidfunk.github.io/mkdocs-material/selection-methods/">
     <meta property="og:title" content="HyPhy">
-    <meta property="og:image" content="http://squidfunk.github.io/mkdocs-material/download//../images/logo.svg">
+    <meta property="og:image" content="http://squidfunk.github.io/mkdocs-material/selection-methods//../images/logo.svg">
     <meta name="apple-mobile-web-app-title" content="HyPhy">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -154,26 +154,12 @@
             <!-- Render sections -->
 
   <li>
-    <a class="current"
-      title="Download" href="./" >
+    <a class=""
+      title="Download" href="../download/" >
       Download
     </a>
 
     <!-- Expand active pages -->
-    
-
-      <!--
-        The top-level anchor must be skipped if the article contains a h1
-        headline, since it would be redundant to the link to the current page
-        that is located just above the anchor. Therefore we directly continue
-        with the children of the anchor.
-      -->
-      
-        
-      
-
-      <!-- Render anchors of active page -->
-      
     
   </li>
 
@@ -220,12 +206,84 @@
             <!-- Render sections -->
 
   <li>
-    <a class=""
-      title="Selection Methods" href="../selection-methods/" >
+    <a class="current"
+      title="Selection Methods" href="./" >
       Selection Methods
     </a>
 
     <!-- Expand active pages -->
+    
+
+      <!--
+        The top-level anchor must be skipped if the article contains a h1
+        headline, since it would be redundant to the link to the current page
+        that is located just above the anchor. Therefore we directly continue
+        with the children of the anchor.
+      -->
+      
+
+      <!-- Render anchors of active page -->
+      
+        <ul>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="Choosing a method for selection inference" href="#choosing-a-method-for-selection-inference">
+                Choosing a method for selection inference
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="FEL" href="#fel">
+                FEL
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="FUBAR" href="#fubar">
+                FUBAR
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="MEME" href="#meme">
+                MEME
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="aBSREL" href="#absrel">
+                aBSREL
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="BUSTED" href="#busted">
+                BUSTED
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="RELAX" href="#relax">
+                RELAX
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -278,8 +336,44 @@
       </div>
       <article class="article">
         <div class="wrapper">
-          <h1 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">#</a></h1>
-<p>The download page can currently be found <a href="http://hyphy.org/w/index.php/Download">here</a></p>
+          <h2 id="choosing-a-method-for-selection-inference">Choosing a method for selection inference<a class="headerlink" href="#choosing-a-method-for-selection-inference" title="Permanent link">#</a></h2>
+<p>HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding sequence alignment. Which method you select will depend on your specific question:</p>
+<h3 id="are-individual-sites-subject-to-pervasive-across-the-whole-phylogeny-positive-or-purifying-selection">Are individual sites subject to <em>pervasive</em> (across the whole phylogeny) positive or purifying selection?<a class="headerlink" href="#are-individual-sites-subject-to-pervasive-across-the-whole-phylogeny-positive-or-purifying-selection" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="../selection-methods/#FEL">FEL</a> (<strong>F</strong>ixed <strong>E</strong>fects <strong>L</strong>ikelihood) is suitable for small-to-medium sized data sets</li>
+<li><a href="../selection-methods/#fubar">FUBAR</a> (<strong>F</strong>ast, <strong>U</strong>nconstrained <strong>B</strong>ayesian <strong>A</strong>pp<strong>R</strong>oximation) is suitable for medium-to-large data sets and is expected to have more power than FEL for detecting pervasive selection at sites.</li>
+</ul>
+<h3 id="are-individual-sites-subject-to-episodic-positive-or-purifying-selection">Are individual sites subject to <em>episodic</em> positive or purifying selection?<a class="headerlink" href="#are-individual-sites-subject-to-episodic-positive-or-purifying-selection" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="../selection-methods/#MEME">MEME</a> tests for episodic (e.g. at a subset of branches) selection at individual sites. <strong>MEME is the preferred approach for inferring site-specific selection</strong> and does not accept <em>a priori</em> branch specifications.</li>
+<li><a href="../selection-methods/#aBSREL">aBSREL</a> is an improved version of the common "branch-site" class of models. aBSREL allows either for <em>a priori</em> specification of branch(es) to test for selection, or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power.</li>
+</ul>
+<h3 id="has-a-gene-experienced-positive-selection-at-any-site-on-a-particular-branch-or-set-of-branches">Has a gene experienced positive selection at any site on a particular branch or set of branches?<a class="headerlink" href="#has-a-gene-experienced-positive-selection-at-any-site-on-a-particular-branch-or-set-of-branches" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="../selection-methods/#BUSTED">BUSTED</a> will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. <strong>This method is not suitable for identifying specific sites subject to positive seleciton.</strong></li>
+</ul>
+<h3 id="has-gene-wide-selection-pressure-been-relaxed-or-intensified-along-a-certain-subset-of-branches">Has gene-wide selection pressure been relaxed or intensified along a certain subset of branches?<a class="headerlink" href="#has-gene-wide-selection-pressure-been-relaxed-or-intensified-along-a-certain-subset-of-branches" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="../selection-methods/#RELAX">RELAX</a> tests for a relaxation (e.g. where purifying selection has become less stringent) or an intensification (e.g. where purifying selection has become stronger) of selection pressures along a specified set of "test" branches. <strong>This method is not suitable for the detection of positive selection.</strong></li>
+</ul>
+<!--------------------------------------------------------------------------------------->
+
+<h2 id="fel">FEL<a class="headerlink" href="#fel" title="Permanent link">#</a></h2>
+<!--------------------------------------------------------------------------------------->
+
+<h2 id="fubar">FUBAR<a class="headerlink" href="#fubar" title="Permanent link">#</a></h2>
+<!--------------------------------------------------------------------------------------->
+
+<h2 id="meme">MEME<a class="headerlink" href="#meme" title="Permanent link">#</a></h2>
+<!--------------------------------------------------------------------------------------->
+
+<h2 id="absrel">aBSREL<a class="headerlink" href="#absrel" title="Permanent link">#</a></h2>
+<!--------------------------------------------------------------------------------------->
+
+<h2 id="busted">BUSTED<a class="headerlink" href="#busted" title="Permanent link">#</a></h2>
+<!--------------------------------------------------------------------------------------->
+
+<h2 id="relax">RELAX<a class="headerlink" href="#relax" title="Permanent link">#</a></h2>
 			 <!--
           <aside class="copyright" role="note">
             
@@ -298,7 +392,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href=".." title="Home">
+        <a href="../support/" title="Support">
           <span class="direction">
             Previous
           </span>
@@ -308,7 +402,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                Home
+                Support
               </div>
             </div>
           </div>
@@ -317,14 +411,14 @@
     </div>
     <div class="next">
       
-        <a href="../installation/" title="Installation">
+        <a href="../tutorials/quickstart/" title="v2.3 Quick Start">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                Installation
+                v2.3 Quick Start
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">

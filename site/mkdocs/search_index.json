@@ -32,7 +32,7 @@
         }, 
         {
             "location": "/glossary/", 
-            "text": "aBSREL Glossary\n#\n\n\nSummary Statistics\n#\n\n\n\n\nnumber of sequences\n - the number of sequences present in the input file\n\n\nnumber of variants\n - the number of variants present in the input file\n\n\nnumber of branches\n - the number of branches in the phylogeny\n\n\n\n\naBSREL results summary\n#\n\n\n\n\nLRT\n - likelihood ratio test implemented as described in Smith et al., 2015 (Mol. Biol. Evol. 32:1342).\n\n\nmultiple testing correction\n - as the number of multiple statistical inferences or comparisons that are considered simultaneously increase, by chance, an increasing number of comparisons will result in a significant p-value that represent false positives. To offset this problem, multiple test corrections such as the Holm-Bonferroni correction (Holm, 1979, Scand. J. Statist., 6:65) are applied.\n\n\n\n\nModel Fits Table\n#\n\n\n\n\n\n\nMG94\n - the standard Muse-Gaut 94 model estimates a single \u03c9 for each branch \n\n\n\n\n\n\nFull model\n - the aBSREL model estimates up to ten \u03c9 rate classes for each branch\n\n\n\n\n\n\nlog\n L\n - log likelihood estimate of the respective model\n\n\n\n\n\n\n# par.\n - the number of parameters in the model\n\n\n\n\n\n\nAIC\nc\n  - small-sample Akaike Information Criterion (Sigiura, 1978, Commun. Stat. Theory Methods, A7:13) is used to infer the optinal number of rate categories to be used for each branch in the phylogeny.\n\n\n\n\n\n\nL\ntree\n - [[add in definition]]\n\n\n\n\n\n\nTree Table\n#\n\n\n\n\n\u03c9 rate classes\n - the number of inferred rate classes. \u03c9 represents the ratio of nonsynonymous to synonymous substitution\n\n\n# of branches\n - the number of branches inferred to have the respective number of \u03c9 rate classes \n\n\n% of branches\n - the proportion of branches in the phylogeny inferred to have the respective number of \u03c9 rate classes \n\n\n% of tree length\n - the proportion of the total tree length inferred to have the respective number of \u03c9 rate classes \n\n\n# under selection\n - the number of branches inferred to have a non neutral \u03c9 rate class at the designated p-value threshold\n\n\n\n\nFull Table\n#\n\n\n\n\nB LRT\n - branch length likelihood ratio test statistic\n\n\nTest p-value\n - multiple testing corrected p-value (Holm, 1979, Scand. J. Statist., 6:65)\n\n\nUncorrected p-value\n - raw p-value\n\n\n\u03c9 distribution over sites\n - inferred \u03c9 branch rates and respective proportion of branch sites", 
+            "text": "This glossary provides definitions for terms in the HyPhy-Vision reports for each method. See \nhere\n for descriptions of each method. \n\n\naBSREL Glossary\n#\n\n\n\n\n\nSummary: Tree Table\n#\n\n\nThe Tree Table reports a summary of the inferred the number of rate classes across branches.\n\n\n\n\n\u03c9 rate classes\n - Number of rate classes inferred, where \u03c9 represents the ratio of nonsynonymous to synonymous substitution rates\n\n\n# of branches\n - The number of branches inferred to have the respective number of \u03c9 rate classes \n\n\n% of branches\n - The proportion of branches inferred to have the respective number of \u03c9 rate classes \n\n\n% of tree length\n - The percent of the total tree length inferred to have the respective number of \u03c9 rate classes \n\n\n# under selection\n - The number of branches inferred to have undergone positive selection (a rate class of \u03c9\n1) at the designated p-value threshold, after correction for multiple testing\n\n\n\n\nSummary: Model Fits Table\n#\n\n\nThe Model Fits Table reports a summary of the models fit to the data.\n\n\n\n\nModel\n - The model fit.\n\n\nMG94\n - Refers to the baseline model fit, using the standard \nMust-Gaut 1994\n model (specifically the \nMG94-REV\n formulation), where a single \u03c9 rate category is inferred per branch. \n\n\nFull Model\n - Refers to the full aBSREL model fit to the tree, with the number of \u03c9 categories per branch inferred using the adaptive algorithm.\n\n\n\n\n\n\nlog\n L\n - The log likelihood estimate of the respective model fit.\n\n\n# par.\n - The number of estimated parameters in the respective model.\n\n\nTime to fit\n - Total \nTYPE\n time, in seconds, to fit the respective model.\n\n\nAIC\nc\n  - Resulting small-sample Akaike Information Criterion \n(Sugiura, 1978, Commun. Stat. Theory Methods, A7:13)\n score, calculated when inferring the optimal number of \u03c9 rate categories at each branch in the phylogeny.\n\n\nL\ntree\n - The tree length under the respective model, where tree length represents the expected number of substitutions per site.\n\n\n\n\nFull Table\n#\n\n\nThe full Results Table reports inferences of positive selection for each branch.\n\n\n\n\nName\n - Branch of interest, where bolded rows refer to branches inferred to have experienced position selection at the designated p-value threshold  \n\n\nB\n - \nBranch length for the branch of interest -- CURRENTLY EMPTY IN THE TABLE\n\n\nLRT\n - Likelihood ratio test statistic for selection \n\n\nTest p-value\n - P-value corrected for multiple testing using the Holm-Bonferroni correction \n(Holm, 1979, Scand. J. Statist., 6:65)\n\n\nUncorrected p-value\n - Raw p-value before correction for multiple testing\n\n\n\u03c9 distribution over sites\n - Inferred \u03c9 estimates and respective proportion of sites along the respective branch\n\n\n\n\n\n\n\nRELAX Glossary\n#\n\n\nSummary: Model Fits Table\n#\n\n\nThe Model Fits Table reports a summary of the models fit to the data. Corresponding plots of \u03c9 distributions display inferred \u03c9 values, and when applicable, how selection intensity compares across \u03c9 categories between test and reference branches.\n\n\n\n\nModel\n - The model fit. For a more thorough description of these models, see \nthis fake link\n.\n\n\nPartitioned MG94xREV\n - This baseline model fits a single rate category, respectively, for each of the two branch sets (reference and test).\n\n\nGeneral Descriptive\n - This model fits a single \u03c9 distribution shared across all branches (single partition analysis), but wherein a selection intensity parameter \nk\n is inferred for each branch.  an overall description of the data, fits a three \u03c9 rate categories to all branches as a single partition.\n\n\nNull\n - This model represents the null model used to test for selection, where the selection intensity parameter \nk\n is set to 1 for both branch sets (reference and test).\n\n\nAlternative\n - This model represents the alternative model used to test for selection, where the selection intensity parameter \nk\n is allowed for vary on the \"test\" partition of branches. Note that all test branches will share the value for \nk\n.\n\n\nPartitioned Descriptive\n - This model infers \u03c9 distributions for each partition, without using the selection intensity parameter \nk\n (e.g. k=1). \n\n\n\n\n\n\n\n\n\n\n\nBUSTED Glossary\n#\n\n\nSummary: Model Fits Table\n#\n\n\nThe Model Fits Table reports a summary of the models fit to the data.\n\n\n\n\nModel\n - The model fit.\n\n\nUnconstrained model\n - Refers to the alternative model fit to the data where the \u03c9 rate category used to test for selection is permitted to exceed 1 on the foreground branches.  \n\n\nConstrained model\n - Refers to a baseline model fit to the data where the background and foreground branches share all \u03c9 rate categories, specifically where the \u03c9 rate category used to test for selection is constrained to equal 1.\n\n\n\n\n\n\nlog\n L\n - The log likelihood estimate of the respective model fit.\n\n\n# par.\n - The number of estimated parameters in the respective model.\n\n\nTime to fit\n - Total \nTYPE\n time, in seconds, to fit the respective model.\n\n\nAIC\nc\n  - Resulting small-sample Akaike Information Criterion \n(Sugiura, 1978, Commun. Stat. Theory Methods, A7:13)\n score.\n\n\nL\ntree\n - The tree length under the respective model, where tree length represents the expected number of substitutions per site.\n\n\nBranch Set\n - \n I think this should go: The specified name for the set of branches with inferred rates under this model\n\n\n\u03c9\n1,2,3\n - The inferred \u03c9 value for the given rate category (1, 2, or 3) with the respective proportion of sites inferred to belong to this category.\n\n\n\n\nSummary: Model Evidence Ratios Per Site\n#\n\n\nThis plot shows the \"Evidence Ratio\", displayed as the scaled likelihood ratio test statistic, indicating evidence for whether a given site experienced positive selection each model (\nHELP, MODELS UNCLEAR\n). \nImportantly, These values should not be interpreted as definitive estimates of selection at individual sites.\n \n\n\nSummary: Model Evidence Ratios Per Site Table\n#\n\n\nThis table provides site-specific inference information.\n\n\n\n\nSite Index\n - The codon site of interest.\n\n\nUnconstrained likelihood\n - The log likelihood score for the codon site of interest, calculated for the unconstrained model fit.\n\n\nConstrained likelihood\n - The log likelihood score for the codon site of interest, calculated for the Constrained Model fit.\n\n\nOptimized Null Likelihood\n - TBD\n\n\nConstrained Evidence Ratio\n - Evidence ratio for selection at the given codon site under the \nConstrained Model\n\n\nOptimized Null Evidence Ratio\n - Evidence ratio for selection at the given codon site under the \nmystery model", 
             "title": "Glossary"
         }, 
         {
@@ -41,29 +41,49 @@
             "title": "aBSREL Glossary"
         }, 
         {
-            "location": "/glossary/#summary-statistics", 
-            "text": "number of sequences  - the number of sequences present in the input file  number of variants  - the number of variants present in the input file  number of branches  - the number of branches in the phylogeny", 
-            "title": "Summary Statistics"
+            "location": "/glossary/#summary-tree-table", 
+            "text": "The Tree Table reports a summary of the inferred the number of rate classes across branches.   \u03c9 rate classes  - Number of rate classes inferred, where \u03c9 represents the ratio of nonsynonymous to synonymous substitution rates  # of branches  - The number of branches inferred to have the respective number of \u03c9 rate classes   % of branches  - The proportion of branches inferred to have the respective number of \u03c9 rate classes   % of tree length  - The percent of the total tree length inferred to have the respective number of \u03c9 rate classes   # under selection  - The number of branches inferred to have undergone positive selection (a rate class of \u03c9 1) at the designated p-value threshold, after correction for multiple testing", 
+            "title": "Summary: Tree Table"
         }, 
         {
-            "location": "/glossary/#absrel-results-summary", 
-            "text": "LRT  - likelihood ratio test implemented as described in Smith et al., 2015 (Mol. Biol. Evol. 32:1342).  multiple testing correction  - as the number of multiple statistical inferences or comparisons that are considered simultaneously increase, by chance, an increasing number of comparisons will result in a significant p-value that represent false positives. To offset this problem, multiple test corrections such as the Holm-Bonferroni correction (Holm, 1979, Scand. J. Statist., 6:65) are applied.", 
-            "title": "aBSREL results summary"
-        }, 
-        {
-            "location": "/glossary/#model-fits-table", 
-            "text": "MG94  - the standard Muse-Gaut 94 model estimates a single \u03c9 for each branch     Full model  - the aBSREL model estimates up to ten \u03c9 rate classes for each branch    log  L  - log likelihood estimate of the respective model    # par.  - the number of parameters in the model    AIC c   - small-sample Akaike Information Criterion (Sigiura, 1978, Commun. Stat. Theory Methods, A7:13) is used to infer the optinal number of rate categories to be used for each branch in the phylogeny.    L tree  - [[add in definition]]", 
-            "title": "Model Fits Table"
-        }, 
-        {
-            "location": "/glossary/#tree-table", 
-            "text": "\u03c9 rate classes  - the number of inferred rate classes. \u03c9 represents the ratio of nonsynonymous to synonymous substitution  # of branches  - the number of branches inferred to have the respective number of \u03c9 rate classes   % of branches  - the proportion of branches in the phylogeny inferred to have the respective number of \u03c9 rate classes   % of tree length  - the proportion of the total tree length inferred to have the respective number of \u03c9 rate classes   # under selection  - the number of branches inferred to have a non neutral \u03c9 rate class at the designated p-value threshold", 
-            "title": "Tree Table"
+            "location": "/glossary/#summary-model-fits-table", 
+            "text": "The Model Fits Table reports a summary of the models fit to the data.   Model  - The model fit.  MG94  - Refers to the baseline model fit, using the standard  Must-Gaut 1994  model (specifically the  MG94-REV  formulation), where a single \u03c9 rate category is inferred per branch.   Full Model  - Refers to the full aBSREL model fit to the tree, with the number of \u03c9 categories per branch inferred using the adaptive algorithm.    log  L  - The log likelihood estimate of the respective model fit.  # par.  - The number of estimated parameters in the respective model.  Time to fit  - Total  TYPE  time, in seconds, to fit the respective model.  AIC c   - Resulting small-sample Akaike Information Criterion  (Sugiura, 1978, Commun. Stat. Theory Methods, A7:13)  score, calculated when inferring the optimal number of \u03c9 rate categories at each branch in the phylogeny.  L tree  - The tree length under the respective model, where tree length represents the expected number of substitutions per site.", 
+            "title": "Summary: Model Fits Table"
         }, 
         {
             "location": "/glossary/#full-table", 
-            "text": "B LRT  - branch length likelihood ratio test statistic  Test p-value  - multiple testing corrected p-value (Holm, 1979, Scand. J. Statist., 6:65)  Uncorrected p-value  - raw p-value  \u03c9 distribution over sites  - inferred \u03c9 branch rates and respective proportion of branch sites", 
+            "text": "The full Results Table reports inferences of positive selection for each branch.   Name  - Branch of interest, where bolded rows refer to branches inferred to have experienced position selection at the designated p-value threshold    B  -  Branch length for the branch of interest -- CURRENTLY EMPTY IN THE TABLE  LRT  - Likelihood ratio test statistic for selection   Test p-value  - P-value corrected for multiple testing using the Holm-Bonferroni correction  (Holm, 1979, Scand. J. Statist., 6:65)  Uncorrected p-value  - Raw p-value before correction for multiple testing  \u03c9 distribution over sites  - Inferred \u03c9 estimates and respective proportion of sites along the respective branch", 
             "title": "Full Table"
+        }, 
+        {
+            "location": "/glossary/#relax-glossary", 
+            "text": "", 
+            "title": "RELAX Glossary"
+        }, 
+        {
+            "location": "/glossary/#summary-model-fits-table_1", 
+            "text": "The Model Fits Table reports a summary of the models fit to the data. Corresponding plots of \u03c9 distributions display inferred \u03c9 values, and when applicable, how selection intensity compares across \u03c9 categories between test and reference branches.   Model  - The model fit. For a more thorough description of these models, see  this fake link .  Partitioned MG94xREV  - This baseline model fits a single rate category, respectively, for each of the two branch sets (reference and test).  General Descriptive  - This model fits a single \u03c9 distribution shared across all branches (single partition analysis), but wherein a selection intensity parameter  k  is inferred for each branch.  an overall description of the data, fits a three \u03c9 rate categories to all branches as a single partition.  Null  - This model represents the null model used to test for selection, where the selection intensity parameter  k  is set to 1 for both branch sets (reference and test).  Alternative  - This model represents the alternative model used to test for selection, where the selection intensity parameter  k  is allowed for vary on the \"test\" partition of branches. Note that all test branches will share the value for  k .  Partitioned Descriptive  - This model infers \u03c9 distributions for each partition, without using the selection intensity parameter  k  (e.g. k=1).", 
+            "title": "Summary: Model Fits Table"
+        }, 
+        {
+            "location": "/glossary/#busted-glossary", 
+            "text": "", 
+            "title": "BUSTED Glossary"
+        }, 
+        {
+            "location": "/glossary/#summary-model-fits-table_2", 
+            "text": "The Model Fits Table reports a summary of the models fit to the data.   Model  - The model fit.  Unconstrained model  - Refers to the alternative model fit to the data where the \u03c9 rate category used to test for selection is permitted to exceed 1 on the foreground branches.    Constrained model  - Refers to a baseline model fit to the data where the background and foreground branches share all \u03c9 rate categories, specifically where the \u03c9 rate category used to test for selection is constrained to equal 1.    log  L  - The log likelihood estimate of the respective model fit.  # par.  - The number of estimated parameters in the respective model.  Time to fit  - Total  TYPE  time, in seconds, to fit the respective model.  AIC c   - Resulting small-sample Akaike Information Criterion  (Sugiura, 1978, Commun. Stat. Theory Methods, A7:13)  score.  L tree  - The tree length under the respective model, where tree length represents the expected number of substitutions per site.  Branch Set  -   I think this should go: The specified name for the set of branches with inferred rates under this model  \u03c9 1,2,3  - The inferred \u03c9 value for the given rate category (1, 2, or 3) with the respective proportion of sites inferred to belong to this category.", 
+            "title": "Summary: Model Fits Table"
+        }, 
+        {
+            "location": "/glossary/#summary-model-evidence-ratios-per-site", 
+            "text": "This plot shows the \"Evidence Ratio\", displayed as the scaled likelihood ratio test statistic, indicating evidence for whether a given site experienced positive selection each model ( HELP, MODELS UNCLEAR ).  Importantly, These values should not be interpreted as definitive estimates of selection at individual sites.", 
+            "title": "Summary: Model Evidence Ratios Per Site"
+        }, 
+        {
+            "location": "/glossary/#summary-model-evidence-ratios-per-site-table", 
+            "text": "This table provides site-specific inference information.   Site Index  - The codon site of interest.  Unconstrained likelihood  - The log likelihood score for the codon site of interest, calculated for the unconstrained model fit.  Constrained likelihood  - The log likelihood score for the codon site of interest, calculated for the Constrained Model fit.  Optimized Null Likelihood  - TBD  Constrained Evidence Ratio  - Evidence ratio for selection at the given codon site under the  Constrained Model  Optimized Null Evidence Ratio  - Evidence ratio for selection at the given codon site under the  mystery model", 
+            "title": "Summary: Model Evidence Ratios Per Site Table"
         }, 
         {
             "location": "/support/", 
@@ -74,6 +94,66 @@
             "location": "/support/#support", 
             "text": "Support can be found on the  HyPhy Github Issues Page .  Please be sure to search closed issues before opening a new one.", 
             "title": "Support"
+        }, 
+        {
+            "location": "/selection-methods/", 
+            "text": "Choosing a method for selection inference\n#\n\n\nHyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding sequence alignment. Which method you select will depend on your specific question:\n\n\nAre individual sites subject to \npervasive\n (across the whole phylogeny) positive or purifying selection?\n#\n\n\n\n\nFEL\n (\nF\nixed \nE\nfects \nL\nikelihood) is suitable for small-to-medium sized data sets\n\n\nFUBAR\n (\nF\nast, \nU\nnconstrained \nB\nayesian \nA\npp\nR\noximation) is suitable for medium-to-large data sets and is expected to have more power than FEL for detecting pervasive selection at sites.\n\n\n\n\nAre individual sites subject to \nepisodic\n positive or purifying selection?\n#\n\n\n\n\nMEME\n tests for episodic (e.g. at a subset of branches) selection at individual sites. \nMEME is the preferred approach for inferring site-specific selection\n and does not accept \na priori\n branch specifications.\n\n\naBSREL\n is an improved version of the common \"branch-site\" class of models. aBSREL allows either for \na priori\n specification of branch(es) to test for selection, or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power.\n\n\n\n\nHas a gene experienced positive selection at any site on a particular branch or set of branches?\n#\n\n\n\n\nBUSTED\n will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. \nThis method is not suitable for identifying specific sites subject to positive seleciton.\n\n\n\n\nHas gene-wide selection pressure been relaxed or intensified along a certain subset of branches?\n#\n\n\n\n\nRELAX\n tests for a relaxation (e.g. where purifying selection has become less stringent) or an intensification (e.g. where purifying selection has become stronger) of selection pressures along a specified set of \"test\" branches. \nThis method is not suitable for the detection of positive selection.\n\n\n\n\n\n\n\nFEL\n#\n\n\n\n\n\nFUBAR\n#\n\n\n\n\n\nMEME\n#\n\n\n\n\n\naBSREL\n#\n\n\n\n\n\nBUSTED\n#\n\n\n\n\n\nRELAX\n#", 
+            "title": "Selection Methods"
+        }, 
+        {
+            "location": "/selection-methods/#choosing-a-method-for-selection-inference", 
+            "text": "HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding sequence alignment. Which method you select will depend on your specific question:", 
+            "title": "Choosing a method for selection inference"
+        }, 
+        {
+            "location": "/selection-methods/#are-individual-sites-subject-to-pervasive-across-the-whole-phylogeny-positive-or-purifying-selection", 
+            "text": "FEL  ( F ixed  E fects  L ikelihood) is suitable for small-to-medium sized data sets  FUBAR  ( F ast,  U nconstrained  B ayesian  A pp R oximation) is suitable for medium-to-large data sets and is expected to have more power than FEL for detecting pervasive selection at sites.", 
+            "title": "Are individual sites subject to pervasive (across the whole phylogeny) positive or purifying selection?"
+        }, 
+        {
+            "location": "/selection-methods/#are-individual-sites-subject-to-episodic-positive-or-purifying-selection", 
+            "text": "MEME  tests for episodic (e.g. at a subset of branches) selection at individual sites.  MEME is the preferred approach for inferring site-specific selection  and does not accept  a priori  branch specifications.  aBSREL  is an improved version of the common \"branch-site\" class of models. aBSREL allows either for  a priori  specification of branch(es) to test for selection, or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power.", 
+            "title": "Are individual sites subject to episodic positive or purifying selection?"
+        }, 
+        {
+            "location": "/selection-methods/#has-a-gene-experienced-positive-selection-at-any-site-on-a-particular-branch-or-set-of-branches", 
+            "text": "BUSTED  will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection.  This method is not suitable for identifying specific sites subject to positive seleciton.", 
+            "title": "Has a gene experienced positive selection at any site on a particular branch or set of branches?"
+        }, 
+        {
+            "location": "/selection-methods/#has-gene-wide-selection-pressure-been-relaxed-or-intensified-along-a-certain-subset-of-branches", 
+            "text": "RELAX  tests for a relaxation (e.g. where purifying selection has become less stringent) or an intensification (e.g. where purifying selection has become stronger) of selection pressures along a specified set of \"test\" branches.  This method is not suitable for the detection of positive selection.", 
+            "title": "Has gene-wide selection pressure been relaxed or intensified along a certain subset of branches?"
+        }, 
+        {
+            "location": "/selection-methods/#fel", 
+            "text": "", 
+            "title": "FEL"
+        }, 
+        {
+            "location": "/selection-methods/#fubar", 
+            "text": "", 
+            "title": "FUBAR"
+        }, 
+        {
+            "location": "/selection-methods/#meme", 
+            "text": "", 
+            "title": "MEME"
+        }, 
+        {
+            "location": "/selection-methods/#absrel", 
+            "text": "", 
+            "title": "aBSREL"
+        }, 
+        {
+            "location": "/selection-methods/#busted", 
+            "text": "", 
+            "title": "BUSTED"
+        }, 
+        {
+            "location": "/selection-methods/#relax", 
+            "text": "", 
+            "title": "RELAX"
         }, 
         {
             "location": "/tutorials/quickstart/", 
