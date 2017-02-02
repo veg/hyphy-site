@@ -27,7 +27,7 @@ The Model Fits Table reports a summary of the models fit to the data.
     * **Full Model** - Refers to the full aBSREL model fit to the tree, with the number of ω categories per branch inferred using the adaptive algorithm.
 * ***log* L** - The log likelihood estimate of the respective model fit.
 * **\# par.** - The number of estimated parameters in the respective model.
-* **Time to fit** - Total **TYPE** time, in seconds, to fit the respective model.
+* **Time to fit** - Total clock time, in seconds, to fit the respective model.
 * **AIC<sub>c</sub>**  - Resulting small-sample Akaike Information Criterion [(Sugiura, 1978, Commun. Stat. Theory Methods, A7:13)](http://www.tandfonline.com/doi/abs/10.1080/03610927808827599) score, calculated when inferring the optimal number of ω rate categories at each branch in the phylogeny.
 * **L<sub>tree</sub>** - The tree length under the respective model, where tree length represents the expected number of substitutions per site.
 
@@ -52,7 +52,7 @@ The full Results Table reports inferences of positive selection for each branch.
 
 The Model Fits Table reports a summary of the models fit to the data. Corresponding plots of ω distributions display inferred ω values, and when applicable, how selection intensity compares across ω categories between test and reference branches.
 
-* **Model** - The model fit. For a more thorough description of these models, see [this fake link](http://thislinkisalie.com).
+* **Model** - The model fit. For a more thorough description of these models, see [this description of RELAX](selection-methods/#RELAX).
     * **Partitioned MG94xREV** - This baseline model fits a single rate category, respectively, for each of the two branch sets (reference and test).
     * **General Descriptive** - This model fits a single ω distribution shared across all branches (single partition analysis), but wherein a selection intensity parameter *k* is inferred for each branch.  an overall description of the data, fits a three ω rate categories to all branches as a single partition.
     * **Null** - This model represents the null model used to test for selection, where the selection intensity parameter *k* is set to 1 for both branch sets (reference and test).
@@ -73,10 +73,10 @@ The Model Fits Table reports a summary of the models fit to the data.
 
 * **Model** - The model fit.
     * **Unconstrained model** - Refers to the alternative model fit to the data where the ω rate category used to test for selection is permitted to exceed 1 on the foreground branches.  
-    * **Constrained model** - Refers to a baseline model fit to the data where the background and foreground branches share all ω rate categories, specifically where the ω rate category used to test for selection is constrained to equal 1.
+    * **Constrained model** - Refers to the null model fit to the data where the background and foreground branches share all ω rate categories, specifically where the ω rate category used to test for selection is constrained to equal 1.
 * ***log* L** - The log likelihood estimate of the respective model fit.
 * **\# par.** - The number of estimated parameters in the respective model.
-* **Time to fit** - Total **TYPE** time, in seconds, to fit the respective model.
+* **Time to fit** - Total clock time, in seconds, to fit the respective model.
 * **AIC<sub>c</sub>**  - Resulting small-sample Akaike Information Criterion [(Sugiura, 1978, Commun. Stat. Theory Methods, A7:13)](http://www.tandfonline.com/doi/abs/10.1080/03610927808827599) score.
 * **L<sub>tree</sub>** - The tree length under the respective model, where tree length represents the expected number of substitutions per site.
 * **Branch Set** - ** I think this should go: The specified name for the set of branches with inferred rates under this model**
@@ -85,18 +85,18 @@ The Model Fits Table reports a summary of the models fit to the data.
 
 ### Summary: Model Evidence Ratios Per Site
 
-This plot shows the "Evidence Ratio", displayed as the scaled likelihood ratio test statistic, indicating evidence for whether a given site experienced positive selection each model (**HELP, MODELS UNCLEAR**). **Importantly, These values should not be interpreted as definitive estimates of selection at individual sites.** 
+This plot shows the "Evidence Ratio", displayed as the scaled likelihood ratio test statistic, indicating evidence for whether a given site experienced positive selection each model. The *Constrained* evidence ratio refers to sitewise quantities calculated from comparing the Constrained (null) model fit to the Unconstrained model fit, as fit to the entire data set. The *Optimized Null* evidence ratios compare *site-specific* fits between the Constrained and Unconstrained models. For more detailed information on the difference between the Constrained and Optimized Null evidence ratios, see [this description of BUSTED](selection-methods/#BUSTED). **Importantly, These values should not be interpreted as definitive estimates of selection at individual sites.** 
 
 ### Summary: Model Evidence Ratios Per Site Table
 
 This table provides site-specific inference information.
 
 * **Site Index** - The codon site of interest.
-* **Unconstrained likelihood** - The log likelihood score for the codon site of interest, calculated for the unconstrained model fit.
-* **Constrained likelihood** - The log likelihood score for the codon site of interest, calculated for the Constrained Model fit.
-* **Optimized Null Likelihood** - TBD
-* **Constrained Evidence Ratio** - Evidence ratio for selection at the given codon site under the **Constrained Model**
-* **Optimized Null Evidence Ratio** - Evidence ratio for selection at the given codon site under the **mystery model**
+* **Unconstrained Likelihood** - The log likelihood score for the codon site of interest, calculated from the Unconstrained model fit.
+* **Constrained Likelihood** - The log likelihood score for the codon site of interest, calculated from the Constrained Model fit.
+* **Optimized Null Likelihood** - The log likelihood score for the codon site of interest, calculated from the Constrained Model fit to the specific codon site of interest (as opposed to a fit to the entire data set).
+* **Constrained Evidence Ratio** - Evidence ratio for positive selection at the given codon site, using the Constrained model as the null model.
+* **Optimized Null Evidence Ratio** - Evidence ratio for selection at the given codon site under the Optimized Null model, i.e. by fitting the Constrained (null) and Unconstrained (alternative) model only to the specific site of interest.
 
 
 
