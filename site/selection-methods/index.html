@@ -237,6 +237,22 @@
 
             <!-- Render anchor -->
             <li class="anchor">
+              <a title="MG94xREV Framework" href="#mg94xrev-framework">
+                MG94xREV Framework
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="Synonymous Rate Variation" href="#synonymous-rate-variation">
+                Synonymous Rate Variation
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
               <a title="FEL" href="#fel">
                 FEL
               </a>
@@ -345,12 +361,12 @@
 </ul>
 <h3 id="are-individual-sites-subject-to-episodic-positive-or-purifying-selection">Are individual sites subject to <em>episodic</em> positive or purifying selection?<a class="headerlink" href="#are-individual-sites-subject-to-episodic-positive-or-purifying-selection" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="../selection-methods/#MEME">MEME</a> tests for episodic (e.g. at a subset of branches) selection at individual sites. <strong>MEME is the preferred approach for inferring site-specific selection</strong> and does not accept <em>a priori</em> branch specifications.</li>
-<li><a href="../selection-methods/#aBSREL">aBSREL</a> is an improved version of the common "branch-site" class of models. aBSREL allows either for <em>a priori</em> specification of branch(es) to test for selection, or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power.</li>
+<li><a href="../selection-methods/#MEME">MEME</a> (<strong>M</strong>ixed <strong>E</strong>ffects <strong>M</strong>odel of <strong>E</strong>volution) tests for episodic (e.g. at a subset of branches) selection at individual sites. <strong>MEME is the preferred approach for inferring site-specific selection</strong> and does not accept <em>a priori</em> branch specifications.</li>
+<li><a href="../selection-methods/#aBSREL">aBSREL</a> (<strong>a</strong>daptive <strong>B</strong>ranch-<strong>S</strong>ite <strong>R</strong>andom <strong>E</strong>ffects <strong>L</strong>ikelihood) is an improved version of the common "branch-site" class of models. aBSREL allows either for <em>a priori</em> specification of branch(es) to test for selection, or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power.</li>
 </ul>
 <h3 id="has-a-gene-experienced-positive-selection-at-any-site-on-a-particular-branch-or-set-of-branches">Has a gene experienced positive selection at any site on a particular branch or set of branches?<a class="headerlink" href="#has-a-gene-experienced-positive-selection-at-any-site-on-a-particular-branch-or-set-of-branches" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="../selection-methods/#BUSTED">BUSTED</a> will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. <strong>This method is not suitable for identifying specific sites subject to positive seleciton.</strong></li>
+<li><a href="../selection-methods/#BUSTED">BUSTED</a> (<strong>B</strong>ranch-<strong>S</strong>ite <strong>U</strong>nrestricted <strong>S</strong>tatistical <strong>T</strong>est for <strong>E</strong>pisodic <strong>D</strong>iversification) will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. <strong>This method is not suitable for identifying specific sites subject to positive seleciton.</strong></li>
 </ul>
 <h3 id="has-gene-wide-selection-pressure-been-relaxed-or-intensified-along-a-certain-subset-of-branches">Has gene-wide selection pressure been relaxed or intensified along a certain subset of branches?<a class="headerlink" href="#has-gene-wide-selection-pressure-been-relaxed-or-intensified-along-a-certain-subset-of-branches" title="Permanent link">#</a></h3>
 <ul>
@@ -358,22 +374,62 @@
 </ul>
 <!--------------------------------------------------------------------------------------->
 
+<h2 id="mg94xrev-framework">MG94xREV Framework<a class="headerlink" href="#mg94xrev-framework" title="Permanent link">#</a></h2>
+<p>All methods rely, to some extent, on the MG94xREV codon model, a generalized extension of the <a href="https://www.ncbi.nlm.nih.gov/labs/articles/7968485/">MG94 model</a> (MG94xREV) that allows for a full GTR mutation rate matrix:</p>
+<p>[rate matrix goes here with explanation of parameters, graphically]</p>
+<p>As part of likelihood calculations, MG94xREV requires a specified set of "codon frequencies," which globally reflect codon frequencies which would be present in the <em>absence</em> of selection. HyPhy employs the <a href="http://dx.doi.org/10.1371/journal.pone.0011230">CF3x4</a>, a corrected version of the common F3x4 estimator (introduced in <a href="https://www.ncbi.nlm.nih.gov/pubmed/7968486">Goldman and Yang 1994</a>) which accounts for biases in nucleotide composition induced by stop codons. </p>
+<p>All methods (with the partial exception of RELAX*) will perform a global MG94xREV fit to optimize branch length and nucleotide substitution parameters before proceeding to hypothesis testing. Several of these methods (FEL, FUBAR, and MEME) additionally pre-fit a GTR nucleotide model to the data, using the estimated parameters as starting values for the global MG94xREV fit, as a computational speed-up. Resulting branch length and nucleotide substitution parameters are subsequently used during model fitting for hypothesis testing.</p>
+<p>*The global MG94xREV fit is only performed for the descriptive and/or exploratory versions of RELAX (see <a href="../selection-methods/#RELAX">below</a> for details).</p>
+<!--------------------------------------------------------------------------------------->
+
+<h2 id="synonymous-rate-variation">Synonymous Rate Variation<a class="headerlink" href="#synonymous-rate-variation" title="Permanent link">#</a></h2>
+<p>A key component of HyPhy analyses is the inclusion of <em>synonymous rate variation</em>, meaning that dS is often allowed to vary across sites and/or branches, depending on the specific method. As such, hypothesis testing for positive selection is typically conducted by assessing whether dN is significantly greater than dS. <a href="https://doi.org/10.1093/molbev/msi232">See this paper</a> for a detailed description of why incorporating synonymous rate variation into positive selection inference is likely beneficial. Importantly, this consideration of synonymous rate variation stands in contrast to methods implemented in, for example, <a href="https://doi.org/10.1093/molbev/msm088">PAML</a> where dS is constrained to equal 1, and postitive selection is inferred based on whether dN () is greater than 1. </p>
+<!--------------------------------------------------------------------------------------->
+
 <h2 id="fel">FEL<a class="headerlink" href="#fel" title="Permanent link">#</a></h2>
+<p>FEL uses a maximum-likelihood (ML) approach to infer nonsynoymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. This method assumes that the selection pressure for each site is constant along the entire phylogeny. </p>
+<p>After optimizing branch lengths and nucleotide substitution parameters, FEL fits a MG94xREV model to each codon site to infer site-specific nonsynonymous and synonymous (dN and dS, respectively) substitution rates. Hypothesis testing is then conducted on a site-specific basis, using the Likelihood Ratio Test, to ascertain if dN is significantly greater than dS.</p>
+<p><strong>If you use FEL in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msi105"><code>Kosakovsky Pond, SL and Frost, SDW. "Not So Different After All: A Comparison of Methods for Detecting Amino Acid Sites Under Selection." Mol. Biol. Evol. 22, 1208--1222 (2005).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="fubar">FUBAR<a class="headerlink" href="#fubar" title="Permanent link">#</a></h2>
+<p>FUBAR uses a Bayesian approach to infer nonsynoymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. This method assumes that the selection pressure for each site is constant along the entire phylogeny.</p>
+<p>Although FUBAR produces similar information to FEL, it has several key differences:</p>
+<ul>
+<li>FUBAR employs a Bayesian algorithm to infer rates, and therefore it reports evidence for positive selection using <em>posterior probabilities</em> (which range from 0-1), not p-values. Generally, posterior probabilities &gt; 0.9 are strongly suggestive of positive selection. </li>
+<li>FUBAR runs extremely quickly and is well-suited for analyzing large alignments, with hundreds or thousands of sequences. This speed-up results from the novel strategy of employing a pre-specified discrete grid of dN and dS values to be applied across sites. This approach contrasts with the time-consuming FEL strategy of fitting a new MG94xREV model at each site.</li>
+<li>FUBAR may have more power than FEL, in particular when positive selection is present but relatively weak (i.e. low values of ω&gt;1).</li>
+</ul>
+<p><strong>If you use FUBAR in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/mst030"><code>Murrell, B et al. "FUBAR: A Fast, Unconstrained Bayesian AppRoximation for inferring selection." Mol. Biol. Evol. 30, 1196–1205 (2013).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="meme">MEME<a class="headerlink" href="#meme" title="Permanent link">#</a></h2>
+<p>MEME employs a mixed-effects maximum likelihood approach to test the hypothesis that individual sites have been subject to episodic positive or diversifying selection. 
+In other words, MEME aims to detect sites evolving under positive selection under a <em>proportion</em> of branches.</p>
+<p>The "mixed-effects" aspect of MEME refers to its modeling strategy of allowing ω rates to vary across sites, while also allowing these ω rates to vary across branches. More specifically, MEME infers two ω rate categories (ω<sub>1</sub> and ω<sub>2</sub>), and corresponding weights, for each site, shared across all branches at that site. These two ω categories share a site-specific synonymous rate dS, but differ in their nonsynonymous rates. 
+For both the null and alternative models, one rate category ω<sub>1</sub> follows the constraint ω<sub>1</sub>≤dS. The second rate category ω<sub>2</sub> is used for positive selection inference: In the null model, ω<sub>2</sub> is similarly constrained as ω<sub>2</sub>≤dS. By contrast, the alternative model places no constraints on ω<sub>2</sub>, thus representing a category of positive selection. Positive selection is inferred using the Likelihood Ratio Test between alternative and null models. </p>
+<p><strong>If you use MEME in your analysis, please cite the following:</strong> <a href="http://dx.doi.org/10.1371/journal.pgen.1002764"><code>Murrell, B et al. "Detecting individual sites subject to episodic diversifying selection." PLoS Genetics 8, e1002764 (2012).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="absrel">aBSREL<a class="headerlink" href="#absrel" title="Permanent link">#</a></h2>
+<p>aBSREL ("adaptive Branch-Site Random Effects Likelihood) is an "adaptive" version of the commonly-used "branch-site" models, which are used to test if positive selection at specific sites has occurred on a proportion of branches. As such, aBSREL models both site-level and branch-level ω heterogeneity.</p>
+<p>aBSREL differs from other branch-site implementations by inferring the optimal number of ω categories for each branch. For example, the earlier HyPhy branch-site approach (BS-REL) assumed three ω rate categories for each branch and assigned each site, with some probability, to one of these categories. aBSREL, by contrast, acknowledges that different branches may feature more or less complex evolutionary patterns and hence may be better modeled by more or fewer ω categories. aBSREL specifically uses AIC<sub>c</sub> (small sample AIC) to infer the optimal number of rate categories for each branch. </p>
+<p>After aBSREL fits the full adaptive model, hypothesis testing is performed for each branch by comparing, using the Likelihood Ratio Test, the full model to a null model where branches are not allowed to have categories of ω&gt;1. </p>
+<p>Most importantly, aBSREL can be run in two modes:</p>
+<ul>
+<li>Select a set of "foreground" branches to explicitly test for positive selection. </li>
+<li>Perform an exploratory analysis where all branches are tested for positive selection. In this scenario, p-values at each branch must be corrected for multiple testing (using the Holh-Bonferroni correction). Due to the increase in multiple testing, this approach <em>has much lower power</em> compared to the former approach. </li>
+</ul>
+<p><strong>If you use aBSREL in your analysis, please cite the following:</strong> <a href="https://doi.org/:10.1093/molbev/msv022"><code>Smith, MD et al. "Less is more: an adaptive branch-site random effects model for efficient detection of episodic diversifying selection." Mol. Biol. Evol. 32, 1342–1353 (2015).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="busted">BUSTED<a class="headerlink" href="#busted" title="Permanent link">#</a></h2>
+<p>Fits two models (con, uncon). Models can be fit either to the entire data set, or to specific sites. Hypothesis testing performed across whole data, whereas evidence ratios (which give <strong>Descriptive, ad hoc</strong> evidence of positive selection at individual sites, not a p-value) can be inferred on a whole-gene or per-site basis. On per-site, the third omega category is </p>
+<p><strong>If you use BUSTED in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msv035"><code>Murrell, B et al. "Gene-wide identification of episodic selection." Mol. Biol. Evol. 32, 1365–1371 (2015).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="relax">RELAX<a class="headerlink" href="#relax" title="Permanent link">#</a></h2>
+<p><strong>If you use RELAX in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msu400"><code>Wertheim, JO et al. "RELAX: detecting relaxed selection in a phylogenetic framework." Mol. Biol. Evol. 32, 820–832 (2015).</code></a></p>
 			 <!--
           <aside class="copyright" role="note">
             
