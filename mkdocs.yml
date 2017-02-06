@@ -61,5 +61,7 @@ pages:
   - Support: 'support.md'
   - Selection Methods: 'selection-methods.md'
   - Tutorials: 
+    - Reference : 'tutorials/reference.md'
     - v2.3 Quick Start : 'tutorials/quickstart.md'
     - Selection : 'tutorials/selection/README.md'
+    
