@@ -27,7 +27,7 @@ The Model Fits Table reports a summary of the models fit to the data.
     * **Full Model** - Refers to the full aBSREL model fit to the tree, with the number of ω categories per branch inferred using the adaptive algorithm.
 * ***log* L** - The log likelihood estimate of the respective model fit.
 * **\# par.** - The number of estimated parameters in the respective model.
-* **Time to fit** - Total clock time, in seconds, to fit the respective model.
+* **Time to fit** - Total clock time to fit the respective model.
 * **AIC<sub>c</sub>**  - Resulting small-sample Akaike Information Criterion [(Sugiura, 1978, Commun. Stat. Theory Methods, A7:13)](http://www.tandfonline.com/doi/abs/10.1080/03610927808827599) score, calculated when inferring the optimal number of ω rate categories at each branch in the phylogeny.
 * **L<sub>tree</sub>** - The tree length under the respective model, where tree length represents the expected number of substitutions per site.
 
@@ -37,7 +37,7 @@ The full Results Table reports inferences of positive selection for each branch.
 
 * **Name** - Branch of interest, where bolded rows refer to branches inferred to have experienced position selection at the designated p-value threshold  
 * **B** - **Branch length for the branch of interest -- CURRENTLY EMPTY IN THE TABLE**
-* **LRT** - Likelihood ratio test statistic for selection 
+* **LRT** - Likelihood ratio test statistic for selection, comparing the aBSREL model to a null model where any categories of ω>1 are disallowed 
 * **Test p-value** - P-value corrected for multiple testing using the Holm-Bonferroni correction [(Holm, 1979, Scand. J. Statist., 6:65)](https://www.jstor.org/stable/4615733)
 * **Uncorrected p-value** - Raw p-value before correction for multiple testing
 * **ω distribution over sites** - Inferred ω estimates and respective proportion of sites along the respective branch
@@ -53,12 +53,11 @@ The full Results Table reports inferences of positive selection for each branch.
 The Model Fits Table reports a summary of the models fit to the data. Corresponding plots of ω distributions display inferred ω values, and when applicable, how selection intensity compares across ω categories between test and reference branches.
 
 * **Model** - The model fit. For a more thorough description of these models, see [this description of RELAX](selection-methods/#RELAX).
-    * **Partitioned MG94xREV** - This baseline model fits a single rate category, respectively, for each of the two branch sets (reference and test).
-    * **General Descriptive** - This model fits a single ω distribution shared across all branches (single partition analysis), but wherein a selection intensity parameter *k* is inferred for each branch.  an overall description of the data, fits a three ω rate categories to all branches as a single partition.
     * **Null** - This model represents the null model used to test for selection, where the selection intensity parameter *k* is set to 1 for both branch sets (reference and test).
     * **Alternative** - This model represents the alternative model used to test for selection, where the selection intensity parameter *k* is allowed for vary on the "test" partition of branches. Note that all test branches will share the value for *k*.
-    * **Partitioned Descriptive** - This model infers ω distributions for each partition, without using the selection intensity parameter *k* (e.g. k=1). 
-
+    * **Partitioned MG94xREV** - This baseline model fits a single ω value to each of the two branch sets (reference and test), respectively.
+    * **Partitioned Descriptive** - This model infers three ω categories distributions for each partition, respectively, without using the selection intensity parameter *k* (e.g. k=1 throughout). 
+    * **General Descriptive** - This model fits three ω categories to the entire phylogeny, i.e. shared across all branches. This model then infers a single selection intensity parameter *k* for each branch. 
 
 
 <!------------------------------------------------------------------------------------->
@@ -76,7 +75,7 @@ The Model Fits Table reports a summary of the models fit to the data.
     * **Constrained model** - Refers to the null model fit to the data where the background and foreground branches share all ω rate categories, specifically where the ω rate category used to test for selection is constrained to equal 1.
 * ***log* L** - The log likelihood estimate of the respective model fit.
 * **\# par.** - The number of estimated parameters in the respective model.
-* **Time to fit** - Total clock time, in seconds, to fit the respective model.
+* **Time to fit** - Total clock time to fit the respective model.
 * **AIC<sub>c</sub>**  - Resulting small-sample Akaike Information Criterion [(Sugiura, 1978, Commun. Stat. Theory Methods, A7:13)](http://www.tandfonline.com/doi/abs/10.1080/03610927808827599) score.
 * **L<sub>tree</sub>** - The tree length under the respective model, where tree length represents the expected number of substitutions per site.
 * **Branch Set** - ** I think this should go: The specified name for the set of branches with inferred rates under this model**

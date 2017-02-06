@@ -1,6 +1,6 @@
 ## Choosing a method for selection inference
 
-HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding sequence alignment. Which method you select will depend on your specific question:
+HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding multiple sequence alignments. Which method you select will depend on your specific question:
 
 ### Are individual sites subject to *pervasive* (across the whole phylogeny) positive or purifying selection?
 * [FEL](selection-methods/#FEL) (**F**ixed **E**fects **L**ikelihood) is suitable for small-to-medium sized data sets
@@ -15,7 +15,7 @@ HyPhy provides a suite of diverse phylogenetic methodologies for testing specifi
 * [BUSTED](selection-methods/#BUSTED) (**B**ranch-**S**ite **U**nrestricted **S**tatistical **T**est for **E**pisodic **D**iversification) will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. **This method is not suitable for identifying specific sites subject to positive seleciton.**
 
 ### Has gene-wide selection pressure been relaxed or intensified along a certain subset of branches?
-* [RELAX](selection-methods/#RELAX) tests for a relaxation (e.g. where purifying selection has become less stringent) or an intensification (e.g. where purifying selection has become stronger) of selection pressures along a specified set of "test" branches. **This method is not suitable for the detection of positive selection.**
+* [RELAX](selection-methods/#RELAX) tests for a relaxation (reduction in stringency) or an intensification (increase in stringency) of selection pressures along a specified set of "test" branches. **This method is not suitable for the detection of positive selection.**
 
 <!--------------------------------------------------------------------------------------->
 ## MG94xREV Framework
@@ -77,7 +77,7 @@ For both the null and alternative models, one rate category ω<sub>1</sub> follo
 <!--------------------------------------------------------------------------------------->
 ## aBSREL
 
-aBSREL ("adaptive Branch-Site Random Effects Likelihood) is an "adaptive" version of the commonly-used "branch-site" models, which are used to test if positive selection at specific sites has occurred on a proportion of branches. As such, aBSREL models both site-level and branch-level ω heterogeneity.
+aBSREL ("adaptive Branch-Site Random Effects Likelihood) is an "adaptive" version of the commonly-used "branch-site" models, which are used to test if positive selection has occurred on a proportion of branches. As such, aBSREL models both site-level and branch-level ω heterogeneity. aBSREL, however, does not test for selection at specific sites. Instead, aBSREL will test, for each branch (or branch of interest) in the phylogeny, whether a proportion of sites have evolved under positive selection. 
 
 aBSREL differs from other branch-site implementations by inferring the optimal number of ω categories for each branch. For example, the earlier HyPhy branch-site approach (BS-REL) assumed three ω rate categories for each branch and assigned each site, with some probability, to one of these categories. aBSREL, by contrast, acknowledges that different branches may feature more or less complex evolutionary patterns and hence may be better modeled by more or fewer ω categories. aBSREL specifically uses AIC<sub>c</sub> (small sample AIC) to infer the optimal number of rate categories for each branch. 
 
@@ -85,8 +85,8 @@ After aBSREL fits the full adaptive model, hypothesis testing is performed for e
 
 Most importantly, aBSREL can be run in two modes:
 
-* Select a set of "foreground" branches to explicitly test for positive selection. 
-* Perform an exploratory analysis where all branches are tested for positive selection. In this scenario, p-values at each branch must be corrected for multiple testing (using the Holh-Bonferroni correction). Due to the increase in multiple testing, this approach *has much lower power* compared to the former approach. 
+* Test a specific hypothesis by *a priori* selecting a set of "foreground" branches to test for positive selection. 
+* Perform an exploratory analysis where all branches are tested for positive selection. In this scenario, p-values at each branch must be corrected for multiple testing (using the Holh-Bonferroni correction). Due to multiple testing, the exploratory approach *has much lower power* compared to the other approach. 
 
 
 **If you use aBSREL in your analysis, please cite the following:** [`Smith, MD et al. "Less is more: an adaptive branch-site random effects model for efficient detection of episodic diversifying selection." Mol. Biol. Evol. 32, 1342–1353 (2015).`](https://doi.org/:10.1093/molbev/msv022)
@@ -95,7 +95,14 @@ Most importantly, aBSREL can be run in two modes:
 <!--------------------------------------------------------------------------------------->
 ## BUSTED
 
-Fits two models (con, uncon). Models can be fit either to the entire data set, or to specific sites. Hypothesis testing performed across whole data, whereas evidence ratios (which give **Descriptive, ad hoc** evidence of positive selection at individual sites, not a p-value) can be inferred on a whole-gene or per-site basis. On per-site, the third omega category is 
+BUSTED provides a gene-wide (*not site-specific*) test for positive selection by asking whether a gene has experienced positive selection at at least one site in at least one branch. As such, BUSTED is not suitable for identifying specific sites under selection. When running BUSTED, users can either specify a set of foreground branches on which to test for positive selection (remaining branches are designated "background"), or users can test the entire phylogeny for positive selection. In the latter case, the entire tree is effectively treated as foreground, and the test for positive selection considers the entire phylogeny.
+
+For each phylogenetic partition (foreground and background branch sites), BUSTED fits a codon model with three rate categories: ω<sub>1</sub>≤ω<sub>2</sub>≤1≤ω<sub>3</sub>, and BUSTED estimates the proportion of sites per partition belonging to each ω category. This model, used as the alternative model in selection testing, is referred to as the *Unconstrained* model. BUSTED then tests for positive selection by comparing this model fit to a null model where ω<sub>3</sub>=1 (i.e. disallowing positive selection) on the foreground branches. This null model is also referred to as the *Constrained* model. If the null hypothesis is rejected, then there is evidence that at least one site has, at least some of the time, experienced positive selection on the foreground branches. Importantly, a significant result *does not* mean that the gene evolved under positive selection along the entire foreground.
+
+BUSTED additionally reports "Evidence Ratios" (ERs) for each site. The ER gives the likelihood ratio (reported on a log-scale) that the alternative model was a better fit to the null model. The ER for each site thus provides *descriptive information* about whether a given site could have evolved under positive selection. The ERs *should not* be interpreted as statistical evidence for positive selection at individual sites (instead, methods like [MEME](selection-methods/#MEME), [FEL](selection-methods/#FEL), or [FUBAR](selection-methods/#FUBAR) should be used for detecting selection at individual sites). 
+
+For each site, two ERs are reported: the *Constrained Model* ER and the *Optimized Null* model ER. The Constrained model ER calculates the evidence ratio using model parameters inferred from the Constrained model. By contrast the Optimized Null model ER re-optimizes parameters inferred using the Constrained model for the given site of interest. These optimized parameter values are then used to calculate the site's ER. Again, while these ERs may be helpful descriptors of selection in the data set, they do not provide statistically valid evidence for positive selection at a site.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
 
 **If you use BUSTED in your analysis, please cite the following:** [`Murrell, B et al. "Gene-wide identification of episodic selection." Mol. Biol. Evol. 32, 1365–1371 (2015).`](https://doi.org/10.1093/molbev/msv035)
 
@@ -103,6 +110,16 @@ Fits two models (con, uncon). Models can be fit either to the entire data set, o
 
 <!--------------------------------------------------------------------------------------->
 ## RELAX
+
+RELAX is a hypothesis testing framework that asks whether the strength of natural selection has been relaxed or intensified along a specified set of test branches. RELAX is therefore not a suitable method for explicitly testing for positive selection. Instead, RELAX is most useful for identifying trends and/or shifts in the stringency of natural selection on a given gene.
+
+RELAX requires a specified set of "test" branches to compare with an additional selection of "reference" branches (note that all branches do not have to be assigned, but one branch is required the test and reference set each). RELAX begins by fitting a codon model with three ω categories to the entire phylogeny (null model). RELAX then tests for relaxed/intensified selection by introducing the parameter **k** (where k≥0), serving as the *selection intensity parameter*, as an exponent for the inferred ω values: ω<sup>k</sup>. Specifically, RELAX fixes the inferred ω values (ω<sub>1</sub>, ω<sub>2</sub>, and ω<sub>3</sub>), and infers, for the test branches, a value for *k* which modifies the rates as ω<sub>1</sub><sup>k</sup>, ω<sub>2</sub><sup>k</sup>, and ω<sub>3</sub><sup>k</sup> (alternative model). RELAX then conducts a likelihood ratio test to compare the alternative and null models. Importantly, a significant result of *k>1* indicates that selection has *been intensified* along the test branches, and a significant result of *k<1* indicates that selection has *been relaxed* along the test branches.
+
+In addition to this pair of null/alternative models, RELAX fits three other models meant as complementary descriptors for the data, but are not suitable for hypothesis testing. These additional models include the following:
+
+* *Partitioned MG94xREV* - This model fits a single ω value, i.e. for all sites, to each branch partition (reference and test).
+* *Partitioned Descriptive* - This model, like a more standard branch-site model, fits three ω categories separately to each branch partition (reference and test). The selection intensity parameter *k* is not included.
+* *General Descriptive* - This model fits three ω categories to the full data set, ignoring the specified test and reference partition division. It subsequently fits a *k* parameter at each branch, ultimately tailoring the three ω category values to this branch. This model may serve as a useful description of how selection intensity fluctuates over the whole tree.
 
 
 **If you use RELAX in your analysis, please cite the following:** [`Wertheim, JO et al. "RELAX: detecting relaxed selection in a phylogenetic framework." Mol. Biol. Evol. 32, 820–832 (2015).`](https://doi.org/10.1093/molbev/msu400)
