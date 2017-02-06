@@ -48,7 +48,12 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: '#'
+  - mdx_math
 
+extra_javascript: 
+    - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML # Required for MathJax
+
+  
 # Google Analytics
 google_analytics: ['UA-36723568-3', 'mkdocs.org']
 

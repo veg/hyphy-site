@@ -68,7 +68,7 @@ Although FUBAR produces similar information to FEL, it has several key differenc
 MEME employs a mixed-effects maximum likelihood approach to test the hypothesis that individual sites have been subject to episodic positive or diversifying selection. 
 In other words, MEME aims to detect sites evolving under positive selection under a *proportion* of branches.
 
-The "mixed-effects" aspect of MEME refers to its modeling strategy of allowing ω rates to vary across sites, while also allowing these ω rates to vary across branches. More specifically, MEME infers two ω rate categories (ω<sub>1</sub> and ω<sub>2</sub>), and corresponding weights, for each site, shared across all branches at that site. These two ω categories share a site-specific synonymous rate dS, but differ in their nonsynonymous rates. 
+The "mixed-effects" aspect of MEME refers to its modeling strategy of allowing ω rates to vary across sites, while also allowing these ω rates to vary across branches. More specifically, MEME infers two ω rate categories (\(\omega_1\) and \(\omega_2\)), and corresponding weights, for each site, shared across all branches at that site. These two ω categories share a site-specific synonymous rate dS, but differ in their nonsynonymous rates. 
 For both the null and alternative models, one rate category ω<sub>1</sub> follows the constraint ω<sub>1</sub>≤dS. The second rate category ω<sub>2</sub> is used for positive selection inference: In the null model, ω<sub>2</sub> is similarly constrained as ω<sub>2</sub>≤dS. By contrast, the alternative model places no constraints on ω<sub>2</sub>, thus representing a category of positive selection. Positive selection is inferred using the Likelihood Ratio Test between alternative and null models. 
  
 
