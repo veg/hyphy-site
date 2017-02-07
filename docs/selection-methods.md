@@ -15,7 +15,7 @@ HyPhy provides a suite of diverse phylogenetic methodologies for testing specifi
 * [BUSTED](selection-methods/#BUSTED) (**B**ranch-**S**ite **U**nrestricted **S**tatistical **T**est for **E**pisodic **D**iversification) will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. **This method is not suitable for identifying specific sites subject to positive seleciton.**
 
 ### Has gene-wide selection pressure been relaxed or intensified along a certain subset of branches?
-* [RELAX](selection-methods/#RELAX) tests for a relaxation (reduction in stringency) or an intensification (increase in stringency) of selection pressures along a specified set of "test" branches. **This method is not suitable for the detection of positive selection.**
+* [RELAX](selection-methods/#RELAX) tests for a relaxation (e.g. where purifying selection has become less stringent) or an intensification (e.g. where purifying selection has become stronger) of selection pressures along a specified set of "test" branches. **This method is not suitable for the detection of positive selection.**
 
 <!--------------------------------------------------------------------------------------->
 ## MG94xREV Framework
