@@ -48,10 +48,14 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: '#'
-  - mdx_math
+  - mdx_math:
+      enable_dollar_delimiter: True
+
+    
 
 extra_javascript: 
-    - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML # Required for MathJax
+    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
+    - assets/mathjaxhelper.js
 
   
 # Google Analytics
@@ -65,6 +69,7 @@ pages:
   - Glossary: 'glossary.md'
   - Support: 'support.md'
   - Selection Methods: 'selection-methods.md'
+  - Other Methods: 'other-methods.md'
   - Tutorials: 
     - Reference : 'tutorials/reference.md'
     - v2.3 Quick Start : 'tutorials/quickstart.md'
