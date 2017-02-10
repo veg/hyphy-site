@@ -2,7 +2,7 @@
 
 ## Development Workflow
 * `pip install mkdocs`
-* `pip install pymdown-extensions`
+* `pip install python-markdown-math`
 * `git clone git@github.com:veg/hyphy-site.git`
 * `mkdocs build`
 * `mkdocs serve`
