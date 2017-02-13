@@ -117,13 +117,13 @@
         }, 
         {
             "location": "/resources/", 
-            "text": "References\n#\n\n\nLinks to various references for HyPhy usage:\n\n\n\n\nGithub Issues\n \n\n\nHyPhy v2 Batch Language Commands\n \n\n\nRetired User Forum (closed 2014)\n \n\n\nIntroduction: Compartmentalization Detection", 
+            "text": "Resources\n#\n\n\nLinks to various references for HyPhy usage:\n\n\n\n\nGithub Issues\n \n\n\nHyPhy v2 Batch Language Commands\n \n\n\nRetired User Forum (closed 2014)\n \n\n\nIntroduction: Compartmentalization Detection", 
             "title": "Resources"
         }, 
         {
-            "location": "/resources/#references", 
+            "location": "/resources/#resources", 
             "text": "Links to various references for HyPhy usage:   Github Issues    HyPhy v2 Batch Language Commands    Retired User Forum (closed 2014)    Introduction: Compartmentalization Detection", 
-            "title": "References"
+            "title": "Resources"
         }, 
         {
             "location": "/methods/general/", 

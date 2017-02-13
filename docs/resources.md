@@ -1,4 +1,4 @@
-References
+Resources
 ===================
 
 Links to various references for HyPhy usage:
