@@ -43,14 +43,15 @@ google_analytics: ['UA-36723568-3', 'mkdocs.org']
 # Page tree
 pages:
   - Home: 'index.html'
-  - Download: 'download.md'
   - Installation: 'installation.md'
+  - Getting Started : 'getting-started.md'
   - Glossary: 'glossary.md'
-  - References : 'reference.md'
+  - Resources : 'resources.md'
   - Methods:
-    - Selection : 'selection-methods.md'
-    - Other : 'other-methods.md'
+    - General : 'methods/general.md'
+    - Selection : 'methods/selection-methods.md'
+    - Other : 'methods/other-methods.md'
   - Tutorials: 
     - v2.3 Quick Start : 'tutorials/quickstart.md'
-    - Selection : 'tutorials/selection/README.md'
+    - Using HyPhy to Detect Selection : 'tutorials/selection/README.md'
     

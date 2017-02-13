@@ -1,4 +1,4 @@
-This glossary provides definitions for terms in the HyPhy-Vision reports for each method. See [here](./selection-methods) for descriptions of each method.
+This glossary provides definitions for terms in the HyPhy-Vision reports for each method. See [here](./methods/selection-methods) for descriptions of each method.
 
 
 ## Shared Terms
@@ -19,7 +19,7 @@ Terms defined below pertain to most HyPhy method results.
 -->
 
 
-## aBSREL Glossary
+## aBSREL
 
 
 ### Summary: Tree Table
@@ -57,7 +57,7 @@ The full Results Table reports inferences of positive selection for each branch.
 <!------------------------------------------------------------------------------------->
 
 
-## RELAX Glossary
+## RELAX
 
 ### Summary: Model Fits Table
 
@@ -80,7 +80,7 @@ The following information is additionally reported for each model (as well as th
 
 
 
-## BUSTED Glossary
+## BUSTED
 
 ### Summary: Model Fits Table
 
