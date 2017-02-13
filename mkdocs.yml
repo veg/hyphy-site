@@ -52,6 +52,6 @@ pages:
     - Selection : 'methods/selection-methods.md'
     - Other : 'methods/other-methods.md'
   - Tutorials: 
-    - v2.3 Quick Start : 'tutorials/quickstart.md'
     - Using HyPhy to Detect Selection : 'tutorials/selection/README.md'
+    - v2.3 Quick Start : 'tutorials/quickstart.md'
     
