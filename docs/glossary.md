@@ -1,4 +1,4 @@
-This glossary provides definitions for terms in the HyPhy-Vision reports for each method. See [here](./selection-methods) for descriptions of each method.
+This glossary provides definitions for terms in the HyPhy-Vision reports for each method. See [here](./methods/selection-methods) for descriptions of each method.
 
 
 ## Shared Terms
@@ -31,7 +31,7 @@ This glossary provides definitions for terms in the HyPhy-Vision reports for eac
 
 ### Summary: Model Fits Table
 
-* **MG94** - The baseline model fit of [MG94xREV](selection-methods/#mg94xrev-framework) that infers a single $\omega$ per branch.
+* **MG94** - The baseline model fit of [MG94xREV](./methods/selection-methods/#mg94xrev-framework) that infers a single $\omega$ per branch.
 * **Full Model** - The full aBSREL model fit to the tree, where the number of $\omega$ classes per branch is inferred adaptively.
 * See these [Shared Terms](glossary/#shared-terms) for additional reported information.
 
