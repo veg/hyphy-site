@@ -48,10 +48,10 @@ pages:
   - Glossary: 'glossary.md'
   - Resources : 'resources.md'
   - Methods:
-    - General : 'methods/general.md'
+    - General Information : 'methods/general.md'
     - Selection : 'methods/selection-methods.md'
     - Other : 'methods/other-methods.md'
   - Tutorials: 
-    - Using HyPhy to Detect Selection : 'tutorials/selection/README.md'
-    - v2.3 Quick Start : 'tutorials/quickstart.md'
+    - Using HyPhy to Detect Selection : 'tutorials/current-release-tutorial.md'
+    - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'
     

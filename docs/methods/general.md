@@ -14,7 +14,7 @@ q_{ij} = \left\{
 
 Parameters in this matrix include the following:
 
-* **The function $\boldsymbol{\delta(i,j)}$** is an indicator function that equals the number of nucleotide differences between codons $i$ and $j$; for example, $\delta(AAA,AAT) = 1$ and $\delta(AAA,CCG) = 3$. Like most other codon models, the MG94xREV model considers only single-nucleotide codon substitutions to be instantaneous. 
+* The function $\boldsymbol{\delta(i,j)}$ is an indicator function that equals the number of nucleotide differences between codons $i$ and $j$; for example, $\delta(AAA,AAT) = 1$ and $\delta(AAA,CCG) = 3$. Like most other codon models, the MG94xREV model considers only single-nucleotide codon substitutions to be instantaneous. 
 
 * $\boldsymbol{AA(i)}$ refers to the amino-acid encoded by codon $i$.
 

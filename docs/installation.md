@@ -1,95 +1,92 @@
 
-Installation
+Download and Installation
 ===========
 
-Download
----------
+### Download and Install GUI
 
-The download page can currently be found [here](http://hyphy.org/w/index.php/Download)
+To download the Desktop/GUI version of HyPhy, follow instructions on this [download page](http://hyphy.org/w/index.php/Download). Note that the GUI is no longer maintained, and at this time we recommend using HyPhy either via [Datamonkey](http://datamonkey.org) or from the command line on your local computer/server. 
 
-From Source
-------------
+### Download and Install from source
 
-Hyphy depends on CMake for its build system.
+> HyPhy depends on [CMake >3.0](https://cmake.org/) for its build system. Before installing HyPhy, please make sure that an appropriate version of CMake has been installed. HyPhy additionally depends on other development libraries like
+libcurl and libpthread. Libcurl requires development libraries such as crypto++ and openssl (or gnutls depending on your configuration). On Ubuntu these are libcurl-dev, libcrypto++-dev and libssl-dev.
 
-To install, make sure you have CMake >3.0 installed. Hyphy is dependent on other development libraries like
-libcurl and libpthread. Libcurl requires development libraries such as crypto++ and openssl ( or gnutls depending on your configuration)
-On Ubuntu these are libcurl-dev, libcrypto++-dev and libssl-dev.
 
-You can download a specific release from this repository or if you prefer the master branch simply 
-clone the repo with
+**You can download HyPhy source in two ways:**
 
-`git clone git@github.com:veg/hyphy.git`
+* Download a specific HyPhy release (we recommend the latest release) from [this github repository](https://github.com/veg/hyphy/releases).
+* Download the master branch of HyPhy by cloning the repository by entering this command into a terminal session:
 
-Change your directory to the newly cloned directory
+        git clone git@github.com:veg/hyphy.git
 
-`cd hyphy`
+**Once downloaded, install HyPhy as follows:**
 
-Configure the project from the source directory using CMake.
+1. Navigate to the newly downloaded/cloned HyPhy directory
+        
+        cd hyphy
 
-`cmake .`
+2. Configure HyPhy using CMake
 
-If you prefer to use other build systems, such as Xcode,
-configure using the -G switch
+        cmake .
+    
+    * By default, HyPhy will install into `/usr/local/`, but it can be installed on any location of your system by providing an installation prefix:
 
-`cmake -G Xcode .`
+            cmake -DINSTALL_PREFIX=/location/of/choice .
+    
+    * If you prefer to use other build systems, such as XCode, configure HyPhy using the -G switch:
+    
+            cmake -G Xcode .
 
-CMake supports a number of build system generators,
-feel free to peruse these and use them if you wish.
+    * If would like to specify a particular compiler for your HyPhy build, use this command:
 
-By default, HyPhy installs into `/usr/local`
-but it can be installed on any location of your system 
-by providing an installation prefix
+            cmake . -DCMAKE_CXX_COMPILER=/path/to/C++-compiler -DCMAKE_C_COMPILER=/path/to/C-compiler
+ 
+    * If you are on an OS X platform, you can specify which OS X SDK to use, for example:
+    
+            cmake -DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX10.9.sdk/ .
 
-`cmake -DINSTALL_PREFIX=/location/of/choice`
+3. Build HyPhy by running `make` with one of the following build targets given below. For example, to install the executable `HYPHYMP`, you would enter the following command:
 
-For example, this configuration will install hyphy at /opt/hyphy
+        make MP2
 
-`mkdir -p /opt/hyphy`
+    *  `MP2` - build a HyPhy executable (`HYPHYMP`) using pthreads to do multiprocessing. For optimal performance, `openMP` should be installed and available in your path. You can check if this is the case by examining the output from running `cmake`. If `openMP` is installed, you should see something similar to the following in the output:
 
-`cmake -DINSTALL_PREFIX=/opt/hyphy .`
+                -- Found MPI_C: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
 
-If you are on an OS X platform, you can specify which OS X SDK to use
+                -- Found MPI_CXX: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi_cxx.so;/opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
 
-`cmake -DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX10.9.sdk/ .`
 
-If you're on a UNIX-compatible system,
-and you're comfortable with GNU make,
-then run `make` with one of the following build targets:
+    *  `MPI` - build a HyPhy executable (`HYPHYMPI`) using MPI to do multiprocessing
+    *  `HYPHYMPI` - build a HyPhy executable (`HYPHYMPI`) using `openMPI`, which must be installed and available in your path. You can check if this is the case by examining the output from running `cmake`. If `openMPI` is installed, you should see something similar to the following in the output:
 
-+   MAC - build a Mac Carbon application
-+   HYPHYGTK - HYPHY with GTK
-+   SP - build a HyPhy executable (HYPHYSP) without multiprocessing
-+   MP2 - build a HyPhy executable (HYPHYMP) using pthreads to do multiprocessing
-+   MPI - build a HyPhy executable (HYPHYMPI) using MPI to do multiprocessing
-+   HYPHYMPI - build a HyPhy executable (HYPHYMPI) using openMPI 
-+   LIB - build a HyPhy library (libhyphy_mp) using pthreads to do multiprocessing
--   GTEST - build HyPhy's gtest testing executable (HYPHYGTEST)
+                -- Found MPI_C: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
 
-For example to create a MPI build of HYPHY using openMPI ensure that you 
-have openmpi installed and available on your  path. You can check if this
-is the case after running 
-`cmake .` you should see something similar to this in your output
+                -- Found MPI_CXX: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi_cxx.so;/opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
+    
+    <!-- I know that SP is now deprecated. Are these still available? -->
+    
+    *  `GTEST` - build HyPhy's gtest testing executable (`HYPHYGTEST`)
+    *  `MAC` - build a Mac Carbon application
+    *  `HYPHYGTK` - HYPHY with GTK
+    *  `LIB` - build a HyPhy library (libhyphy_mp) using pthreads to do multiprocessing
 
-`-- Found MPI_C: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so `
+4. Finally, install HyPhy on your system with the command
 
-`-- Found MPI_CXX: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi_cxx.so;/opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so `
+        make install
 
-Then run 
+    HyPhy will install either in its default location `/usr/local/`, or in any custom  `/location/of/choice/` provided when calling cmake.
+    
+      * `HYPHYMP(I)` will be installed at  `/location/of/choice/bin`
+      * `libhyphy_mp.(so/dylib/dll)` will be installed at `/location/of/choice/lib`
+      * HyPhy's standard library of batchfiles will go into `/location/of/choice/lib/hyphy`
 
-`make HYPHYMPI`
 
-And then run make install to install the software
 
-`make install`
-
-  +   HYPHYMP(I) will be installed at  `/location/of/choice/bin`
-  +   libhyphy_mp.(so/dylib/dll) will be installed at `/location/of/choice/lib`
-  +   HyPhy's standard library of batchfiles will go into `/location/of/choice/lib/hyphy`
-
+<!--
 HYPHYGTEST isn't installed normally,
 because it serves no utility outside of testing.
 
 To test HyPhy, build with the  GTEST target and run ./HYPHYGTEST from the source directory.
 `make GTEST`
 `./HYPHYGTEST`
+-->
