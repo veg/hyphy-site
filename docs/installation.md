@@ -51,10 +51,12 @@ libcurl and libpthread. Libcurl requires development libraries such as crypto++ 
 
     *  `MP2` - build a HyPhy executable (`HYPHYMP`) using pthreads to do multiprocessing. For optimal performance, `openMP` should be installed and available in your path. You can check if this is the case by examining the output from running `cmake`. If `openMP` is installed, you should see something similar to the following in the output:
 
-                -- Found MPI_C: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
-
-                -- Found MPI_CXX: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi_cxx.so;/opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
-
+            -- Performing Test OpenMP_FLAG_DETECTED
+            -- Performing Test OpenMP_FLAG_DETECTED - Success
+            -- Try OpenMP CXX flag = [-fopenmp]
+            -- Performing Test OpenMP_FLAG_DETECTED
+            -- Performing Test OpenMP_FLAG_DETECTED - Success
+            -- Found OpenMP: -fopenmp  
 
     *  `MPI` - build a HyPhy executable (`HYPHYMPI`) using MPI to do multiprocessing
     *  `HYPHYMPI` - build a HyPhy executable (`HYPHYMPI`) using `openMPI`, which must be installed and available in your path. You can check if this is the case by examining the output from running `cmake`. If `openMPI` is installed, you should see something similar to the following in the output:
