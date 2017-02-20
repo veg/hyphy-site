@@ -38,11 +38,12 @@ extra_javascript:
     - assets/mathjaxhelper.js
 
 # Google Analytics
-google_analytics: ['UA-36723568-3', 'mkdocs.org']
+google_analytics: ['hyphy.org', 'veg.github.io']
 
 # Page tree
 pages:
   - Home: 'index.html'
+  - Register: 'register.html'
   - Installation: 'installation.md'
   - Getting Started : 'getting-started.md'
   - Glossary: 'glossary.md'
