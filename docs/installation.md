@@ -71,11 +71,6 @@ libcurl and libpthread. Libcurl requires development libraries such as crypto++ 
 
                 -- Found MPI_CXX: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi_cxx.so;/opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
     
-    <!-- I know that SP is now deprecated. Are these still available? -->
-    
-    *  `GTEST` - build HyPhy's gtest testing executable (`HYPHYGTEST`)
-    *  `MAC` - build a Mac Carbon application
-    *  `HYPHYGTK` - HYPHY with GTK
     *  `LIB` - build a HyPhy library (libhyphy_mp) using pthreads to do multiprocessing
 
 4. Finally, install HyPhy on your system with the command
@@ -89,12 +84,3 @@ libcurl and libpthread. Libcurl requires development libraries such as crypto++ 
       * HyPhy's standard library of batchfiles will go into `/location/of/choice/lib/hyphy`
 
 
-
-<!--
-HYPHYGTEST isn't installed normally,
-because it serves no utility outside of testing.
-
-To test HyPhy, build with the  GTEST target and run ./HYPHYGTEST from the source directory.
-`make GTEST`
-`./HYPHYGTEST`
--->
