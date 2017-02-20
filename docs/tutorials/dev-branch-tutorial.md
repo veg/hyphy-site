@@ -1,7 +1,7 @@
 HyPhy v2.3 Quick Start
 ======================
 
-> **CAUTION:** This tutorial is for the development branch of HyPhy only! Please see [this tutorial](selection/README.md) for information on using the current HyPhy release.
+> **CAUTION:** This tutorial is for the development branch of HyPhy only! Please see [this tutorial](tutorials/current-release-tutorial) for information on using the current HyPhy release.
 
 
 This tutorial outlines how to prepare data and execute analyses for use in the following methods:
