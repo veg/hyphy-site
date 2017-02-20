@@ -1,5 +1,5 @@
 # Project information
-site_name: HyPhy
+site_name: HyPhy - Hypothesis Testing using Phylogenies
 site_description: null
 site_author: Michael Li
 site_url: http://squidfunk.github.io/mkdocs-material/
@@ -19,8 +19,8 @@ extra:
   github:
     download_release: true
   author:
-    github: squidfunk
-    twitter: squidfunk
+    github: stevenweaver
+    twitter: maximumsteve
 
 # Extensions
 markdown_extensions:
