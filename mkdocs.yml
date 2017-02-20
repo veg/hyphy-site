@@ -50,7 +50,7 @@ pages:
   - Methods:
     - General Information : 'methods/general.md'
     - Selection : 'methods/selection-methods.md'
-    - Other : 'methods/other-methods.md'
+#    - Other : 'methods/other-methods.md'
   - Tutorials: 
     - Using HyPhy to Detect Selection : 'tutorials/current-release-tutorial.md'
     - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'
