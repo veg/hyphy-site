@@ -108,3 +108,10 @@
 .mi {
   color: gray !important;
 }
+
+.citation-footer {
+  border-top:1px solid #ccc;
+  padding-top: 16px;
+  text-align: center;
+  font-weight: bold;
+}

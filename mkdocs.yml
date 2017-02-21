@@ -1,7 +1,7 @@
 # Project information
-site_name: HyPhy
+site_name: HyPhy - Hypothesis Testing using Phylogenies
 site_description: null
-site_author: Michael Li
+site_author: VEG
 site_url: http://squidfunk.github.io/mkdocs-material/
 
 # Copyright
@@ -19,8 +19,8 @@ extra:
   github:
     download_release: true
   author:
-    github: squidfunk
-    twitter: squidfunk
+    github: veg
+    twitter: hyphy_software
 
 # Extensions
 markdown_extensions:
@@ -38,14 +38,16 @@ extra_javascript:
     - assets/mathjaxhelper.js
 
 # Google Analytics
-google_analytics: ['UA-36723568-3', 'mkdocs.org']
+google_analytics: ['hyphy.org', 'veg.github.io']
 
 # Page tree
 pages:
   - Home: 'index.html'
+  - Download : 'register.html'
+  - _Real_Download : 'download.md'
   - Installation: 'installation.md'
   - Getting Started : 'getting-started.md'
-  - Glossary: 'glossary.md'
+#  - Glossary: 'glossary.md'
   - Resources : 'resources.md'
   - Methods:
     - General Information : 'methods/general.md'
