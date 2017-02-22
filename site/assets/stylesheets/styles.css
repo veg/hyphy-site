@@ -4,7 +4,6 @@
  * Resets
  * ------------------------------------------------------------------------- */
 
-
 /*
  * Enfore correct box model - the prefixed versions are necessary for older
  * browsers, i.e. Chrome < 10, Firefox < 29, Safari < 6 and Android < 4
@@ -779,16 +778,15 @@ hr {
 }
 
 .header-title {
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Montserrat", sans-serif;
 	font-size: 18px;
-	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: 600;
-	margin: 0px 0px 0px 20px;
+	margin: 2px 0px 0px 20px;
 }
 
 .header-title-light {
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Montserrat", sans-serif;
 	font-weight: 100;
 	letter-spacing: 0.75px;
 }
@@ -1039,7 +1037,7 @@ hr {
 }
 
 .bar a {
-	display: block;
+	display: inline-block;
 }
 
 .no-js .bar .button-search {

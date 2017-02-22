@@ -4,15 +4,7 @@
     
     <url>
      <loc>http://squidfunk.github.io/mkdocs-material//</loc>
-     <lastmod>2016-12-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//download/</loc>
-     <lastmod>2016-12-14</lastmod>
+     <lastmod>2017-02-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,15 +12,15 @@
     
     <url>
      <loc>http://squidfunk.github.io/mkdocs-material//installation/</loc>
-     <lastmod>2016-12-14</lastmod>
+     <lastmod>2017-02-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//tutorials/selection/README/</loc>
-     <lastmod>2016-12-14</lastmod>
+     <loc>http://squidfunk.github.io/mkdocs-material//getting-started/</loc>
+     <lastmod>2017-02-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,17 +28,55 @@
     
     <url>
      <loc>http://squidfunk.github.io/mkdocs-material//glossary/</loc>
-     <lastmod>2016-12-14</lastmod>
+     <lastmod>2017-02-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//support/</loc>
-     <lastmod>2016-12-14</lastmod>
+     <loc>http://squidfunk.github.io/mkdocs-material//resources/</loc>
+     <lastmod>2017-02-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+        
+    <url>
+     <loc>http://squidfunk.github.io/mkdocs-material//methods/general/</loc>
+     <lastmod>2017-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://squidfunk.github.io/mkdocs-material//methods/selection-methods/</loc>
+     <lastmod>2017-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://squidfunk.github.io/mkdocs-material//methods/other-methods/</loc>
+     <lastmod>2017-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://squidfunk.github.io/mkdocs-material//tutorials/selection/README/</loc>
+     <lastmod>2017-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://squidfunk.github.io/mkdocs-material//tutorials/quickstart/</loc>
+     <lastmod>2017-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>

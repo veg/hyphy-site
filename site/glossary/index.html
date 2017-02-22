@@ -91,7 +91,9 @@
     </div>
     <div class="stretch">
       <div class="header-title">
-        <a href="#">HyPhy//<span class="header-title-light">Hypothesis Testing <br>using Phylogenies</span></a>
+        <a href="#">HyPhy
+        <br />
+        <span class="header-title-light">Hypothesis Testing using Phylogenies</span></a>
       </div>
       
       <div class="mobile-header-title">
@@ -153,19 +155,6 @@
 
   <li>
     <a class=""
-      title="Download" href="../download/" >
-      Download
-    </a>
-
-    <!-- Expand active pages -->
-    
-  </li>
-
-          
-            <!-- Render sections -->
-
-  <li>
-    <a class=""
       title="Installation" href="../installation/" >
       Installation
     </a>
@@ -179,8 +168,8 @@
 
   <li>
     <a class=""
-      title="Tutorials" href="../tutorials/selection/README/" >
-      Tutorials
+      title="Getting Started" href="../getting-started/" >
+      Getting Started
     </a>
 
     <!-- Expand active pages -->
@@ -206,8 +195,6 @@
         with the children of the anchor.
       -->
       
-        
-      
 
       <!-- Render anchors of active page -->
       
@@ -216,40 +203,32 @@
 
             <!-- Render anchor -->
             <li class="anchor">
-              <a title="Summary Statistics" href="#summary-statistics">
-                Summary Statistics
+              <a title="Shared Terms" href="#shared-terms">
+                Shared Terms
               </a>
             </li>
           
 
             <!-- Render anchor -->
             <li class="anchor">
-              <a title="aBSREL results summary" href="#absrel-results-summary">
-                aBSREL results summary
+              <a title="aBSREL" href="#absrel">
+                aBSREL
               </a>
             </li>
           
 
             <!-- Render anchor -->
             <li class="anchor">
-              <a title="Model Fits Table" href="#model-fits-table">
-                Model Fits Table
+              <a title="RELAX" href="#relax">
+                RELAX
               </a>
             </li>
           
 
             <!-- Render anchor -->
             <li class="anchor">
-              <a title="Tree Table" href="#tree-table">
-                Tree Table
-              </a>
-            </li>
-          
-
-            <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Full Table" href="#full-table">
-                Full Table
+              <a title="BUSTED" href="#busted">
+                BUSTED
               </a>
             </li>
           
@@ -263,13 +242,106 @@
 
   <li>
     <a class=""
-      title="Support" href="../support/" >
-      Support
+      title="Resources" href="../resources/" >
+      Resources
     </a>
 
     <!-- Expand active pages -->
     
   </li>
+
+          
+            <!-- Render sections -->
+
+  <li>
+    <span class="section">Methods</span>
+    <ul>
+
+      <!-- Render pages of section -->
+      
+        <!-- Render sections -->
+
+  <li>
+    <a class=""
+      title="General" href="../methods/general/" >
+      General
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+      
+        <!-- Render sections -->
+
+  <li>
+    <a class=""
+      title="Selection" href="../methods/selection-methods/" >
+      Selection
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+      
+        <!-- Render sections -->
+
+  <li>
+    <a class=""
+      title="Other" href="../methods/other-methods/" >
+      Other
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+<!-- Render page link -->
+
+          
+            <!-- Render sections -->
+
+  <li>
+    <span class="section">Tutorials</span>
+    <ul>
+
+      <!-- Render pages of section -->
+      
+        <!-- Render sections -->
+
+  <li>
+    <a class=""
+      title="Using HyPhy to Detect Selection" href="../tutorials/selection/README/" >
+      Using HyPhy to Detect Selection
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+      
+        <!-- Render sections -->
+
+  <li>
+    <a class=""
+      title="v2.3 Quick Start" href="../tutorials/quickstart/" >
+      v2.3 Quick Start
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+<!-- Render page link -->
 
           
         </ul>
@@ -280,32 +352,101 @@
       </div>
       <article class="article">
         <div class="wrapper">
-          <h1 id="absrel-glossary">aBSREL Glossary<a class="headerlink" href="#absrel-glossary" title="Permanent link">#</a></h1>
-<h4 id="summary-statistics">Summary Statistics<a class="headerlink" href="#summary-statistics" title="Permanent link">#</a></h4>
-<p>number of sequences - the number of sequences present in the input file</p>
-<p>number of variants - the number of variants present in the input file</p>
-<p>number of branches - the number of branches in the phylogeny</p>
-<h4 id="absrel-results-summary">aBSREL results summary<a class="headerlink" href="#absrel-results-summary" title="Permanent link">#</a></h4>
-<p>LRT - likelihood ratio test implemented as described in Smith et al., 2015 (Mol. Biol. Evol. 32:1342).</p>
-<p>multiple testing correction - as the number of multiple statistical inferences or comparisons that are considered simultaneously increase, by chance, an increasing number of comparisons will result in a significant p-value that represent false positives. To offset this problem, multiple test corrections such as the Holm-Bonferroni correction (Holm, 1979, Scand. J. Statist., 6:65) are applied.</p>
-<h4 id="model-fits-table">Model Fits Table<a class="headerlink" href="#model-fits-table" title="Permanent link">#</a></h4>
-<p>MG94 - the standard Muse-Gaut 94 model estimates a single ω for each branch </p>
-<p>Full model - the aBSREL model estimates up to ten ω rate classes for each branch</p>
-<p><em>log</em> L - log likelihood estimate of the respective model</p>
-<p># par. - the number of parameters in the model</p>
-<p>AIC<sub>c</sub>  - small-sample Akaike Information Criterion (Sigiura, 1978, Commun. Stat. Theory Methods, A7:13) is used to infer the optinal number of rate categories to be used for each branch in the phylogeny.</p>
-<p>L<sub>tree</sub> - [[add in definition]]</p>
-<h4 id="tree-table">Tree Table<a class="headerlink" href="#tree-table" title="Permanent link">#</a></h4>
-<p>ω rate classes - the number of inferred rate classes. ω represents the ratio of nonsynonymous to synonymous substitution</p>
-<p># of branches - the number of branches inferred to have the respective number of ω rate classes </p>
-<p>% of branches - the proportion of branches in the phylogeny inferred to have the respective number of ω rate classes </p>
-<p>% of tree length - the proportion of the total tree length inferred to have the respective number of ω rate classes </p>
-<p># under selection - the number of branches inferred to have a non neutral ω rate class at the designated p-value threshold</p>
-<h4 id="full-table">Full Table<a class="headerlink" href="#full-table" title="Permanent link">#</a></h4>
-<p>B LRT - branch length likelihood ratio test statistic</p>
-<p>Test p-value - multiple testing corrected p-value (Holm, 1979, Scand. J. Statist., 6:65)</p>
-<p>Uncorrected p-value - raw p-value</p>
-<p>ω distribution over sites - inferred ω branch rates and respective proportion of branch sites</p>
+          <p>This glossary provides definitions for terms in the HyPhy-Vision reports for each method. See <a href="../methods/selection-methods">here</a> for descriptions of each method.</p>
+<h2 id="shared-terms">Shared Terms<a class="headerlink" href="#shared-terms" title="Permanent link">#</a></h2>
+<p>Terms defined below pertain to most HyPhy method results.</p>
+<ul>
+<li><strong><em>log</em> L</strong> - The log likelihood estimate of the respective model fit.</li>
+<li><strong># par.</strong> - The number of estimated parameters in the respective model.</li>
+<li><strong>Time to fit</strong> - Total clock time to fit the respective model.</li>
+<li><strong>AIC<sub>c</sub></strong>  - <a href="http://www.tandfonline.com/doi/abs/10.1080/03610927808827599">Small-sample Akaike Information Criterion</a> score.</li>
+<li><strong>L<sub>tree</sub></strong> - The tree length under the respective model, where tree length represents the expected number of substitutions per site.</li>
+</ul>
+<!-- I think the following has been removed from vision
+### Summary Statistics **\\\\ has this info since been removed?**
+* **number of sequences** - the number of sequences present in the input file
+* **number of variants** - the number of variants present in the input file
+* **number of branches** - the number of branches in the phylogeny
+-->
+
+<h2 id="absrel">aBSREL<a class="headerlink" href="#absrel" title="Permanent link">#</a></h2>
+<h3 id="summary-tree-table">Summary: Tree Table<a class="headerlink" href="#summary-tree-table" title="Permanent link">#</a></h3>
+<p>The Tree Table reports a summary of the inferred the number of rate classes across branches.</p>
+<ul>
+<li><strong><script type="math/tex">\boldsymbol \omega</script> rate classes</strong> - Number of <script type="math/tex">\omega</script> rate classes inferred.</li>
+<li><strong># of branches</strong> - The number of branches inferred to have the respective number of <script type="math/tex">\omega</script> rate classes.</li>
+<li><strong>% of branches</strong> - The proportion of branches inferred to have the respective number of <script type="math/tex">\omega</script> rate classes.</li>
+<li><strong>% of tree length</strong> - The percentage of the total tree length inferred to have the respective number of <script type="math/tex">\omega</script> rate classes.</li>
+<li><strong># under selection</strong> - The number of branches inferred to have undergone positive selection (a rate class of <script type="math/tex">\omega>1</script>) at the designated p-value threshold, after correction for multiple testing.</li>
+</ul>
+<h3 id="summary-model-fits-table">Summary: Model Fits Table<a class="headerlink" href="#summary-model-fits-table" title="Permanent link">#</a></h3>
+<p>The Model Fits Table reports a summary of the models fit to the data.</p>
+<ul>
+<li><strong>MG94</strong> - The baseline model fit of <a href="../selection-methods/#mg94xrev-framework">MG94xREV</a> that infers a single <script type="math/tex">\omega</script> per branch.</li>
+<li><strong>Full Model</strong> - The full aBSREL model fit to the tree, where the number of <script type="math/tex">\omega</script> classes per branch is inferred adaptively.</li>
+</ul>
+<p>See these <a href="../glossary/#shared-terms">Shared Terms</a> for additional reported information.</p>
+<h3 id="full-table">Full Table<a class="headerlink" href="#full-table" title="Permanent link">#</a></h3>
+<p>The full Results Table reports inferences of positive selection for each branch.</p>
+<ul>
+<li><strong>Name</strong> - Branch of interest, where bolded rows indicate that the branch shows evidence, at the designated p-value threshold, of positive selection.</li>
+<li><strong>B</strong> - Optimized (under the full aBSREL model) branch length for the branch of interest</li>
+<li><strong>LRT</strong> - Likelihood Ratio Test statistic for selection. This LRT was calculated by comparing the fitted aBSREL model to the null model where rate classes of <script type="math/tex">\omega>1</script> are disallowed.</li>
+<li><strong>Test p-value</strong> - P-value corrected for multiple testing using the <a href="https://www.jstor.org/stable/4615733">Holm-Bonferroni correction</a>. These values are only calculated for branches with uncorrected p-values less than 1.</li>
+<li><strong>Uncorrected p-value</strong> - Raw p-value before correction for multiple testing.</li>
+<li><strong><script type="math/tex">\boldsymbol \omega</script> distribution over sites</strong> - Inferred <script type="math/tex">\omega</script> estimates and respective proportion of sites along the respective branch.</li>
+</ul>
+<!------------------------------------------------------------------------------------->
+
+<h2 id="relax">RELAX<a class="headerlink" href="#relax" title="Permanent link">#</a></h2>
+<h3 id="summary-model-fits-table_1">Summary: Model Fits Table<a class="headerlink" href="#summary-model-fits-table_1" title="Permanent link">#</a></h3>
+<p>The Model Fits Table reports a summary of the models fit to the data. Corresponding plots of <script type="math/tex">\omega</script> distributions display inferred <script type="math/tex">\omega</script> class values, and when applicable, how selection intensity compares across <script type="math/tex">\omega</script> classes between test and reference branches.</p>
+<p>Fitted models include the following:</p>
+<ul>
+<li><strong>Null</strong> - This model represents the null model used to test for selection relaxation. Here, the selection intensity parameter <em>k</em> is set to 1 for both branch sets (reference and test).</li>
+<li><strong>Alternative</strong> - This model represents the alternative model used to test for selection relaxation. Here, the selection intensity parameter <em>k</em> is allowed for vary on the "test" partition of branches. Note that a single <em>k</em> is inferred and shared across all test branches.</li>
+<li><strong>Partitioned MG94xREV</strong> - This baseline model fits a single <script type="math/tex">\omega</script> value to each of the two branch sets (reference and test), respectively.</li>
+<li><strong>Partitioned Descriptive</strong> - This model infers three <script type="math/tex">\omega</script> classes distributions for each partition, respectively, without using the selection intensity parameter <em>k</em> (e.g. k=1 throughout).</li>
+<li><strong>General Descriptive</strong> - This model fits three <script type="math/tex">\omega</script> classes to the entire phylogeny, i.e. shared across all branches. This model then infers a single selection intensity parameter <em>k</em> for each branch.</li>
+</ul>
+<p>The following information is additionally reported for each model (as well as these <a href="../glossary/#shared-terms">Shared Terms</a>):</p>
+<ul>
+<li><strong>Branch set</strong> - The set of branches (all, test, or reference) for which the given set of <script type="math/tex">\omega</script> rate classes were inferred.</li>
+<li><strong><script type="math/tex">\boldsymbol{\omega_{<1,2,3>}}</script></strong> - The inferred <script type="math/tex">\omega</script> value for the respective rate class (<script type="math/tex">\omega_1</script>, <script type="math/tex">\omega_2</script>, or <script type="math/tex">\omega_3</script>). The value in parentheses indicates the proportion of sites inferred to belong to this rate class.</li>
+</ul>
+<!------------------------------------------------------------------------------------->
+
+<h2 id="busted">BUSTED<a class="headerlink" href="#busted" title="Permanent link">#</a></h2>
+<h3 id="summary-model-fits-table_2">Summary: Model Fits Table<a class="headerlink" href="#summary-model-fits-table_2" title="Permanent link">#</a></h3>
+<p>The Model Fits Table reports a summary of the models fit to the data.
+Fitted models include the following:</p>
+<ul>
+<li>
+<p><strong>Constrained model</strong> - This model represents the null model used in the BUSTED hypothesis test. For this model, the background and foreground branch partitions share all <script type="math/tex">\omega</script> rate classes, but the value <script type="math/tex">\omega</script> rate class used to test for selection is constrained to equal 1 (i.e. <script type="math/tex">\omega_3 = 1</script> for both the background and foreground branches).</p>
+</li>
+<li>
+<p><strong>Unconstrained model</strong> - This model represents the alternative model used in the BUSTED hypothesis test. For this model, the value for <script type="math/tex">\omega</script> rate class used to test for selection is permitted to exceed 1 on the foreground branches. (i.e. <script type="math/tex">\omega_3 > 1</script> on foreground branches).</p>
+</li>
+</ul>
+<p>The following information is additionally reported for each model (as well as these <a href="../glossary/#shared-terms">Shared Terms</a>:
+* <strong><script type="math/tex">\boldsymbol{\omega_{<1,2,3>}}</script></strong> - The inferred <script type="math/tex">\omega</script> value for the respective rate class (<script type="math/tex">\omega_1</script>, <script type="math/tex">\omega_2</script>, or <script type="math/tex">\omega_3</script>). The value in parentheses indicates the proportion of sites inferred to belong to this rate class.</p>
+<h3 id="summary-model-evidence-ratios-per-site">Summary: Model Evidence Ratios Per Site<a class="headerlink" href="#summary-model-evidence-ratios-per-site" title="Permanent link">#</a></h3>
+<p>This plot shows the "Evidence Ratio" (ER), displayed as the scaled Likelihood Ratio Test statistic. The ER is calculated for a given site <em>s</em> (<script type="math/tex">ER^s</script>) using the likelihoods from a fitted null model (<script type="math/tex">L_{null}</script>) and a fitted alternative model (<script type="math/tex">L_{alt}</script>) at the site of interest <em>s</em>:</p>
+<p>
+<script type="math/tex; mode=display"> ER^s = 2 \times \log\big{(}{ \frac{ L^s_{alt}}{L^s_{null}} }\big{)} </script>
+</p>
+<p>Evidence ratios provide <em>descriptive evidence</em> for whether a given site may have experienced positive selection. <strong>Note that evidence ratios do not provide statistically valid evidence for selection at individuals sites.</strong></p>
+<p>For more detailed information on the difference between the Constrained and Optimized Null evidence ratios, see <a href="../selection-methods/#BUSTED">this description of BUSTED</a>.</p>
+<h3 id="summary-model-evidence-ratios-per-site-table">Summary: Model Evidence Ratios Per Site Table<a class="headerlink" href="#summary-model-evidence-ratios-per-site-table" title="Permanent link">#</a></h3>
+<p>This table provides site-specific inference information.</p>
+<ul>
+<li><strong>Site Index</strong> - The codon site of interest.</li>
+<li><strong>Unconstrained Likelihood</strong> - The log likelihood score for the codon site of interest, calculated from the Unconstrained Model fit.</li>
+<li><strong>Constrained Likelihood</strong> - The log likelihood score for the codon site of interest, calculated from the Constrained Model fit.</li>
+<li><strong>Optimized Null Likelihood</strong> - The log likelihood score for the codon site of interest, calculated from the Optimized Null Model fit. The Optimized Null model is the Constrained model whose parameters have been re-optimized for this specific site.</li>
+<li><strong>Constrained Evidence Ratio</strong> - Evidence ratio for positive selection at the given codon site, using the Constrained Model as the null model.</li>
+<li><strong>Optimized Null Evidence Ratio</strong> - Evidence ratio for selection at the given codon site, using the Optimized Null model as the null model.</li>
+</ul>
 			 <!--
           <aside class="copyright" role="note">
             
@@ -324,7 +465,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../tutorials/selection/README/" title="Tutorials">
+        <a href="../getting-started/" title="Getting Started">
           <span class="direction">
             Previous
           </span>
@@ -334,7 +475,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                Tutorials
+                Getting Started
               </div>
             </div>
           </div>
@@ -343,14 +484,14 @@
     </div>
     <div class="next">
       
-        <a href="../support/" title="Support">
+        <a href="../resources/" title="Resources">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                Support
+                Resources
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">
@@ -380,6 +521,10 @@
       var repo_id  = '';
     </script>
     <script src="../assets/javascripts/application.js"></script>
+    
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    
+      <script src="../assets/mathjaxhelper.js"></script>
     
     
       <script>

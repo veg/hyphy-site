@@ -7,48 +7,90 @@ header .button .icon {
  * Phones
 ---------------------------*/
 @media only screen and (max-width: 960px) {
-  .header-title {
-    padding: 2px 0px 0px 20px;
-    margin: 0px;
+   .drawer {
+      position: fixed !important;
+      width: 262px;
+      font-size: 13px;
+      line-height: 1.0em;
+      z-index: 9999 !important;
+   }
+   .header {
+      margin: 0;
+      padding: 6px 0px 6px 0px;
+   }
+   #header-logo {
+      width: 63px;
+      margin: 0;
+      padding: 0;
+      vertical-align: middle;
+   }
+   #header-title {
+      margin: 0;
+      padding: 0;
+   }
+   .button {
+      vertical-align: middle;
+   }
+   .header-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin: 0px 0px 0px 20px;
+   }
+   .header-title a {
+      vertical-align: middle;
+      height: 45px;
+   }
+  .result:hover {
+      background-color: #eee;
+      -webkit-transition: ease-in-out 175ms;
+      -moz-transition: ease-in-out 175ms;
+      -o-transition: ease-in-out 175ms;
+      transition: ease-in-out 175ms;
   }
+   
+   
   .mobile-header-title {
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
     letter-spacing: 2px;
+    line-height: 48px;
     font-weight: 600;
-    padding: 1px 0px 0px 10px;
+    padding: 1px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
   }
   
   /*---------------------
    * TEXT
    * --------------------*/
-  .article h1 {
-     font-size: 30px;
-     line-height: 42px;
-     letter-spacing: 0px;
-     font-weight: 300;
-     margin: 0px 0px 20px 0px;
-     word-wrap: break-word;
-  }
-  
-  .article h2 {
-     font-size: 20px;
-     line-height: 26px;
-     font-weight: 600;
-     margin: 0px 0px 0px 0px;
-     padding-top: 15px;
-     padding-bottom: 13px;
-     width: 100%;
-  }
-  
-  .article p {
-     font-family: "Roboto", sans-serif;
-     font-size: 16px;
-     line-height: 21px;
-     font-weight: 400;
-     margin: 0px 0px 15px 0px;
-  }
+   .article h1 {
+      font-size: 36px;
+      line-height: 1;
+      letter-spacing: 0px;
+      font-weight: 300;
+      margin: 0px 0px 20px 0px;
+      word-wrap: break-word;
+   }
+   
+   .article h2 {
+      font-size: 26px;
+      line-height: 26px;
+      font-weight: 600;
+      margin: 0px 0px 15px 0px;
+      padding: 0;
+      width: 100%;
+   }
+      .article h3 {
+       margin: 0px 0px 15px 0px;
+   }
+   .article p {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 21px;
+      font-weight: 400;
+      margin: 0px 0px 25px 0px;
+   }
   
   
   /*---------------------
@@ -143,7 +185,7 @@ header .button .icon {
   }
   .article .wrapper {
      width: 100%;
-     padding: 100px 0px 130px 0px;
+     padding: 30px 0px 130px 0px;
   }
 }
 
@@ -151,7 +193,7 @@ header .button .icon {
 	display: inline-block;
 	font-size: 28px;
 	padding: 10px 8px 8px 8px;
-	margin: 0px 0px 0px 0px;
+	margin: 0;
 }
 
 
@@ -163,16 +205,16 @@ header .button .icon {
   }
   */
   .header .stretch {
-    padding: 11px 16px 0px 0px;
+    padding: 0;
   }
   .header-title {
     padding: 0px 0px 0px 10px;
-    margin: 0px;
+    margin: 0;
     display: none;
   }
   
   .header .field {
-    margin-top: 0px;
+    margin-top: 10px;
   }
 	.bar.search .query {
 		font-family: "Montserrat", sans-serif;
@@ -182,7 +224,6 @@ header .button .icon {
    }
     header .icon-back {
       margin: 7px 0px 0px 0px !important;
-      vertical-align: middle !important;
     }
 
 /*---------------------
@@ -286,7 +327,7 @@ header .button .icon {
 	.header {
       width: 100%;
 		height: 64px;
-		padding: 8px 20px 8px 20px;
+		padding: 9px;
 		border-bottom: 2px solid #518961;
 		background-color: #518961;
 	}
@@ -301,8 +342,6 @@ header .button .icon {
       display: none !important;
     }
     header .icon-back {
-      margin: 5px 0px 0px 20px !important;
-      vertical-align: middle !important;
     }
 	.project .name {
 		margin: 26px 0 0 5px;
@@ -311,7 +350,7 @@ header .button .icon {
     display: none;
    }
 	.article .wrapper {
-		padding: 155px 50px 200px 50px;
+		padding: 30px 50px 200px 50px;
 	}
 	.article .data {
 		margin: 1.5em -24px;
@@ -324,7 +363,7 @@ header .button .icon {
 	}
    .article {
       margin-left: 0px;
-      padding: 0px 15px 0px 15px;
+      padding: 0px 50px 0px 15px;
      /*background-color: yellow;*/
 	}
 	.ios.standalone .article h2 {
@@ -369,7 +408,7 @@ header .button .icon {
 	.bar.search .query {
 		font-family: "Montserrat", sans-serif;
 		font-size: 20px;
-		padding: 2px 0px 0px 0px;
+		padding: 0px;
 
 	}
 	.results .scrollable {
@@ -445,7 +484,7 @@ header .button .icon {
 		float: left;
 		height: auto;
 		margin-bottom: 96px;
-		padding-top: 80px;
+		padding-top: 20px;
 	}
 	.drawer .scrollable {
 		position: static;
@@ -454,16 +493,15 @@ header .button .icon {
      display: table;
      width: 95%;
      height: auto;
+     margin: 0px 0px 0px 15px;
      padding: 20px;
-     margin: 0px;
-     margin-left: 15px;
   }
 	.article {
     margin-left: 252px;
      /*background-color: red;*/
 	}
 	.article .wrapper {
-		padding: 135px 0px 200px 0px;
+		padding: 65px 0px 200px 0px;
 	}
 	.footer {
 		z-index: 5;
@@ -537,7 +575,7 @@ header .button .icon {
      /*background-color: blue;*/
   }
 	.article .wrapper {
-		padding: 135px 60px 180px 20px;
+		padding: 65px 60px 180px 20px;
 	}
 }
 
