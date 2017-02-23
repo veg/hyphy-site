@@ -49,8 +49,7 @@
 }
 
 .article img {
-	margin-top: 20px;
-	margin-bottom: 30px;
+	margin: 20px 0px 0px 0px;
 }
 
 .home-section01 {
@@ -72,7 +71,7 @@
 	color: #fff;
 }
 
-.download-button:hover {
+.download-button:hover, .download-buton:focus {
 	color: #fff !important;
 	background-color: #3e9b51;
 	-webkit-transition: ease-in-out 150ms;
@@ -115,3 +114,4 @@
   text-align: center;
   font-weight: bold;
 }
+

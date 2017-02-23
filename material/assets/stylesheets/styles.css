@@ -777,15 +777,26 @@ hr {
    * Add status bar overlay for iOS web application
    */
 }
-
+#header-logo {
+	width: 63px;
+	margin: 0;
+	padding: 0;
+}
+#header-title {
+	margin: 0;
+	padding: 0;
+}
 .header-title {
 	font-family: "Montserrat", sans-serif;
 	font-size: 18px;
 	letter-spacing: 2px;
 	font-weight: 600;
-	margin: 2px 0px 0px 20px;
+	margin: 0px 0px 0px 20px;
 }
-
+.header-title a {
+	vertical-align: middle;
+	height: 45px;
+}
 .header-title-light {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 100;
@@ -1039,6 +1050,7 @@ hr {
 
 .bar a {
 	display: inline-block;
+	vertical-align: top;
 }
 
 .no-js .bar .button-search {
@@ -1063,8 +1075,9 @@ hr {
 
 .button {
 	display: table-cell;
-	vertical-align: top;
+	vertical-align: middle;
 	width: 1%;
+	height: 50px;
 	/*
    * Remove native spacing on button
    */
@@ -1528,9 +1541,13 @@ kbd {
  */
 
 .drawer {
+	position: fixed !important;
 	width: 262px;
+	top: 64px !important;;
 	font-size: 13px;
 	line-height: 1.0em;
+	overflow: auto;
+	overflow-x: hidden;
 	/* [tablet landscape-]: Fixed positioning */
 	/* [tablet landscape+]: Inline with content */
 	/* Hack [iOS]: Mitigate scrolling of parent container on boundaries */
@@ -1566,7 +1583,8 @@ kbd {
 	font-weight: 400 !important;
 	text-transform: lowercase;
 	letter-spacing: 2px;
-	margin: 0px 0px 15px 73px;
+	line-height: 1.5;
+	margin: 0px 0px 5px 73px;
 	padding: 0px 0px 2px 0px;
 	white-space: normal;
 	overflow: hidden;
@@ -1575,18 +1593,17 @@ kbd {
 
 .drawer .toc li.anchor a {
 	font-family: "Roboto", sans-serif;
-	font-size: 12px;
-	line-height: 16px;
-	font-weight: 400 !important;
+	font-size: 13px;
+	line-height: 1.5;
+	font-weight: 500 !important;
 	text-transform: none;
 	color: #666;
-	padding: 10px;
+	padding: 5px;
 }
 
 .drawer .toc li.anchor a:hover {
 	color: #f15a24;
-	font-weight: 400 !important;
-	transition: ease-in-out 200ms;
+	transition: ease-in-out 175ms;
 }
 
 .drawer .toc li ul {
@@ -1616,15 +1633,20 @@ kbd {
 }
 
 strong {
-	font-family: "Open Sans", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 .ios.standalone .drawer .scrollable {
 	/* [orientation: portrait]: Account for status bar in portrait mode */
 }
 
+.clear-fix {
+	height: 64px;
+}
+
 .drawer .scrollable .wrapper {
 	height: auto;
+	padding-right: 40px;
 	min-height: 100%;
 	/*
        * Add spacing at top and bottom of separator
@@ -2018,9 +2040,9 @@ pre span {
 }
 
 .article code {
-	background: #ddd;
+	background: #eaeaea;
 	color: #666;
-	padding: 2px 5px 2px 5px;
+	padding: 3px 10px 5px 10px;
 }
 }
 
@@ -2229,44 +2251,32 @@ pre span {
 }
 
 .article h1 {
-	font-size: 43px;
+	font-size: 42px;
 	font-weight: 100;
-	line-height: 66px;
 	letter-spacing: 1px;
-	margin-top: 19px;
-	margin-bottom: 26px;
+	margin: 19px 0px 10px 0px;
 }
 
 .article h2 {
-	font-size: 32px;
-	line-height: 1.4em;
-	padding-top: 10px;
-	padding-bottom: 19px;
+	font-size: 28px;
+	margin: 40px 0px 10px 0px;
+	padding: 0;
 	letter-spacing: 1px;
+	line-height: 1;
 	width: 80%;
 	/*
      * No offset correction in iOS web application
      */
 }
 
-.ios.standalone .article h2 {
-	padding-top: 36px;
-	margin: 0;
-}
-
 .article h3 {
 	font-family: "Sansation", sans-serif;
 	font-size: 24px;
 	font-weight: 400;
-	color: #479167;
-	padding-top: 10px;
-	padding-bottom: 20px;
-}
-
-.ios.standalone .article h3,
-.ios.standalone .article h4 {
-	padding-top: 20px;
-	margin-top: 0;
+	margin: 10px 0px 20px 0px;
+	padding: 0px;
+	line-height: 1.2;
+	color: #59a578;
 }
 
 .article .headerlink {
@@ -2288,8 +2298,8 @@ h1 .article .headerlink {
 .article ol {
 	font-family: "Roboto", sans-serif;
 	font-size: 16px;
-	line-height: 2;
-	margin-bottom: 20px;
+	line-height: 1.5;
+	margin: 0px 0px 30px 0px;
 	word-wrap: break-word;
 }
 
@@ -2299,8 +2309,7 @@ h1 .article .headerlink {
 }
 
 .article li {
-	margin-top: 0px;
-	margin-left: 18px;
+	margin: 0px 0px 25px 18px;
 	/*
      * Inline paragraphs in list elements
      */
@@ -3001,7 +3010,7 @@ h1 .article .headerlink {
  */
 
 .bar.search {
-	margin-top: 3px;
+	margin-top: 0px;
 	/*
    * Search input
    */
