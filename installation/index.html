@@ -91,12 +91,13 @@
     </div>
     <div class="stretch">
       <div class="header-title">
-        <a href="#">HyPhy
-        <br />
+        <a href="#"><img src="/images/header-logo.svg" alt="HyPhy Logo" id="header-logo" /></a>
+        <a href="#" id="header-title">HyPhy<br />
         <span class="header-title-light">Hypothesis Testing using Phylogenies</span></a>
       </div>
       
       <div class="mobile-header-title">
+        <a href="#"><img src="/images/header-logo.svg" alt="HyPhy Logo" id="header-logo" /></a>
         <a href="#">HyPhy</a>
       </div>
     </div>
@@ -124,7 +125,7 @@
       <div class="drawer">
         <nav aria-label="Navigation">
   
-  <a href="/" class="project">
+  <a href="/index.html" class="project">
     <div class="banner">
       
         <div class="logo">
@@ -140,6 +141,7 @@
           
             <!-- Render sections -->
 
+
   <li>
     <a class=""
       title="Home" href=".." >
@@ -150,8 +152,30 @@
     
   </li>
 
+
           
             <!-- Render sections -->
+
+
+  <li>
+    <a class=""
+      title="Download" href="../register/" >
+      Download
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+
+          
+            <!-- Render sections -->
+
+
+
+          
+            <!-- Render sections -->
+
 
   <li>
     <a class="current"
@@ -174,31 +198,13 @@
 
       <!-- Render anchors of active page -->
       
-        <ul>
-          
-
-            <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Download and Install GUI" href="#download-and-install-gui">
-                Download and Install GUI
-              </a>
-            </li>
-          
-
-            <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Download and Install from source" href="#download-and-install-from-source">
-                Download and Install from source
-              </a>
-            </li>
-          
-        </ul>
-      
     
   </li>
 
+
           
             <!-- Render sections -->
+
 
   <li>
     <a class=""
@@ -210,21 +216,10 @@
     
   </li>
 
-          
-            <!-- Render sections -->
-
-  <li>
-    <a class=""
-      title="Glossary" href="../glossary/" >
-      Glossary
-    </a>
-
-    <!-- Expand active pages -->
-    
-  </li>
 
           
             <!-- Render sections -->
+
 
   <li>
     <a class=""
@@ -235,6 +230,7 @@
     <!-- Expand active pages -->
     
   </li>
+
 
           
             <!-- Render sections -->
@@ -247,6 +243,7 @@
       
         <!-- Render sections -->
 
+
   <li>
     <a class=""
       title="General Information" href="../methods/general/" >
@@ -257,8 +254,10 @@
     
   </li>
 
+
       
         <!-- Render sections -->
+
 
   <li>
     <a class=""
@@ -269,6 +268,7 @@
     <!-- Expand active pages -->
     
   </li>
+
 
       
     </ul>
@@ -287,6 +287,7 @@
       
         <!-- Render sections -->
 
+
   <li>
     <a class=""
       title="Using HyPhy to Detect Selection" href="../tutorials/current-release-tutorial/" >
@@ -297,8 +298,10 @@
     
   </li>
 
+
       
         <!-- Render sections -->
+
 
   <li>
     <a class=""
@@ -309,6 +312,7 @@
     <!-- Expand active pages -->
     
   </li>
+
 
       
     </ul>
@@ -325,28 +329,11 @@
       </div>
       <article class="article">
         <div class="wrapper">
-          <h1 id="download-and-installation">Download and Installation<a class="headerlink" href="#download-and-installation" title="Permanent link">#</a></h1>
-<h3 id="download-and-install-gui">Download and Install GUI<a class="headerlink" href="#download-and-install-gui" title="Permanent link">#</a></h3>
-<p>To download the Desktop/GUI version of HyPhy, follow instructions on this <a href="http://hyphy.org/w/index.php/Download">download page</a>. Note that the GUI is no longer maintained, and at this time we recommend using HyPhy either via <a href="http://datamonkey.org">Datamonkey</a> or from the command line on your local computer/server. </p>
-<p>Alternatively, you may download an installer for an older release of HyPhy (version 2.2.4) for your specific operating system using the appropriate link:</p>
-<ul>
-<li><a href="https://github.com/veg/hyphy/releases/download/2.2.4/hyphy.dmg">Mac OSX</a></li>
-<li><a href="https://github.com/veg/hyphy/releases/download/2.2.4/HyPhy2.2.4.exe">Windows XP or later</a></li>
-</ul>
-<h3 id="download-and-install-from-source">Download and Install from source<a class="headerlink" href="#download-and-install-from-source" title="Permanent link">#</a></h3>
+          <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h1>
 <blockquote>
-<p>HyPhy depends on <a href="https://cmake.org/">CMake &gt;3.0</a> for its build system. Before installing HyPhy, please make sure that an appropriate version of CMake has been installed. HyPhy additionally depends on other development libraries like
-libcurl and libpthread. Libcurl requires development libraries such as crypto++ and openssl (or gnutls depending on your configuration). On Ubuntu these are libcurl-dev, libcrypto++-dev and libssl-dev.</p>
+<p>Before continuing, please download and consider registering before using HyPhy.</p>
+<p><a href="../register">Download</a></p>
 </blockquote>
-<p><strong>You can download HyPhy source in two ways:</strong></p>
-<ul>
-<li>Download a specific HyPhy release (we recommend the latest release) from <a href="https://github.com/veg/hyphy/releases">this github repository</a>.</li>
-<li>Download the master branch of HyPhy by cloning the repository by entering this command into a terminal session:<div class="code"><pre><span></span>git clone git@github.com:veg/hyphy.git
-</pre></div>
-
-
-</li>
-</ul>
 <p><strong>Once downloaded, install HyPhy as follows:</strong></p>
 <ol>
 <li>
@@ -415,21 +402,18 @@ libcurl and libpthread. Libcurl requires development libraries such as crypto++ 
 <li>
 <p><code>MPI</code> - build a HyPhy executable (<code>HYPHYMPI</code>) using MPI to do multiprocessing</p>
 </li>
-<li><code>HYPHYMPI</code> - build a HyPhy executable (<code>HYPHYMPI</code>) using <code>openMPI</code>, which must be installed and available in your path. You can check if this is the case by examining the output from running <code>cmake</code>. If <code>openMPI</code> is installed, you should see something similar to the following in the output:<div class="code"><pre><span></span>    <span class="nt">--</span> <span class="nt">Found</span> <span class="nt">MPI_C</span><span class="o">:</span> <span class="o">/</span><span class="nt">opt</span><span class="o">/</span><span class="nt">scyld</span><span class="o">/</span><span class="nt">openmpi</span><span class="o">/</span><span class="nt">1</span><span class="nc">.6.3</span><span class="o">/</span><span class="nt">gnu</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">libmpi</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libibverbs</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libdat</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libtorque</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnuma</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span>
+<li>
+<p><code>HYPHYMPI</code> - build a HyPhy executable (<code>HYPHYMPI</code>) using <code>openMPI</code>, which must be installed and available in your path. You can check if this is the case by examining the output from running <code>cmake</code>. If <code>openMPI</code> is installed, you should see something similar to the following in the output:</p>
+<div class="code"><pre><span></span>    <span class="nt">--</span> <span class="nt">Found</span> <span class="nt">MPI_C</span><span class="o">:</span> <span class="o">/</span><span class="nt">opt</span><span class="o">/</span><span class="nt">scyld</span><span class="o">/</span><span class="nt">openmpi</span><span class="o">/</span><span class="nt">1</span><span class="nc">.6.3</span><span class="o">/</span><span class="nt">gnu</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">libmpi</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libibverbs</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libdat</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libtorque</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnuma</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span>
 
     <span class="nt">--</span> <span class="nt">Found</span> <span class="nt">MPI_CXX</span><span class="o">:</span> <span class="o">/</span><span class="nt">opt</span><span class="o">/</span><span class="nt">scyld</span><span class="o">/</span><span class="nt">openmpi</span><span class="o">/</span><span class="nt">1</span><span class="nc">.6.3</span><span class="o">/</span><span class="nt">gnu</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">libmpi_cxx</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">opt</span><span class="o">/</span><span class="nt">scyld</span><span class="o">/</span><span class="nt">openmpi</span><span class="o">/</span><span class="nt">1</span><span class="nc">.6.3</span><span class="o">/</span><span class="nt">gnu</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">libmpi</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libibverbs</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libdat</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libtorque</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnuma</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span>
 </pre></div>
 
 
 </li>
-</ul>
-<!-- I know that SP is now deprecated. Are these still available? -->
-
-<ul>
-<li><code>GTEST</code> - build HyPhy's gtest testing executable (<code>HYPHYGTEST</code>)</li>
-<li><code>MAC</code> - build a Mac Carbon application</li>
-<li><code>HYPHYGTK</code> - HYPHY with GTK</li>
-<li><code>LIB</code> - build a HyPhy library (libhyphy_mp) using pthreads to do multiprocessing</li>
+<li>
+<p><code>LIB</code> - build a HyPhy library (libhyphy_mp) using pthreads to do multiprocessing</p>
+</li>
 </ul>
 </li>
 <li>
@@ -446,14 +430,6 @@ libcurl and libpthread. Libcurl requires development libraries such as crypto++ 
 </ul>
 </li>
 </ol>
-<!--
-HYPHYGTEST isn't installed normally,
-because it serves no utility outside of testing.
-
-To test HyPhy, build with the  GTEST target and run ./HYPHYGTEST from the source directory.
-`make GTEST`
-`./HYPHYGTEST`
--->
 			 <!--
           <aside class="copyright" role="note">
             
@@ -472,7 +448,7 @@ To test HyPhy, build with the  GTEST target and run ./HYPHYGTEST from the source
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href=".." title="Home">
+        <a href="../download/" title="_Real_Download">
           <span class="direction">
             Previous
           </span>
@@ -482,7 +458,7 @@ To test HyPhy, build with the  GTEST target and run ./HYPHYGTEST from the source
             </div>
             <div class="stretch">
               <div class="title">
-                Home
+                _Real_Download
               </div>
             </div>
           </div>
@@ -545,37 +521,22 @@ To test HyPhy, build with the  GTEST target and run ./HYPHYGTEST from the source
       <script src="../assets/mathjaxhelper.js"></script>
     
     
-      <script>
-        (function(i,s,o,g,r,a,m){
-          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
-          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
-          m.parentNode.insertBefore(a,m)
-        })(window, document,
-          'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        /* General initialization */
-        ga('create', 'UA-36723568-3', 'mkdocs.org');
-        ga('set', 'anonymizeIp', true);
-        ga('send', 'pageview');
-        /* Track outbound links */
-        var buttons = document.querySelectorAll('a');
-        Array.prototype.map.call(buttons, function(item) {
-          if (item.host != document.location.host) {
-            item.addEventListener('click', function() {
-              var action = item.getAttribute('data-action') || 'follow';
-              ga('send', 'event', 'outbound', action, item.href);
-            });
-          }
-        });
-        /* Register handler to log search on blur */
-        var query = document.querySelector('.query');
-        query.addEventListener('blur', function() {
-          if (this.value) {
-            var path = document.location.pathname;
-            ga('send', 'pageview', path + '?q=' + this.value);
-          }
-        });
-      </script>
+				<!-- Piwik -->
+				<script type="text/javascript">
+					var _paq = _paq || [];
+					_paq.push(["setDomains", ["*.hyphy.org"]]);
+					_paq.push(['trackPageView']);
+					_paq.push(['enableLinkTracking']);
+					(function() {
+						var u="//datamonkey.org/piwik/";
+						_paq.push(['setTrackerUrl', u+'piwik.php']);
+						_paq.push(['setSiteId', 10]);
+						var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+						g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+					})();
+				</script>
+				<noscript><p><img src="//datamonkey.org/piwik/piwik.php?idsite=10" style="border:0;" alt="" /></p></noscript>
+				<!-- End Piwik Code -->
     
   </body>
 </html>
