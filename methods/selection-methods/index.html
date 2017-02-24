@@ -120,6 +120,7 @@
   </div>
 </nav>
     </header>
+	 <div class="clear-fix"></div>
     <main class="main">
       
       <div class="drawer">
@@ -456,18 +457,6 @@ In other words, MEME aims to detect sites evolving under positive selection unde
 <p>SLAC uses a combination of maximum-likelihood (ML) and counting approaches to infer nonsynonymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. Like FEL, this method assumes that the selection pressure for each site is constant along the entire phylogeny. </p>
 <p>SLAC begins by optimizing branch lengths and nucleotide substitution parameters under the MG94xREV model. However, rather than using ML to fit site-specific dN and dS parameters, SLAC instead uses ML to infer the most likely ancestral sequence at each node of the phylogeny. SLAC then employs a modified version of the <a href="https://doi.org/10.1093/oxfordjournals.molbev.a026042">Suzuki-Gojobori counting method</a> to directly count the total number of nonsynonymous and synonymous changes which have occurred at each site. Significance is ascertained at each site using an extended binomial distribution. Importantly, due to its counting-based approach, SLAC may not be accurate for data sets with high divergence levels.</p>
 <p><strong>If you use SLAC in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msi105"><code>Kosakovsky Pond, SL and Frost, SDW. "Not So Different After All: A Comparison of Methods for Detecting Amino Acid Sites Under Selection." Mol. Biol. Evol. 22, 1208--1222 (2005).</code></a></p>
-			 <!--
-          <aside class="copyright" role="note">
-            
-            Documentation built with
-            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
-            using the
-            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
-              Michael Li's Custom Theme
-            </a>
-            theme.
-          </aside>
-				-->
           
             <footer class="footer">
               

@@ -376,7 +376,7 @@ header .button .icon {
 		margin-top: 0;
 	}
 	.article pre {
-		padding: 1.5em 24px;
+		padding: 10px 24px;
 		margin: 20px;
 	}
 	.footer {
@@ -551,7 +551,7 @@ header .button .icon {
        letter-spacing: 0px;
        font-weight: 300;
        margin-bottom: 15px;
-       padding-top: 39px;
+       padding-top: 10px;
        word-wrap: break-word;
     }
     
@@ -575,7 +575,7 @@ header .button .icon {
      /*background-color: blue;*/
   }
 	.article .wrapper {
-		padding: 65px 60px 180px 20px;
+		padding: 95px 60px 180px 20px;
 	}
 }
 
