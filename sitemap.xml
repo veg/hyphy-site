@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//</loc>
+     <loc>http://veg.github.io/hyphy-site//</loc>
      <lastmod>2017-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//register/</loc>
+     <loc>http://veg.github.io/hyphy-site//register/</loc>
      <lastmod>2017-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//download/</loc>
+     <loc>http://veg.github.io/hyphy-site//download/</loc>
      <lastmod>2017-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,7 +27,7 @@
 
     
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//installation/</loc>
+     <loc>http://veg.github.io/hyphy-site//installation/</loc>
      <lastmod>2017-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -35,7 +35,7 @@
 
     
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//getting-started/</loc>
+     <loc>http://veg.github.io/hyphy-site//getting-started/</loc>
      <lastmod>2017-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -43,38 +43,38 @@
 
     
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//resources/</loc>
+     <loc>http://veg.github.io/hyphy-site//resources/</loc>
      <lastmod>2017-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
-    <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//methods/general/</loc>
-     <lastmod>2017-02-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//methods/selection-methods/</loc>
-     <lastmod>2017-02-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
     
 
     
         
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//tutorials/current-release-tutorial/</loc>
+     <loc>http://veg.github.io/hyphy-site//methods/general/</loc>
      <lastmod>2017-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://squidfunk.github.io/mkdocs-material//tutorials/dev-branch-tutorial/</loc>
+     <loc>http://veg.github.io/hyphy-site//methods/selection-methods/</loc>
+     <lastmod>2017-02-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://veg.github.io/hyphy-site//tutorials/current-release-tutorial/</loc>
+     <lastmod>2017-02-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://veg.github.io/hyphy-site//tutorials/dev-branch-tutorial/</loc>
      <lastmod>2017-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
