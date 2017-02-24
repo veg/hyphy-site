@@ -2037,6 +2037,7 @@ pre span {
 	font-family: "Sansation", sans-serif;
 	font-weight: 600;
 	color: #479167;
+	line-height: 1;
 }
 
 .article code {
@@ -2057,7 +2058,8 @@ pre span {
 
 .article h1 {
 	font-family: "Sansation", sans-serif;
-	font-size: 48px;
+	font-size: 42px;
+	margin: 0;
 }
 
 .article a {
@@ -2254,12 +2256,12 @@ pre span {
 	font-size: 42px;
 	font-weight: 100;
 	letter-spacing: 1px;
-	margin: 19px 0px 10px 0px;
+	margin: 0px 10px 25px 0px;
 }
 
 .article h2 {
 	font-size: 28px;
-	margin: 40px 0px 10px 0px;
+	margin: 0px 0px 10px 0px;
 	padding: 0;
 	letter-spacing: 1px;
 	line-height: 1;
