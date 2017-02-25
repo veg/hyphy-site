@@ -128,7 +128,7 @@ and answer the prompts
 Alternatively, you couple pipe the arguments into HyPhy
 
 ```
-(echo 1; echo <path to sequence file>; echo <path to tree file>; echo 4; echo d) | ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
+(echo 1; echo <path to sequence file>; echo <path to tree file>; echo 4; echo d) | ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/BUSTED.bf
 ```
 
 Explanation
