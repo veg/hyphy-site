@@ -1,7 +1,7 @@
 HyPhy v2.3 Quick Start
 ======================
 
-> **CAUTION:** This tutorial is for the development branch of HyPhy only! Please see [this tutorial](tutorials/current-release-tutorial) for information on using the current HyPhy release.
+> **CAUTION:** This tutorial is for the development branch of HyPhy only! This tutorial is **not compatible** with the current release. Please see [this tutorial](tutorials/current-release-tutorial) for information on using the current HyPhy release.
 
 
 This tutorial outlines how to prepare data and execute analyses for use in the following methods:
@@ -20,7 +20,7 @@ download this [zip file](https://github.com/veg/hyphy-tutorials/blob/master/docs
 Installation
 ------------------------------------------------------------------
 
-> *Warning : This is for the development branch of HyPhy!* 
+> *Warning : This is for the development branch of HyPhy only!* 
 
 
 ### Dependencies
@@ -28,18 +28,19 @@ Installation
 
 ### Commands
 
-Install the development branch of HyPhy on your system by issuing the following commands. These commands will build the executable `HYPHYMP`.
-
+Build the development branch of HyPhy on your system by issuing the following commands. 
 ```
 git clone https://github.com/veg/hyphy.git
 cd hyphy
 git checkout v2.3-dev
 cmake .       # Requires version > 3.0
 make MP      # openMP should be installed in your system for optimal performance
-# For faster make, try "make -j MP"
+# For faster make, try "make -j MP". 
 ```
+*Do not run* `make install` as you will encounter conflicts with any other HyPhy versions installed in your system.
 
-Check that the HyPhy installation was successful using the following command:
+
+Check that the HyPhy build was successful using the following command **issued from the** `hyphy/` **directory**:
 ```
 ./HYPHYMP LIBPATH=`pwd`/res ./tests/hbltests/libv3/math.bf
 ```
@@ -80,7 +81,7 @@ Note that you can use RELAX via [Datamonkey](http://test.datamonkey.org/relax), 
     ![relax-selection](./rsrc/relax.gif)
 
 
-2. Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. From within this directory, issue the following command to run RELAX and respond to the prompts. Be sure to provide **absolute paths** for all file names prompted.
+2. Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. *From within this directory*, issue the following command to run RELAX and respond to the prompts. Be sure to provide **absolute paths** for all file names prompted.
 
         ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
 
@@ -114,7 +115,7 @@ Note that you can use BUSTED via [Datamonkey](http://test.datamonkey.org/busted)
 
     ![busted-selection](./rsrc/busted.gif) 
 
-2. Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. From within this directory, issue the following command to run BUSTED and respond to the prompts. Be sure to provide **absolute paths** for all file names prompted.
+2. Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. *From within this directory*, issue the following command to run BUSTED and respond to the prompts. Be sure to provide **absolute paths** for all file names prompted.
 
         ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/BUSTED.bf
 
@@ -148,7 +149,7 @@ Note that you can use FEL via [Datamonkey](http://datamonkey.org), you can or fo
 
 Please also note that FEL is an MPI-aware script. You are free to use HYPHYMPI (instead of HYPHYMP) in conjunction with mpirun on computing clusters for improved performance.
 
-1. Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. From within this directory, issue the following command to run BUSTED and respond to the prompts. Be sure to provide **absolute paths** for all file names prompted.
+1. Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. *From within this directory*, issue the following command to run BUSTED and respond to the prompts. Be sure to provide **absolute paths** for all file names prompted.
 
         ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/FEL.bf
 
