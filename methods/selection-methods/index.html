@@ -262,6 +262,8 @@
         with the children of the anchor.
       -->
       
+        
+      
 
       <!-- Render anchors of active page -->
       
@@ -296,6 +298,14 @@
             <li class="anchor">
               <a title="FUBAR" href="#fubar">
                 FUBAR
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="GARD" href="#gard">
+                GARD
               </a>
             </li>
           
@@ -388,8 +398,10 @@
       </div>
       <article class="article">
         <div class="wrapper">
-          <h2 id="absrel">aBSREL<a class="headerlink" href="#absrel" title="Permanent link">#</a></h2>
-<p>aBSREL is an improved version of the commonly-used "branch-site" models, which are used to test if positive selection has occurred on a proportion of branches. As such, aBSREL models both site-level and branch-level <script type="math/tex">\omega</script>  heterogeneity. aBSREL, however, does not test for selection at specific sites. Instead, aBSREL will test, for each branch (or branch of interest) in the phylogeny, whether a proportion of sites have evolved under positive selection. </p>
+          <h1 id="methods-for-inferring-selection-pressure">Methods for Inferring Selection Pressure<a class="headerlink" href="#methods-for-inferring-selection-pressure" title="Permanent link">#</a></h1>
+<p>HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using the <em>dN/dS</em> metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow <a href="../../getting-started/#choosing-a-method-for-selection-inference">these guidelines</a>.</p>
+<h2 id="absrel">aBSREL<a class="headerlink" href="#absrel" title="Permanent link">#</a></h2>
+<p>aBSREL (<strong>a</strong>daptive <strong>B</strong>ranch-<strong>S</strong>ite <strong>R</strong>andom <strong>E</strong>ffects <strong>L</strong>ikelihood) is an improved version of the commonly-used "branch-site" models, which are used to test if positive selection has occurred on a proportion of branches. As such, aBSREL models both site-level and branch-level <script type="math/tex">\omega</script>  heterogeneity. aBSREL, however, does not test for selection at specific sites. Instead, aBSREL will test, for each branch (or branch of interest) in the phylogeny, whether a proportion of sites have evolved under positive selection. </p>
 <p>aBSREL differs from other branch-site model implementations by inferring the optimal number of <script type="math/tex">\omega</script>  classes for each branch. For example, the earlier HyPhy branch-site approach (BS-REL) assumed three <script type="math/tex">\omega</script>  rate classes for each branch and assigned each site, with some probability, to one of these classes. aBSREL, by contrast, acknowledges that different branches may feature more or less complex evolutionary patterns and hence may be better modeled by more or fewer <script type="math/tex">\omega</script> classes. Specifically, aBSREL uses AIC<sub>c</sub> (small sample AIC) to infer the optimal number of <script type="math/tex">\omega</script> rate classes for each branch. </p>
 <p>After aBSREL fits the full adaptive model, the Likelihood Ratio Test is performed at each branch and compares the full model to a null model where branches are not allowed to have rate classes of <script type="math/tex">\omega>1</script>. </p>
 <p>aBSREL can be run in two modes:</p>
@@ -397,11 +409,11 @@
 <li>Test a specific hypothesis by <em>a priori</em> selecting a set of "foreground" branches to test for positive selection. </li>
 <li>Perform an exploratory analysis where all branches are tested for positive selection. In this scenario, p-values at each branch must be corrected for multiple testing (using the Holm-Bonferroni correction). Due to multiple testing, the exploratory approach <em>has much lower power</em> compared to the other approach. </li>
 </ul>
-<p><strong>If you use aBSREL in your analysis, please cite the following:</strong> <a href="https://doi.org/:10.1093/molbev/msv022"><code>Smith, MD et al. "Less is more: an adaptive branch-site random effects model for efficient detection of episodic diversifying selection." Mol. Biol. Evol. 32, 1342–1353 (2015).</code></a></p>
+<p><strong>If you use aBSREL in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msv022"><code>Smith, MD et al. "Less is more: an adaptive branch-site random effects model for efficient detection of episodic diversifying selection." Mol. Biol. Evol. 32, 1342–1353 (2015).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="busted">BUSTED<a class="headerlink" href="#busted" title="Permanent link">#</a></h2>
-<p>BUSTED provides a gene-wide (<em>not site-specific</em>) test for positive selection by asking whether a gene has experienced positive selection at at least one site on at least one branch. When running BUSTED, users can either specify a set of foreground branches on which to test for positive selection (remaining branches are designated "background"), or users can test the entire phylogeny for positive selection. In the latter case, the entire tree is effectively treated as foreground, and the test for positive selection considers the entire phylogeny.</p>
+<p>BUSTED (<strong>B</strong>ranch-<strong>S</strong>ite <strong>U</strong>nrestricted <strong>S</strong>tatistical <strong>T</strong>est for <strong>E</strong>pisodic <strong>D</strong>iversification) provides a gene-wide (<em>not site-specific</em>) test for positive selection by asking whether a gene has experienced positive selection at at least one site on at least one branch. When running BUSTED, users can either specify a set of foreground branches on which to test for positive selection (remaining branches are designated "background"), or users can test the entire phylogeny for positive selection. In the latter case, the entire tree is effectively treated as foreground, and the test for positive selection considers the entire phylogeny.</p>
 <p>For each phylogenetic partition (foreground and background branch sites), BUSTED fits a codon model with three rate classes, constrained as <script type="math/tex">\omega_1 \leq \omega_2 \leq 1 \leq \omega_3</script>. As in other methods, BUSTED simultaneously estimates the proportion of sites per partition belonging to each <script type="math/tex">\omega</script>  class. This model, used as the alternative model in selection testing, is referred to as the <em>Unconstrained</em> model. BUSTED then tests for positive selection by comparing this model fit to a null model where <script type="math/tex">\omega_3 \geq 1</script> (i.e. disallowing positive selection) on the foreground branches. This null model is also referred to as the <em>Constrained</em> model. If the null hypothesis is rejected, then there is evidence that at least one site has, at least some of the time, experienced positive selection on the foreground branches. Importantly, a significant result <em>does not</em> mean that the gene evolved under positive selection along the entire foreground.</p>
 <p>BUSTED additionally calculates "Evidence Ratios" (ERs) for each site. The ER gives the likelihood ratio (reported on a log-scale) that the alternative model was a better fit to the data compared to the null model. The ER for each site thus provides <em>descriptive information</em> about whether a given site could have evolved under positive selection. The ERs <em>should not</em> be interpreted as statistical evidence for positive selection at individual sites (instead, methods like <a href="../selection-methods/#meme">MEME</a>, <a href="../selection-methods/#fel">FEL</a>, or <a href="../selection-methods/#fubar">FUBAR</a> should be used for detecting selection at individual sites). </p>
 <p>For each site, two ERs are reported: the <em>Constrained Model</em> ER and the <em>Optimized Null</em> Model ER. The Constrained Model ER calculates the evidence ratio using model parameters inferred from the Constrained model. By contrast, the Optimized Null model ER re-optimizes parameters inferred using the Constrained model for the given site of interest. These optimized parameter values are then used to calculate the site's ER. Again, while these ERs may be helpful descriptors of selection in the data set, they do not provide statistically valid evidence for positive selection at a site.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </p>
@@ -417,13 +429,13 @@
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="fel">FEL<a class="headerlink" href="#fel" title="Permanent link">#</a></h2>
-<p>FEL uses a maximum-likelihood (ML) approach to infer nonsynoymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. This method assumes that the selection pressure for each site is constant along the entire phylogeny. </p>
+<p>FEL (<strong>F</strong>ixed <strong>E</strong>fects <strong>L</strong>ikelihood) uses a maximum-likelihood (ML) approach to infer nonsynoymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. This method assumes that the selection pressure for each site is constant along the entire phylogeny. </p>
 <p>After optimizing branch lengths and nucleotide substitution parameters, FEL fits a MG94xREV model to each codon site to infer site-specific nonsynonymous and synonymous (dN and dS, respectively) substitution rates. Hypothesis testing is then conducted on a site-specific basis, using the Likelihood Ratio Test, to ascertain if dN is significantly greater than dS.</p>
 <p><strong>If you use FEL in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msi105"><code>Kosakovsky Pond, SL and Frost, SDW. "Not So Different After All: A Comparison of Methods for Detecting Amino Acid Sites Under Selection." Mol. Biol. Evol. 22, 1208--1222 (2005).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="fubar">FUBAR<a class="headerlink" href="#fubar" title="Permanent link">#</a></h2>
-<p>FUBAR uses a Bayesian approach to infer nonsynoymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. This method assumes that the selection pressure for each site is constant along the entire phylogeny.</p>
+<p>FUBAR (<strong>F</strong>ast, <strong>U</strong>nconstrained <strong>B</strong>ayesian <strong>A</strong>pp<strong>R</strong>oximation) uses a Bayesian approach to infer nonsynoymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. This method assumes that the selection pressure for each site is constant along the entire phylogeny.</p>
 <p>Although FUBAR produces similar information to FEL, it has several key differences:</p>
 <ul>
 <li>FUBAR employs a Bayesian algorithm to infer rates, and therefore it reports evidence for positive selection using <em>posterior probabilities</em> (which range from 0-1), not p-values. Generally, posterior probabilities &gt; 0.9 are strongly suggestive of positive selection. </li>
@@ -433,8 +445,23 @@
 <p><strong>If you use FUBAR in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/mst030"><code>Murrell, B et al. "FUBAR: A Fast, Unconstrained Bayesian AppRoximation for inferring selection." Mol. Biol. Evol. 30, 1196–1205 (2013).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
+<h2 id="gard">GARD<a class="headerlink" href="#gard" title="Permanent link">#</a></h2>
+<p>GARD (<strong>G</strong>enetic <strong>A</strong>lgorithm for <strong>R</strong>ecombination <strong>D</strong>etection) is a method to screen a multiple sequence analysis for the presence of recombination and is extremely useful as a <em>pre-processing step for selection inference</em>. Because recombinant sequences cannot be adequately described with a single phylogenetic history, selection inference on recombinant data often leads to a significant increase in false positives. GARD alleviates this concern by comprehensively screening an alignment for recombination breakpoints and inferring a unique phylogenetic history for each detected recombination block.</p>
+<p>If GARD detects recombination in your dataset, it will provide you with an updated <em>partitioned</em> dataset, where each partition corresponds to a recombination block with its own corresponding phylogeny. This partitioned dataset can then be used as input (instead of your original data) for the selection inference method of interest.</p>
+<!--
+Methods which accept data processed by GARD include the following:
+
++ [FEL](./selection-methods/#fel)
++ [FUBAR](./selection-methods/#fubar)
++ [SLAC](./selection-methods/#slac)
++ ...more...
+-->
+
+<p><strong>If you use GARD in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msl051"><code>Kosakovsky Pond, SL et al. "Automated Phylogenetic Detection of Recombination Using a Genetic Algorithm." Mol. Biol. Evol. 23, 1891–1901 (2006).</code></a></p>
+<!--------------------------------------------------------------------------------------->
+
 <h2 id="meme">MEME<a class="headerlink" href="#meme" title="Permanent link">#</a></h2>
-<p>MEME employs a mixed-effects maximum likelihood approach to test the hypothesis that individual sites have been subject to episodic positive or diversifying selection. 
+<p>MEME (<strong>M</strong>ixed <strong>E</strong>ffects <strong>M</strong>odel of <strong>E</strong>volution) employs a mixed-effects maximum likelihood approach to test the hypothesis that individual sites have been subject to episodic positive or diversifying selection. 
 In other words, MEME aims to detect sites evolving under positive selection under a <em>proportion</em> of branches.</p>
 <p>For each site, MEME infers two <script type="math/tex">\omega</script> rate classes and corresponding weights representing the probability that the site evolves under <script type="math/tex">\omega</script> rate class, at a given branch. Importantly, to infer <script type="math/tex">\omega</script> rates, MEME infers a single <script type="math/tex">\alpha</script> (dS) value and two separate <script type="math/tex">\beta</script> (dN) values, <script type="math/tex">\beta^-</script> and <script type="math/tex">\beta^+</script>, which share the same <script type="math/tex">\alpha</script>, per site. For both the null and alternative model, MEME enforces the constraint <script type="math/tex">\beta^- \leq \alpha</script>. The <script type="math/tex">\beta^+</script> parameter is therefore the key difference between null and alternative models: In the null model, <script type="math/tex">\beta^+</script> is constrained as in the null model: <script type="math/tex">\beta^+ \leq \alpha</script>, but <script type="math/tex">\beta^+</script> is not constrained in the alternative model. Ultimately, positive selection for each site is inferred when <script type="math/tex">\beta^+ > \alpha</script> and shown to be significant using the likelihood ratio test. </p>
 <p><strong>If you use MEME in your analysis, please cite the following:</strong> <a href="http://dx.doi.org/10.1371/journal.pgen.1002764"><code>Murrell, B et al. "Detecting individual sites subject to episodic diversifying selection." PLoS Genetics 8, e1002764 (2012).</code></a></p>
@@ -454,7 +481,7 @@ In other words, MEME aims to detect sites evolving under positive selection unde
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="slac">SLAC<a class="headerlink" href="#slac" title="Permanent link">#</a></h2>
-<p>SLAC uses a combination of maximum-likelihood (ML) and counting approaches to infer nonsynonymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. Like FEL, this method assumes that the selection pressure for each site is constant along the entire phylogeny. </p>
+<p>SLAC (<strong>S</strong>ingle-<strong>L</strong>ikelihood <strong>A</strong>ncestor <strong>C</strong>ounting) uses a combination of maximum-likelihood (ML) and counting approaches to infer nonsynonymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. Like FEL, this method assumes that the selection pressure for each site is constant along the entire phylogeny. </p>
 <p>SLAC begins by optimizing branch lengths and nucleotide substitution parameters under the MG94xREV model. However, rather than using ML to fit site-specific dN and dS parameters, SLAC instead uses ML to infer the most likely ancestral sequence at each node of the phylogeny. SLAC then employs a modified version of the <a href="https://doi.org/10.1093/oxfordjournals.molbev.a026042">Suzuki-Gojobori counting method</a> to directly count the total number of nonsynonymous and synonymous changes which have occurred at each site. Significance is ascertained at each site using an extended binomial distribution. Importantly, due to its counting-based approach, SLAC may not be accurate for data sets with high divergence levels.</p>
 <p><strong>If you use SLAC in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msi105"><code>Kosakovsky Pond, SL and Frost, SDW. "Not So Different After All: A Comparison of Methods for Detecting Amino Acid Sites Under Selection." Mol. Biol. Evol. 22, 1208--1222 (2005).</code></a></p>
           

@@ -351,7 +351,7 @@
           <!--------------------------------------------------------------------------------------->
 
 <h2 id="mg94xrev-framework">MG94xREV Framework<a class="headerlink" href="#mg94xrev-framework" title="Permanent link">#</a></h2>
-<p>All methods rely, to some extent, on the MG94xREV codon model, a generalized extension of the <a href="https://www.ncbi.nlm.nih.gov/labs/articles/7968485/">MG94 model</a> that allows for a full GTR mutation rate matrix. The MG94xREV <em>transition matrix</em> <strong>Q</strong> (also known as the <em>instantaneous rate matrix</em>), for the substitution from codon <script type="math/tex">i</script> to codon <script type="math/tex">j</script> is given by: </p>
+<p>All selection inference methods rely, to some extent, on the MG94xREV codon model, a generalized extension of the <a href="https://www.ncbi.nlm.nih.gov/labs/articles/7968485/">MG94 model</a> that allows for a full GTR mutation rate matrix. The MG94xREV <em>transition matrix</em> <strong>Q</strong> (also known as the <em>instantaneous rate matrix</em>), for the substitution from codon <script type="math/tex">i</script> to codon <script type="math/tex">j</script> is given by: </p>
 <p>
 <script type="math/tex; mode=display">\begin{equation}
 q_{ij} = \left\{ 
@@ -383,7 +383,7 @@ q_{ij} = \left\{
 <p>Not explicitly seen in this model are the <em>equilibrium codon frequencies</em>, denoted <script type="math/tex">\boldsymbol{\hat{\Pi}}</script>. These frequencies are estimated using nine positional nucleotide frequencies for the target nucleotides in each codon substitution. Specifically, HyPhy employs the <a href="http://dx.doi.org/10.1371/journal.pone.0011230">CF3x4</a> frequency estimator, a corrected version of the common F3x4 estimator (introduced in <a href="https://www.ncbi.nlm.nih.gov/pubmed/7968486">Goldman and Yang 1994</a>) which accounts for biases in nucleotide composition induced by stop codons. </p>
 </li>
 </ul>
-<p>Most methods (except FADE, which does not use codon data) will perform a global MG94xREV fit to optimize branch length and nucleotide substitution parameters before proceeding to hypothesis testing. Several methods (FEL, FUBAR, and MEME) additionally pre-fit a GTR nucleotide model to the data, using the estimated parameters as starting values for the global MG94xREV fit, as a computational speed-up. Resulting branch length and nucleotide substitution parameters are subsequently used as initial parameter values during model fitting for hypothesis testing.</p>
+<p>Most methods <!--(except FADE, which does not use codon data)--> will perform a global MG94xREV fit to optimize branch length and nucleotide substitution parameters before proceeding to hypothesis testing. Several methods (<a href="../selection-methods/#fel">FEL</a>, <a href="../selection-methods/#fubar">FUBAR</a>, and <a href="../selection-methods/#meme">MEME</a>) additionally pre-fit a GTR nucleotide model to the data, using the estimated parameters as starting values for the global MG94xREV fit, as a computational speed-up. Resulting branch length and nucleotide substitution parameters are subsequently used as initial parameter values during model fitting for hypothesis testing.</p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="synonymous-rate-variation">Synonymous Rate Variation<a class="headerlink" href="#synonymous-rate-variation" title="Permanent link">#</a></h2>
