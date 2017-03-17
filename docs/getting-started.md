@@ -10,7 +10,10 @@ You can use HyPhy in two ways:
 
 ## Choosing a method for selection inference
 
-HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding and/or amino-acid multiple sequence alignments. Which method you select will depend on your specific question. Below we recommend several methods for different purposes, linked to more in depth descriptions. Tutorials for using these methods are also available [here](tutorials/current-release-tutorial).
+HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding and/or amino-acid multiple sequence alignments. Which method you select will depend on your specific question. Below we recommend several methods for different purposes, linked to more in depth descriptions. Tutorials for using these methods are also available [here](tutorials/current-release-tutorial). 
+
+> Note that you may find it useful to perform pre-processing on your dataset, specifically by screening for recombination breakpoints using our [GARD](./methods/selection-methods/#gard) (**G**enetic **A**lgorithm for **R**ecombination **D**etection) method before proceeding to selection analysis.
+
 
 ### Are individual sites subject to *pervasive* (across the whole phylogeny) positive or purifying selection?
 * [FEL](./methods/selection-methods/#fel) (**F**ixed **E**fects **L**ikelihood) is suitable for small-to-medium sized data sets.
