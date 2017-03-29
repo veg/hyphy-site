@@ -1,6 +1,11 @@
 <!--------------------------------------------------------------------------------------->
+## Overview
+HyPhy provides a suite of tools for analyzing phylogenetic sequence data, in particular for inferring the strength of selection from sequence data. In addition, HyPhy features a flexible batch language for implementing and customizing discrete state Markov models in a phylogenetic framework.
+
+
+<!--------------------------------------------------------------------------------------->
 ## MG94xREV Framework
-All selection inference methods rely, to some extent, on the MG94xREV codon model, a generalized extension of the [MG94 model](https://www.ncbi.nlm.nih.gov/labs/articles/7968485/) that allows for a full GTR mutation rate matrix. The MG94xREV *transition matrix* **Q** (also known as the *instantaneous rate matrix*), for the substitution from codon $i$ to codon $j$ is given by: 
+All methods used to infer selection from coding-sequence data rely, to some extent, on the MG94xREV codon model, a generalized extension of the [MG94 model](https://www.ncbi.nlm.nih.gov/labs/articles/7968485/) that allows for a full GTR mutation rate matrix. The MG94xREV *transition matrix* **Q** (also known as the *instantaneous rate matrix*), for the substitution from codon $i$ to codon $j$ is given by: 
 
 $$\begin{equation}
 q_{ij} = \left\{ 
