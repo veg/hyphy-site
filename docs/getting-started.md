@@ -1,15 +1,24 @@
-## What is HyPhy?
+## Using HyPhy
 
-HyPhy (**Hy**pothesis Testing using **Phy**logenies) is an open-source software package for the analysis of genetic sequences (in particular the inference of natural selection) using techniques in phylogenetics, molecular evolution, and machine learning. It features a rich scripting language for limitless customization of analyses. Additionally, HyPhy features support for parallel computing environments (via message passing interface). HyPhy has over 8000 registered users and has been cited in over 1800 peer-reviewed publications ([Google Scholar](https://scholar.google.com/scholar?hl=en&as_sdt=5,39&cites=17874163875017617061,8555001991860797787&scipsc=&q=&scisbd=1)). 
+There are four ways to use HyPhy
 
-You can use HyPhy in two ways:
+### Easiest, supports most popular analyses
+Run HyPhy our accompanying webserver [Datamonkey](http://datamonkey.org), or the [development version of Datamonkey](http://test.datamonkey.org) for newer methods and a dramatically better user experience.
 
-* Run HyPhy our accompanying webserver [Datamonkey](http://datamonkey.org) (or see the [development version of Datamonkey](http://test.datamonkey.org) for newer methods and a dramatically better user experience).
-* Run HyPhy from the command line on your local computer/server. Follow [these instructions](installation.md) for download and installation. 
+###Access All available analyses, pipelines, customization
+Run HyPhy from the command line on your local computer/server. Follow [these instructions](installation.md) for download and installation. 
 
-HyPhy provides its own scripting language - **HBL** or **HyPhy Batch Language**, which can be used to develop custom analyses or modify existing ones, but it is not necessary to learn or even be aware of it in order to use the package. This is because HyPhy ships with a library of **standard analyses** that implement the most popular methods from start to finish. The most popular class of analyses are those that deal with understanding how **natural selection** has shaped the evolution of extant sequences, e.g., pathogens or comparative genomic data over different time scales.
+###Custom analyses without having to use the command line
+Run a legacy graphical user interface version of HyPhy (no longer developed, but still supporting many popular analyses) Mac OS X or Windows. Follow [these instructions](download.md) for download.
+ 
+###Software/pipeline development
+Compile HyPhy as a library that can be accessed via Python, R, or other language bindings [these instructions](installation.md) for download and installation. 
 
-## Choosing a method for selection inference
+## Typical uses of HyPhy
+
+HyPhy ships with a library of **standard analyses** that implement about ~100 different methods from start to finish. HyPhy is most commonly used for **characterizing the evolutionary process**, e.g., detecting signatures of selection, estimating evolutionary rates, comparing different evolutionary models, or fitting custom models to sequence alignments.
+
+## Characterizing selective pressures
 
 HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding and/or amino-acid multiple sequence alignments. Which method you select will depend on your specific question. Below we recommend several methods for different purposes, linked to more in depth descriptions. Tutorials for using these methods are also available [here](tutorials/current-release-tutorial). 
 
@@ -23,7 +32,7 @@ HyPhy provides a suite of diverse phylogenetic methodologies for testing specifi
 
 
 ### Are individual sites subject to *episodic* (at a subset of branches) positive or purifying selection?
-* [MEME](./methods/selection-methods/#meme) (**M**ixed **E**ffects **M**odel of **E**volution) tests for episodic selection at individual sites. Note that MEME does not accept *a priori* branch specifications. **MEME is the preferred approach for detecting positive selection at individual sites.**
+* [MEME](./methods/selection-methods/#meme) (**M**ixed **E**ffects **M**odel of **E**volution) tests for episodic selection at individual sites. Note that MEME does not accept *a priori* branch specifications (this feature is being introduced with `v2.3-dev` and later). **MEME is the preferred approach for detecting positive selection at individual sites.**
 
 
 ### Are individual branches subject to *episodic* (at a subset of sites) positive or purifying selection?

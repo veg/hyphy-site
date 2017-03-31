@@ -36,13 +36,14 @@ markdown_extensions:
 extra_javascript: 
     - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
     - assets/mathjaxhelper.js
-
+    
 # Google Analytics
 google_analytics: ['hyphy.org', 'veg.github.io']
 
 # Page tree
 pages:
   - Home: 'index.html'
+  - About : 'about.md'
   - Download : 'register.html'
   - _Real_Download : 'download.md'
   - Installation: 'installation.md'
@@ -52,7 +53,7 @@ pages:
   - Methods:
     - General Information : 'methods/general.md'
     - Selection : 'methods/selection-methods.md'
-#    - Other : 'methods/other-methods.md'
+    - Other : 'methods/other-methods.md'
   - Tutorials: 
     - Using HyPhy to Detect Selection : 'tutorials/current-release-tutorial.md'
     - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'
