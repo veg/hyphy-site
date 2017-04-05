@@ -62,7 +62,8 @@ F81RateMatrix =
 	  
 Model 	F81 = (F81RateMatrix, observedFreqs);
 
-//.  Now we can define the tree variable, using the tree string read from the data file, // and, by default, assigning the last defined model (F81) to all tree branches.
+// Now we can define the tree variable, using the tree string read from the data file, 
+// and, by default, assigning the last defined model (F81) to all tree branches.
 
 Tree	givenTree = DATAFILE_TREE;
 
