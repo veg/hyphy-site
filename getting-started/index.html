@@ -160,6 +160,21 @@
 
   <li>
     <a class=""
+      title="About" href="../about/" >
+      About
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+
+          
+            <!-- Render sections -->
+
+
+  <li>
+    <a class=""
       title="Download" href="../register/" >
       Download
     </a>
@@ -217,16 +232,24 @@
 
             <!-- Render anchor -->
             <li class="anchor">
-              <a title="What is HyPhy?" href="#what-is-hyphy">
-                What is HyPhy?
+              <a title="Using HyPhy" href="#using-hyphy">
+                Using HyPhy
               </a>
             </li>
           
 
             <!-- Render anchor -->
             <li class="anchor">
-              <a title="Choosing a method for selection inference" href="#choosing-a-method-for-selection-inference">
-                Choosing a method for selection inference
+              <a title="Typical uses of HyPhy" href="#typical-uses-of-hyphy">
+                Typical uses of HyPhy
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="Characterizing selective pressures" href="#characterizing-selective-pressures">
+                Characterizing selective pressures
               </a>
             </li>
           
@@ -348,15 +371,19 @@
       </div>
       <article class="article">
         <div class="wrapper">
-          <h2 id="what-is-hyphy">What is HyPhy?<a class="headerlink" href="#what-is-hyphy" title="Permanent link">#</a></h2>
-<p>HyPhy (<strong>Hy</strong>pothesis Testing using <strong>Phy</strong>logenies) is an open-source software package for the analysis of genetic sequences (in particular the inference of natural selection) using techniques in phylogenetics, molecular evolution, and machine learning. It features a rich scripting language for limitless customization of analyses. Additionally, HyPhy features support for parallel computing environments (via message passing interface). HyPhy has over 8000 registered users and has been cited in over 900 peer-reviewed publications (Google Scholar). 
-<!-- UPDATE THIS, also check citation counts above.: Continued development of HyPhy is currently supported in part by an NIGMS R01 award 1R01GM093939. --></p>
-<p>You can use HyPhy in two ways:</p>
-<ul>
-<li>Run HyPhy our accompanying webserver <a href="http://datamonkey.org">Datamonkey</a> (or see the <a href="http://test.datamonkey.org">development version of Datamonkey</a> for some newer methods).</li>
-<li>Run HyPhy from the command line on your local computer/server. Follow <a href="../installation/">these instructions</a> for download and installation. </li>
-</ul>
-<h2 id="choosing-a-method-for-selection-inference">Choosing a method for selection inference<a class="headerlink" href="#choosing-a-method-for-selection-inference" title="Permanent link">#</a></h2>
+          <h2 id="using-hyphy">Using HyPhy<a class="headerlink" href="#using-hyphy" title="Permanent link">#</a></h2>
+<p>There are four ways to use HyPhy</p>
+<h3 id="easiest-supports-most-popular-analyses">Easiest, supports most popular analyses<a class="headerlink" href="#easiest-supports-most-popular-analyses" title="Permanent link">#</a></h3>
+<p>Run HyPhy our accompanying webserver <a href="http://datamonkey.org">Datamonkey</a>, or the <a href="http://test.datamonkey.org">development version of Datamonkey</a> for newer methods and a dramatically better user experience.</p>
+<h3 id="access-all-available-analyses-pipelines-customization">Access All available analyses, pipelines, customization<a class="headerlink" href="#access-all-available-analyses-pipelines-customization" title="Permanent link">#</a></h3>
+<p>Run HyPhy from the command line on your local computer/server. Follow <a href="../installation/">these instructions</a> for download and installation. </p>
+<h3 id="custom-analyses-without-having-to-use-the-command-line">Custom analyses without having to use the command line<a class="headerlink" href="#custom-analyses-without-having-to-use-the-command-line" title="Permanent link">#</a></h3>
+<p>Run a legacy graphical user interface version of HyPhy (no longer developed, but still supporting many popular analyses) Mac OS X or Windows. Follow <a href="../download/">these instructions</a> for download.</p>
+<h3 id="softwarepipeline-development">Software/pipeline development<a class="headerlink" href="#softwarepipeline-development" title="Permanent link">#</a></h3>
+<p>Compile HyPhy as a library that can be accessed via Python, R, or other language bindings <a href="../installation/">these instructions</a> for download and installation. </p>
+<h2 id="typical-uses-of-hyphy">Typical uses of HyPhy<a class="headerlink" href="#typical-uses-of-hyphy" title="Permanent link">#</a></h2>
+<p>HyPhy ships with a library of <strong>standard analyses</strong> that implement about ~100 different methods from start to finish. HyPhy is most commonly used for <strong>characterizing the evolutionary process</strong>, e.g., detecting signatures of selection, estimating evolutionary rates, comparing different evolutionary models, or fitting custom models to sequence alignments.</p>
+<h2 id="characterizing-selective-pressures">Characterizing selective pressures<a class="headerlink" href="#characterizing-selective-pressures" title="Permanent link">#</a></h2>
 <p>HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding and/or amino-acid multiple sequence alignments. Which method you select will depend on your specific question. Below we recommend several methods for different purposes, linked to more in depth descriptions. Tutorials for using these methods are also available <a href="../tutorials/current-release-tutorial">here</a>. </p>
 <blockquote>
 <p>Note that you may find it useful to perform pre-processing on your dataset, specifically by screening for recombination breakpoints using our <a href="../methods/selection-methods/#gard">GARD</a> (<strong>G</strong>enetic <strong>A</strong>lgorithm for <strong>R</strong>ecombination <strong>D</strong>etection) method before proceeding to selection analysis.</p>
@@ -369,8 +396,11 @@
 </ul>
 <h3 id="are-individual-sites-subject-to-episodic-at-a-subset-of-branches-positive-or-purifying-selection">Are individual sites subject to <em>episodic</em> (at a subset of branches) positive or purifying selection?<a class="headerlink" href="#are-individual-sites-subject-to-episodic-at-a-subset-of-branches-positive-or-purifying-selection" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="../methods/selection-methods/#meme">MEME</a> (<strong>M</strong>ixed <strong>E</strong>ffects <strong>M</strong>odel of <strong>E</strong>volution) tests for episodic selection at individual sites. Note that MEME does not accept <em>a priori</em> branch specifications. <strong>MEME is the preferred approach for detecting positive selection at individual sites.</strong></li>
-<li><a href="../methods/selection-methods/#absrel">aBSREL</a> (<strong>a</strong>daptive <strong>B</strong>ranch-<strong>S</strong>ite <strong>R</strong>andom <strong>E</strong>ffects <strong>L</strong>ikelihood) is an improved version of the common "branch-site" class of models. aBSREL allows either for <em>a priori</em> specification of branch(es) to test for selection, or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power.</li>
+<li><a href="../methods/selection-methods/#meme">MEME</a> (<strong>M</strong>ixed <strong>E</strong>ffects <strong>M</strong>odel of <strong>E</strong>volution) tests for episodic selection at individual sites. Note that MEME does not accept <em>a priori</em> branch specifications (this feature is being introduced with <code>v2.3-dev</code> and later). <strong>MEME is the preferred approach for detecting positive selection at individual sites.</strong></li>
+</ul>
+<h3 id="are-individual-branches-subject-to-episodic-at-a-subset-of-sites-positive-or-purifying-selection">Are individual branches subject to <em>episodic</em> (at a subset of sites) positive or purifying selection?<a class="headerlink" href="#are-individual-branches-subject-to-episodic-at-a-subset-of-sites-positive-or-purifying-selection" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="../methods/selection-methods/#absrel">aBSREL</a> (<strong>a</strong>daptive <strong>B</strong>ranch-<strong>S</strong>ite <strong>R</strong>andom <strong>E</strong>ffects <strong>L</strong>ikelihood) is an improved version of the common "branch-site" class of models. aBSREL allows either for <em>a priori</em> specification of branch(es) to test for selection, or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power. <strong>aBSREL is the preferred approach for detecting positive selection at individual branches.</strong></li>
 </ul>
 <h3 id="has-a-gene-experienced-positive-selection-at-any-site-on-a-particular-branch-or-set-of-branches">Has a gene experienced positive selection at any site on a particular branch or set of branches?<a class="headerlink" href="#has-a-gene-experienced-positive-selection-at-any-site-on-a-particular-branch-or-set-of-branches" title="Permanent link">#</a></h3>
 <ul>

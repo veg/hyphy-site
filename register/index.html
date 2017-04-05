@@ -159,6 +159,21 @@
 
 
   <li>
+    <a class=""
+      title="About" href="../about/" >
+      About
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+
+          
+            <!-- Render sections -->
+
+
+  <li>
     <a class="current"
       title="Download" href="./" >
       Download
@@ -329,8 +344,13 @@
       <article class="article">
         <div class="wrapper">
           <p><link rel="stylesheet" href="//unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous"></p>
-<form class="pure-form pure-form-stacked" action="//formspree.io/datamonkey.services@gmail.com" method="post" name="regForm">   
-    <fieldset>
+<style>
+    input[type="radio"]{
+            -webkit-appearance: radio;
+    }
+</style>
+
+<form class="pure-form pure-form-stacked" action="//formspree.io/datamonkey.services@gmail.com" method="post" name="regForm">
 
         <p>
             <i>Please take your time to fill out all the relevant information in the form below.
@@ -344,173 +364,70 @@
         </p>
 
 
-        <div class="ctrlHolder">
+        <div>
+      <label for="">email address</label>
+      <input type="text" name="email" value="" size="50">
+        </div>
 
-        <label for="">E-Mail</label>
-        <input type="text" name="Email" value="" size="50"></div>
+        <div>
+            <label for="">Institution</label>
+            <input type="text" name="organization" value="" size="50">
+        </div>
 
-        <div class="ctrlHolder"><label for="">Your field:</label>
-        <select name="Organization" class="selectInput">
-        <option name="" value=""></option>
-        <option name="Academic" value="Academic">Academic</option>
-        <option name="Government" value="Government">Government</option>
-        <option name="Private Sector" value="Private Sector">Private Sector</option>
-        <option name="Other" value="Other">Other</option>
+        <div>
 
-        </select>       
+      <label for="">I mainly use HyPhy for</label>
+
+            <label for="hyphy-use" class="pure-radio">
+                <input type="radio" name="hyphy-use-case" value="Selection Analysis" />
+                Selection Analysis
+            </label>
+
+            <label for="hyphy-use" class="pure-radio">
+                <input type="radio" name="hyphy-use-case" value="Model Development" />
+                Model Development
+            </label>
+
+            <label for="hyphy-use" class="pure-radio">
+                <input type="radio" name="hyphy-use-case" value="Other">
+                Other
+            </label>
+
     </div>
 
+        <div>
+            <label for="">Have you cited HyPhy results in a publication:</label>
 
-        <div class="ctrlHolder">
-        <label for="">OS/Computer/HyPhy version:</label>
-        <input name="OS" size="50" maxlength="150" type="text" class="textInput">
-    </div>
+            <label for="cited" class="pure-radio">
+                <input type="radio" name="have-cited-hyphy-before" value="Yes" />
+                Yes
+            </label>
 
-        <div class="ctrlHolder">
-        <label for="">HYPHY User for:</label>
-        <select name="Length" class="selectInput">
-            <option name="" value=""></option>
-            <option name="6 months or less" value="6 months or less">6 months or less</option>
-            <option name="6 months to 1 year" value="6 months to 1 year">6 months to 1 year</option>
-            <option name="1 to 2 years" value="1 to 2 years">1 to 2 years</option>
-            <option name="2 to 4 years" value="2 to 4 years">2 to 4 years</option>
-            <option name="5 years or longer" value="5 years or longer">5 years or longer</option>
-        </select>       
-    </div>
+            <label for="cited" class="pure-radio">
+                <input type="radio" name="have-cited-hyphy-before" value="No" />
+                No
+            </label>
 
-        <div class="ctrlHolder">
-                <label for="">Mainly used HyPhy for:</label>
-        <select name="Use" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Hypothesis testing" value="Hypothesis testing">Hypothesis testing</option>
-            <option name="Phylogeny reconstruction" value="Phylogeny reconstruction">Phylogeny reconstruction</option>
-            <option name="Bootstrapping" value="Bootstrapping">Bootstrapping</option>
-            <option name="Relative Rate/Ratio" value="Relative Rate/Ratio">Relative Rate/Ratio</option>
-            <option name="Molecular clock" value="Molecular clock">Molecular clock</option>
-            <option name="Selection analyses" value="Selection analyses">Selection analyses</option>
-            <option name="Recombination analyses" value="Recombination analyses">Recombination analyses</option>
-            <option name="Other" value="Other">Other</option>
-        </select>       
-    </div>
+        </div>
 
-        <div class="ctrlHolder">
-                <label for="">Rate HyPhy overall:</label>
-        <select name="Overall" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Very Useful" value="Very Useful">Very Useful</option>
-            <option name="Somewhat Useful" value="Somewhat Useful">Somewhat Useful</option>
-            <option name="Marginally Useful" value="Marginally Useful">Marginally Useful</option>
-            <option name="Pretty Useless" value="Pretty Useless">Pretty Useless</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">HyPhy ease of use:</label>
-        <select name="Ease" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Good" value="Good">Good</option>
-            <option name="Acceptable" value="Acceptable">Acceptable</option>
-            <option name="Poor" value="Poor">Poor</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">HyPhy documentation:</label>
-        <select name="Docs" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Good" value="Good">Good</option>
-            <option name="Acceptable" value="Acceptable">Acceptable</option>
-            <option name="Poor" value="Poor">Poor</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">Rate HyPhy speed:</label>
-        <select name="Speed" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Fast" value="Fast">Fast</option>
-            <option name="Adequate" value="Adequate">Adequate</option>
-            <option name="Slow" value="Slow">Slow</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">Rate HyPhy stability:</label>
-        <select name="Stability" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Good" value="Good">Good</option>
-            <option name="Acceptable" value="Acceptable">Acceptable</option>
-            <option name="Poor" value="Poor">Poor</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">How does HyPhy compare to other similar packages you have used:</label>
-        <select name="Comp" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Better Than Most" value="Better Than Most">Better Than Most</option>
-            <option name="About the Same" value="About the Same">About the Same</option>
-            <option name="Worse Than Most" value="Worse Than Most">Worse Than Most</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">Have you written custom HyPhy batch files:</label>
-        <select name="Custom" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Yes" value="Yes">Yes</option>
-            <option name="No" value="No">No</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">Is a graphical user interface important to you:</label>
-        <select name="GUI" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Very" value="Very">Very</option>
-            <option name="Somewhat" value="Somewhat">Somewhat</option>
-            <option name="Not Really" value="Not Really">Not Really</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">Have you cited HyPhy results in a publication:</label>
-        <select name="Publication" class="selectInput">
-            <option name="" value=""></option>
-            <option name="No" value="No">No</option>
-            <option name="Yes" value="Yes">Yes</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">How did you first find out about HyPhy:</label>
-        <select name="ReferredBy" class="selectInput">
-            <option name="" value=""></option>
-            <option name="Colleague" value="Colleague">Colleague</option>
-            <option name="Mailing List" value="Mailing List">Mailing List</option>
-            <option name="Software Listing Page" value="Software Listing Page">Software Listing Page</option>
-            <option name="Search Engine" value="Search Engine">Search Engine</option>
-            <option name="Publication" value="Publication">Publication</option>
-            <option name="Conference/Seminar" value="Conference/Seminar">Conference/Seminar</option>
-            <option name="Other" value="Other">Other</option>
-        </select>       
-    </div>
-
-        <div class="ctrlHolder">
-                <label for="">Most useful HyPhy feature/analysis:</label>
-        <textarea name="FavFeature" rows="10" cols="100"></textarea>
-    </div>
-
-    <div class="ctrlHolder">
-        <label for="">Which features would you most like to see added:</label>
-        <textarea name="AddFeature" rows="10" cols="100"></textarea>
-    </div>
+        <div>
+            <label for="">How did you first find out about HyPhy:</label>
+            <select name="ReferredBy" class="selectInput">
+                <option name="" value=""></option>
+                <option name="Colleague" value="Colleague">Colleague</option>
+                <option name="Mailing List" value="Mailing List">Mailing List</option>
+                <option name="Software Listing Page" value="Software Listing Page">Software Listing Page</option>
+                <option name="Search Engine" value="Search Engine">Search Engine</option>
+                <option name="Publication" value="Publication">Publication</option>
+                <option name="Conference/Seminar" value="Conference/Seminar">Conference/Seminar</option>
+                <option name="Other" value="Other">Other</option>
+            </select>       
+        </div>
 
     <input type="hidden" name="_next" value="//veg.github.io/hyphy-site/download?registered" />
     <button type="submit" name="Submit" value="Send" class="pure-button pure-button-primary">Submit</button>
 
 
-    </fieldset>
 </form>
           
             <footer class="footer">

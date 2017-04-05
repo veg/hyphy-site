@@ -160,6 +160,21 @@
 
   <li>
     <a class=""
+      title="About" href="../../about/" >
+      About
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+
+          
+            <!-- Render sections -->
+
+
+  <li>
+    <a class=""
       title="Download" href="../../register/" >
       Download
     </a>
@@ -251,6 +266,14 @@
       <!-- Render anchors of active page -->
       
         <ul>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="Overview" href="#overview">
+                Overview
+              </a>
+            </li>
           
 
             <!-- Render anchor -->
@@ -350,8 +373,12 @@
         <div class="wrapper">
           <!--------------------------------------------------------------------------------------->
 
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>HyPhy provides a suite of tools for analyzing phylogenetic sequence data, in particular for inferring the strength of selection from sequence data. In addition, HyPhy features a flexible batch language for implementing and customizing discrete state Markov models in a phylogenetic framework.</p>
+<!--------------------------------------------------------------------------------------->
+
 <h2 id="mg94xrev-framework">MG94xREV Framework<a class="headerlink" href="#mg94xrev-framework" title="Permanent link">#</a></h2>
-<p>All selection inference methods rely, to some extent, on the MG94xREV codon model, a generalized extension of the <a href="https://www.ncbi.nlm.nih.gov/labs/articles/7968485/">MG94 model</a> that allows for a full GTR mutation rate matrix. The MG94xREV <em>transition matrix</em> <strong>Q</strong> (also known as the <em>instantaneous rate matrix</em>), for the substitution from codon <script type="math/tex">i</script> to codon <script type="math/tex">j</script> is given by: </p>
+<p>All methods used to infer selection from coding-sequence data rely, to some extent, on the MG94xREV codon model, a generalized extension of the <a href="https://www.ncbi.nlm.nih.gov/labs/articles/7968485/">MG94 model</a> that allows for a full GTR mutation rate matrix. The MG94xREV <em>transition matrix</em> <strong>Q</strong> (also known as the <em>instantaneous rate matrix</em>), for the substitution from codon <script type="math/tex">i</script> to codon <script type="math/tex">j</script> is given by: </p>
 <p>
 <script type="math/tex; mode=display">\begin{equation}
 q_{ij} = \left\{ 
