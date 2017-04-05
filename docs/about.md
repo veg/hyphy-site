@@ -26,7 +26,7 @@ HyPhy was designed to allow the specification and fitting of a very broad class 
 
 
 ## Example HBL Script
-```
+```js
 /* 
    This is an example HY-PHY Batch File.
    It reads in a MEGA format nucleotide dataset from data/hiv.nuc 
