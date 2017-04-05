@@ -348,6 +348,9 @@
     input[type="radio"]{
             -webkit-appearance: radio;
     }
+    label.title{
+        font-weight: bold;
+    }
 </style>
 
 <form class="pure-form pure-form-stacked" action="//formspree.io/datamonkey.services@gmail.com" method="post" name="regForm">
@@ -365,18 +368,18 @@
 
 
         <div>
-      <label for="">email address</label>
+      <label class="title" for="">email address</label>
       <input type="text" name="email" value="" size="50">
         </div>
 
         <div>
-            <label for="">Institution</label>
+            <label class="title" for="">Institution</label>
             <input type="text" name="organization" value="" size="50">
         </div>
 
         <div>
 
-      <label for="">I mainly use HyPhy for</label>
+      <label class="title" for="">What do you mainly use HyPhy for?</label>
 
             <label for="hyphy-use" class="pure-radio">
                 <input type="radio" name="hyphy-use-case" value="Selection Analysis" />
@@ -396,7 +399,7 @@
     </div>
 
         <div>
-            <label for="">Have you cited HyPhy results in a publication:</label>
+            <label class="title" for="">Have you cited HyPhy results in a publication</label>
 
             <label for="cited" class="pure-radio">
                 <input type="radio" name="have-cited-hyphy-before" value="Yes" />
@@ -411,7 +414,7 @@
         </div>
 
         <div>
-            <label for="">How did you first find out about HyPhy:</label>
+            <label class="title" for="">How did you first find out about HyPhy?</label>
             <select name="ReferredBy" class="selectInput">
                 <option name="" value=""></option>
                 <option name="Colleague" value="Colleague">Colleague</option>
