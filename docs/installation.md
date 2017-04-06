@@ -4,7 +4,7 @@ Installation
 
 > Before continuing, please download and consider registering before using HyPhy.
 
-> [Download](register)
+> [Download](register/)
 
 **Once downloaded, install HyPhy as follows:**
 
