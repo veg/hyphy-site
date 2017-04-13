@@ -416,7 +416,8 @@ Running FEL and SLAC require almost identical steps as MEME (see above). Therefo
 1. To run FEL, enter either `5` (One-rate FEL, i.e. without *dS* variation) or `6` (Two-rate FEL, i.e. with *dS* variation) when you see the prompt `Ancestor Counting Options`. For selection inference, we strongly recommend running a two-rate FEL (option `6`).
 2. HyPhy will proceed to fit the initial nucleotide and global codon models. You will then see a prompt for the Significance level, for which you may enter a preferred p-value threshold (default is `0.1`).
 3. If you have selected option `6` for a two-rate FEL, you will see an additional prompt asking about `Branch Options`. To test the whole tree for selection, enter `1` here for `All branches`. If you selected option `5` for a one-rate FEL, this prompt will not appear.
-4. FEL will now run to completion. As it runs, FEL will print site-specific inferences to the screen, for example:
+4. Enter `1` to analyze all branches. 
+5. FEL will now run to completion. As it runs, FEL will print site-specific inferences to the screen, for example:
 
         [RETUNING BRANCH LENGTHS AND NUCLEOTIDE RATES UNDER THE CODON MODEL]
         IMPROVED Log(L) BY 125.2787507415687 POINTS
@@ -426,7 +427,7 @@ Running FEL and SLAC require almost identical steps as MEME (see above). Therefo
         | Codon:    4| dN/dS:       0.00| dN:  0.00| dS:  1.88| dS(=dN):  0.33| Log(L):     -19.68| LRT:  9.43| p:  0.00 *N
 
 
-5. When finished, FEL issues a final prompt for a CSV file name in which this site-specific information will be saved. For example, `/path/to/downloaded/example/files/WestNileVirus_NS3.fas.FEL.csv` is a good option to provide here.
+6. When finished, FEL issues a final prompt for a CSV file name in which this site-specific information will be saved. For example, `/path/to/downloaded/example/files/WestNileVirus_NS3.fas.FEL.csv` is a good option to provide here.
 
 This final FEL results file will have several columns:
 
