@@ -6,7 +6,7 @@ HyPhy v2.3 Quick Start
 
 This tutorial outlines how to prepare data and execute analyses for use in the following methods:
 
-* [aBSREL](../methods/selection-methods/#absrel)
+* [RELAX](../methods/selection-methods/#relax)
 * [BUSTED](../methods/selection-methods/#busted)
 * [FEL](../methods/selection-methods/#fel)
 
