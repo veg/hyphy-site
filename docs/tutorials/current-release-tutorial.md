@@ -272,7 +272,7 @@ For this example, we will run FUBAR on the dataset `WestNileVirus_NS3.fas` to id
 
 
 1. Launch HyPhy from the command line by entering `HYPHYMP`. Provide the following options to the menu prompts:
-    1. Enter `13` to select `Selection/Recombination`.
+    1. Enter `12` to select `Selection/Recombination`.
     2. Enter `1` to select `Detect site-specific pervasive diversifying and purifying selection using the FUBAR (Fast Unbiased Bayesian AppRoximate) method on a multiple partition data set, e.g. produced by GARD.`  Note that, as suggested by the text, FUBAR can account for the confounding effect of recombination, although it is not necessary to run GARD if recombination is not suspected.
     3. Enter `1` to select the Universal genetic code.
     4. Enter `1` to specify that a single dataset is being analyzed. Note that more could be specified, for example as outputted by GARD in the event of detected recombination.
