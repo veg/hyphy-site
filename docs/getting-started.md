@@ -5,7 +5,7 @@ There are four ways to use HyPhy
 ### Easiest, supports most popular analyses
 Run HyPhy our accompanying webserver [Datamonkey](http://datamonkey.org), or the [development version of Datamonkey](http://test.datamonkey.org) for newer methods and a dramatically better user experience.
 
-###Access All available analyses, pipelines, customization
+###Access all available analyses, pipelines, customization
 Run HyPhy from the command line on your local computer/server. Follow [these instructions](installation.md) for download and installation. 
 
 ###Custom analyses without having to use the command line
