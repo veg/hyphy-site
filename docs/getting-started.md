@@ -5,8 +5,10 @@ There are four ways to use HyPhy:
 ### Run HyPhy on our accompanying Datamonkey webserver
 This option is the **easiest**, **supports most popular analyses**, and **does not require use of the command line**. Access Datamonkey [here](http://datamonkey.org), or see this [development version of Datamonkey](http://test.datamonkey.org) for newer methods and a dramatically better user experience.
 
+
 ### Run HyPhy from the command line
 This option is the **most flexible** approach through which you can access **all available analyses and pipelines** as well as **customize** your own HyPhy analyses. Follow [these instructions](installation.md) for download and installation. 
+
 
 ### Run HyPhy custom analyses without the command line
 Run a legacy graphical user interface version of HyPhy (no longer developed, but still supporting many popular analyses) Mac OS X or Windows. Follow [these instructions](http://hyphy.org/w/index.php/Download) for download and installation.
