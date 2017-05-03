@@ -225,8 +225,8 @@
 
   <li>
     <a class=""
-      title="Resources" href="../../resources/" >
-      Resources
+      title="Resources and help" href="../../resources/" >
+      Resources and help
     </a>
 
     <!-- Expand active pages -->
@@ -414,7 +414,7 @@
       <article class="article">
         <div class="wrapper">
           <h1 id="methods-for-inferring-selection-pressure">Methods for Inferring Selection Pressure<a class="headerlink" href="#methods-for-inferring-selection-pressure" title="Permanent link">#</a></h1>
-<p>HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using the <em>dN/dS</em> metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow <a href="../../getting-started/#choosing-a-method-for-selection-inference">these guidelines</a>.</p>
+<p>HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using the <em>dN/dS</em> metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow <a href="../../getting-started/#characterizing-selective-pressures">these guidelines</a>.</p>
 <h2 id="absrel">aBSREL<a class="headerlink" href="#absrel" title="Permanent link">#</a></h2>
 <p>aBSREL (<strong>a</strong>daptive <strong>B</strong>ranch-<strong>S</strong>ite <strong>R</strong>andom <strong>E</strong>ffects <strong>L</strong>ikelihood) is an improved version of the commonly-used "branch-site" models, which are used to test if positive selection has occurred on a proportion of branches. As such, aBSREL models both site-level and branch-level <script type="math/tex">\omega</script>  heterogeneity. aBSREL, however, does not test for selection at specific sites. Instead, aBSREL will test, for each branch (or branch of interest) in the phylogeny, whether a proportion of sites have evolved under positive selection. </p>
 <p>aBSREL differs from other branch-site model implementations by inferring the optimal number of <script type="math/tex">\omega</script>  classes for each branch. For example, the earlier HyPhy branch-site approach (BS-REL) assumed three <script type="math/tex">\omega</script>  rate classes for each branch and assigned each site, with some probability, to one of these classes. aBSREL, by contrast, acknowledges that different branches may feature more or less complex evolutionary patterns and hence may be better modeled by more or fewer <script type="math/tex">\omega</script> classes. Specifically, aBSREL uses AIC<sub>c</sub> (small sample AIC) to infer the optimal number of <script type="math/tex">\omega</script> rate classes for each branch. </p>
