@@ -1,22 +1,27 @@
 ## Using HyPhy
 
-There are four ways to use HyPhy
+There are four ways to use HyPhy:
 
-### Easiest, supports most popular analyses
-Run HyPhy our accompanying webserver [Datamonkey](http://datamonkey.org), or the [development version of Datamonkey](http://test.datamonkey.org) for newer methods and a dramatically better user experience.
+### Run HyPhy on our accompanying Datamonkey webserver
+This option is the **easiest**, **supports most popular analyses**, and **does not require use of the command line**. Access Datamonkey [here](http://datamonkey.org), or see this [development version of Datamonkey](http://test.datamonkey.org) for newer methods and a dramatically better user experience.
 
-###Access All available analyses, pipelines, customization
-Run HyPhy from the command line on your local computer/server. Follow [these instructions](installation.md) for download and installation. 
+### Run HyPhy from the command line
+This option is the **most flexible** approach through which you can access **all available analyses and pipelines** as well as **customize** your own HyPhy analyses. Follow [these instructions](installation.md) for download and installation. 
 
-###Custom analyses without having to use the command line
-Run a legacy graphical user interface version of HyPhy (no longer developed, but still supporting many popular analyses) Mac OS X or Windows. Follow [these instructions](download.md) for download.
+### Run HyPhy custom analyses without the command line
+Run a legacy graphical user interface version of HyPhy (no longer developed, but still supporting many popular analyses) Mac OS X or Windows. Follow [these instructions](http://hyphy.org/w/index.php/Download) for download and installation.
  
-###Software/pipeline development
-Compile HyPhy as a library that can be accessed via Python, R, or other language bindings [these instructions](installation.md) for download and installation. 
+### Use HyPhy for software/pipeline development
+Compile HyPhy as a library that can be accessed via Python, R, or other language bindings. Follow [these instructions](installation.md) for download and installation. 
 
 ## Typical uses of HyPhy
 
-HyPhy ships with a library of **standard analyses** that implement about ~100 different methods from start to finish. HyPhy is most commonly used for **characterizing the evolutionary process**, e.g., detecting signatures of selection, estimating evolutionary rates, comparing different evolutionary models, or fitting custom models to sequence alignments.
+HyPhy ships with a library of **standard analyses** that implement ~100 different methods from start to finish. HyPhy is most commonly used for **characterizing the evolutionary process**, in particular:
+
++ Detecting signatures of selection
++ Estimating evolutionary rates
++ Comparing different evolutionary models
++ Fitting custom models to sequence alignments
 
 ## Characterizing selective pressures
 
