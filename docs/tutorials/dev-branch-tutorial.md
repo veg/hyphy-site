@@ -10,7 +10,7 @@ This tutorial outlines how to prepare data and execute analyses for use in the f
 * [BUSTED](../methods/selection-methods/#busted)
 * [FEL](../methods/selection-methods/#fel)
 
-Note that you can additional use these methods via [Datamonkey](http://test.datamonkey.org).
+Note that you can additional use these methods via [the development version of Datamonkey](http://test.datamonkey.org) (RELAX and BUSTED) or [the current version of Datamonkey](http://datamonkey.org) (FEL).
 
 
 If you do not have a dataset to work with, you might find it convenient to
@@ -20,11 +20,11 @@ download this [zip file](https://github.com/veg/hyphy-tutorials/blob/master/docs
 Installation
 ------------------------------------------------------------------
 
-> *Warning : This is for the development branch of HyPhy only!* 
+> *__CAUTION__* *: This is for the development branch of HyPhy only!* 
 
 
 ### Dependencies
-  - [cmake](https://cmake.org/download/) > 3.0
+  - [cmake > 3.0](https://cmake.org/download/)
 
 ### Commands
 

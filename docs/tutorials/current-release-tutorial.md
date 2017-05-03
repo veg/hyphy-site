@@ -7,7 +7,7 @@ These tutorials outline how to prepare data and execute analyses in HyPhy's suit
 __Before you begin__
 
 
-1. Install the current release of HyPhy on your computer, as needed, using [these instructions].
+1. Install the current release of HyPhy on your computer, as needed, using [these instructions](../installation.md).
 2. This tutorial employs example datasets, available for download as a  [zip file](https://github.com/veg/hyphy-tutorials/blob/master/docs/selection/data/files.zip?raw=true). Unpack this zip file on your machine for use and **remember the absolute path to this directory**.
 3. This tutorial assumes you are specifically using the HyPhy executable `HYPHYMP`. If you have installed a different executable (e.g. `HYPHYMPI`), you may need to alter some commands.
 4. This tutorial uses the interactive HyPhy menu prompt to perform analyses. If you wish to automate many analyses instead of using HyPhy interactively, see the section [Automating Analyses](./current-release-tutorial/#automating-analyses) for modified instructions.

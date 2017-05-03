@@ -2,7 +2,7 @@
 
 To download the Desktop/GUI version of HyPhy, follow instructions on this [download page](http://hyphy.org/w/index.php/Download). 
 
-> HyPhy GUI is no longer maintained, as we are moving to a JavaScript based front-end, and at this time we recommend using HyPhy either via [Datamonkey](http://datamonkey.org) or from the command line on your local computer/server. 
+> **NOTE**: The HyPhy GUI is no longer maintained and will be replaced in the near future with a JavaScript front-end. For those interested in a GUI experience, we recommend using HyPhy either via [Datamonkey](http://datamonkey.org) (for newer methods see [the development version of Datamonkey](http://test.datamonkey.org)) or from the command line on your local computer/server. 
 
 Alternatively, you may download an installer for the final prebuilt release of HyPhy (version 2.2.4) for your specific operating system using the appropriate link:
 
@@ -15,7 +15,7 @@ Alternatively, you may download an installer for the final prebuilt release of H
 > HyPhy depends on [CMake version 3 or later](https://cmake.org/) for its build system. Before installing HyPhy, please make sure that an appropriate version of *CMake* has been installed. Some HyPhy configurations also depends on other development libraries like *libcurl* and  *libpthread*. *Libcurl* requires development libraries such as  *crypto++* and  *openssl* (or  *gnutls* depending on your configuration). On Ubuntu these are  *libcurl-dev*,  *libcrypto++-dev* and  *libssl-dev*.
 
 
-**You can obtain HyPhy source in two ways**
+**You can obtain HyPhy source in two ways:**
 
 * Download a specific HyPhy release (we recommend the latest release) from [the HyPhy github repository](https://github.com/veg/hyphy/releases).
 * Download the master branch of HyPhy by cloning the repository by entering this command into a terminal session:
@@ -24,7 +24,11 @@ Alternatively, you may download an installer for the final prebuilt release of H
 git clone git@github.com:veg/hyphy.git
 ```
 
-**Development versions**
+Once you have downloaded HyPhy, follow these [installation instructions](./installation.md).
+
+### Development version
+
+> **Caution**: For advanced users only.
 
 The most recent (not necessarily stable, but containing the latest features) versions of HyPhy can be obtained by checking out the *v2.3-dev* branch, by entering this command into a terminal session before proceeding with the install process
 

@@ -1,6 +1,6 @@
 # Methods for Inferring Selection Pressure
 
-HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using the *dN/dS* metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow [these guidelines](../getting-started/#choosing-a-method-for-selection-inference).
+HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using the *dN/dS* metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow [these guidelines](../getting-started/#characterizing-selective-pressures).
 
 
 

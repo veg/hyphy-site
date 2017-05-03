@@ -8,18 +8,18 @@ HyPhy grew out of the collaboration between [Spencer Muse](http://www4.stat.ncsu
 
 ## Design philosophy
  
-HyPhy was designed to allow the specification and fitting of a very broad class of continuous time discrete space Markov models of sequence evolution. To implement these models, HyPhy provides its own scripting language - **HBL**, or **HyPhy Batch Language** (see [an example](#example-hbl-script)), which can be used to develop custom analyses or modify existing ones, but it is not necessary to learn or even be aware of it in order to use the package. This is because most common models and analyses have been implemented in a "push-button" type of analyses. Once the model is defined, it can be fitted to data (using a fixed tree), its parameters can be constrained in almost arbitrary ways to test various hypotheses (e.g. is rate1 > rate2), and simulate data from. While HyPhy by and large implements **maximum likelihood** methods, it can also be used to perform some forms of Bayesian inference (e.g. [FUBAR](/methods/selection-methods.md#fubar)), fit Bayesian Graphical Models to the data, run Genetic Algorithms to perform complex model selection, etc.
+HyPhy was designed to allow the specification and fitting of a broad class of continuous-time discrete-space Markov models of sequence evolution. To implement these models, HyPhy provides its own scripting language - **HBL**, or **HyPhy Batch Language** (see [an example](#example-hbl-script)), which can be used to develop custom analyses or modify existing ones. Importantly, it is not necessary to learn (or even be aware of) HBL in order to use HyPhy, as most common models and analyses have been implemented for user convenience. Once a model is defined, it can be fitted to data (using a fixed topology tree), its parameters can be constrained in user-defined ways to test various hypotheses (e.g. is rate1 > rate2), and simulate data from. HyPhy primarily implements **maximum likelihood** methods, but it can also be used to perform some forms of Bayesian inference (e.g. [FUBAR](/methods/selection-methods.md#fubar)), fit Bayesian graphical models to data, run genetic algorithms to perform complex model selection.
 
 ## Features
 
 1. Support for arbitrary sequence data, including nucleotide, amino-acid, codon, binary, count (microsattelite) data, including multiple partitions mixing differen data types. 
-2. Complex models of rate variation, including site-to-site, branch-to-branch, hidden markov model (autocorrelated rates), between/within partions, co-varion type models.
+2. Complex models of rate variation, including site-to-site, branch-to-branch, hidden markov model (autocorrelated rates), between/within partitions, and co-varion type models.
 3. Fast numerical fitting routines, supporting parallel and distributed execution.
-4. A very broad collection of pre-defined evolutionary models. 
-5. The ability to specify very flexible constraints on model parameters and estimate confidence intervals on MLEs.
+4. A broad collection of pre-defined evolutionary models. 
+5. The ability to specify flexible constraints on model parameters and estimate confidence intervals on MLEs.
 6. Ancestral sequence reconstruction and sampling. 
 7. Simulate data from any model that can be defined and fitted in the language.
-8. Apply unique (for this domain) machine learning methods to discover patterns in the data, e.g. genetic algorithms, stochastic context free grammars, Bayesian Graphical models.
+8. Apply unique (for this domain) machine learning methods to discover patterns in the data, e.g. genetic algorithms, stochastic context free grammars, Bayesian graphical models.
 9. Script analyses completely in HBL including flow control, I/O, parallelization, etc.
 10. (v2.3) Modern web-applications for interactive result visualization.
 
@@ -28,11 +28,11 @@ HyPhy was designed to allow the specification and fitting of a very broad class 
 ## Example HBL Script
 ```js
 /* 
-   This is an example HY-PHY Batch File.
-   It reads in a MEGA format nucleotide dataset from data/hiv.nuc 
-   and fits the F81 model using the tree inclded in the file usig maximum likelihood
+   This is an example HYPHY Batch File.
+   It reads in a MEGA format nucleotide dataset from data/hiv.nuc.
+   and fits the F81 model using the tree inclded in the file using maximum likelihood.
    Output is printed out as a Newick Style tree with branch lengths
-   representing the number of expected substitutions per branch
+   representing the number of expected substitutions per branch.
 */
 
 // 1. Read in the data and store the result in a DataSet variable

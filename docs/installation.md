@@ -2,9 +2,8 @@
 Installation
 ===========
 
-> Before continuing, please download and consider registering before using HyPhy.
+> Before continuing, please [register and download HyPhy](register/).
 
-> [Download](register/)
 
 **Once downloaded, install HyPhy as follows:**
 
@@ -20,7 +19,7 @@ Installation
 
             cmake -DINSTALL_PREFIX=/location/of/choice .
     
-	* If you prefer to use other build systems [supported by *CMake*](https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html), such as *XCode*, configure HyPhy using the generator (`-G`) switch:
+	* If you prefer to use other build systems [supported by CMake](https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html), such as *XCode*, configure HyPhy using the generator (`-G`) switch:
     
             cmake -G Xcode .
 

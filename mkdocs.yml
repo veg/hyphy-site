@@ -49,7 +49,7 @@ pages:
   - Installation: 'installation.md'
   - Getting Started : 'getting-started.md'
 #  - Glossary: 'glossary.md'
-  - Resources : 'resources.md'
+  - Resources and help: 'resources.md'
   - Methods:
     - General Information : 'methods/general.md'
     - Selection : 'methods/selection-methods.md'
