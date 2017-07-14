@@ -105,7 +105,41 @@ For each site, MEME infers two $\omega$ rate classes and corresponding weights r
 
 **If you use MEME in your analysis, please cite the following:** [`Murrell, B et al. "Detecting individual sites subject to episodic diversifying selection." PLoS Genetics 8, e1002764 (2012).`](http://dx.doi.org/10.1371/journal.pgen.1002764)
 
+<!--------------------------------------------------------------------------------------->
 
+## PRIME
+
+Protein evolution models are typically based on estimates of amino acid
+exchangeabilities, e.g. as quantified in the BLOSUM substitution matrices which
+are still commonly used today. These models derive their power from the fact
+that radical substitutions – involving amino acids with very different
+physico-chemical properties – are generally rare, while conservative
+substitutions – involving similar amino acids – are more common. However, more
+recent studies have shown that amino acid exchangeabilities vary across
+organisms and across genes, reflecting the fact that the set of relevant
+physico-chemical properties changes from case to case, so that the same
+substitution may sometimes be radical (having a large effect on protein
+structure and/or function) and sometimes conservative (having little effect on
+structure or function). This variation can be expected from site to site within
+a protein: for instance, amino acids with different hydrophobicity may be
+unexchangeable at sites where the protein fold is sensitive to hydrophobicity
+but exchangeable at sites where it is not. PRIME(*PR*operty *I*nformed *M*odels
+of *E*volution) models were designed to take account of this variation.
+
+PRIME currently supports two predefined sets of 5 amino-acid properties: the
+five empirically measured properties used by [Conant et
+al.](http://dx.doi.org/10.1016/j.ympev.2006.07.006)  and the five composite
+properties proposed by [Atchley et
+al.](http://www.pnas.org/content/102/18/6395). The latter were obtained by
+applying a dimensionality reduction technique based on factor analysis to a
+large set of 494 empirically measured attributes.
+
+### Property interpretation
+
+| Property  | 1 | 2 | 3 | 4 | 5 |
+|-----------|---|---|---|---|---|
+| Conant-Stadler et al. | Chemical Composition | Polarity | Volume | Iso-electric point | Hydropathy |
+| Atchley et al. | Polarity index |  Secondary structurefactor | Volume | Refractivity/Heat Capacity | Charge/ Iso-electric point |
 
 <!--------------------------------------------------------------------------------------->
 ## RELAX
