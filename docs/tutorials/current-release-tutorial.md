@@ -493,7 +493,7 @@ This final SLAC results file will have several columns, where rows are ordered a
 <!---------------------------------------------------------------------------------------------------->
 ## Use RELAX to compare selective pressures on different parts of the tree
 
->[RELAX](../methods/selection/#relax) is a method described in [Wertheim et al](http://www.ncbi.nlm.nih.gov/pubmed/25540451). It is based on the [BS-REL model](http://www.ncbi.nlm.nih.gov/pubmed/21670087) branch site framework, but the tree is partitioned (a priori) into non-overlapping sets of branches, and the separate distributions of &omega; are fitted to each set and compared for relative _relaxation_ (&omega; values contract to 1) or _intensification_ (&omega; values move away from 1).
+>[RELAX](../methods/selection-methods/#relax) is a method described in [Wertheim et al](http://www.ncbi.nlm.nih.gov/pubmed/25540451). It is based on the [BS-REL model](http://www.ncbi.nlm.nih.gov/pubmed/21670087) branch site framework, but the tree is partitioned (a priori) into non-overlapping sets of branches, and the separate distributions of &omega; are fitted to each set and compared for relative _relaxation_ (&omega; values contract to 1) or _intensification_ (&omega; values move away from 1).
 
 For this example, we will run RELAX on the dataset `HIV.nex`, which includes partial clonal HIV-1 env sequences from epidemiologically linked partners (source/donor and recipient). We will specifically test if natural selection in the recipient (`R` branches) and in the source/donor (`D` branches) operate at different intensities. Importantly, this analysis will **not** use the tree provided in `HIV.nex`, but instead a different tree available in the example file `HIV-relax.nwk`. This file contains a newick phylogeny whose branches have been annotated as either `{Recipient}` or `{Donor}`. These labels were applied using this web-based [phylotree widget](http://veg.github.io/phylotree.js/).
 
@@ -506,7 +506,7 @@ For this example, we will run RELAX on the dataset `HIV.nex`, which includes par
     6. Enter the **absolute path** to the newick tree file which has been annotated for use in RELAX: `/path/to/downloaded/example/files/HIV-relax.nwk`.
     7. Enter `3` to select the branches labeled `Recipient` as your test set of branches ("T set").
     8. Enter `2` to select the branches labeled `Donor` as your reference set of branches ("R set").
-    9. Enter `2` to execute only the `Minimal` analysis type. Note that entering `1` for `All` tests will additionally run additional descriptive models described [here](../methods/selection/#relax).
+    9. Enter `2` to execute only the `Minimal` analysis type. Note that entering `1` for `All` tests will additionally run additional descriptive models described [here](../methods/selection-methods/#relax).
 2. RELAX will now begin to run and output information to the screen as it proceeds to completion:
         
         [RELAX] Obtaining branch lengths under the GTR model 
