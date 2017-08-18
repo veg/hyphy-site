@@ -35,3 +35,4 @@ mkdocs_material.egg-info
 
 # Stop tracking site
 site/**
+site/
