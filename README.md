@@ -8,4 +8,4 @@
 * `mkdocs serve`
 
 ### To push to the Github Page
-`git subtree push --prefix site origin gh-pages`
+`mkdocs gh-deploy`
