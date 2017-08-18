@@ -936,7 +936,7 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
 
 <h2 id="use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree">Use RELAX to compare selective pressures on different parts of the tree<a class="headerlink" href="#use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree" title="Permanent link">#</a></h2>
 <blockquote>
-<p><a href="../../methods/selection/#relax">RELAX</a> is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25540451">Wertheim et al</a>. It is based on the <a href="http://www.ncbi.nlm.nih.gov/pubmed/21670087">BS-REL model</a> branch site framework, but the tree is partitioned (a priori) into non-overlapping sets of branches, and the separate distributions of &omega; are fitted to each set and compared for relative <em>relaxation</em> (&omega; values contract to 1) or <em>intensification</em> (&omega; values move away from 1).</p>
+<p><a href="../../methods/selection-methods/#relax">RELAX</a> is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25540451">Wertheim et al</a>. It is based on the <a href="http://www.ncbi.nlm.nih.gov/pubmed/21670087">BS-REL model</a> branch site framework, but the tree is partitioned (a priori) into non-overlapping sets of branches, and the separate distributions of &omega; are fitted to each set and compared for relative <em>relaxation</em> (&omega; values contract to 1) or <em>intensification</em> (&omega; values move away from 1).</p>
 </blockquote>
 <p>For this example, we will run RELAX on the dataset <code>HIV.nex</code>, which includes partial clonal HIV-1 env sequences from epidemiologically linked partners (source/donor and recipient). We will specifically test if natural selection in the recipient (<code>R</code> branches) and in the source/donor (<code>D</code> branches) operate at different intensities. Importantly, this analysis will <strong>not</strong> use the tree provided in <code>HIV.nex</code>, but instead a different tree available in the example file <code>HIV-relax.nwk</code>. This file contains a newick phylogeny whose branches have been annotated as either <code>{Recipient}</code> or <code>{Donor}</code>. These labels were applied using this web-based <a href="http://veg.github.io/phylotree.js/">phylotree widget</a>.</p>
 <ol>
@@ -949,7 +949,7 @@ Codon   Prob[dN/dS&gt;1]   EBF[dN/dS]&gt;1    PSRF    N_eff
 <li>Enter the <strong>absolute path</strong> to the newick tree file which has been annotated for use in RELAX: <code>/path/to/downloaded/example/files/HIV-relax.nwk</code>.</li>
 <li>Enter <code>3</code> to select the branches labeled <code>Recipient</code> as your test set of branches ("T set").</li>
 <li>Enter <code>2</code> to select the branches labeled <code>Donor</code> as your reference set of branches ("R set").</li>
-<li>Enter <code>2</code> to execute only the <code>Minimal</code> analysis type. Note that entering <code>1</code> for <code>All</code> tests will additionally run additional descriptive models described <a href="../../methods/selection/#relax">here</a>.</li>
+<li>Enter <code>2</code> to execute only the <code>Minimal</code> analysis type. Note that entering <code>1</code> for <code>All</code> tests will additionally run additional descriptive models described <a href="../../methods/selection-methods/#relax">here</a>.</li>
 </ol>
 </li>
 <li>
