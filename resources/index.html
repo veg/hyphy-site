@@ -244,6 +244,26 @@
 
       <!-- Render anchors of active page -->
       
+        <ul>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="General" href="#general">
+                General
+              </a>
+            </li>
+          
+
+            <!-- Render anchor -->
+            <li class="anchor">
+              <a title="Labeling branches with phylotree" href="#labeling-branches-with-phylotree">
+                Labeling branches with phylotree
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -346,6 +366,7 @@
       <article class="article">
         <div class="wrapper">
           <h1 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">#</a></h1>
+<h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">#</a></h3>
 <ul>
 <li>
 <p><a href="../tutorials/current-release-tutorial">Tutorials</a> for using HyPhy to infer selection with various methods. Detailed descriptions of these methods are available <a href="../getting-started/#choosing-a-method-for-selection-inference">here</a>.</p>
@@ -368,6 +389,30 @@ coding sequences (2007)</a></li>
 </ul>
 </li>
 </ul>
+<h3 id="labeling-branches-with-phylotree">Labeling branches with phylotree<a class="headerlink" href="#labeling-branches-with-phylotree" title="Permanent link">#</a></h3>
+<p>Labeling phylogenies is critical for branch-level analyses such as RELAX and BUSTED. These instructions detail the most basic usage of the <a href="http://veg.github.io/phylotree.js/">phylotree.js</a> widget's branch labeling functionality. </p>
+<ol>
+<li>Upload your phylogeny.<ul>
+<li>Click the <code>Newick</code> dropdown menu at the top left of the site and choose your newick-formatted phylogeny to upload. Once uploaded, the phylogeny will load in the widget for labeling and/or manipulation.</li>
+</ul>
+</li>
+<li>In the text box next to the <code>Tag</code> dropdown menu, create all of your labels <strong>before selecting/highlighting any branches</strong>. <ul>
+<li>By default, the first label will always be named <em>Foreground</em>. This can be renamed with <code>Tag-&gt;Rename selection set</code> as desired. Be sure to click <code>Save</code> when finished renaming!</li>
+<li>To additional more labels, click <code>Tag-&gt;New selection set</code>. Each new selection set will be named, by default, <em>new_selection_name</em>. You can change this name now by directly typing the new name into the text field next to the <code>Tag</code> button. Again, click <code>Save</code> when finished renaming.</li>
+</ul>
+</li>
+<li>
+<p>After all labels have been created, they will be visible in differently-colored text under the <code>Tag</code> dropdown menu. To select branches for a label, follow these steps:</p>
+<ul>
+<li>Click the label of interest in the <code>Tag</code> dropdown menu. The name of your chosen label will now be shown in the text box to the right of <code>Tag</code>. </li>
+<li>Highlight and select any branches for this label. </li>
+<li>When finished, navigate back to <code>Tag</code> to select the next label of interest, and select branches accordingly. Proceed until all selections are complete.</li>
+</ul>
+</li>
+<li>
+<p>Export your labeled phylogeny by clicking the <code>Newick</code> dropdown menu and then <code>Export</code>. A text box with your labeled newick tree will appear. Copy and paste this newick tree as needed.</p>
+</li>
+</ol>
           
             <footer class="footer">
               <div class="container citation-footer">
