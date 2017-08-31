@@ -26,13 +26,15 @@ git clone git@github.com:veg/hyphy.git
 
 Once you have downloaded HyPhy, follow these [installation instructions](./installation.md).
 
-### Development version
+### Developmental versions
 
 > **Caution**: For advanced users only.
 
-The most recent (not necessarily stable, but containing the latest features) versions of HyPhy can be obtained by checking out the *v2.3-dev* branch, by entering this command into a terminal session before proceeding with the install process
+The most recent (not necessarily stable, but containing the latest features) versions of HyPhy can be obtained by checking out the current (working) development branch, by entering this command into a terminal session before proceeding with the install process
 
-		git checkout v2.3-dev
+		git branch
+		#select the branch that has the x.x.x-dev name 
+		git checkout x.x.x-dev
         
     
 
