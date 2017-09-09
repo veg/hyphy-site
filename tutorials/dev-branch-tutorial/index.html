@@ -9,8 +9,10 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>v2.3 Quick Start - HyPhy - Hypothesis Testing using Phylogenies</title>
+        <title>HyPhy - Hypothesis Testing using Phylogenies - Information, documentation, and news about the HyPhy software package</title>
       
+      
+        <meta name="description" content="Information, documentation, and news about the HyPhy software package">
       
       
         <link rel="canonical" href="http://veg.github.io/hyphy-site/tutorials/dev-branch-tutorial/">
@@ -29,8 +31,8 @@
       <link rel="apple-touch-icon" href="../../images/logo.svg">
     
     
-    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ base_url }}/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ base_url }}/img/favicon.ico">
     <style>
       @font-face {
       	font-family: 'Icon';
@@ -273,6 +275,40 @@
 
 
       
+        <!-- Render sections -->
+
+  <li>
+    <span class="section">Other</span>
+    <ul>
+
+      <!-- Render pages of section -->
+      
+        <!-- Render sections -->
+
+
+  <li>
+    <a class=""
+      title="Evolutionary hypothesis testing" href="../../methods/other/evo/" >
+      Evolutionary hypothesis testing
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+
+      
+        <!-- Render sections -->
+
+
+
+      
+    </ul>
+  </li>
+
+<!-- Render page link -->
+
+      
     </ul>
   </li>
 
@@ -330,35 +366,43 @@
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Installation" href="#installation">
-                Installation
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="Installation" href="#installation">
+                    Installation
+                  </a>
+                </li>
+            
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Use RELAX to compare selective pressures on different parts of the tree" href="#use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree">
-                Use RELAX to compare selective pressures on different parts of the tree
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="Use RELAX to compare selective pressures on different parts of the tree" href="#use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree">
+                    Use RELAX to compare selective pressures on different parts of the tree
+                  </a>
+                </li>
+            
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Use BUSTED to test for alignment-wide episodic diversification" href="#use-busted-to-test-for-alignment-wide-episodic-diversification">
-                Use BUSTED to test for alignment-wide episodic diversification
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="Use BUSTED to test for alignment-wide episodic diversification" href="#use-busted-to-test-for-alignment-wide-episodic-diversification">
+                    Use BUSTED to test for alignment-wide episodic diversification
+                  </a>
+                </li>
+            
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="FEL - Fixed Effects Model for detecting site-wise selective pressure" href="#fel-fixed-effects-model-for-detecting-site-wise-selective-pressure">
-                FEL - Fixed Effects Model for detecting site-wise selective pressure
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="FEL - Fixed Effects Model for detecting site-wise selective pressure" href="#fel-fixed-effects-model-for-detecting-site-wise-selective-pressure">
+                    FEL - Fixed Effects Model for detecting site-wise selective pressure
+                  </a>
+                </li>
+            
           
         </ul>
       
@@ -397,31 +441,29 @@ download this <a href="https://github.com/veg/hyphy-tutorials/blob/master/docs/s
 <hr />
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h2>
 <blockquote>
-<p><em><strong>CAUTION</strong></em> <em>: This is for the development branch of HyPhy only!</em> </p>
+<p><em><strong>CAUTION</strong></em> <em>: This is for the development branch of HyPhy only!</em></p>
 </blockquote>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">#</a></h3>
 <ul>
 <li><a href="https://cmake.org/download/">cmake &gt; 3.0</a></li>
 </ul>
 <h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h3>
-<p>Build the development branch of HyPhy on your system by issuing the following commands. </p>
-<div class="code"><pre><span></span>git clone https://github.com/veg/hyphy.git
+<p>Build the development branch of HyPhy on your system by issuing the following commands.</p>
+<pre class="code"><code>git clone https://github.com/veg/hyphy.git
 cd hyphy
 git checkout v2.3-dev
 cmake .       # Requires version &gt; 3.0
 make MP      # openMP should be installed in your system for optimal performance
-# For faster make, try &quot;make -j MP&quot;. 
-</pre></div>
+# For faster make, try &quot;make -j MP&quot;.</code></pre>
 
 
 <p><em>Do not run</em> <code>make install</code> as you will encounter conflicts with any other HyPhy versions installed in your system.</p>
 <p>Check that the HyPhy build was successful using the following command <strong>issued from the</strong> <code>hyphy/</code> <strong>directory</strong>:</p>
-<div class="code"><pre><span></span>./HYPHYMP LIBPATH=`pwd`/res ./tests/hbltests/libv3/math.bf
-</pre></div>
+<pre class="code"><code>./HYPHYMP LIBPATH=`pwd`/res ./tests/hbltests/libv3/math.bf</code></pre>
 
 
 <p>If HyPhy is working correctly, you should see the following output:</p>
-<div class="code"><pre><span></span>{
+<pre class="code"><code>{
  &quot;Count&quot;:4,
  &quot;Mean&quot;:2.25,
  &quot;Median&quot;:2,
@@ -437,14 +479,13 @@ make MP      # openMP should be installed in your system for optimal performance
  &quot;Kurtosis&quot;:2.096952908587258,
  &quot;Sq. sum&quot;:18,
  &quot;Non-negative&quot;:4
-}
-</pre></div>
+}</code></pre>
 
 
 <p>Note that all examples below will assume that a tree has <strong>not</strong> been defined within your dataset (e.g. FASTA or NEXUS) file. If you opt to use a data file that contains a tree, some of the prompts may change. Specifically, you will not need to provide HyPhy with a separate file containing a tree, but you will have to confirm that HyPhy should use the provided tree.</p>
 <h2 id="use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree">Use RELAX to compare selective pressures on different parts of the tree<a class="headerlink" href="#use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree" title="Permanent link">#</a></h2>
 <blockquote>
-<p>RELAX is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25540451">Wertheim et al</a>. It is based on the <a href="http://www.ncbi.nlm.nih.gov/pubmed/21670087">BS-REL model</a> branch site framework, but the tree is partitioned (a priori) into non-overlapping sets of branches. Separate distributions of <script type="math/tex">\omega</script> are fitted to each set and compared for relative <em>relaxation</em> (<script type="math/tex">\omega</script> values contract to 1) or <em>intensification</em> (<script type="math/tex">\omega</script> values move away from 1) of selection pressure. </p>
+<p>RELAX is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25540451">Wertheim et al</a>. It is based on the <a href="http://www.ncbi.nlm.nih.gov/pubmed/21670087">BS-REL model</a> branch site framework, but the tree is partitioned (a priori) into non-overlapping sets of branches. Separate distributions of <script type="math/tex">\omega</script> are fitted to each set and compared for relative <em>relaxation</em> (<script type="math/tex">\omega</script> values contract to 1) or <em>intensification</em> (<script type="math/tex">\omega</script> values move away from 1) of selection pressure.</p>
 </blockquote>
 <p>Note that you can use RELAX via <a href="http://test.datamonkey.org/relax">Datamonkey</a>, you can or follow <a href="../current-release-tutorial/#use-relax-to-compare-selective-pressures-on-different-parts-of-the-tree">this tutorial</a> to use RELAX in the current version of HyPhy. Otherwise, follow these directions to run RELAX in the development branch of HyPhy:</p>
 <ol>
@@ -454,15 +495,13 @@ make MP      # openMP should be installed in your system for optimal performance
 </li>
 <li>
 <p>Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. <em>From within this directory</em>, issue the following command to run RELAX and respond to the prompts. Be sure to provide <strong>absolute paths</strong> for all file names prompted.</p>
-<div class="code"><pre><span></span>./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
-</pre></div>
+<pre class="code"><code>./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/RELAX.bf</code></pre>
 
 
 </li>
 <li>
 <p>Alternatively, you can pipe the arguments directly into the HyPhy call to RELAX.</p>
-<div class="code"><pre><span></span>./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
-</pre></div>
+<pre class="code"><code>./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/RELAX.bf</code></pre>
 
 
 <ul>
@@ -481,30 +520,28 @@ make MP      # openMP should be installed in your system for optimal performance
 </li>
 <li>
 <p>Once the RELAX job is completed, there will be a file that is generated in the
-same directory as the sequence file named <code>&lt;sequence-file&gt;.RELAX.json</code>. The file is standard JSON, and can be parsed with any programming language. You can also visualize, explore, and obtain plots from this JSON file using the <a href="http://veg.github.io/hyphy-vision/pages/relax/">HyPhy Vision web application</a>. </p>
+same directory as the sequence file named <code>&lt;sequence-file&gt;.RELAX.json</code>. The file is standard JSON, and can be parsed with any programming language. You can also visualize, explore, and obtain plots from this JSON file using the <a href="http://veg.github.io/hyphy-vision/pages/relax/">HyPhy Vision web application</a>.</p>
 </li>
 </ol>
 <h2 id="use-busted-to-test-for-alignment-wide-episodic-diversification">Use BUSTED to test for alignment-wide episodic diversification<a class="headerlink" href="#use-busted-to-test-for-alignment-wide-episodic-diversification" title="Permanent link">#</a></h2>
 <blockquote>
-<p><a href="../../methods/selection-methods/#busted">BUSTED</a> is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25701167">Murrell et al</a>. It has been extensively tested and shows better power and accuracy than either <a href="http://mbe.oxfordjournals.org/content/24/5/1219.short">"branch-site" models in PAML</a>, or the <a href="http://mbe.oxfordjournals.org/content/early/2013/10/16/molbev.mst198">"covarion" style models</a>. </p>
+<p><a href="../../methods/selection-methods/#busted">BUSTED</a> is a method described in <a href="http://www.ncbi.nlm.nih.gov/pubmed/25701167">Murrell et al</a>. It has been extensively tested and shows better power and accuracy than either <a href="http://mbe.oxfordjournals.org/content/24/5/1219.short">"branch-site" models in PAML</a>, or the <a href="http://mbe.oxfordjournals.org/content/early/2013/10/16/molbev.mst198">"covarion" style models</a>.</p>
 </blockquote>
 <p>Note that you can use BUSTED via <a href="http://test.datamonkey.org/busted">Datamonkey</a>, you can or follow <a href="../current-release-tutorial/#use-busted-to-test-for-alignment-wide-episodic-diversification">this tutorial</a> to use BUSTED in the current version of HyPhy. Otherwise, follow these directions to run BUSTED in the development branch of HyPhy:</p>
 <ol>
 <li>
 <p>If you would like to use BUSTED to test specific foreground branches for episodic selection, you must prepare your newick phylogeny with annotated branches. To accomplish this, we recommend using the web-based <a href="http://veg.github.io/phylotree.js/">phylotree widget</a>, as demonstrated below. Export and save this annotated tree for use in BUSTED. Alternatively, you can analyze the entire tree for episodic diversification, in which case branch annotation is not needed and a "regular" newick tree will be fine.</p>
-<p><img alt="busted-selection" src="../rsrc/busted.gif" /> </p>
+<p><img alt="busted-selection" src="../rsrc/busted.gif" /></p>
 </li>
 <li>
 <p>Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. <em>From within this directory</em>, issue the following command to run BUSTED and respond to the prompts. Be sure to provide <strong>absolute paths</strong> for all file names prompted.</p>
-<div class="code"><pre><span></span>./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/BUSTED.bf
-</pre></div>
+<pre class="code"><code>./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/BUSTED.bf</code></pre>
 
 
 </li>
 <li>
 <p>Alternatively, you can pipe the arguments directly into the HyPhy call to BUSTED. Note that, as written, this command will instruct BUSTED to consider all branches as foreground:</p>
-<div class="code"><pre><span></span>(echo 1; echo &lt;path to sequence file&gt;; echo &lt;path to tree file&gt;; echo 4; echo d) | ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
-</pre></div>
+<pre class="code"><code>(echo 1; echo &lt;path to sequence file&gt;; echo &lt;path to tree file&gt;; echo 4; echo d) | ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/RELAX.bf</code></pre>
 
 
 <ul>
@@ -522,7 +559,7 @@ same directory as the sequence file named <code>&lt;sequence-file&gt;.RELAX.json
 </li>
 </ol>
 <p>Once the BUSTED job is completed, there will be a file that is generated in the
-same directory as the sequence file named <code>&lt;sequence-file&gt;.BUSTED.json</code>. The file is standard JSON, and can be parsed with any programming language. You can also visualize, explore, and obtain plots from this JSON file using the <a href="http://veg.github.io/hyphy-vision/pages/busted/">HyPhy Vision web application</a>. </p>
+same directory as the sequence file named <code>&lt;sequence-file&gt;.BUSTED.json</code>. The file is standard JSON, and can be parsed with any programming language. You can also visualize, explore, and obtain plots from this JSON file using the <a href="http://veg.github.io/hyphy-vision/pages/busted/">HyPhy Vision web application</a>.</p>
 <h2 id="fel-fixed-effects-model-for-detecting-site-wise-selective-pressure">FEL - Fixed Effects Model for detecting site-wise selective pressure<a class="headerlink" href="#fel-fixed-effects-model-for-detecting-site-wise-selective-pressure" title="Permanent link">#</a></h2>
 <hr />
 <blockquote>
@@ -537,15 +574,13 @@ pervasive diversification or conservation.</p>
 <ol>
 <li>
 <p>Launch a terminal session and navigate to the directory where you have compiled the development version of HyPhy. <em>From within this directory</em>, issue the following command to run BUSTED and respond to the prompts. Be sure to provide <strong>absolute paths</strong> for all file names prompted.</p>
-<div class="code"><pre><span></span>./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/FEL.bf
-</pre></div>
+<pre class="code"><code>./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/FEL.bf</code></pre>
 
 
 </li>
 <li>
 <p>Alternatively, you can pipe the arguments directly into the HyPhy call to BUSTED. Note that, as written, this command will instruct BUSTED to consider all branches as foreground:</p>
-<div class="code"><pre><span></span>(echo 1; echo &lt;path to sequence file&gt;; echo &lt;path to tree file&gt;; echo 1; echo 0.1) | ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/FEL.bf
-</pre></div>
+<pre class="code"><code>(echo 1; echo &lt;path to sequence file&gt;; echo &lt;path to tree file&gt;; echo 1; echo 0.1) | ./HYPHYMP LIBPATH=`pwd`/res res/TemplateBatchFiles/SelectionAnalyses/FEL.bf</code></pre>
 
 
 <ul>
@@ -562,31 +597,96 @@ pervasive diversification or conservation.</p>
 </ul>
 </li>
 <li>
-<p>FEL will now run to completion. While running, it will print out a table of site-specific inferences specifically for those sounds found to be under selection (either negative or positive):</p>
-<div class="code"><pre><span></span><span class="p">|</span>     <span class="nv">Codon</span>      <span class="p">|</span>   <span class="nv">Partition</span>    <span class="p">|</span>     <span class="s s-Atom">alpha</span>      <span class="p">|</span>      <span class="s s-Atom">beta</span>      <span class="p">|</span>      <span class="nv">LRT</span>       <span class="p">|</span><span class="nv">Selection</span> <span class="s s-Atom">detected?</span><span class="p">|</span>
-<span class="p">|:-</span><span class="s s-Atom">-------------:</span><span class="p">|:-</span><span class="s s-Atom">-------------:</span><span class="p">|:-</span><span class="s s-Atom">-------------:</span><span class="p">|:-</span><span class="s s-Atom">-------------:</span><span class="p">|:-</span><span class="s s-Atom">-------------:</span><span class="p">|:-</span><span class="s s-Atom">----------------:</span><span class="p">|</span>
-<span class="p">|</span>       <span class="mi">12</span>       <span class="p">|</span>       <span class="mi">1</span>        <span class="p">|</span>       <span class="mf">10.917</span>   <span class="p">|</span>        <span class="mf">0.000</span>   <span class="p">|</span>        <span class="mf">2.931</span>   <span class="p">|</span>  <span class="nv">Neg</span><span class="p">.</span> <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mf">0.0869</span>  <span class="p">|</span>
-<span class="p">|</span>       <span class="mi">18</span>       <span class="p">|</span>       <span class="mi">1</span>        <span class="p">|</span>       <span class="mf">54.146</span>   <span class="p">|</span>        <span class="mf">0.000</span>   <span class="p">|</span>        <span class="mf">8.159</span>   <span class="p">|</span>  <span class="nv">Neg</span><span class="p">.</span> <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mf">0.0043</span>  <span class="p">|</span>
-<span class="p">|</span>       <span class="mi">20</span>       <span class="p">|</span>       <span class="mi">1</span>        <span class="p">|</span>       <span class="mf">25.068</span>   <span class="p">|</span>        <span class="mf">0.000</span>   <span class="p">|</span>        <span class="mf">2.827</span>   <span class="p">|</span>  <span class="nv">Neg</span><span class="p">.</span> <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mf">0.0927</span>  <span class="p">|</span>
-<span class="p">|</span>       <span class="mi">88</span>       <span class="p">|</span>       <span class="mi">1</span>        <span class="p">|</span>       <span class="mf">37.678</span>   <span class="p">|</span>        <span class="mf">0.000</span>   <span class="p">|</span>        <span class="mf">4.004</span>   <span class="p">|</span>  <span class="nv">Neg</span><span class="p">.</span> <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mf">0.0454</span>  <span class="p">|</span>
-<span class="p">|</span>       <span class="mi">93</span>       <span class="p">|</span>       <span class="mi">1</span>        <span class="p">|</span>       <span class="mf">26.041</span>   <span class="p">|</span>        <span class="mf">0.000</span>   <span class="p">|</span>        <span class="mf">3.142</span>   <span class="p">|</span>  <span class="nv">Neg</span><span class="p">.</span> <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mf">0.0763</span>  <span class="p">|</span>
-<span class="p">|</span>      <span class="mi">101</span>       <span class="p">|</span>       <span class="mi">1</span>        <span class="p">|</span>        <span class="mf">9.866</span>   <span class="p">|</span>        <span class="mf">0.000</span>   <span class="p">|</span>        <span class="mf">2.894</span>   <span class="p">|</span>  <span class="nv">Neg</span><span class="p">.</span> <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mf">0.0889</span>  <span class="p">|</span>
-<span class="p">|</span>      <span class="mi">134</span>       <span class="p">|</span>       <span class="mi">1</span>        <span class="p">|</span>       <span class="mf">25.423</span>   <span class="p">|</span>        <span class="mf">0.000</span>   <span class="p">|</span>        <span class="mf">3.949</span>   <span class="p">|</span>  <span class="nv">Neg</span><span class="p">.</span> <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mf">0.0469</span>  <span class="p">|</span>
-<span class="p">|</span>      <span class="mi">159</span>       <span class="p">|</span>       <span class="mi">1</span>        <span class="p">|</span>       <span class="mf">23.622</span>   <span class="p">|</span>        <span class="mf">0.000</span>   <span class="p">|</span>        <span class="mf">3.895</span>   <span class="p">|</span>  <span class="nv">Neg</span><span class="p">.</span> <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mf">0.0484</span>  <span class="p">|</span>
-</pre></div>
-
-
-<p>These columns are as follows:</p>
-<ul>
-<li><code>Codon</code>: The codon site. </li>
+<p>FEL will now run to completion. While running, it will print out a table of site-specific inferences specifically for those sounds found to be under selection (either negative or positive), with
+the following columns</p>
+<ol>
+<li><code>Codon</code>: The codon site.</li>
 <li><code>Partition</code>: The partition for this codon. If the analysis was not partitioned, all codons are in partition 1.</li>
-<li><code>alpha</code>: The estimated <em>dS</em> parameter at this site. </li>
-<li><code>beta</code>: The estimated <em>dN</em> parameter at this site. </li>
+<li><code>alpha</code>: The estimated <em>dS</em> parameter at this site.</li>
+<li><code>beta</code>: The estimated <em>dN</em> parameter at this site.</li>
 <li><code>LRT</code>: The likelihood ratio test statistic for comparing null and alternative models to test for selection.</li>
 <li><code>Selection Detected?</code>: Indicates whether this site shows evidence for negative (<code>Neg.</code>) or positive (<code>Pos.</code>) selection and the associated p-value.</li>
-</ul>
+</ol>
 </li>
 </ol>
+<table>
+<thead>
+<tr>
+<th align="center">Codon</th>
+<th align="center">Partition</th>
+<th align="center">alpha</th>
+<th align="center">beta</th>
+<th align="center">LRT</th>
+<th align="center">Selection detected?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">12</td>
+<td align="center">1</td>
+<td align="center">10.917</td>
+<td align="center">0.000</td>
+<td align="center">2.931</td>
+<td align="center">Neg. p = 0.0869</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">1</td>
+<td align="center">54.146</td>
+<td align="center">0.000</td>
+<td align="center">8.159</td>
+<td align="center">Neg. p = 0.0043</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">25.068</td>
+<td align="center">0.000</td>
+<td align="center">2.827</td>
+<td align="center">Neg. p = 0.0927</td>
+</tr>
+<tr>
+<td align="center">88</td>
+<td align="center">1</td>
+<td align="center">37.678</td>
+<td align="center">0.000</td>
+<td align="center">4.004</td>
+<td align="center">Neg. p = 0.0454</td>
+</tr>
+<tr>
+<td align="center">93</td>
+<td align="center">1</td>
+<td align="center">26.041</td>
+<td align="center">0.000</td>
+<td align="center">3.142</td>
+<td align="center">Neg. p = 0.0763</td>
+</tr>
+<tr>
+<td align="center">101</td>
+<td align="center">1</td>
+<td align="center">9.866</td>
+<td align="center">0.000</td>
+<td align="center">2.894</td>
+<td align="center">Neg. p = 0.0889</td>
+</tr>
+<tr>
+<td align="center">134</td>
+<td align="center">1</td>
+<td align="center">25.423</td>
+<td align="center">0.000</td>
+<td align="center">3.949</td>
+<td align="center">Neg. p = 0.0469</td>
+</tr>
+<tr>
+<td align="center">159</td>
+<td align="center">1</td>
+<td align="center">23.622</td>
+<td align="center">0.000</td>
+<td align="center">3.895</td>
+<td align="center">Neg. p = 0.0484</td>
+</tr>
+</tbody>
+</table>
 <p>Once the FEL job is completed, there will be a file that is generated in the
 same directory as the sequence file named <code>&lt;sequence-file&gt;.fel.json</code>. The file is standard JSON, and can be parsed with any programming language. Currently it is not possible to explore this JSON with HyPhy Vision although this functionality is expected soon.</p>
           

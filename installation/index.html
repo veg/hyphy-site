@@ -9,8 +9,10 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Installation - HyPhy - Hypothesis Testing using Phylogenies</title>
+        <title>HyPhy - Hypothesis Testing using Phylogenies - Information, documentation, and news about the HyPhy software package</title>
       
+      
+        <meta name="description" content="Information, documentation, and news about the HyPhy software package">
       
       
         <link rel="canonical" href="http://veg.github.io/hyphy-site/installation/">
@@ -29,8 +31,8 @@
       <link rel="apple-touch-icon" href="../images/logo.svg">
     
     
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ base_url }}/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ base_url }}/img/favicon.ico">
     <style>
       @font-face {
       	font-family: 'Icon';
@@ -287,6 +289,40 @@
 
 
       
+        <!-- Render sections -->
+
+  <li>
+    <span class="section">Other</span>
+    <ul>
+
+      <!-- Render pages of section -->
+      
+        <!-- Render sections -->
+
+
+  <li>
+    <a class=""
+      title="Evolutionary hypothesis testing" href="../methods/other/evo/" >
+      Evolutionary hypothesis testing
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+
+      
+        <!-- Render sections -->
+
+
+
+      
+    </ul>
+  </li>
+
+<!-- Render page link -->
+
+      
     </ul>
   </li>
 
@@ -353,36 +389,31 @@
 <ol>
 <li>
 <p>Navigate to the newly downloaded/cloned HyPhy directory</p>
-<div class="code"><pre><span></span>cd hyphy
-</pre></div>
+<pre class="code"><code>cd hyphy</code></pre>
 
 
 </li>
 <li>
 <p>Configure HyPhy using <em>CMake</em></p>
-<div class="code"><pre><span></span>cmake .
-</pre></div>
+<pre class="code"><code>cmake .</code></pre>
 
 
 <ul>
 <li>
 <p>By default, HyPhy will be installed into <code>/usr/local/</code>, but it can be installed on any location of your system by specifying a custom installation path:</p>
-<div class="code"><pre><span></span>cmake -DINSTALL_PREFIX=/location/of/choice .
-</pre></div>
+<pre class="code"><code>cmake -DINSTALL_PREFIX=/location/of/choice .</code></pre>
 
 
 </li>
 <li>
 <p>If you prefer to use other build systems <a href="https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html">supported by CMake</a>, such as <em>XCode</em>, configure HyPhy using the generator (<code>-G</code>) switch:</p>
-<div class="code"><pre><span></span>cmake -G Xcode .
-</pre></div>
+<pre class="code"><code>cmake -G Xcode .</code></pre>
 
 
 </li>
 <li>
 <p>If would like to specify a particular C/C++ compiler (please note that it must support the C++-14 language standard) for your HyPhy build, use this command:</p>
-<div class="code"><pre><span></span>cmake . -DCMAKE_CXX_COMPILER=/path/to/C++-compiler -DCMAKE_C_COMPILER=/path/to/C-compiler
-</pre></div>
+<pre class="code"><code>cmake . -DCMAKE_CXX_COMPILER=/path/to/C++-compiler -DCMAKE_C_COMPILER=/path/to/C-compiler</code></pre>
 
 
 </li>
@@ -390,36 +421,32 @@
 </li>
 <li>
 <p>If you are building HyPhy under MacOS X, you can specify which version of SDK to use, for example:</p>
-<div class="code"><pre><span></span>    cmake -DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX10.9.sdk/ .
-</pre></div>
+<pre class="code"><code>    cmake -DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX10.9.sdk/ .</code></pre>
 
 
 </li>
 <li>
 <p>Build HyPhy by running <code>make</code> with one of the following build targets given below. For example, to install the executable <code>HYPHYMP</code>, you would enter the following command:</p>
-<div class="code"><pre><span></span>make MP2
-</pre></div>
+<pre class="code"><code>make MP2</code></pre>
 
 
 <ul>
 <li>
 <p><code>MP2/MP</code> - build a HyPhy executable (<code>HYPHYMP</code>) using <a href="http://www.openmp.org"><em>OpenMP</em></a> to support symmetric multiprocessing. If <em>OpenMP</em> is not installed or not supported by the compiler (e.g. LLVM), the compiled executable will not support multi-threading. You can confirm  case by examining the output from running <code>cmake</code>. If <code>openMP</code> is installed, you should see something similar to the following in the output:</p>
-<div class="code"><pre><span></span>-- Performing Test OpenMP_FLAG_DETECTED
+<pre class="code"><code>-- Performing Test OpenMP_FLAG_DETECTED
 -- Performing Test OpenMP_FLAG_DETECTED - Success
 -- Try OpenMP CXX flag = [-fopenmp]
 -- Performing Test OpenMP_FLAG_DETECTED
 -- Performing Test OpenMP_FLAG_DETECTED - Success
--- Found OpenMP: -fopenmp
-</pre></div>
+-- Found OpenMP: -fopenmp</code></pre>
 
 
 </li>
 <li>
 <p><code>MPI</code> - build a HyPhy executable (<code>HYPHYMPI</code>) using the message passing interface <a href="http://mpi-forum.org">MPI</a> to support parallel execution on distributed systems (clusters). An MPI library (e.g., OpenMPI) must be installed and available in your path. You can check if this is the case by examining the output from running <code>cmake</code>. If <code>openMPI</code> is installed, you should see something similar to the following in the output:</p>
-<div class="code"><pre><span></span>    <span class="nt">--</span> <span class="nt">Found</span> <span class="nt">MPI_C</span><span class="o">:</span> <span class="o">/</span><span class="nt">opt</span><span class="o">/</span><span class="nt">scyld</span><span class="o">/</span><span class="nt">openmpi</span><span class="o">/</span><span class="nt">1</span><span class="nc">.6.3</span><span class="o">/</span><span class="nt">gnu</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">libmpi</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libibverbs</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libdat</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libtorque</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnuma</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span>
+<pre class="code"><code>    -- Found MPI_C: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
 
-    <span class="nt">--</span> <span class="nt">Found</span> <span class="nt">MPI_CXX</span><span class="o">:</span> <span class="o">/</span><span class="nt">opt</span><span class="o">/</span><span class="nt">scyld</span><span class="o">/</span><span class="nt">openmpi</span><span class="o">/</span><span class="nt">1</span><span class="nc">.6.3</span><span class="o">/</span><span class="nt">gnu</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">libmpi_cxx</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">opt</span><span class="o">/</span><span class="nt">scyld</span><span class="o">/</span><span class="nt">openmpi</span><span class="o">/</span><span class="nt">1</span><span class="nc">.6.3</span><span class="o">/</span><span class="nt">gnu</span><span class="o">/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">libmpi</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libibverbs</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libdat</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libtorque</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnuma</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">librt</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libnsl</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libutil</span><span class="nc">.so</span><span class="o">;/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">lib64</span><span class="o">/</span><span class="nt">libm</span><span class="nc">.so</span>
-</pre></div>
+    -- Found MPI_CXX: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi_cxx.so;/opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so</code></pre>
 
 
 </li>
@@ -430,8 +457,7 @@
 </li>
 <li>
 <p>Finally, install HyPhy on your system with the command</p>
-<div class="code"><pre><span></span>make install
-</pre></div>
+<pre class="code"><code>make install</code></pre>
 
 
 <p>HyPhy will install either in its default location <code>/usr/local/</code>, or in any custom  <code>/location/of/choice/</code> provided when configuring <em>CMake</em>.</p>

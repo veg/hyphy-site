@@ -9,8 +9,10 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>About - HyPhy - Hypothesis Testing using Phylogenies</title>
+        <title>HyPhy - Hypothesis Testing using Phylogenies - Information, documentation, and news about the HyPhy software package</title>
       
+      
+        <meta name="description" content="Information, documentation, and news about the HyPhy software package">
       
       
         <link rel="canonical" href="http://veg.github.io/hyphy-site/about/">
@@ -29,8 +31,8 @@
       <link rel="apple-touch-icon" href="../images/logo.svg">
     
     
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ base_url }}/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ base_url }}/img/favicon.ico">
     <style>
       @font-face {
       	font-family: 'Icon';
@@ -174,6 +176,8 @@
         with the children of the anchor.
       -->
       
+        
+      
 
       <!-- Render anchors of active page -->
       
@@ -181,43 +185,53 @@
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Overview" href="#overview">
-                Overview
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="Overview" href="#overview">
+                    Overview
+                  </a>
+                </li>
+            
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Brief history" href="#brief-history">
-                Brief history
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="Brief history" href="#brief-history">
+                    Brief history
+                  </a>
+                </li>
+            
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Design philosophy" href="#design-philosophy">
-                Design philosophy
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="Design philosophy" href="#design-philosophy">
+                    Design philosophy
+                  </a>
+                </li>
+            
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Features" href="#features">
-                Features
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="Features" href="#features">
+                    Features
+                  </a>
+                </li>
+            
           
 
             <!-- Render anchor -->
-            <li class="anchor">
-              <a title="Example HBL Script" href="#example-hbl-script">
-                Example HBL Script
-              </a>
-            </li>
+            
+                <li class="anchor">
+                  <a title="Example HBL Script" href="#example-hbl-script">
+                    Example HBL Script
+                  </a>
+                </li>
+            
           
         </ul>
       
@@ -329,6 +343,40 @@
 
 
       
+        <!-- Render sections -->
+
+  <li>
+    <span class="section">Other</span>
+    <ul>
+
+      <!-- Render pages of section -->
+      
+        <!-- Render sections -->
+
+
+  <li>
+    <a class=""
+      title="Evolutionary hypothesis testing" href="../methods/other/evo/" >
+      Evolutionary hypothesis testing
+    </a>
+
+    <!-- Expand active pages -->
+    
+  </li>
+
+
+      
+        <!-- Render sections -->
+
+
+
+      
+    </ul>
+  </li>
+
+<!-- Render page link -->
+
+      
     </ul>
   </li>
 
@@ -407,59 +455,58 @@
 <li>(v2.3) Modern web-applications for interactive result visualization.</li>
 </ol>
 <h2 id="example-hbl-script">Example HBL Script<a class="headerlink" href="#example-hbl-script" title="Permanent link">#</a></h2>
-<div class="code"><pre><span></span><span class="cm">/* </span>
-<span class="cm">   This is an example HYPHY Batch File.</span>
-<span class="cm">   It reads in a MEGA format nucleotide dataset from data/hiv.nuc.</span>
-<span class="cm">   and fits the F81 model using the tree inclded in the file using maximum likelihood.</span>
-<span class="cm">   Output is printed out as a Newick Style tree with branch lengths</span>
-<span class="cm">   representing the number of expected substitutions per branch.</span>
-<span class="cm">*/</span>
+<pre class="code"><code class="language-js">/* 
+   This is an example HYPHY Batch File.
+   It reads in a MEGA format nucleotide dataset from data/hiv.nuc.
+   and fits the F81 model using the tree inclded in the file using maximum likelihood.
+   Output is printed out as a Newick Style tree with branch lengths
+   representing the number of expected substitutions per branch.
+*/
 
-<span class="c1">// 1. Read in the data and store the result in a DataSet variable</span>
+// 1. Read in the data and store the result in a DataSet variable
 
-<span class="nx">DataSet</span>         <span class="nx">nucleotideSequences</span> <span class="o">=</span> <span class="nx">ReadDataFile</span> <span class="p">(</span><span class="s2">&quot;data/hiv.nuc&quot;</span><span class="p">);</span>
+DataSet         nucleotideSequences = ReadDataFile (&quot;data/hiv.nuc&quot;);
 
-<span class="c1">// 2. Filter the data, specifying that all of the data is to be used</span>
-<span class="c1">//  and that it is to be treated as nucleotides.*/</span>
+// 2. Filter the data, specifying that all of the data is to be used
+//  and that it is to be treated as nucleotides.*/
 
-<span class="nx">DataSetFilter</span>   <span class="nx">filteredData</span> <span class="o">=</span> <span class="nx">CreateFilter</span> <span class="p">(</span><span class="nx">nucleotideSequences</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+DataSetFilter   filteredData = CreateFilter (nucleotideSequences,1);
 
-<span class="c1">// Collect observed nucleotide frequencies from the filtered data. observedFreqs will</span>
-<span class="c1">// store receieve the vector of frequencies. </span>
+// Collect observed nucleotide frequencies from the filtered data. observedFreqs will
+// store receieve the vector of frequencies. 
 
-<span class="nx">HarvestFrequencies</span> <span class="p">(</span><span class="nx">observedFreqs</span><span class="p">,</span> <span class="nx">filteredData</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+HarvestFrequencies (observedFreqs, filteredData, 1, 1, 1);
 
-<span class="c1">// Define the F81 substitution matrix. &#39;*&#39; is defined to be -(sum of off-diag row </span>
-<span class="c1">// elements); mu is the rate*time parameter </span>
+// Define the F81 substitution matrix. '*' is defined to be -(sum of off-diag row 
+// elements); mu is the rate*time parameter 
 
-<span class="nx">F81RateMatrix</span> <span class="o">=</span> 
-        <span class="p">{{</span><span class="o">*</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">}</span>
-         <span class="p">{</span><span class="nx">mu</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">}</span>
-         <span class="p">{</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="nx">mu</span><span class="p">}</span>
-         <span class="p">{</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="o">*</span><span class="p">}};</span>
+F81RateMatrix = 
+        {{*,mu,mu,mu}
+         {mu,*,mu,mu}
+         {mu,mu,*,mu}
+         {mu,mu,mu,*}};
 
-<span class="c1">//  Define the F81 models, by combining the substitution matrix with the vector of observed (equilibrium) frequencies.</span>
+//  Define the F81 models, by combining the substitution matrix with the vector of observed (equilibrium) frequencies.
 
-<span class="nx">Model</span>   <span class="nx">F81</span> <span class="o">=</span> <span class="p">(</span><span class="nx">F81RateMatrix</span><span class="p">,</span> <span class="nx">observedFreqs</span><span class="p">);</span>
+Model   F81 = (F81RateMatrix, observedFreqs);
 
-<span class="c1">// Now we can define the tree variable, using the tree string read from the data file, </span>
-<span class="c1">// and, by default, assigning the last defined model (F81) to all tree branches.</span>
+// Now we can define the tree variable, using the tree string read from the data file, 
+// and, by default, assigning the last defined model (F81) to all tree branches.
 
-<span class="nx">Tree</span>    <span class="nx">givenTree</span> <span class="o">=</span> <span class="nx">DATAFILE_TREE</span><span class="p">;</span>
+Tree    givenTree = DATAFILE_TREE;
 
-<span class="c1">// Since all the likelihood function ingredients (data, tree, equilibrium frequencies)</span>
-<span class="c1">// have been defined we are ready to construct the likelihood function.</span>
+// Since all the likelihood function ingredients (data, tree, equilibrium frequencies)
+// have been defined we are ready to construct the likelihood function.
 
-<span class="nx">LikelihoodFunction</span>  <span class="nx">LF</span> <span class="o">=</span> <span class="p">(</span><span class="nx">filteredData</span><span class="p">,</span> <span class="nx">givenTree</span><span class="p">);</span>
+LikelihoodFunction  LF = (filteredData, givenTree);
 
-<span class="c1">// Maximize the likelihood function, storing parameter values in the matrix paramValues </span>
+// Maximize the likelihood function, storing parameter values in the matrix paramValues 
 
-<span class="nx">Optimize</span> <span class="p">(</span><span class="nx">paramValues</span><span class="p">,</span> <span class="nx">LF</span><span class="p">);</span>
+Optimize (paramValues, LF);
 
-<span class="c1">// Print the tree with optimal branch lengths to the console. </span>
+// Print the tree with optimal branch lengths to the console. 
 
-<span class="nx">fprintf</span>  <span class="p">(</span><span class="nx">stdout</span><span class="p">,</span> <span class="nx">LF</span><span class="p">);</span>
-</pre></div>
+fprintf  (stdout, LF);</code></pre>
           
             <footer class="footer">
               <div class="container citation-footer">
