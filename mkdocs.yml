@@ -1,6 +1,6 @@
 # Project information
 site_name: HyPhy - Hypothesis Testing using Phylogenies
-site_description: null
+site_description: Information, documentation, and news about the HyPhy software package
 site_author: VEG
 site_url: http://veg.github.io/hyphy-site/
 
@@ -14,7 +14,7 @@ theme_dir: material
 
 # Options
 extra:
-  version: 0.2.4
+  version: 0.2.5
   logo: images/logo.svg
   github:
     download_release: true
@@ -31,12 +31,12 @@ markdown_extensions:
   - mdx_math:
       enable_dollar_delimiter: True
 
-    
 
-extra_javascript: 
+
+extra_javascript:
     - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
     - assets/mathjaxhelper.js
-    
+
 # Google Analytics
 google_analytics: ['hyphy.org', 'veg.github.io']
 
@@ -53,7 +53,11 @@ pages:
   - Methods:
     - General Information : 'methods/general.md'
     - Selection : 'methods/selection-methods.md'
-#   - Other : 'methods/other-methods.md'
-  - Tutorials: 
+    - Other :
+        - Evolutionary hypothesis testing : 'methods/other/evo.md'
+        - '________' : 'methods/other/fel-contrast.md'
+        # '________' will hide the item from the toc
+#  - Scripting language: 'language.md'
+  - Tutorials:
     - Using HyPhy to Detect Selection : 'tutorials/current-release-tutorial.md'
     - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'
