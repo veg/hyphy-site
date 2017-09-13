@@ -56,4 +56,4 @@ pages:
 #   - Other : 'methods/other-methods.md'
   - Tutorials: 
     - Using HyPhy to Detect Selection : 'tutorials/current-release-tutorial.md'
-    - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'
+#    - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'

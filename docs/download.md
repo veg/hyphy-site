@@ -4,10 +4,10 @@ To download the Desktop/GUI version of HyPhy, follow instructions on this [downl
 
 > **NOTE**: The HyPhy GUI is no longer maintained and will be replaced in the near future with a JavaScript front-end. For those interested in a GUI experience, we recommend using HyPhy either via [Datamonkey](http://datamonkey.org) (for newer methods see [the development version of Datamonkey](http://test.datamonkey.org)) or from the command line on your local computer/server. 
 
-Alternatively, you may download an installer for the final prebuilt release of HyPhy (version 2.2.4) for your specific operating system using the appropriate link:
+Alternatively, you may download an installer for the final prebuilt release of HyPhy (version 2.3.3, as of 9/13/17) for your specific operating system using the appropriate link:
 
-* [Mac OSX](https://github.com/veg/hyphy/releases/download/2.2.4/hyphy.dmg)
-* [Windows XP or later](https://github.com/veg/hyphy/releases/download/2.2.4/HyPhy2.2.4.exe)
+* [Mac OSX](https://github.com/veg/hyphy/releases/tag/2.3.3)
+* [Windows XP or later](https://github.com/veg/hyphy/releases/tag/2.3.3)
 
 
 ### Download and Install from source
@@ -17,7 +17,7 @@ Alternatively, you may download an installer for the final prebuilt release of H
 
 **You can obtain HyPhy source in two ways:**
 
-* Download a specific HyPhy release (we recommend the latest release) from [the HyPhy github repository](https://github.com/veg/hyphy/releases).
+* Download a the latest HyPhy release from [the HyPhy github repository](https://github.com/veg/hyphy/releases).
 * Download the master branch of HyPhy by cloning the repository by entering this command into a terminal session:
 
 ```
@@ -26,6 +26,7 @@ git clone git@github.com:veg/hyphy.git
 
 Once you have downloaded HyPhy, follow these [installation instructions](./installation.md).
 
+<!--
 ### Development version
 
 > **Caution**: For advanced users only.
@@ -34,5 +35,5 @@ The most recent (not necessarily stable, but containing the latest features) ver
 
 		git checkout v2.3-dev
         
-    
+ -->   
 

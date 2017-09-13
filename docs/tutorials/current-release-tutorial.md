@@ -2,16 +2,73 @@ Using HyPhy to detect selection.
 =================================
 
 
-These tutorials outline how to prepare data and execute analyses in HyPhy's suite of methods for detecting natural selection in protein-coding alignments. Specifically, this tutorial explains how to use the [current release](https://github.com/veg/hyphy/releases) of HyPhy from the **command line**.
+These tutorials outline how to prepare data and execute analyses in HyPhy's suite of methods for detecting natural selection in protein-coding alignments. Specifically, this tutorial explains how to use the [current release](https://github.com/veg/hyphy/releases) of HyPhy from the **command line**. 
 
 __Before you begin__
 
 
 1. Install the current release of HyPhy on your computer, as needed, using [these instructions](../installation.md).
-2. This tutorial employs example datasets, available for download as a  [zip file](https://github.com/veg/hyphy-tutorials/blob/master/docs/selection/data/files.zip?raw=true). Unpack this zip file on your machine for use and **remember the absolute path to this directory**.
+2. This tutorial employs example datasets, available for download as a [zip file](https://github.com/veg/hyphy-site/blob/master/docs/tutorials/files/tutorial_data.zip?raw=true). Unpack this zip file on your machine for use and **remember the absolute path to this directory**.
 3. This tutorial assumes you are specifically using the HyPhy executable `HYPHYMP`. If you have installed a different executable (e.g. `HYPHYMPI`), you may need to alter some commands.
 4. This tutorial uses the interactive HyPhy menu prompt to perform analyses. If you wish to automate many analyses instead of using HyPhy interactively, see the section [Automating Analyses](./current-release-tutorial/#automating-analyses) for modified instructions.
 
+
+
+
+## Use BUSTED to test for alignment-wide episodic diversification.
+
+
+
+
+### BUSTED: Full tree analysis
+
+### BUSTED: Test a subset of branches for selection
+
+
+
+## Use aBSREL to find lineages which have experienced episodic diversification.
+
+
+
+### aBSREL: Full tree analysis
+### aBSREL: Test a subset of branches for selection
+
+## Use MEME to find sites which have experienced pervasive diversification.
+
+
+
+## Use FUBAR to find sites which have experienced pervasive diversification.
+
+
+
+## Use FEL to find sites which have experienced pervasive diversification.
+
+
+
+## Use SLAC to find sites which have experienced pervasive diversification.
+
+
+
+## Use RELAX to compare selective pressures on different parts of the tree
+
+
+
+## Automating analyses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------------- BELOW THIS LINE ARE OLD TUTORIALS ---------------->
 <!--
 __Notation__
 
@@ -30,9 +87,8 @@ or a command line you will supply in terminal with the command line version of H
 [BUSTED] Log(L) = -7745.475588071066
 [BUSTED] Fitting the unconstrained branch-site model
 ```
--->
 
-<!---------------------------------------------------------------------------------------------------->
+
 
 ## Estimate a single alignment-wide &omega;.
 
@@ -73,10 +129,7 @@ Additional information reported here includes the following:
 * **Log Likelihood** is the log likelihood of the model fit to your dataset.
 * Parameters named **GT**, **CT**, etc. represent the nucleotide exchangeability rates inferred for the GTR mutation model component of the MG94 codon model.
 * **Tree givenTree** is your provided tree with branch lengths have been optimized under the fitted MG94xREV model.
-<!---------------------------------------------------------------------------------------------------->
 
-
-<!---------------------------------------------------------------------------------------------------->
 ## Use BUSTED to test for alignment-wide episodic diversification.
 ------------------------------------------------------------------
 
@@ -131,7 +184,7 @@ If you label your tree in this manner, the branch selection prompt (step 1.6 abo
 
 Example results for such an *a priori* analysis might look like the following:
  
-<!--
+
 1. Navigate to http://test.datamonkey.org, selected _BUSTED_ from the _Methods and Tools_ menu.
 2. Choose the file to analyze on the next screen.
 3. Use the analysis setup screen to select all the `source/donor` branches as the foreground (shift-click on the branches to add them to selection)
@@ -161,7 +214,6 @@ Repeat the analysis from the previous section, choosing option 4 (**Set Test**) 
 Note that you could also manually select the set of branches to test in the same dialog.
 
 The results of this *a priori* analysis are
--->
 
 ```
 [BUSTED] Selected 1 branches as the test (foreground) set: Node1 
@@ -179,7 +231,7 @@ Running BUSTED to test this specified branch set for selection tells us the foll
 * A proportion of sites ($\sim 0.078$) is evolving with $\omega > 1$ on the *specified* set of foreground branch(es).
 * The performed Likelihood ratio test returned a P-value$=6.84\times10^{-9}$. This result means that disallowing positive selection results in a *significantly worse fit* to the data. **We therefore reject the null hypothesis that there is no episodic positive selection on the specified foreground branch(es).**  
 
-<!--
+
 #### Questions.
 
 0. Use the [web app](http://veg.github.io/hyphy-vision/pages/busted/) to visualize the JSON result file from this analysis and
@@ -188,11 +240,7 @@ compare the inferred &omega; distributions for the foreground and background bra
 2. Do these results suggest that the transmission branch is evolving differently from the rest of the tree?
 3. If the *a priori* analysis had a negative result (no selection along the transmission branch), might it still be possible to
 find evidence of selection in the **All** branches analysis?
--->
-<!---------------------------------------------------------------------------------------------------->
 
-
-<!---------------------------------------------------------------------------------------------------->
 ## Use aBSREL to find lineages which have experienced episodic diversification.
 
 >[aBSREL](../methods/selection-methods/#absrel) is a method described in [Smith et al](http://www.ncbi.nlm.nih.gov/pubmed/25697341). It is an extension of our popular [BS-REL model](http://www.ncbi.nlm.nih.gov/pubmed/21670087), which performs a complexity analysis and model selection prior to doing hypothesis testing. It runs much faster than BS-REL and has better statistical properies.
@@ -256,12 +304,7 @@ Our aBSREL analysis determined that **three** branches with evidence of episodic
 
 
 To test for a specific selection of branches, you can modify step **1.8** from the previous aBSREL example to instead select one or more branches of interest to test for selection. All other aspects of analysis will remain the same, except runtime will be faster because fewer tests are performed.
-<!---------------------------------------------------------------------------------------------------->
 
-
-
-
-<!---------------------------------------------------------------------------------------------------->
 ## Use FUBAR to find sites which have experienced pervasive diversification.
 
 
@@ -307,7 +350,7 @@ This output tells us that a single site, codon 249, has experienced diversifying
 * `PREFIX.grid_info`: A text file containing information pertaining to the 20x20 rate grid. Generally you will not need this file.
 
 
-<!--
+
 ### Questions
 
 1. Try the same analysis with different grid sizes (5,10,30).
@@ -318,11 +361,7 @@ This output tells us that a single site, codon 249, has experienced diversifying
   * How does the list of sites found by FUBAR compare with the MEDS paper?
   * And with the list of sites known for their as resistance associated for [NNRTI](http://hivdb.stanford.edu/DR/NNRTIResiNote.html) and [NRTI](http://hivdb.stanford.edu/DR/NRTIResiNote.html)?
 3. Explore the effect of correcting for recombination with partitioning, by running FUBAR on `CVV_G.fas` [no partitioning] and `CVV_G_GARD.nex` [partitioning into non-recombinant fragments using GARD]. How different are the lists of sites produced by the analyses?
--->
-<!---------------------------------------------------------------------------------------------------->
 
-
-<!---------------------------------------------------------------------------------------------------->
 ## Use MEME to find sites which have experienced episodic diversification.
 
 >[MEME](../methods/selection/#meme) is described in [Murrell et al.](http://www.plosgenetics.org/article/info%3Adoi%2F10.1371%2Fjournal.pgen.1002764) and is our default recommendation for finding individual sites under selection. It is MUCH slower than FUBAR, however, so there's room for both.
@@ -396,16 +435,13 @@ This information, along with information for all other codon sites, will be in t
 * `p` is the p-value for positive selection at this site. if `*P` is displayed at the end of the line, the p-value is at or below the selected threshold for positive selection.
 
 
-<!--
+
 ### Questions
 
 1. Find sites detected as selected by MEME, but not by FUBAR. What makes them different from those which are detected by both methods?
 2. Using R (or another data analysis package), plot how LRT (or p-value) varies over sites.
 3. Is `(1-p)` [p-value] of MEME correlated with the posterior probability of positive selection derived by FUBAR (use a non-parametric association test, e.g. rank correlation)? Use the CSV files generated by each analysis to import the results into a statistical package for analysis.
--->
-<!---------------------------------------------------------------------------------------------------->
 
-<!---------------------------------------------------------------------------------------------------->
 ## Use FEL or SLAC to find sites which have experienced pervasive diversification.
 
 >[FEL](../methods/selection/#fel) and [SLAC](../methods/selection/#slac) are described in [Pond and Frost]( https://doi.org/10.1093/molbev/msi105). These are the original HyPhy methods for detecting individual sites under selection across the entire phylogeny. We strongly recommend using MEME or FUBAR instead of either of these methods, but they remain available if you still wish to use them.
@@ -486,11 +522,7 @@ This final SLAC results file will have several columns, where rows are ordered a
 * `P{S leq. observed}`: The probability of getting as many or *fewer* synonymous changes observed at this site, under a binomial distribution.
 * `P{S geq. observed}`: The probability of getting as many or *more* synonymous changes observed at this site, under a binomial distribution.
 * `Scaled(dN-dS)`: The difference between dN and dS values, normalized by the total tree length (sum of optimized branch lengths).
-<!---------------------------------------------------------------------------------------------------->
 
-
-
-<!---------------------------------------------------------------------------------------------------->
 ## Use RELAX to compare selective pressures on different parts of the tree
 
 >[RELAX](../methods/selection/#relax) is a method described in [Wertheim et al](http://www.ncbi.nlm.nih.gov/pubmed/25540451). It is based on the [BS-REL model](http://www.ncbi.nlm.nih.gov/pubmed/21670087) branch site framework, but the tree is partitioned (a priori) into non-overlapping sets of branches, and the separate distributions of &omega; are fitted to each set and compared for relative _relaxation_ (&omega; values contract to 1) or _intensification_ (&omega; values move away from 1).
@@ -526,11 +558,7 @@ For this example, we will run RELAX on the dataset `HIV.nex`, which includes par
 
 
 Like in other analyses, HyPhy will generate a JSON file, in this case called `HIV.nex.RELAX.json`, in the same directory where the original dataset `HIV.nex` is located. This JSON file contains all the relevant analysis output, and can visualize, explore, and obtain plots from this JSON file using the [HyPhy Vision web application](http://veg.github.io/hyphy-vision/pages/relax/). 
-<!---------------------------------------------------------------------------------------------------->
 
-
-
-<!---------------------------------------------------------------------------------------------------->
 ## Automating analyses
 
 All above examples use HyPhy interactively. This approach, however, may be exceptionally tedious if you have many datasets to analyze (or if you don't want to use HyPhy interactively). In this case, it would be better to automate analyses in HyPhy. The best way to accomplish this goal is by **piping** arguments (`|` symbol) into HyPhy. 
@@ -563,3 +591,4 @@ done
 ```
 
 
+-->
