@@ -4,11 +4,13 @@ To download the Desktop/GUI version of HyPhy, follow instructions on this [downl
 
 > **NOTE**: The HyPhy GUI is no longer maintained and will be replaced in the near future with a JavaScript front-end. For those interested in a GUI experience, we recommend using HyPhy either via [Datamonkey](http://datamonkey.org) (for newer methods see [the development version of Datamonkey](http://test.datamonkey.org)) or from the command line on your local computer/server. 
 
+<!--
+NOTE: Current release has no installers, commenting out until installers exist. This way we don't have users installing old versions which will conflict w/ tutorials.
 Alternatively, you may download an installer for the final prebuilt release of HyPhy (version 2.3.3, as of 9/13/17) for your specific operating system using the appropriate link:
 
 * [Mac OSX](https://github.com/veg/hyphy/releases/tag/2.3.3)
 * [Windows XP or later](https://github.com/veg/hyphy/releases/tag/2.3.3)
-
+-->
 
 ### Download and Install from source
 

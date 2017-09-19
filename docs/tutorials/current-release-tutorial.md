@@ -4,36 +4,125 @@ Using HyPhy to detect selection.
 
 These tutorials outline how to prepare data and execute analyses in HyPhy's suite of methods for detecting natural selection in protein-coding alignments. Specifically, this tutorial explains how to use the [current release](https://github.com/veg/hyphy/releases) of HyPhy from the **command line**. 
 
-__Before you begin__
+All analyses described here produce a final output JSON-formatted file which can be uploaded to [HyPhy Vision](http://vision.hyphy.org) for exploration. You can obtain a description of JSON contents for all analyses [here](../resources/files/json-fields.pdf). In addition, each analyses will provide live [Markdown-formatted](https://en.wikipedia.org/wiki/Markdown) status indicators to the console while running. 
 
+### Before you begin
 
 1. Install the current release of HyPhy on your computer, as needed, using [these instructions](../installation.md).
 2. This tutorial employs example datasets, available for download as a [zip file](https://github.com/veg/hyphy-site/blob/master/docs/tutorials/files/tutorial_data.zip?raw=true). Unpack this zip file on your machine for use and **remember the absolute path to this directory**.
 3. This tutorial assumes you are specifically using the HyPhy executable `HYPHYMP`. If you have installed a different executable (e.g. `HYPHYMPI`), you may need to alter some commands.
-4. This tutorial uses the interactive HyPhy menu prompt to perform analyses. If you wish to automate many analyses instead of using HyPhy interactively, see the section [Automating Analyses](./current-release-tutorial/#automating-analyses) for modified instructions.
+<!--4. This tutorial uses the interactive HyPhy menu prompt to perform analyses. If you wish to automate many analyses instead of using HyPhy interactively, see the section [Automating Analyses](./current-release-tutorial/#automating-analyses) for modified instructions.-->
+
+### Preparing labeled phylogenies
+
+Several analyses are accept labeled phylogenies to define branch sets for selection testing. Moreover, the method **RELAX** _requires_ a labeled phylogeny to compare selection pressures. To assist in tree labeling, we recommend using our [Phylotree Widget](http://phylotree.hyphy.org). Instructions for using this widget are available [here](../resources/phylotree.md).
 
 
+### Preparing input data for HyPhy
+
+All analyses require an alignment and corresponding phylogeny for analysis. There are options for preparing your data:
++ Prepare your data in two separate files with the alignment and phylogeny each. Most standard alignemnt formats are accepted (FASTA, phylip, etc.), and the phylogeny should be newick-formatted.
++ Prepare your data in a single file containing a FASTA-formatted alignment, beneath which should be a newick-formatted phylogeny.
++ Prepare your data as a NEXUS file with both a data matrix and tree block. Note that this file type will be necessary for performing a partitioned analysis, where different sites evolve according to different phylogenies (i.e. a recombination-corrected dataset from [**GARD**](../methods/selection-methods/#gard).
+
+Each of these choices will trigger a slightly different data-input prompt, as described in the **General Information** section below.
 
 
-## Use BUSTED to test for alignment-wide episodic diversification.
+### General Information
+
+All available selection analyses in HyPhy can be accessed by launching HyPhy from the command line by typing `HYPHYMP` (or launching `HYPHYMPI` in an appropriate MPI environment) and entering **`1`** to reach the **`Selection Analyses`** menu: 
+![HyPhy Selection Analyses Menu](./files/images/selection-analyses-menu.png)
+
+In this menu, launch your desired analyis by issuing its associated number (i.e. launch FEL by entering **`2`** upon reaching this menu).
+
+Within each analysis, you will see a series of prompts for providing information. All analyses begin with the following prompts:
+
++ **`Choose Genetic Code`**. Generally, the universal genetic code (**`1`**) should be provided here, unless the dataset of interest uses a different NCBI-defined genetic code. For each option, the corresponding NCBI translation table is indicated.
+
++ **`Select a coding sequence alignment file`**. This option prompts for the dataset to analyze. Provide the **full path** to the dataset of interest. 
+	+ If you provide a file containing only an alignment, HyPhy will issue a subsequent prompt: **`Please select a tree file for the data`**. Supply the full path to your newick-formatted phylogeny here.
+	+ If you provide a file containing both an alignment and tree, HyPhy will prompt you to confirm that the tree provided should be used: **`A tree was found in the data file:...Would you like to use it (y/n)?`**. Enter **`y`** to use this tree, or enter **`n`** if a different tree is desired. HyPhy will then prompt for this path.
+	+ If you provide a NEXUS file, Hyphy will accept the tree(s) as given and will not issue a subsequent prompt.
+ 
 
 
+### Use BUSTED to test for alignment-wide episodic diversification.
+> See [here](../methods/selection-methods/#busted) for a description of the BUSTED method.
+
+We will demonstate BUSTED use with an alignment of primate sequences for the KSR2 gene, a kinase suppressor of RAS-2, from [Enard et al, 2016](https://elifesciences.org/articles/12469).
+
+Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the BUSTED analysis: Enter **1** for "Selection Analyses", and then **5** for "BUSTED". Respond to the following prompts:
+
++ **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
++ **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/ksr2.fna`
++ **`A tree was found in the data file:...Would you like to use it (y/n)?`**: Enter `y` to use the provided tree.
++ **`Choose the set of branches to test for selection`**: To execute a BUSTED analysis that tests the entire tree for selection, enter option `1` for **All**. Alternatively, if you wish to test a subset of branches, enter a different option (2,3,4, or other). Note that any labels present in the provided phylogeny will be listed as options in this menu.
+		
+BUSTED will now run to completion and print markdown-formatted status indicators to screen, indicating the progression of model fits and concluding with the final BUSTED test results:
+![BUSTED markdown output](./files/images/busted-markdown.png)
+
+We therefore find that there is evidence for positive, diversifying selection in this dataset, at P=0.0015.
+		
+		
+
+### Use aBSREL to find lineages which have experienced episodic diversification.
+
+> See [here](../methods/selection-methods/#absrel) for a description of the aBSREL method.
+
+We will demonstate aBSREL use with an alignment of HIV-1 envelope protein sequences collected from  epidemiologically-linked donor-recipient transmission pairs, from [Frost et al, 2005](http://jvi.asm.org/content/79/10/6523). 
+
+Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the aBSREL analysis: Enter **1** for "Selection Analyses", and then **6** for "aBSREL". Respond to the following prompts:
+
++ **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
++ **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/hiv1_transmission.fna`
++ **`A tree was found in the data file:...Would you like to use it (y/n)?`**: Enter `y` to use the provided tree.
++ **`Choose the set of branches to test for selection`**: To test for selection on each branch of your tree (an "exploratory" analysis that may suffer from low power), enter option `1` for **All**. Alternatively, if you wish to test for selection only on a subset of branches, enter a different option (2,3,4, or other). Note that any labels present in the provided phylogeny will be listed as options in this menu.
+		
+aBSREL will now run to completion and print markdown-formatted status indicators to screen, indicating the progression of model fits and concluding with the final aBSREL test results (abbreviated output shown here with final result only):
+![aBSREL markdown output](./files/images/absrel-markdown.png)
+
+We therefore find that there is evidence for episodic diversifying selection in this dataset along three branches, after applying the Bonferroni-Holm procedure to control family-wise error rates. 		
+
+### Use FEL to find sites which have experienced pervasive diversification.
+
+> See [here](../methods/selection-methods/#fel) for a description of the FEL method.
+
+We will demonstate FEL use with an alignment of abalone sperm lysin sequences. 
+
+Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the FEL analysis: Enter **1** for "Selection Analyses", and then **2** for "FEL". Respond to the following prompts:
+
++ **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
++ **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/lysin.fna`
++ **`A tree was found in the data file:...Would you like to use it (y/n)?`**: Enter `y` to use the provided tree.
++ **`Choose the set of branches to test for selection`**: To perform tests for diversifying selection that consider all branches, enter option `1` for **All**. Alternatively, if you wish to test for site-level selection considering only a subset of branches, enter a different option (2,3,4, or other). Note that any labels present in the provided phylogeny will be listed as options in this menu.
++ **`Use synonymous rate variation? Strongly recommended YES for selection inference.`**: Enter `1` to employ synonymous rate variation. If you would like to constrain dS=1 at all sites, for example to calculate evolutionary rate point estimates, enter `2`. 
++ **`Select the p-value threshold to use when testing for selection`**: Provide the desired P-value threshold for calling sites as positively selected. We recommend `0.1` for FEL.
 
 
-### BUSTED: Full tree analysis
+FEL will now run to completion and print markdown-formatted status indicators to screen, indicating the progression of model fits and concluding with the final FEL test results:
+![FEL markdown output](./files/images/fel-markdown.png)
 
-### BUSTED: Test a subset of branches for selection
-
-
-
-## Use aBSREL to find lineages which have experienced episodic diversification.
+Note that FEL will formally test for both positive and negative selection at each site. This analysis found 22 sites under pervasive negative selection and 17 sites under pervasive positive selection at our specified threshold of P<0.1.
 
 
+### Use MEME to find sites which have experienced pervasive diversification.
 
-### aBSREL: Full tree analysis
-### aBSREL: Test a subset of branches for selection
+> See [here](../methods/selection-methods/#meme) for a description of the MEME method.
 
-## Use MEME to find sites which have experienced pervasive diversification.
+We will demonstate MEME use with an alignment of H3N2 hemagglutinin sequences, sampled along the trunk of a large phylogeny encompassing seasonal influenza sequences since 1991. This dataset was derived from a large alignment from [Meyer and Wilke, 2015](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1004940). 
+
+Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the aBSREL analysis: Enter **1** for "Selection Analyses", and then **1** for "MEME". Respond to the following prompts:
+
++ **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
++ **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/h3_trunk.fna`
++ **`A tree was found in the data file:...Would you like to use it (y/n)?`**: Enter `y` to use the provided tree.
++ **`Choose the set of branches to test for selection`**: To perform tests for episodic selection that consider all branches, enter option `1` for **All**. Alternatively, if you wish to test for site-level selection considering only a subset of branches, enter a different option (2,3,4, or other). Note that any labels present in the provided phylogeny will be listed as options in this menu.
++ **`Select the p-value threshold to use when testing for selection`**: Provide the desired P-value threshold for calling sites as positively selected. We recommend `0.1` for MEME.
+
+MEME will now run to completion and print markdown-formatted status indicators to screen, indicating the progression of model fits and concluding with the final MEME test results):
+![MEME markdown output](./files/images/meme-markdown.png)
+
+Note that MEME will formally test only for positive, but not negative, selection at each site. This analysis found 30 sites under episodic positive selection at our specified threshold of P<0.1.
 
 
 
