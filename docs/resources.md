@@ -1,7 +1,7 @@
 Resources
 ===================
 
-* [Tutorials](./tutorials/current-release-tutorial) for using HyPhy to infer selection with various methods. Detailed descriptions of these methods are available [here](./getting-started/#choosing-a-method-for-selection-inference).
+* Tutorials for using standard methods in HyPhy to infer selection ware available [here](./tutorials/current-release-tutorial). Detailed descriptions of these methods are available [here](./getting-started/#characterizing-selective-pressures).
 
 * Current HyPhy selection analyses output JSON-formatted files, whose contents are documented [here](./resources/json-fields.pdf). 
 
