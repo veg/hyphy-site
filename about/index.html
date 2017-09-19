@@ -295,8 +295,8 @@
 
   <li>
     <a class=""
-      title="Resources and help" href="../resources/" >
-      Resources and help
+      title="Resources" href="../resources/" >
+      Resources
     </a>
 
     <!-- Expand active pages -->
@@ -411,8 +411,8 @@
 
   <li>
     <a class=""
-      title="v2.3 Quick Start" href="../tutorials/dev-branch-tutorial/" >
-      v2.3 Quick Start
+      title="Labeling branches with phylotree" href="../tutorials/phylotree/" >
+      Labeling branches with phylotree
     </a>
 
     <!-- Expand active pages -->
@@ -455,58 +455,59 @@
 <li>(v2.3) Modern web-applications for interactive result visualization.</li>
 </ol>
 <h2 id="example-hbl-script">Example HBL Script<a class="headerlink" href="#example-hbl-script" title="Permanent link">#</a></h2>
-<pre class="code"><code class="language-js">/* 
-   This is an example HYPHY Batch File.
-   It reads in a MEGA format nucleotide dataset from data/hiv.nuc.
-   and fits the F81 model using the tree inclded in the file using maximum likelihood.
-   Output is printed out as a Newick Style tree with branch lengths
-   representing the number of expected substitutions per branch.
-*/
+<div class="code"><pre><span></span><span class="cm">/* </span>
+<span class="cm">   This is an example HYPHY Batch File.</span>
+<span class="cm">   It reads in a MEGA format nucleotide dataset from data/hiv.nuc.</span>
+<span class="cm">   and fits the F81 model using the tree inclded in the file using maximum likelihood.</span>
+<span class="cm">   Output is printed out as a Newick Style tree with branch lengths</span>
+<span class="cm">   representing the number of expected substitutions per branch.</span>
+<span class="cm">*/</span>
 
-// 1. Read in the data and store the result in a DataSet variable
+<span class="c1">// 1. Read in the data and store the result in a DataSet variable</span>
 
-DataSet         nucleotideSequences = ReadDataFile (&quot;data/hiv.nuc&quot;);
+<span class="nx">DataSet</span>         <span class="nx">nucleotideSequences</span> <span class="o">=</span> <span class="nx">ReadDataFile</span> <span class="p">(</span><span class="s2">&quot;data/hiv.nuc&quot;</span><span class="p">);</span>
 
-// 2. Filter the data, specifying that all of the data is to be used
-//  and that it is to be treated as nucleotides.*/
+<span class="c1">// 2. Filter the data, specifying that all of the data is to be used</span>
+<span class="c1">//  and that it is to be treated as nucleotides.*/</span>
 
-DataSetFilter   filteredData = CreateFilter (nucleotideSequences,1);
+<span class="nx">DataSetFilter</span>   <span class="nx">filteredData</span> <span class="o">=</span> <span class="nx">CreateFilter</span> <span class="p">(</span><span class="nx">nucleotideSequences</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
-// Collect observed nucleotide frequencies from the filtered data. observedFreqs will
-// store receieve the vector of frequencies. 
+<span class="c1">// Collect observed nucleotide frequencies from the filtered data. observedFreqs will</span>
+<span class="c1">// store receieve the vector of frequencies. </span>
 
-HarvestFrequencies (observedFreqs, filteredData, 1, 1, 1);
+<span class="nx">HarvestFrequencies</span> <span class="p">(</span><span class="nx">observedFreqs</span><span class="p">,</span> <span class="nx">filteredData</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-// Define the F81 substitution matrix. '*' is defined to be -(sum of off-diag row 
-// elements); mu is the rate*time parameter 
+<span class="c1">// Define the F81 substitution matrix. &#39;*&#39; is defined to be -(sum of off-diag row </span>
+<span class="c1">// elements); mu is the rate*time parameter </span>
 
-F81RateMatrix = 
-        {{*,mu,mu,mu}
-         {mu,*,mu,mu}
-         {mu,mu,*,mu}
-         {mu,mu,mu,*}};
+<span class="nx">F81RateMatrix</span> <span class="o">=</span> 
+        <span class="p">{{</span><span class="o">*</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">}</span>
+         <span class="p">{</span><span class="nx">mu</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">}</span>
+         <span class="p">{</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="nx">mu</span><span class="p">}</span>
+         <span class="p">{</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="nx">mu</span><span class="p">,</span><span class="o">*</span><span class="p">}};</span>
 
-//  Define the F81 models, by combining the substitution matrix with the vector of observed (equilibrium) frequencies.
+<span class="c1">//  Define the F81 models, by combining the substitution matrix with the vector of observed (equilibrium) frequencies.</span>
 
-Model   F81 = (F81RateMatrix, observedFreqs);
+<span class="nx">Model</span>   <span class="nx">F81</span> <span class="o">=</span> <span class="p">(</span><span class="nx">F81RateMatrix</span><span class="p">,</span> <span class="nx">observedFreqs</span><span class="p">);</span>
 
-// Now we can define the tree variable, using the tree string read from the data file, 
-// and, by default, assigning the last defined model (F81) to all tree branches.
+<span class="c1">// Now we can define the tree variable, using the tree string read from the data file, </span>
+<span class="c1">// and, by default, assigning the last defined model (F81) to all tree branches.</span>
 
-Tree    givenTree = DATAFILE_TREE;
+<span class="nx">Tree</span>    <span class="nx">givenTree</span> <span class="o">=</span> <span class="nx">DATAFILE_TREE</span><span class="p">;</span>
 
-// Since all the likelihood function ingredients (data, tree, equilibrium frequencies)
-// have been defined we are ready to construct the likelihood function.
+<span class="c1">// Since all the likelihood function ingredients (data, tree, equilibrium frequencies)</span>
+<span class="c1">// have been defined we are ready to construct the likelihood function.</span>
 
-LikelihoodFunction  LF = (filteredData, givenTree);
+<span class="nx">LikelihoodFunction</span>  <span class="nx">LF</span> <span class="o">=</span> <span class="p">(</span><span class="nx">filteredData</span><span class="p">,</span> <span class="nx">givenTree</span><span class="p">);</span>
 
-// Maximize the likelihood function, storing parameter values in the matrix paramValues 
+<span class="c1">// Maximize the likelihood function, storing parameter values in the matrix paramValues </span>
 
-Optimize (paramValues, LF);
+<span class="nx">Optimize</span> <span class="p">(</span><span class="nx">paramValues</span><span class="p">,</span> <span class="nx">LF</span><span class="p">);</span>
 
-// Print the tree with optimal branch lengths to the console. 
+<span class="c1">// Print the tree with optimal branch lengths to the console. </span>
 
-fprintf  (stdout, LF);</code></pre>
+<span class="nx">fprintf</span>  <span class="p">(</span><span class="nx">stdout</span><span class="p">,</span> <span class="nx">LF</span><span class="p">);</span>
+</pre></div>
           
             <footer class="footer">
               <div class="container citation-footer">
