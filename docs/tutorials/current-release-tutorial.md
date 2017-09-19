@@ -159,8 +159,6 @@ Note that SLAC will formally test for both positive and negative selection at ea
 We will demonstate FUBAR use with an alignment of influenza A H3N2 hemagglutinin sequences subsetted from [Meyer and Wilke 2015](http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1004940) to sample sequences only along the trunk. This dataset is in the file `h3_trunk.fna`.
 
 
-Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the FUBAR analysis: Enter **1** for "Selection Analyses", and then **4** for "FUBAR". Respond to the following prompts:
-
 + **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
 + **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/h3_trunk.fna`
 + **`A tree was found in the data file:...Would you like to use it (y/n)?`**: Enter `y` to use the provided tree.
