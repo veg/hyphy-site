@@ -1,22 +1,17 @@
-Understanding the content of JSON output files
-===============
+% Understanding the content of HyPhy's JSON output files
+% Stephanie J. Spielman
+% September 2017
 
 Most standard analyses in HyPhy output results in [JSON format](https://en.wikipedia.org/wiki/JSON), essentially a nested dictionary. This page describes the contents of each method's JSON output.
 
 We note that these files are easily parsed for downstream use with standard scripting languages, e.g. using the `json` package in Python or `jsonlite` package in R.
 
-### Bookkeeping fields
-
-There are several fields which appear in JSONs that are used strictly for displaying results in [HyPhy Vision](vision.hyphy.org) and have no scientific meaning. These fields, which you can safely ignore, include the following:
-
-+ **`display order`**, in all analyses
-+ <od mashhu>
 	
-### Shared fields
+# Shared fields
 
-All standard selection analyses will have the following top-level fields:
+All standard selection analyses will have the following top-level fields. Note that the key **`display order`** appears in may JSON fields. This key is used strictly for displaying results in [HyPhy Vision](vision.hyphy.org) and have no scientific meaning.
 
-#### **`analysis`** 
+## **`analysis`** 
 
 This field contains information about the analysis method of interest and is comprised of the following keys:
 
@@ -27,7 +22,7 @@ This field contains information about the analysis method of interest and is com
 + **`contact`**, primary author to contact
 + **`requirements`**, Data required in order to execute method
 
-#### **`input`** 
+## **`input`** 
 
 This field contains information about the inputted dataset being analyzed and is comprised of the following keys:
 
@@ -50,27 +45,27 @@ This field contains information about the inputted dataset being analyzed and is
 		    	}
 
 
-#### **`fits`** 
+## **`fits`** 
 
 This field will contain information about each fitted model in the given analysis, and as such each method will return different fits. Most fit fields will contain the following fields:
 
 + **`Log Likelihood`**, the log likelihood of the fitted model
 + **`estimated parameters`**, the number of parameters estimated during likelihood optimization (i.e., not including empirically-determined parameters)
 + **`AIC-c`**, the [small-sample AIC](https://en.wikipedia.org/wiki/Akaike_information_criterion#AICc) for the fitted model
-+ **`Rate distributions`**, the inferred rate distribution under the fitted model. Depending on the model, this field can refer to different rates. See each fit description for an explanation of the rates provided.
++ **`Rate Distributions`**, the inferred rate distribution under the fitted model. Depending on the model, this field can refer to different rates. See each fit description for an explanation of the rates provided.
 
 
 Within **`fits`**, all methods will contain a field **`Nucleotide GTR`**, and most will contain a field for **`Global MG94xREV`** (note that this is termed **`MG94xREV with separate rates for branch sets`** in methods RELAX and BUSTED, and termed **`Baseline MG94xREV`** in aBSREL). Each of these fields will contain the following additional fields:
 
 + **`Nucleotide GTR`**
 	+ **`Equilibrium frequencies`**, a vector of nucleotide frequencies obtained empirically, in alphabetical order (A, C, G, T)
-	+ **`Rate distributions`**, a dictionary of inferred nucleotide substitution rates under the GTR model. Note that, for all inferences, the rate `A->G` (`G->A`) is constrained to equal 1. 
+	+ **`Rate Distributions`**, a dictionary of inferred nucleotide substitution rates under the GTR model. Note that, for all inferences, the rate `A->G` (and therefore also `G->A`) is constrained to equal 1. 
 + **`Global MG94xREV`** (or analogous field in RELAX, BUSTED, aBSREL)
 	+ **`Equilibrium frequencies`**, a vector of codon frequencies obtained using the [CF3x4 estimator](http://dx.doi.org/10.1371/journal.pone.0011230), in alphabetical order (AAA, AAC, AAG,..., TTT)
-	+ **`Rate distributions`**, inferred $\omega$ rates under the fitted model. Content in this field is method-specific.
+	+ **`Rate Distributions`**, inferred $\omega$ rates under the fitted model. Content in this field is method-specific.
 	
 
-#### **`data partitions`**
+## **`data partitions`**
 
 This field provides information about the specified partitions for a given analysis. In this context, partition refers to the case where different sites evolve according to different trees. It does not refer to branch sets.
 
@@ -80,7 +75,7 @@ Keys enumerate partitions (starting from 0). Each partition contains the followi
 + **`coverage`**, a list of the sites to which the given partition corresponds.
 
 
-#### **`branch attributes`**
+## **`branch attributes`**
 
 This field provides information branch-level inferences. It contains a field for each partition (starting from 0) as well as an **`attributes`** field. Each partition's field further contains a dictionary for each node (taxa and internal nodes) in the data containing information about the branch. For each key seen per node, the **`attributes`** field defines its meaning, either **branch length** or **node label** (indicating meta information). 
 
@@ -128,30 +123,31 @@ For example, consider this (fake, for explanation purposes) example **`branch at
 		    }
 		}
 
-Here, we see a single partition (0) with two internal nodes (Node0, Node1) and three tips (taxon1, taxon2, taxon3). All of these nodes contain the keys **"Nucleotide GTR"** and **"Global MG94xREV"** associated with numerical values. Looking into the **`attributes`** dictionary, we see that these keys correspond to the **`attribute type`** "branch length". Therefore, the values present in each node's dictionary represent the inferred branch length at that node under the given model. 
+Here, we see a single partition (0) with two internal nodes (Node0, Node1) and three tips (taxon1, taxon2, taxon3). All of these nodes contain the keys **`Nucleotide GTR`** and **`Global MG94xREV`** associated with numerical values. Looking into the **`attributes`** dictionary, we see that these keys correspond to the **`attribute type`** "branch length". Therefore, the values present in each node's dictionary represent the inferred branch length at that node under the given model. 
 We also see the key **`original name`** for only nodes which are *tips*. This attribute, recorded as a "node label" in **`attributes`**, provides the original taxon name provided to HyPhy. In the event that there are forbidden characters in the provided name (i.e. for taxon3), HyPhy maps this forbidden name to an acceptable name. The original provided name will be recorded as an attribute in the node's dictionary.
 
-#### **`tested`**
+## **`tested`**
 
 This field indicates whether each node (taxon and internal node) belongs to either the "test" or "background" branch sets. If multiple partitions were specified, then there will be a dictionary for each partition, beginning from 0. In the case of RELAX, this field will indicate if branches are Test, Reference, or Unclassified.
 
-#### **`timers`**
+## **`timers`**
 
 This field provides the run times, including total execution time (**`Total time`**), of different stages in model fitting. Each method will report the total time as well as times for critical fitting stages specific to the method.
 
-### BUSTED
+# BUSTED
 
 This section details JSON fields which are specific to BUSTED, and further clarifies the contents of shared fields as they appear in BUSTED.
 
-#### **`background`**
+## **`background`**
 
 This field simply contains the value **0** or **1** indicating if all nodes are considered as test ("foreground"), or if specific test/background sets have been specified. **0** indicates  that all branches are test, and **1** indicates that there are separate test and background lineages.
 
-#### **`test results`**
+## **`test results`**
 
 This field reports the likelihood ratio test statistic (**`LRT`**) and P-value (**`p-value`**) obtained under the BUSTED test for gene-wide episodic selection.
 
-#### **`fits`**
+
+## **`fits`**
 
 In BUSTED, this field contains either 3 or 4 model fits:
 
@@ -176,7 +172,7 @@ In BUSTED, this field contains either 3 or 4 model fits:
 	+ **`Rate Distributions`** reports the three-rate $\omega$ distribution inferred for the test lineages, as well as the background lineages if they were specified. It follows the same format as does the corresponding field in **`Unconstrained model`**. 
 
 
-#### **`branch attributes`**
+## **`branch attributes`**
 
 The branch attributes in BUSTED consist of the following:
 
@@ -186,23 +182,21 @@ The branch attributes in BUSTED consist of the following:
 + **`unconstrained`**, branch lengths under the BUSTED alternative model
 + **`constrained`**, branch lengths under the BUSTED null model, if it was fit during the given BUSTED analysis
 
-#### **`Site Log Likelihood`**
+## **`Site Log Likelihood`**
 
-Log-likelihood values calculated for each site, under the **unconstrained** and, if fit, the **constrained** models.
+Log-likelihood values calculated for each site, under the **unconstrained** and, if fit, the **constrained** models. A description of these values is available in the BUSTED publication and on [hyphy.org](http://hyphy.org/methods/selection-methods/#busted).
 
-#### **`Evidence Ratios`**
+## **`Evidence Ratios`**
 
-Site-wise evidence ratios providing descriptive evidence for whether each site might be selected. A description of these values is available in the BUSTED publication and on [hyphy.org](http://hyphy.org/methods/selection-methods/#busted) values calculated for each site, under the **unconstrained** and, if fit, the **constrained** models. 
-
-Note that this field will **only be populated** if the Constrained model was fit.
+Site-wise evidence ratios providing descriptive evidence for whether each site might be selected. A description of these values is available in the BUSTED publication and on [hyphy.org](http://hyphy.org/methods/selection-methods/#busted). Note that this field will **only be populated** if the Constrained model was fit.
 
 
-### aBSREL
+# aBSREL
 
 This section details JSON fields which are specific to aBSREL, and further clarifies the contents of shared fields as they appear in aBSREL.
 
 
-#### **`test results`**
+## **`test results`**
 
 This field contains three keys:
 
@@ -213,7 +207,7 @@ This field contains three keys:
 Lineage-specific test results are contained the in **`branch attributes`** field, described below. 
 
 
-#### **`fits`**
+## **`fits`**
 
 In aBSREL, this field contains 3 model fits:
 
@@ -233,7 +227,7 @@ In aBSREL, this field contains 3 model fits:
 + **`Full adaptive model`**, the aBSREL adaptive model fit. Note that it will contain an *empty* **`Rate Distributions`** field. The inferred lineage $\omega$ distributions are contained in the **`branch attributes`** field, described below.
 
 
-#### **`branch attributes`**
+## **`branch attributes`**
 
 The branch attributes in aBSREL consist of the following:
 
@@ -250,11 +244,11 @@ The branch attributes in aBSREL consist of the following:
 
 
 
-### RELAX
+# RELAX
 
 This section details JSON fields which are specific to RELAX, and further clarifies the contents of shared fields as they appear in RELAX.
 
-#### `**fits**`
+## **`fits`**
 
 In RELAX, this field contains either either 4 or 6 model fits, where **`General descriptive`** and **`RELAX partitioned descriptive`** are only present when "All" RELAX models are fitted (in contrast to "Minimal" mode).
 
@@ -272,12 +266,12 @@ In RELAX, this field contains either either 4 or 6 model fits, where **`General 
 
 
 
-#### `**test results**`
+## **`test results`**
 
 This field reports the likelihood ratio test statistic (**`LRT`**) and P-value (**`p-value`**) obtained under the RELAX test. It additionally reports the inferred K parameter in the key **`relaxation or intensification parameter`**.
 
 
-#### **`branch attributes`**
+## **`branch attributes`**
 
 The branch attributes in RELAX consist of the following:
 
@@ -291,18 +285,18 @@ The branch attributes in RELAX consist of the following:
 + **`RELAX partitioned descriptive`**, branch lengths under this model. This attribute is only present if RELAX is run in "All" mode. 
 
 
-#### **`tested`**
+## **`tested`**
 
 This field indicates whether each node (taxon and internal node) belongs to either the "Test", "Reference", or (if specified) "Unclassified" branch sets. 
 
 
 
 
-### FEL and MEME
+# FEL and MEME
 
 FEL and MEME JSONs contain very similar contents, most of which is described under **Shared fields** above. This section details JSON fields in FEL and MEME. 
 
-#### **`branch attributes`**
+## **`branch attributes`**
 
 The branch attributes in FEL and MEME consist of the following:
 
@@ -310,7 +304,7 @@ The branch attributes in FEL and MEME consist of the following:
 + **`Nucleotide GTR`**, branch lengths under this model
 + **`Global MG94xREV`**, branch lengths under this model
 
-#### **`MLE`**
+## **`MLE`**
 
 This field contains all site-level estimates of selection and effectively corresponds to a csv of inferences. It contains two keys:
 
@@ -318,11 +312,11 @@ This field contains all site-level estimates of selection and effectively corres
 + **`content`**, site-level estimates of selection, with values ordered as in **`headers`**. Each row corresponds to a site, in the order the sites were listed in **`data partitions`**. There will be a separate **`content`** section for each partition, starting from 0.
 
 
-### SLAC
+# SLAC
 
 The SLAC JSON is very similar to those of FEL and MEME but contains some additional information. This section details JSON fields in SLAC. 
 
-#### **`branch attributes`**
+## **`branch attributes`**
 
 The branch attributes in SLAC consist of the following:
 
@@ -334,7 +328,7 @@ The branch attributes in SLAC consist of the following:
 + **`synonymous substitution count`**, the number of synonymous substitutions per site inferred to have occured along this branch
 + **`nonsynonymous substitution count`**, the number of nonsynonymous substitutions per site inferred to have occured along this branch
 
-#### **`MLE`**
+## **`MLE`**
 
 This field is arranged similar to MEME and FEL, with **`headers`** representing a csv header and **`content`** representing corresponding rows under this header, per partition. However, it contains additional content information as well:
 
@@ -344,15 +338,15 @@ This field is arranged similar to MEME and FEL, with **`headers`** representing 
 + **`sample-97.5`** contains **`RESOLVED`** and **`AVERAGED`** versions of the header contents referring to the upper 97.5% boundary of the bootstrap draws for establishing a 95% confidence interval.
 
 
-### FUBAR
+# FUBAR
 
 This section details JSON fields which are specific to FUBAR, and further clarifies the contents of shared fields as they appear in FUBAR.
 
-#### **`MLE`**
+## **`MLE`**
 
 This field follows the same format as in FEL/MEME. Please see the **FEL and MEME** section above for details.
 
-#### **`settings`**
+## **`settings`**
 
 This field records the run-time settings specified for FUBAR inference:
 
@@ -365,17 +359,17 @@ This field records the run-time settings specified for FUBAR inference:
 + **`posterior`**, the posterior probalility threshold used to call selected sites
 
 
-#### **`grid`**
+## **`grid`**
 
 This field contains the full grid of rates and their corresponding weights, where each row represents the following:
 
 		[nonsynonymous rate (dN), synonymous rate (dS), posterior mean over the grid for this dN/dS rate]
 
-#### **`posterior`**
+## **`posterior`**
 
 This field contains, for each partition (starting from 0), the posterior probability for each grid rate across all sites (starting from 0).
 
-#### **`branch attributes`**
+## **`branch attributes`**
 
 The branch attributes in FUBAR consist of the following:
 
