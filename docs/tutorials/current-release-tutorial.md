@@ -4,7 +4,7 @@ Using HyPhy to detect selection.
 
 These tutorials outline how to prepare data and execute analyses in HyPhy's suite of methods for detecting natural selection in protein-coding alignments. Specifically, this tutorial explains how to use the [current release](https://github.com/veg/hyphy/releases) of HyPhy from the **command line**. 
 
-All analyses described here produce a final output JSON-formatted file which can be uploaded to [HyPhy Vision](http://vision.hyphy.org) for exploration. You can obtain a description of JSON contents for all analyses [here](../resources/files/json-fields.pdf). In addition, each analyses will provide live [Markdown-formatted](https://en.wikipedia.org/wiki/Markdown) status indicators to the console while running. 
+All analyses described here produce a final output JSON-formatted file which can be uploaded to [HyPhy Vision](http://vision.hyphy.org) for exploration. You can obtain a description of JSON contents for all analyses [here](../resources/json-fields.pdf). In addition, each analyses will provide live [Markdown-formatted](https://en.wikipedia.org/wiki/Markdown) status indicators to the console while running. 
 
 ### Before you begin
 
