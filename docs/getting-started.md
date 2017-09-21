@@ -33,7 +33,7 @@ HyPhy provides a suite of diverse phylogenetic methodologies for testing specifi
 
 
 ### Are individual sites subject to *pervasive* (across the whole phylogeny) positive or purifying selection?
-* [FEL](./methods/selection-methods/#fel) (**F**ixed **E**fects **L**ikelihood) is suitable for small-to-medium sized data sets.
+* [FEL](./methods/selection-methods/#fel) (**F**ixed **E**ffects **L**ikelihood) is suitable for small-to-medium sized data sets.
 * [SLAC](./methods/selection-methods/#slac) (**S**ingle-**L**ikelihood **A**ncestor **C**ounting) is an approximate method with accuracy similar to FEL, but suitable for larger datasets. However, SLAC is not suitable for highly-diverged sequences.
 * [FUBAR](./methods/selection-methods/#fubar) (**F**ast, **U**nconstrained **B**ayesian **A**pp**R**oximation) is suitable for medium-to-large data sets and is expected to have more power than FEL for detecting pervasive selection at sites. **FUBAR is the preferred approach for inferring pervasive selection.**
 

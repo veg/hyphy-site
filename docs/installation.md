@@ -31,11 +31,18 @@ Installation
     
             cmake -DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX10.9.sdk/ .
 
-3. Build HyPhy by running `make` with one of the following build targets given below. For example, to install the executable `HYPHYMP`, you would enter the following command:
+3. Build HyPhy by running `make` with one of the following build targets given below. Note that including the `-j` flag for make (i.e. `make -j <target>`) will dramatically speed this step up by taking advantage of multiple processors.
 
-		make MP2
 
-	*  `MP2/MP` - build a HyPhy executable (`HYPHYMP`) using [*OpenMP*](http://www.openmp.org) to support symmetric multiprocessing. If *OpenMP* is not installed or not supported by the compiler (e.g. LLVM), the compiled executable will not support multi-threading. You can confirm  case by examining the output from running `cmake`. If `openMP` is installed, you should see something similar to the following in the output:
+		## make the HYPHYMP executable:
+		make MP
+		## Faster:
+		make -j MP
+		
+		## make the HYPHYMPI executable:
+		make MPI
+
+	*  `MP` - build a HyPhy executable (`HYPHYMP`) using [*OpenMP*](http://www.openmp.org) to support symmetric multiprocessing. If *OpenMP* is not installed or not supported by the compiler (e.g. LLVM), the compiled executable will not support multi-threading. You can confirm  case by examining the output from running `cmake`. If `openMP` is installed, you should see something similar to the following in the output:
 
             -- Performing Test OpenMP_FLAG_DETECTED
             -- Performing Test OpenMP_FLAG_DETECTED - Success
@@ -49,8 +56,7 @@ Installation
                 -- Found MPI_C: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
 
                 -- Found MPI_CXX: /opt/scyld/openmpi/1.6.3/gnu/lib/libmpi_cxx.so;/opt/scyld/openmpi/1.6.3/gnu/lib/libmpi.so;/usr/lib64/libibverbs.so;/usr/lib64/libdat.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so;/usr/lib64/libtorque.so;/usr/lib64/libm.so;/usr/lib64/libnuma.so;/usr/lib64/librt.so;/usr/lib64/libnsl.so;/usr/lib64/libutil.so;/usr/lib64/libm.so
-    
-    *  `LIB` - build a HyPhy library (libhyphy_mp), optionally using OpenMP (see above) to support multiprocessing
+
 
 4. Finally, install HyPhy on your system with the command
 
