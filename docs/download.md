@@ -23,7 +23,7 @@ Alternatively, you may download an installer for the final prebuilt release of H
 * Download the master branch of HyPhy by cloning the repository by entering this command into a terminal session:
 
 ```
-git clone git@github.com:veg/hyphy.git
+git clone https://github.com/veg/hyphy.git
 ```
 
 Once you have downloaded HyPhy, follow these [installation instructions](./installation.md).
