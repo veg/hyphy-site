@@ -105,12 +105,11 @@ of branches.
 
 For each site, MEME infers two $\omega$ rate classes and corresponding weights
 representing the probability that the site evolves under each respective
-$\omega$ rate class, at a given branch. 
+$\omega$ rate class at a given branch. 
 
 To infer $\omega$ rates, MEME infers a single $\alpha$ (dS) value and two
-separate $\beta$ (dN) values, $\beta^-$ and $\beta^+$. Both $\beta+ and $\beta-$
-share the same $\alpha$ per site. For both the null and alternative model, MEME
-enforces the constraint $\beta^- \leq \alpha$. 
+separate $\beta$ (dN) values, $\beta^+$ and $\beta^-$. Both $\beta^+$ and $\beta^-$
+share the same $\alpha$ per site. 
 
 **Alternative Model Rate Parameter Constraints**
 $$ \alpha\ unrestricted \\ \beta^+\ free \\ \beta^- \leq \alpha $$
@@ -119,9 +118,9 @@ $$ \alpha\ unrestricted \\ \beta^+\ free \\ \beta^- \leq \alpha $$
 **Null Model Rate Parameter Constraints**
 $$\alpha\ unrestricted \\ \beta^+ \leq \alpha \\ \beta^- \leq \alpha$$
 
-The $\beta^+$ parameter is therefore the key difference between the null and
-alternative models. In the null model, both $\beta^+$ and $\beta^-$ are
-constrained, but $\beta^+$ is unrestricted in the alternative model. 
+The $\beta^+$ parameter is the key difference between the null and alternative
+models. In the null model, both $\beta^+$ and $\beta^-$ are constrained, but
+$\beta^+$ is unrestricted in the alternative model. 
 
 Positive selection for each site is inferred when $\beta^+ > \alpha$ and shown
 to be significant using the likelihood ratio test. 
