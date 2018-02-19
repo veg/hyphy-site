@@ -112,7 +112,7 @@ separate $\beta$ (dN) values, $\beta^+$ and $\beta^-$. Both $\beta^+$ and $\beta
 share the same $\alpha$ per site. 
 
 **Alternative Model Rate Parameter Constraints**
-$$ \alpha\ unrestricted \\ \beta^+\ free \\ \beta^- \leq \alpha $$
+$$ \alpha\ unrestricted \\ \beta^+\ unrestricted \\ \beta^- \leq \alpha $$
 
 
 **Null Model Rate Parameter Constraints**
