@@ -96,16 +96,40 @@ Methods which accept data processed by GARD include the following:
 <!--------------------------------------------------------------------------------------->
 ## MEME
 
-MEME (**M**ixed **E**ffects **M**odel of **E**volution) employs a mixed-effects maximum likelihood approach to test the hypothesis that individual sites have been subject to episodic positive or diversifying selection. 
-In other words, MEME aims to detect sites evolving under positive selection under a *proportion* of branches.
+MEME (**M**ixed **E**ffects **M**odel of **E**volution) employs a mixed-effects
+maximum likelihood approach to test the hypothesis that individual sites have
+been subject to episodic positive or diversifying selection.  In other words,
+MEME aims to detect sites evolving under positive selection under a *proportion*
+of branches.
 
 
-For each site, MEME infers two $\omega$ rate classes and corresponding weights representing the probability that the site evolves under $\omega$ rate class, at a given branch. Importantly, to infer $\omega$ rates, MEME infers a single $\alpha$ (dS) value and two separate $\beta$ (dN) values, $\beta^-$ and $\beta^+$, which share the same $\alpha$, per site. For both the null and alternative model, MEME enforces the constraint $\beta^- \leq \alpha$. The $\beta^+$ parameter is therefore the key difference between null and alternative models: In the null model, $\beta^+$ is constrained as in the null model: $\beta^+ \leq \alpha$, but $\beta^+$ is not constrained in the alternative model. Ultimately, positive selection for each site is inferred when $\beta^+ > \alpha$ and shown to be significant using the likelihood ratio test. 
+For each site, MEME infers two $\omega$ rate classes and corresponding weights
+representing the probability that the site evolves under each respective
+$\omega$ rate class at a given branch. 
+
+To infer $\omega$ rates, MEME infers a single $\alpha$ (dS) value and two
+separate $\beta$ (dN) values, $\beta^+$ and $\beta^-$. Both $\beta^+$ and $\beta^-$
+share the same $\alpha$ per site. 
+
+**Alternative Model Rate Parameter Constraints**
+$$ \alpha\ unrestricted \\ \beta^+\ unrestricted \\ \beta^- \leq \alpha $$
+
+
+**Null Model Rate Parameter Constraints**
+$$\alpha\ unrestricted \\ \beta^+ \leq \alpha \\ \beta^- \leq \alpha$$
+
+The $\beta^+$ parameter is the key difference between the null and alternative
+models. In the null model, both $\beta^+$ and $\beta^-$ are constrained, but
+$\beta^+$ is unrestricted in the alternative model. 
+
+Positive selection for each site is inferred when $\beta^+ > \alpha$ and shown
+to be significant using the likelihood ratio test. 
  
 
-**If you use MEME in your analysis, please cite the following:** [`Murrell, B et al. "Detecting individual sites subject to episodic diversifying selection." PLoS Genetics 8, e1002764 (2012).`](http://dx.doi.org/10.1371/journal.pgen.1002764)
-
-
+**If you use MEME in your analysis, please cite the following:** [`Murrell, B et
+al. "Detecting individual sites subject to episodic diversifying selection."
+PLoS Genetics 8, e1002764
+(2012).`](http://dx.doi.org/10.1371/journal.pgen.1002764)
 
 <!--------------------------------------------------------------------------------------->
 ## RELAX
