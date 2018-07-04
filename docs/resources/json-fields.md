@@ -1,6 +1,6 @@
 % Understanding the content of HyPhy's JSON output files
 % Stephanie J. Spielman
-% September 2017
+% December 2017
 
 Most standard analyses in HyPhy output results in [JSON format](https://en.wikipedia.org/wiki/JSON), essentially a nested dictionary. This page describes the contents of each method's JSON output.
 
@@ -311,6 +311,30 @@ This field contains all site-level estimates of selection and effectively corres
 + **`headers`**, the header/meaning of each column in the **`content`** block
 + **`content`**, site-level estimates of selection, with values ordered as in **`headers`**. Each row corresponds to a site, in the order the sites were listed in **`data partitions`**. There will be a separate **`content`** section for each partition, starting from 0.
 
+# LEISR
+
+The LEISR JSON is very similar to those of FEL and MEME. This section details JSON fields in LEISR. 
+
+## **`fits`**
+
+This field contains a description of the specified model fit. As such, the specific name will differ based on what model the user has selected.
+
++ **`<model>`**
+	+ **`Rate Distributions`** is either empty if rate heterogeneity is off, or contains information about the rate distribution
+
+Note that in version <=2.3.7, there was a minor bug in the LEISR JSON, such that the field `Equilibrium Frequencies` in `fits` was misnamed as `EFV`. This has been addressed for HyPhy version >=2.3.8.
+
+
+## **`branch attributes`**
+
+The branch attributes in LEISR consist of the following:
+
++ **`original name`**, provided taxon names
++ **`<model>`**, branch lengths under the given model name in the `fits` field
+
+## **`MLE`**
+
+This field contains is analogous to those of FEL and MEME. Note that only a single partition is allowed for LEISR inference at this time. 
 
 # SLAC
 
