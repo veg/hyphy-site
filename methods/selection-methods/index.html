@@ -310,6 +310,16 @@
             <!-- Render anchor -->
             
                 <li class="anchor">
+                  <a title="FADE" href="#fade">
+                    FADE
+                  </a>
+                </li>
+            
+          
+
+            <!-- Render anchor -->
+            
+                <li class="anchor">
                   <a title="FEL" href="#fel">
                     FEL
                   </a>
@@ -466,7 +476,7 @@
       <article class="article">
         <div class="wrapper">
           <h1 id="methods-for-inferring-selection-pressure">Methods for Inferring Selection Pressure<a class="headerlink" href="#methods-for-inferring-selection-pressure" title="Permanent link">#</a></h1>
-<p>HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using the <em>dN/dS</em> metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow <a href="../../getting-started/#characterizing-selective-pressures">these guidelines</a>.</p>
+<p>HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using, in the case of codon-based methods, the <em>dN/dS</em> metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow <a href="../../getting-started/#characterizing-selective-pressures">these guidelines</a>.</p>
 <h2 id="absrel">aBSREL<a class="headerlink" href="#absrel" title="Permanent link">#</a></h2>
 <p>aBSREL (<strong>a</strong>daptive <strong>B</strong>ranch-<strong>S</strong>ite <strong>R</strong>andom <strong>E</strong>ffects <strong>L</strong>ikelihood) is an improved version of the commonly-used "branch-site" models, which are used to test if positive selection has occurred on a proportion of branches. As such, aBSREL models both site-level and branch-level <script type="math/tex">\omega</script>  heterogeneity. aBSREL, however, does not test for selection at specific sites. Instead, aBSREL will test, for each branch (or branch of interest) in the phylogeny, whether a proportion of sites have evolved under positive selection. </p>
 <p>aBSREL differs from other branch-site model implementations by inferring the optimal number of <script type="math/tex">\omega</script>  classes for each branch. For example, the earlier HyPhy branch-site approach (BS-REL) assumed three <script type="math/tex">\omega</script>  rate classes for each branch and assigned each site, with some probability, to one of these classes. aBSREL, by contrast, acknowledges that different branches may feature more or less complex evolutionary patterns and hence may be better modeled by more or fewer <script type="math/tex">\omega</script> classes. Specifically, aBSREL uses AIC<sub>c</sub> (small sample AIC) to infer the optimal number of <script type="math/tex">\omega</script> rate classes for each branch. </p>
@@ -487,12 +497,10 @@
 <p><strong>If you use BUSTED in your analysis, please cite the following:</strong> <a href="https://doi.org/10.1093/molbev/msv035"><code>Murrell, B et al. "Gene-wide identification of episodic selection." Mol. Biol. Evol. 32, 1365–1371 (2015).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
-<!--
-## FADE
-
-[forthcoming]
--->
-
+<h2 id="fade">FADE<a class="headerlink" href="#fade" title="Permanent link">#</a></h2>
+<p>FADE (<strong>F</strong>UBAR <strong>A</strong>proach to <strong>D</strong>irectional <strong>E</strong>volution) is a method that uses a Bayesian framework, based on that introduced by <a href="../selection-methods/#fubar"><strong>FUBAR</strong></a> ), to test whether sites in a <em>protein alignment</em> are subject to directional selection. Specifically, FADE will systematically test, for each site in the alignment, whether a specified set of foreground branches shows a <em>substitution bias</em> towards a particular amino-acid, compared to background branches. High values of this bias parameter indicate that the site is experiencing substantially more than expected substitutions towards. Statistical significance in FADE is assessed using Bayes Factors (BF), where <script type="math/tex">BF\geq100</script> provides strong evidence that the site is evolving under directional selection.</p>
+<p>Importantly, unlike most methods in HyPhy, FADE does not use a reversible Markov model since its aim is to detect directional selection. As such, a rooted phylogeny is required for FADE analysis. The browser-based interactive tools <a href="http://http://phylotree.hyphy.org/">Phylotree.js</a> can be used to help root the tree prior to analyzing with FADE.</p>
+<p>Please also note that FADE has replaced older methods for detecting directional selection, including EDEPS and MEDS. FADE citation is forthcoming.</p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="fel">FEL<a class="headerlink" href="#fel" title="Permanent link">#</a></h2>
@@ -528,10 +536,32 @@ Methods which accept data processed by GARD include the following:
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="meme">MEME<a class="headerlink" href="#meme" title="Permanent link">#</a></h2>
-<p>MEME (<strong>M</strong>ixed <strong>E</strong>ffects <strong>M</strong>odel of <strong>E</strong>volution) employs a mixed-effects maximum likelihood approach to test the hypothesis that individual sites have been subject to episodic positive or diversifying selection. 
-In other words, MEME aims to detect sites evolving under positive selection under a <em>proportion</em> of branches.</p>
-<p>For each site, MEME infers two <script type="math/tex">\omega</script> rate classes and corresponding weights representing the probability that the site evolves under <script type="math/tex">\omega</script> rate class, at a given branch. Importantly, to infer <script type="math/tex">\omega</script> rates, MEME infers a single <script type="math/tex">\alpha</script> (dS) value and two separate <script type="math/tex">\beta</script> (dN) values, <script type="math/tex">\beta^-</script> and <script type="math/tex">\beta^+</script>, which share the same <script type="math/tex">\alpha</script>, per site. For both the null and alternative model, MEME enforces the constraint <script type="math/tex">\beta^- \leq \alpha</script>. The <script type="math/tex">\beta^+</script> parameter is therefore the key difference between null and alternative models: In the null model, <script type="math/tex">\beta^+</script> is constrained as in the null model: <script type="math/tex">\beta^+ \leq \alpha</script>, but <script type="math/tex">\beta^+</script> is not constrained in the alternative model. Ultimately, positive selection for each site is inferred when <script type="math/tex">\beta^+ > \alpha</script> and shown to be significant using the likelihood ratio test. </p>
-<p><strong>If you use MEME in your analysis, please cite the following:</strong> <a href="http://dx.doi.org/10.1371/journal.pgen.1002764"><code>Murrell, B et al. "Detecting individual sites subject to episodic diversifying selection." PLoS Genetics 8, e1002764 (2012).</code></a></p>
+<p>MEME (<strong>M</strong>ixed <strong>E</strong>ffects <strong>M</strong>odel of <strong>E</strong>volution) employs a mixed-effects
+maximum likelihood approach to test the hypothesis that individual sites have
+been subject to episodic positive or diversifying selection.  In other words,
+MEME aims to detect sites evolving under positive selection under a <em>proportion</em>
+of branches.</p>
+<p>For each site, MEME infers two <script type="math/tex">\omega</script> rate classes and corresponding weights
+representing the probability that the site evolves under each respective
+<script type="math/tex">\omega</script> rate class at a given branch. </p>
+<p>To infer <script type="math/tex">\omega</script> rates, MEME infers a single <script type="math/tex">\alpha</script> (dS) value and two
+separate <script type="math/tex">\beta</script> (dN) values, <script type="math/tex">\beta^+</script> and <script type="math/tex">\beta^-</script>. Both <script type="math/tex">\beta^+</script> and <script type="math/tex">\beta^-</script>
+share the same <script type="math/tex">\alpha</script> per site. </p>
+<p><strong>Alternative Model Rate Parameter Constraints</strong>
+<script type="math/tex; mode=display"> \alpha\ unrestricted \\ \beta^+\ unrestricted \\ \beta^- \leq \alpha </script>
+</p>
+<p><strong>Null Model Rate Parameter Constraints</strong>
+<script type="math/tex; mode=display">\alpha\ unrestricted \\ \beta^+ \leq \alpha \\ \beta^- \leq \alpha</script>
+</p>
+<p>The <script type="math/tex">\beta^+</script> parameter is the key difference between the null and alternative
+models. In the null model, both <script type="math/tex">\beta^+</script> and <script type="math/tex">\beta^-</script> are constrained, but
+<script type="math/tex">\beta^+</script> is unrestricted in the alternative model. </p>
+<p>Positive selection for each site is inferred when <script type="math/tex">\beta^+ > \alpha</script> and shown
+to be significant using the likelihood ratio test. </p>
+<p><strong>If you use MEME in your analysis, please cite the following:</strong> <a href="http://dx.doi.org/10.1371/journal.pgen.1002764"><code>Murrell, B et
+al. "Detecting individual sites subject to episodic diversifying selection."
+PLoS Genetics 8, e1002764
+(2012).</code></a></p>
 <!--------------------------------------------------------------------------------------->
 
 <h2 id="relax">RELAX<a class="headerlink" href="#relax" title="Permanent link">#</a></h2>
@@ -585,6 +615,10 @@ In other words, MEME aims to detect sites evolving under positive selection unde
       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     
       <script src="../../assets/mathjaxhelper.js"></script>
+    
+      <script src="../../search/require.js"></script>
+    
+      <script src="../../search/search.js"></script>
     
     
 				<!-- Piwik -->
