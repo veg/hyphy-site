@@ -70,7 +70,7 @@ We therefore find that there is evidence for positive, diversifying selection in
 
 > See [here](../methods/selection-methods/#absrel) for a description of the aBSREL method.
 
-We will demonstate aBSREL use with an alignment of HIV-1 envelope protein sequences collected from  epidemiologically-linked donor-recipient transmission pairs, from [Frost et al, 2005](http://jvi.asm.org/content/79/10/6523). This dataset is in the file `hiv1_transmission.fna`.
+We will demonstate aBSREL use with an alignment of HIV-1 envelope protein-coding sequences collected from epidemiologically-linked donor-recipient transmission pairs, from [Frost et al, 2005](http://jvi.asm.org/content/79/10/6523). This dataset is in the file `hiv1_transmission.fna`.
 
 Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the aBSREL analysis: Enter **1** for "Selection Analyses", and then **6** for "aBSREL". Respond to the following prompts:
 
@@ -181,7 +181,7 @@ Note that FUBAR will formally test for both positive and negative selection at e
 
 > See [here](../methods/selection-methods/#relax) for a description of the RELAX method.
 
-We will demonstate RELAX use with an alignment of HIV-1 envelope protein sequences collected from  epidemiologically-linked donor-recipient transmission pairs, from [Frost et al, 2005](http://jvi.asm.org/content/79/10/6523). This dataset is in the file `hiv1_transmission_labeled.fna`.
+We will demonstate RELAX use with an alignment of HIV-1 envelope protein-coding sequences collected from epidemiologically-linked donor-recipient transmission pairs, from [Frost et al, 2005](http://jvi.asm.org/content/79/10/6523). This dataset is in the file `hiv1_transmission_labeled.fna`.
 
 
 Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the RELAX analysis: Enter **1** for "Selection Analyses", and then **7** for "RELAX". Respond to the following prompts:
@@ -198,3 +198,32 @@ RELAX will now run to completion and print markdown-formatted status indicators 
 
 
 This analysis did not detect any evidence of relaxed selection. However, if it had, a significant K>1 would indicate intensified selection on test lineages, and significant K<1 would indicate relaxed selection on test lineages.
+
+
+### Use FADE to test for directional selection at individual sites in a *protein* alignment 
+
+> See [here](../methods/selection-methods/#fade) for a description of the FADE method.
+
+We will demonstate FADE use with an alignment of Influenza A (IAV) matrix protein 2 (MP2) amino-acid sequences analyzed by [Tamuri et al, 2009](https://doi.org/10.1371/journal.pcbi.1000564). This alignment contains sequences from both human and avian IAV strains and was originally used to test for shifts in selection pressures between hosts. Here, we will test for directional evolution in human host lineages (tested foreground) compared to avian host lineages (background). This dataset is in the file `MP2.fna`. Importantly, Fade **requires** a rooted phylogeny. As such, the phylogeny is this data file has been rooted and human host lineages have been labeled as `FG` using [Phylotree.js](http://phylotree.hyphy.org). 
+
+Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the FADE analysis: Enter **1** for "Selection Analyses", and then **8** for "FADE". Respond to the following prompts:
+
++ **`Select a sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/MP2.fna`
++ **`A tree was found in the data file:...Would you like to use it (y/n)?`**: Enter `y` to use the provided tree.
++ **`Choose the set of branches to use test for selection`**: Enter `5` to select all branches we have previously labeled as `FG`.
++ **`Number of grid points per dimension`**: Press the `Enter` key to accept the default of 20.
++ **`Baseline substitution model`**: Select a baseline protein model to use during directional selection inference. For this analysis, enter `1` for the LG model. 
++ **`Posterior estimation method`**: Enter `1` to select the *Variational Bayes* algorithm. Other algorithms are expected to give the same inferences of selection, and Variational Bayes will run the most quickly. If you opt for a slower algorithm, you will encounter some or all of these subsequent prompts:
+	+ **`Number of MCMC chains to run `**: Press the `Enter` key to accept the default of 5.
+	+ **`The length of each chain`**: Press the `Enter` key to accept the default of 2000000.
+	+ **`Use this many samples as burn-in`**:Press the `Enter` key to accept the default of 1000000.
+	+ **`How many samples should be drawn from each chain`**: Press the `Enter` key to accept the default of 100.
++ **`The concentration parameter of the Dirichlet prior `**: Press the `Enter` key to accept the default of 0.5.
+
+
+FADE will now run to completion and print markdown-formatted status indicators to screen as it systematically tests each site for directional selection towards each amino acid, i.e `[fade] [A] Computing the phylogenetic likelihood function on the grid` for each amino acid through `Y`. The markdown output will conclude with the final FADE results for all sites with a Bayes Factor greater than 100. ![FADE markdown output](./files/images/fade-markdown.png)
+
+
+This analysis detected 6 sites directionally evolving, with one site evolving preferentially towards E, G, and K each, and three sites evolving preferentially towards N. Previous analysis of this gene, using a different method that detects shifts in selection pressure between two groups of lineages, identified sites 10 and 93 as evolving differently between host species ([Tamuri et al., 2009](https://doi.org/10.1371/journal.pcbi.1000564)). FADE similarly detected site 93, but not site 10, as well as 5 other sites with strong evidence for directional selection in human host lineages compared to avian host lineages.
+
+Additional information reported to the console in markdown includes the site *composition* and *substitution history* along the foreground branches. Note that the composition includes inferred ancestral states at internal nodes. In other words, composition values will not directly correspond to the composition observed in the multiple sequence alignment. For example, the full composition site 16, reported as directionally evolving towards glutamate (E), contains 37 glutamates, 296 glycines, and one valine. The inferred substitution history at site 16 along foreground branches is that E has undergone two substitutions to G, and G has undergone 9 substitutions to E and one substitution to V. 

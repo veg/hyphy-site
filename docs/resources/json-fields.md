@@ -1,6 +1,9 @@
-% Understanding the content of HyPhy's JSON output files
-% Stephanie J. Spielman
-% December 2017
+---
+title: Understanding the content of HyPhy's JSON output files
+author: Stephanie J. Spielman
+date: July 2018
+geometry: margin=0.75in
+---
 
 Most standard analyses in HyPhy output results in [JSON format](https://en.wikipedia.org/wiki/JSON), essentially a nested dictionary. This page describes the contents of each method's JSON output.
 
@@ -399,6 +402,54 @@ The branch attributes in FUBAR consist of the following:
 
 + **`original name`**, provided taxon names
 + **`Nucleotide GTR`**, branch lengths under this model
+
+
+
+
+
+# FADE
+
+This section details JSON fields which are specific to FADE, and further clarifies the contents of shared fields as they appear in FADE.
+
+## **`MLE`**
+
+This field is arranged similarly to MEME/FEL, with headers representing a csv header and content representing corresponding rows under this header. In FADE, the **`content`** field is organized per amino acid, with each amino-acid field containing a separate array for each partition. For example, the **`A`** field nested within **`content`** provides parameters estimated during FADE's test for directional evolution towards alanine at each site in each partition. Importantly, the final column in the content gives the Bayes Factor indicating whether the site has evolved under directional selection towards the amino acid of interest, where values over 100 provide strong statistical evidence.
+
+
+## **`settings`**
+
+This field records the run-time settings specified for FADE inference:
+
++ **`grid size`**, size of the NxN grid used to pre-compute rates and likelihoods
++ **`chains`**, the number of MCMC chains run
++ **`chain-length`**, the number of generations run per chain
++ **`burn-in`**, the number of samples discarded per chain as burn-in
++ **`samples`**, the number of samples drawn per chain
++ **`concentration`**, the alpha parameter for thr Dirichlet prior
++ **`bayes factor`**, the Bayes Factor threshold used to call directionally selected sites
++ **`method`**, the algorithm used during posterior inference
+
+## **`site annotations`**
+
+This field is arranged similarly to MEME/FEL, with headers representing a csv header and content representing corresponding rows under this header, per partition. In FADE, this field contains information regarding the subsitution history of each site *in the foreground lineages*, with headers representing a csv header and content representing corresponding rows under this header, per partition. The two columns are as follows:
+
++ **`Composition`** provides the amino-acid composition, *including inferred ancestral states*, of the given site along foreground branches only. This column will contain an empty string `""` if the site contains only missing and/or amibguous states. For example, an entry of `"A37,P1"` indicates that the site column *and* inferred internal node states contain, in total, 37 alanines and 1 proline.
++ **`Substitutions`** provides the inferred amino-acid substitutions of the given site along foregound branches only. This column will contain an empty string `""` if the site has not experienced any substitutions, according to ancestral reconstruction under the specified model. Substitutions are represented by text arrows, with commas separating different starting amino-acids. For example, an entry of `"T->A(2)I(2)L(1)V(1), V->G(1)"` indicates the following:
+	+ Two substitutions from threonine to alanine
+	+ Two substitutions from threonine to isoleucine
+	+ One substitution from threonine to leucine
+	+ One substitution from threonine to valine
+	+ One substitution from valine to glycine
+
+
+## **`branch attributes`**
+
+The branch attributes in FUBAR consist of the following:
+
++ **`original name`**, provided taxon names
++ **`<model>`**, branch lengths under the given protein model. The name of this field will correspond to the model name provided to FADE analysis, which is also shown in **`fits`**.
+
+
 
 
 
