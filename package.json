@@ -41,5 +41,8 @@
     "node-notifier": "^4.5.0",
     "vinyl-paths": "^2.1.0",
     "yargs": "^3.32.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }

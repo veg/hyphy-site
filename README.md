@@ -5,7 +5,7 @@
 * `pip install python-markdown-math`
 * `git clone git@github.com:veg/hyphy-site.git`
 * `mkdocs build`
-* `mkdocs serve`
+* `node server.js`
 
-### To push to the Github Page
-`mkdocs gh-deploy`
+### To deploy
+Currently deployed on temple server see operations-documentation repo for instructions
