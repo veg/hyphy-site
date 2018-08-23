@@ -59,6 +59,7 @@ pages:
         # '________' will hide the item from the toc
 #  - Scripting language: 'language.md'
   - Tutorials: 
-    - Using HyPhy to Detect Selection : 'tutorials/current-release-tutorial.md'
+    - Using HyPhy from the Command Line to Detect Selection : 'tutorials/current-release-tutorial.md'
+    - Using HyPHy-GUI to Detect Selection: 'tutorials/current-release-tutorial_gui.md'
     - Labeling branches with phylotree : 'tutorials/phylotree.md' 
 #    - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'
