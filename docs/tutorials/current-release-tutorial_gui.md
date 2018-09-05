@@ -7,7 +7,7 @@ These tutorials outline how to use the HyPhy Graphical User Interface (GUI) desk
 
 ### Before you begin
 
-1. Install the beta version of the HyPhy-GUI using the download linked [here](https://github.com/veg/hyphy-gui).
+1. Download the beta version of the HyPhy-GUI using the download linked [here](https://github.com/veg/hyphy-gui/releases/download/0.1.0-beta/HyPhyGUI.zip).
 2. Download the example datasets used in the tutorial [here](https://github.com/veg/hyphy-site/blob/master/docs/tutorials/files/tutorial_data.zip?raw=true). Unpack this zip file on your machine for use. All datasets and output JSON files for this tutorial are in this zip file.
 
 
