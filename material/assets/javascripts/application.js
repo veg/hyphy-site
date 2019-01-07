@@ -3286,7 +3286,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* Initialize index */
   var initialize = function() {
-    pegasus(base_url + '/mkdocs/search_index.json').then(
+    pegasus(base_url + '/search/search_index.json').then(
 
       /* Request successful, we got the index */
       function(data, xhr) {
