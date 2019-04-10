@@ -1,8 +1,8 @@
-Using HyPhy to detect selection.
+Using HyPhy interactive command line prompt to detect selection.
 =================================
 
 
-These tutorials outline how to prepare data and execute analyses in HyPhy's suite of methods for detecting natural selection in protein-coding alignments. Specifically, this tutorial explains how to use the [current release](https://github.com/veg/hyphy/releases) of HyPhy from the **command line**. 
+These tutorials outline how to prepare data and execute analyses in HyPhy's suite of methods for detecting natural selection in protein-coding alignments. Specifically, this tutorial explains how to use the [current release](https://github.com/veg/hyphy/releases) _(full disclosure: this tutorial was written based on version 2.3.11 but it should still be completely applicable)_ of HyPhy using the interactive command line prompt. 
 
 All analyses described here produce a final output JSON-formatted file which can be uploaded to [HyPhy Vision](http://vision.hyphy.org) for exploration. You can obtain a description of JSON contents for all analyses [here](../resources/json-fields.pdf). In addition, each analyses will provide live [Markdown-formatted](https://en.wikipedia.org/wiki/Markdown) status indicators to the console while running. 
 
@@ -21,7 +21,8 @@ Several analyses are accept labeled phylogenies to define branch sets for select
 ### Preparing input data for HyPhy
 
 All analyses require an alignment and corresponding phylogeny for analysis. There are options for preparing your data:
-+ Prepare your data in two separate files with the alignment and phylogeny each. Most standard alignemnt formats are accepted (FASTA, phylip, etc.), and the phylogeny should be newick-formatted.
+
++ Prepare your data in two separate files with the alignment and phylogeny each. Most standard alignemnt formats are accepted (FASTA, phylip, etc.), and the phylogeny should be newick-formatted.
 + Prepare your data in a single file containing a FASTA-formatted alignment, beneath which should be a newick-formatted phylogeny.
 + Prepare your data as a NEXUS file with both a data matrix and tree block. Note that this file type will be necessary for performing a partitioned analysis, where different sites evolve according to different phylogenies (i.e. a recombination-corrected dataset from [**GARD**](../methods/selection-methods/#gard).
 

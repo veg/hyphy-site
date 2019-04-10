@@ -57,7 +57,8 @@ pages:
   - '________' : 'methods/other/fel-contrast.md'
   # '________' will hide the item from the toc
 #  - Scripting language: 'language.md'
-  - '_________' : 'tutorials/current-release-tutorial.md'
-  - '_________' : 'tutorials/current-release-tutorial_gui.md'
+  - '_________' : 'tutorials/CLI-tutorial.md'
+  - '_________' : 'tutorials/CL-prompt-tutorial.md'
+  - '_________' : 'tutorials/gui-tutorial.md'
   - '_________' : 'tutorials/phylotree.md' 
 #    - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'
