@@ -3,11 +3,12 @@ Installation
 ===========
 Please note that HyPhy is not currently available for Windows.
 
-### Install with Conda
+### Installing with Conda
 
 `conda install hyphy`
 
-_you will need to add the bioconda channel if you have not already done so: (`conda config --add channels bioconda`)_
+_you will need to add the bioconda channel if you have not already done so:_  
+`conda config --add channels bioconda`
 
 ### Building from source
 

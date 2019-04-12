@@ -1,10 +1,10 @@
-Using HyPhy from the Command Line
+Using HyPhy as a standard command line tool
 =================================
 
 As of version 2.4.0 HyPhy is a bonified command line tool.
 An executable with key-word arguments, relative paths to files and sane defaults.
-No more echoing in arguments from bash scripts.
-Yes... We're excited too!
+The interactive command line prompt is still avaialible if you prefer that (simply run `hyphy -i`).
+This page provides some general information about using HyPhy as a command line tool; the older [command line prompt tutorial](./CL-prompt-tutorial.md) provides more details about each method.
 
 Like any command line tool, to see the available options simply run `hyphy --help`.
 
