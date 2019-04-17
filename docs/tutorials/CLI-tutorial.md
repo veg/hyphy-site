@@ -18,7 +18,12 @@ If you're tree is in a seperate file (not the same file as the alignment) add a 
 
 Most methods require only an alignment and a tree.
 Default values are used for any other options.
-To see a list of the available options for a method run `hyphy <method_name> --help` (`hyphy slac --help` in our example)
+To see a list of the available options for a method run `hyphy <method_name> --help` (`hyphy slac --help` in our example).
+
+Key word arguments and interactive prompts can be mixed by including `-i` before any key word arguments.
+For example:  
+`hyphy -i slac --alignment CD2.fasta --code Universal`  
+Will begin a slac analysis with CD2.fasta using the universal genetic code and prompt you for all the non-specified options: a tree file, branch selection, number of samples for ancesteral state reconstruction, p-value.
 
 Markdown formatted status indicators will be printed to stdout as the analysis runs.
 Final results will be saved in a JSON-formatted file (saved in the same directory as the alignment file unless a `--output` argument is provided). This JSON results file can be uploaded at [vision.hyphy.org](http://vision.hyphy.org) for an interactive visualization of the results.

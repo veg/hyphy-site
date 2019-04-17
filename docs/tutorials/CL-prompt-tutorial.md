@@ -10,8 +10,9 @@ All analyses described here produce a final output JSON-formatted file which can
 
 1. Install the current release of HyPhy on your computer, as needed, using [these instructions](../installation.md).
 2. This tutorial employs example datasets, available for download as a [zip file](https://github.com/veg/hyphy-site/blob/master/docs/tutorials/files/tutorial_data.zip?raw=true). Unpack this zip file on your machine for use and **remember the absolute path to this directory**. All datasets and output JSON files for this tutorial are in this zip file.
-3. This tutorial assumes you are specifically using the HyPhy executable `HYPHYMP`. If you have installed a different executable (e.g. `HYPHYMPI`), you may need to alter some commands.
-<!--4. This tutorial uses the interactive HyPhy menu prompt to perform analyses. If you wish to automate many analyses instead of using HyPhy interactively, see the section [Automating Analyses](./current-release-tutorial/#automating-analyses) for modified instructions.-->
+3. This tutorial assumes you are specifically using the HyPhy executable `hyphy`*. If you have installed a different executable (e.g. `HYPHYMPI`), you may need to alter some commands.  
+
+_*Note: As of version 2.4.0, the old single-core executable, `hyphy`, has been removed; now the multi-core executable is refered to as `hyphy` (a `HYPHYMP` executable is still created for backwards compatability but it is just a sim-link to the `hyphy` executable). This was done for simplicity and because running hyphy with a single-core is rarely the desired choice_
 
 ### Preparing labeled phylogenies
 
@@ -31,7 +32,7 @@ Each of these choices will trigger a slightly different data-input prompt, as de
 
 ### General Information
 
-All available selection analyses in HyPhy can be accessed by launching HyPhy from the command line by typing `HYPHYMP` (or launching `HYPHYMPI` in an appropriate MPI environment) and entering **`1`** to reach the **`Selection Analyses`** menu: 
+All available selection analyses in HyPhy can be accessed by launching HyPhy from the command line by typing `hyphy -i`* (or launching `HYPHYMPI -i` in an appropriate MPI environment) and entering **`1`** to reach the **`Selection Analyses`** menu: 
 ![HyPhy Selection Analyses Menu](./files/images/selection-analyses-menu.png)
 
 In this menu, launch your desired analyis by issuing its associated number (i.e. launch FEL by entering **`2`** upon reaching this menu).
@@ -52,7 +53,7 @@ Within each analysis, you will see a series of prompts for providing information
 
 We will demonstate BUSTED use with an alignment of primate sequences for the KSR2 gene, a kinase suppressor of RAS-2, from [Enard et al, 2016](https://elifesciences.org/articles/12469). This dataset is in the file `ksr2.fna`.
 
-Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the BUSTED analysis: Enter **1** for "Selection Analyses", and then **5** for "BUSTED". Respond to the following prompts:
+Launch HyPhy from the command line by typing `hyphy -i`. Navigate through the prompt to reach the BUSTED analysis: Enter **1** for "Selection Analyses", and then **5** for "BUSTED". Respond to the following prompts:
 
 + **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
 + **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/ksr2.fna`
@@ -73,7 +74,7 @@ We therefore find that there is evidence for positive, diversifying selection in
 
 We will demonstate aBSREL use with an alignment of HIV-1 envelope protein-coding sequences collected from epidemiologically-linked donor-recipient transmission pairs, from [Frost et al, 2005](http://jvi.asm.org/content/79/10/6523). This dataset is in the file `hiv1_transmission.fna`.
 
-Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the aBSREL analysis: Enter **1** for "Selection Analyses", and then **6** for "aBSREL". Respond to the following prompts:
+Launch HyPhy from the command line by typing `hyphy -i`. Navigate through the prompt to reach the aBSREL analysis: Enter **1** for "Selection Analyses", and then **6** for "aBSREL". Respond to the following prompts:
 
 + **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
 + **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/hiv1_transmission.fna`
@@ -92,7 +93,7 @@ We therefore find that there is evidence for episodic diversifying selection in 
 We will demonstate FEL use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 
 
-Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the FEL analysis: Enter **1** for "Selection Analyses", and then **2** for "FEL". Respond to the following prompts:
+Launch HyPhy from the command line by typing `hyphy -i`. Navigate through the prompt to reach the FEL analysis: Enter **1** for "Selection Analyses", and then **2** for "FEL". Respond to the following prompts:
 
 + **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
 + **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/lysin.fna`
@@ -115,7 +116,7 @@ Note that FEL will formally test for both positive and negative selection at eac
 We will demonstate MEME use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 
 
-Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the MEME analysis: Enter **1** for "Selection Analyses", and then **1** for "MEME". Respond to the following prompts:
+Launch HyPhy from the command line by typing `hyphy -i`. Navigate through the prompt to reach the MEME analysis: Enter **1** for "Selection Analyses", and then **1** for "MEME". Respond to the following prompts:
 
 + **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
 + **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/h3_trunk.fna`
@@ -137,7 +138,7 @@ Note that MEME will formally test only for positive, but not negative, selection
 We will demonstate SLAC use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 
 
-Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the SLAC analysis: Enter **1** for "Selection Analyses", and then **3** for "SLAC". Respond to the following prompts:
+Launch HyPhy from the command line by typing `hyphy -i`. Navigate through the prompt to reach the SLAC analysis: Enter **1** for "Selection Analyses", and then **3** for "SLAC". Respond to the following prompts:
 
 + **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
 + **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/h3_trunk.fna`
@@ -185,7 +186,7 @@ Note that FUBAR will formally test for both positive and negative selection at e
 We will demonstate RELAX use with an alignment of HIV-1 envelope protein-coding sequences collected from epidemiologically-linked donor-recipient transmission pairs, from [Frost et al, 2005](http://jvi.asm.org/content/79/10/6523). This dataset is in the file `hiv1_transmission_labeled.fna`.
 
 
-Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the RELAX analysis: Enter **1** for "Selection Analyses", and then **7** for "RELAX". Respond to the following prompts:
+Launch HyPhy from the command line by typing `hyphy -i`. Navigate through the prompt to reach the RELAX analysis: Enter **1** for "Selection Analyses", and then **7** for "RELAX". Respond to the following prompts:
 
 + **`Choose Genetic Code`**: Enter `1` to select the Universal genetic code.
 + **`Select a coding sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/hiv1_transmission_labeled.fna`
@@ -207,7 +208,7 @@ This analysis did not detect any evidence of relaxed selection. However, if it h
 
 We will demonstate FADE use with an alignment of Influenza A (IAV) matrix protein 2 (MP2) amino-acid sequences analyzed by [Tamuri et al, 2009](https://doi.org/10.1371/journal.pcbi.1000564). This alignment contains sequences from both human and avian IAV strains and was originally used to test for shifts in selection pressures between hosts. Here, we will test for directional evolution in human host lineages (tested foreground) compared to avian host lineages (background). This dataset is in the file `MP2.fna`. Importantly, Fade **requires** a rooted phylogeny. As such, the phylogeny is this data file has been rooted and human host lineages have been labeled as `FG` using [Phylotree.js](http://phylotree.hyphy.org). 
 
-Launch HyPhy from the command line by typing `HYPHYMP`. Navigate through the prompt to reach the FADE analysis: Enter **1** for "Selection Analyses", and then **8** for "FADE". Respond to the following prompts:
+Launch HyPhy from the command line by typing `hyphy -i`. Navigate through the prompt to reach the FADE analysis: Enter **1** for "Selection Analyses", and then **8** for "FADE". Respond to the following prompts:
 
 + **`Select a sequence alignment file`**: Enter the full path to the example dataset, `/path/to/tutorial_data/MP2.fna`
 + **`A tree was found in the data file:...Would you like to use it (y/n)?`**: Enter `y` to use the provided tree.
