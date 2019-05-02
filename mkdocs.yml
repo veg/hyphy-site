@@ -53,6 +53,7 @@ pages:
   - Resources: 'resources.md'
   - '_________' : 'methods/general.md'
   - '_________' : 'methods/selection-methods.md'
+  - '_________' : 'methods/stand-alone-analyses.md'
   - '_________' : 'methods/other/evo.md'
   - '________' : 'methods/other/fel-contrast.md'
   # '________' will hide the item from the toc
