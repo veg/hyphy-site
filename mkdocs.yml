@@ -48,17 +48,17 @@ pages:
   - _Real_Download : 'download.md'
   - Installation: 'installation.md'
   - Getting Started : 'getting-started.md'
+  - Methods: 'methods/index.md'
+  - Tutorials: 'tutorials/index.md'
 #  - Glossary: 'glossary.md'
   - Resources: 'resources.md'
-  - Methods:
-    - General Information : 'methods/general.md'
-    - Selection : 'methods/selection-methods.md'
-    - Other :
-        - Evolutionary hypothesis testing : 'methods/other/evo.md'
-        - '________' : 'methods/other/fel-contrast.md'
-        # '________' will hide the item from the toc
+  - '_________' : 'methods/general.md'
+  - '_________' : 'methods/selection-methods.md'
+  - '_________' : 'methods/other/evo.md'
+  - '________' : 'methods/other/fel-contrast.md'
+  # '________' will hide the item from the toc
 #  - Scripting language: 'language.md'
-  - Tutorials: 
-    - Using HyPhy to Detect Selection : 'tutorials/current-release-tutorial.md'
-    - Labeling branches with phylotree : 'tutorials/phylotree.md' 
+  - '_________' : 'tutorials/current-release-tutorial.md'
+  - '_________' : 'tutorials/current-release-tutorial_gui.md'
+  - '_________' : 'tutorials/phylotree.md' 
 #    - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'

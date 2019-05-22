@@ -1,6 +1,6 @@
 # Methods for Inferring Selection Pressure
 
-HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using the *dN/dS* metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow [these guidelines](../getting-started/#characterizing-selective-pressures).
+HyPhy distributes a variety of methods for inferring the strength of natural selection in your data using, in the case of codon-based methods, the *dN/dS* metric. Here, we provide an overview of each method. For help determining which method best suits your specific needs, follow [these guidelines](../getting-started/#characterizing-selective-pressures).
 
 
 
@@ -37,12 +37,14 @@ For each site, two ERs are reported: the *Constrained Model* ER and the *Optimiz
 
 <!--------------------------------------------------------------------------------------->
 
-<!--
+
 ## FADE
 
+FADE (**F**UBAR **A**proach to **D**irectional **E**volution) is a method that uses a Bayesian framework, based on that introduced by [**FUBAR**](./selection-methods/#fubar) ), to test whether sites in a *protein alignment* are subject to directional selection. Specifically, FADE will systematically test, for each site in the alignment, whether a specified set of foreground branches shows a *substitution bias* towards a particular amino-acid, compared to background branches. High values of this bias parameter indicate that the site is experiencing substantially more than expected substitutions towards. Statistical significance in FADE is assessed using Bayes Factors (BF), where $BF\geq100$ provides strong evidence that the site is evolving under directional selection.
 
-[forthcoming]
--->
+Importantly, unlike most methods in HyPhy, FADE does not use a reversible Markov model since its aim is to detect directional selection. As such, a rooted phylogeny is required for FADE analysis. The browser-based interactive tools [Phylotree.js](http://http://phylotree.hyphy.org/) can be used to help root the tree prior to analyzing with FADE.
+
+Please also note that FADE has replaced older methods for detecting directional selection, including EDEPS and MEDS. FADE citation is forthcoming.
 
 <!--------------------------------------------------------------------------------------->
 ## FEL
@@ -96,50 +98,40 @@ Methods which accept data processed by GARD include the following:
 <!--------------------------------------------------------------------------------------->
 ## MEME
 
-MEME (**M**ixed **E**ffects **M**odel of **E**volution) employs a mixed-effects maximum likelihood approach to test the hypothesis that individual sites have been subject to episodic positive or diversifying selection. 
-In other words, MEME aims to detect sites evolving under positive selection under a *proportion* of branches.
+MEME (**M**ixed **E**ffects **M**odel of **E**volution) employs a mixed-effects
+maximum likelihood approach to test the hypothesis that individual sites have
+been subject to episodic positive or diversifying selection.  In other words,
+MEME aims to detect sites evolving under positive selection under a *proportion*
+of branches.
 
 
-For each site, MEME infers two $\omega$ rate classes and corresponding weights representing the probability that the site evolves under $\omega$ rate class, at a given branch. Importantly, to infer $\omega$ rates, MEME infers a single $\alpha$ (dS) value and two separate $\beta$ (dN) values, $\beta^-$ and $\beta^+$, which share the same $\alpha$, per site. For both the null and alternative model, MEME enforces the constraint $\beta^- \leq \alpha$. The $\beta^+$ parameter is therefore the key difference between null and alternative models: In the null model, $\beta^+$ is constrained as in the null model: $\beta^+ \leq \alpha$, but $\beta^+$ is not constrained in the alternative model. Ultimately, positive selection for each site is inferred when $\beta^+ > \alpha$ and shown to be significant using the likelihood ratio test. 
+For each site, MEME infers two $\omega$ rate classes and corresponding weights
+representing the probability that the site evolves under each respective
+$\omega$ rate class at a given branch. 
+
+To infer $\omega$ rates, MEME infers a single $\alpha$ (dS) value and two
+separate $\beta$ (dN) values, $\beta^+$ and $\beta^-$. Both $\beta^+$ and $\beta^-$
+share the same $\alpha$ per site. 
+
+**Alternative Model Rate Parameter Constraints**
+$$ \alpha\ unrestricted \\ \beta^+\ unrestricted \\ \beta^- \leq \alpha $$
+
+
+**Null Model Rate Parameter Constraints**
+$$\alpha\ unrestricted \\ \beta^+ \leq \alpha \\ \beta^- \leq \alpha$$
+
+The $\beta^+$ parameter is the key difference between the null and alternative
+models. In the null model, both $\beta^+$ and $\beta^-$ are constrained, but
+$\beta^+$ is unrestricted in the alternative model. 
+
+Positive selection for each site is inferred when $\beta^+ > \alpha$ and shown
+to be significant using the likelihood ratio test. 
  
 
-**If you use MEME in your analysis, please cite the following:** [`Murrell, B et al. "Detecting individual sites subject to episodic diversifying selection." PLoS Genetics 8, e1002764 (2012).`](http://dx.doi.org/10.1371/journal.pgen.1002764)
-
-<!--------------------------------------------------------------------------------------->
-
-## PRIME
-
-Protein evolution models are typically based on estimates of amino acid
-exchangeabilities, e.g. as quantified in the BLOSUM substitution matrices which
-are still commonly used today. These models derive their power from the fact
-that radical substitutions – involving amino acids with very different
-physico-chemical properties – are generally rare, while conservative
-substitutions – involving similar amino acids – are more common. However, more
-recent studies have shown that amino acid exchangeabilities vary across
-organisms and across genes, reflecting the fact that the set of relevant
-physico-chemical properties changes from case to case, so that the same
-substitution may sometimes be radical (having a large effect on protein
-structure and/or function) and sometimes conservative (having little effect on
-structure or function). This variation can be expected from site to site within
-a protein: for instance, amino acids with different hydrophobicity may be
-unexchangeable at sites where the protein fold is sensitive to hydrophobicity
-but exchangeable at sites where it is not. PRIME(*PR*operty *I*nformed *M*odels
-of *E*volution) models were designed to take account of this variation.
-
-PRIME currently supports two predefined sets of 5 amino-acid properties: the
-five empirically measured properties used by [Conant et
-al.](http://dx.doi.org/10.1016/j.ympev.2006.07.006)  and the five composite
-properties proposed by [Atchley et
-al.](http://www.pnas.org/content/102/18/6395). The latter were obtained by
-applying a dimensionality reduction technique based on factor analysis to a
-large set of 494 empirically measured attributes.
-
-### Property interpretation
-
-| Property  | 1 | 2 | 3 | 4 | 5 |
-|-----------|---|---|---|---|---|
-| Conant-Stadler et al. | Chemical Composition | Polarity | Volume | Iso-electric point | Hydropathy |
-| Atchley et al. | Polarity index |  Secondary structurefactor | Volume | Refractivity/Heat Capacity | Charge/ Iso-electric point |
+**If you use MEME in your analysis, please cite the following:** [`Murrell, B et
+al. "Detecting individual sites subject to episodic diversifying selection."
+PLoS Genetics 8, e1002764
+(2012).`](http://dx.doi.org/10.1371/journal.pgen.1002764)
 
 <!--------------------------------------------------------------------------------------->
 ## RELAX
