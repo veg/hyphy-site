@@ -5,6 +5,7 @@
 * `pip install python-markdown-math`
 * `git clone git@github.com:veg/hyphy-site.git`
 * `mkdocs build`
+* `yarn` or `npm install`
 * `node server.js`
 
 ### To deploy

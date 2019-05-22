@@ -3,7 +3,7 @@ Installation
 ===========
 
 > Before continuing, please [register and download HyPhy](register/).
-
+> Please note that HyPhy is not currently available for Windows.
 
 **Once downloaded, install HyPhy as follows:**
 
