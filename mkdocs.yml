@@ -30,8 +30,6 @@ markdown_extensions:
   - mdx_math:
       enable_dollar_delimiter: True
 
-
-
 extra_javascript:
     - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
     - assets/mathjaxhelper.js
@@ -49,6 +47,8 @@ pages:
   - Getting Started : 'getting-started.md'
   - Methods: 'methods/index.md'
   - Tutorials: 'tutorials/index.md'
+  - Batch Language : 'hbl-reference/index.md'
+  - _Library : 'hbl-reference/libv3.md'
 #  - Glossary: 'glossary.md'
   - Resources: 'resources.md'
   - '_________' : 'methods/general.md'
