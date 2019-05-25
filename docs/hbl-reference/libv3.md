@@ -679,7 +679,7 @@ Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 **Parameters**
 
--   `id`  
+-   `id`  {String}
 -   `tree`  
 -   `model_list`  
 -   `rules`  
