@@ -1,10 +1,10 @@
 ## Overview
 
-HyPhy (**Hy**pothesis Testing using **Phy**logenies) is an open-source software package for the analysis of genetic sequences (in particular the inference of natural selection) using techniques in phylogenetics, molecular evolution, and machine learning. It features a rich scripting language for limitless customization of analyses. Additionally, HyPhy features support for parallel computing environments (via message passing interface). HyPhy has over 10000 registered users and has been cited in over 1800 peer-reviewed publications ([Google Scholar](https://scholar.google.com/scholar?hl=en&as_sdt=5,39&cites=17874163875017617061,8555001991860797787&scipsc=&q=&scisbd=1)). 
+HyPhy (**Hy**pothesis Testing using **Phy**logenies) is an open-source software package for the analysis of genetic sequences (in particular the inference of natural selection) using techniques in phylogenetics, molecular evolution, and machine learning. It features a rich scripting language for limitless customization of analyses. Additionally, HyPhy features support for parallel computing environments (via message passing interface). HyPhy has over 10,000 registered users and has been cited in over 2,000 peer-reviewed publications ([Google Scholar](https://scholar.google.com/scholar?hl=en&as_sdt=5,39&cites=17874163875017617061,8555001991860797787&scipsc=&q=&scisbd=1)). 
 
 ## Brief history
 
-HyPhy grew out of the collaboration between [Spencer Muse](http://www4.stat.ncsu.edu/~muse/) and [Sergei Kosakovsky Pond](http://hyphy.org/sergei) that commenced in 1997 and continues to this day, with many additional collaborators, including [Art Poon](https://www.schulich.uwo.ca/pathol/people/bios/faculty/poon_art.html), [Simon Frost](http://www.vet.cam.ac.uk/directory/sdf22@cam.ac.uk), [Steven Weaver](http://stevenweaver.org), [Stephanie Spielman](http://sjspielman.org), [Lance Hepler](https://github.com/nlhepler), [Martin Smith](https://www.linkedin.com/in/martin-smith-371a7717/), [Konrad Scheffler](https://www.linkedin.com/in/konrad-scheffler-b185943/), [Wayne Delport](https://www.linkedin.com/in/wayne-delport-5195b545/), [Ben Murrell](http://profiles.ucsd.edu/benjamin.murrell), and [Joel Wertheim](http://id.ucsd.edu/faculty/wertheim.shtml). HyPhy was originally released in 2000, is currently at version 2.3, and is presently undergoing a major rewrite, with version v3.0 planned for release in 2018. 
+HyPhy grew out of the collaboration between [Spencer Muse](http://www4.stat.ncsu.edu/~muse/) and [Sergei Kosakovsky Pond](http://hyphy.org/sergei) that commenced in 1997 and continues to this day, with many additional collaborators, including [Art Poon](https://www.schulich.uwo.ca/pathol/people/bios/faculty/poon_art.html), [Simon Frost](http://www.vet.cam.ac.uk/directory/sdf22@cam.ac.uk), [Steven Weaver](http://stevenweaver.org), [Stephanie Spielman](http://sjspielman.org), [Lance Hepler](https://github.com/nlhepler), [Martin Smith](https://www.linkedin.com/in/martin-smith-371a7717/), [Konrad Scheffler](https://www.linkedin.com/in/konrad-scheffler-b185943/), [Wayne Delport](https://www.linkedin.com/in/wayne-delport-5195b545/), [Ben Murrell](http://profiles.ucsd.edu/benjamin.murrell), and [Joel Wertheim](http://id.ucsd.edu/faculty/wertheim.shtml). HyPhy was originally released in 2000, and is currently at version 2.4. 
 
 ## Design philosophy
  
@@ -21,7 +21,7 @@ HyPhy was designed to allow the specification and fitting of a broad class of co
 7. Simulate data from any model that can be defined and fitted in the language.
 8. Apply unique (for this domain) machine learning methods to discover patterns in the data, e.g. genetic algorithms, stochastic context free grammars, Bayesian graphical models.
 9. Script analyses completely in HBL including flow control, I/O, parallelization, etc.
-10. (v2.3) Modern web-applications for interactive result visualization.
+10. Modern web-applications for running and visualizing results ([datamonkey](https://datamonkey.org)) or for interactive result visualization of HyPhy analyses run locally ([hyphy-vision](http://vision.hyphy.org)).
 
 
 
