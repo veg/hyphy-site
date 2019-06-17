@@ -84,11 +84,11 @@
 -   [parameters.GenerateAttributedNames](#parametersgenerateattributednames)
 -   [parameters.GenerateSequentialNames](#parametersgeneratesequentialnames)
 -   [parameters.GetRange](#parametersgetrange)
--   [parameters.SetRange](#parameterssetrange)
 -   [parameters](#parameters)
+-   [parameters.SetRange](#parameterssetrange)
 -   [parameters.IsIndependent](#parametersisindependent)
--   [parameters.SetConstraint](#parameterssetconstraint)
 -   [parameters.DeclareGlobal](#parametersdeclareglobal)
+-   [parameters.SetConstraint](#parameterssetconstraint)
 -   [parameters.SetProprtionalConstraint](#parameterssetproprtionalconstraint)
 -   [parameters.ConstrainSets](#parametersconstrainsets)
 -   [parameters.RemoveConstraint](#parametersremoveconstraint)
@@ -927,6 +927,8 @@ Returns **Matrix** 1 x <count> row vector of generated names
 
 Returns **any** variable range
 
+## parameters
+
 ## parameters.SetRange
 
 **Parameters**
@@ -935,8 +937,6 @@ Returns **any** variable range
 -   `ranges`  
 
 Returns **any** nothing
-
-## parameters
 
 ## parameters.IsIndependent
 
@@ -948,6 +948,15 @@ Check if parameter is independent
 
 Returns **Bool** TRUE if independent, FALSE otherwise
 
+## parameters.DeclareGlobal
+
+**Parameters**
+
+-   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `cache` **Matrix** 
+
+Returns **any** nothing
+
 ## parameters.SetConstraint
 
 sets constraint on parameter
@@ -957,15 +966,6 @@ sets constraint on parameter
 -   `or` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** {AssociativeList} id - id(s) of parameter(s) to set constraint on
 -   `value` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** the constraint to set on the parameter
 -   `global_tag` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the global namespace of the parameter
-
-Returns **any** nothing
-
-## parameters.DeclareGlobal
-
-**Parameters**
-
--   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `cache` **Matrix** 
 
 Returns **any** nothing
 
