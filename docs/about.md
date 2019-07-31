@@ -1,6 +1,6 @@
 ## Overview
 
-HyPhy (**Hy**pothesis Testing using **Phy**logenies) is an open-source software package for the analysis of genetic sequences (in particular the inference of natural selection) using techniques in phylogenetics, molecular evolution, and machine learning. It features a rich scripting language for limitless customization of analyses. Additionally, HyPhy features support for parallel computing environments (via message passing interface). HyPhy has over 10,000 registered users and has been cited in over 2,000 peer-reviewed publications ([Google Scholar](https://scholar.google.com/scholar?hl=en&as_sdt=5,39&cites=17874163875017617061,8555001991860797787&scipsc=&q=&scisbd=1)). 
+HyPhy (**Hy**pothesis Testing using **Phy**logenies) is an open-source software package for the analysis of genetic sequences (in particular the inference of natural selection) using techniques in phylogenetics, molecular evolution, and machine learning. It features a rich scripting language for limitless customization of analyses. Additionally, HyPhy features support for parallel computing environments (via message passing interface). HyPhy has over 10,000 registered users and has been cited in over 4,500 peer-reviewed publications ([Google Scholar](https://scholar.google.com/scholar?cites=16973819349446791915,2507126703666127860,10744903628463166553,15911627314324900825,17874163875017617061,7814797909138642259)). 
 
 ## Brief history
 
