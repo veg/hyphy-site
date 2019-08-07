@@ -6,5 +6,8 @@
 * `git clone git@github.com:veg/hyphy-site.git`
 * `mkdocs serve`
 
+Or just edit on Github.
+
 ### To deploy
-Currently deployed on temple server see operations-documentation repo for instructions
+
+No need to worry about it. https://github.com/veg/github-webhooks ensures that the changes are reflected on the site each time this repo is updated.
