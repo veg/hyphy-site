@@ -83,11 +83,11 @@
 -   [parameters.StringMatrixToFormulas](#parametersstringmatrixtoformulas)
 -   [parameters.GenerateAttributedNames](#parametersgenerateattributednames)
 -   [parameters.GenerateSequentialNames](#parametersgeneratesequentialnames)
--   [parameters.GetRange](#parametersgetrange)
 -   [parameters](#parameters)
+-   [parameters.GetRange](#parametersgetrange)
 -   [parameters.SetRange](#parameterssetrange)
--   [parameters.IsIndependent](#parametersisindependent)
 -   [parameters.DeclareGlobal](#parametersdeclareglobal)
+-   [parameters.IsIndependent](#parametersisindependent)
 -   [parameters.SetConstraint](#parameterssetconstraint)
 -   [parameters.SetProprtionalConstraint](#parameterssetproprtionalconstraint)
 -   [parameters.ConstrainSets](#parametersconstrainsets)
@@ -837,8 +837,10 @@ Ensures that the mean of parameters in a set is maintained
 
 **Parameters**
 
--   `set` **Dict** list of variable ids
+-   `set` **Dict/Matrix** list of variable ids
+-   `weights` **Dict/Matrix** weights to apply
 -   `mean` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** desired mean
+-   `namespace` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** desired mean
 
 Returns **any** nothing
 
@@ -919,6 +921,8 @@ Returns **any** nothing
 
 Returns **Matrix** 1 x <count> row vector of generated names
 
+## parameters
+
 ## parameters.GetRange
 
 **Parameters**
@@ -927,14 +931,21 @@ Returns **Matrix** 1 x <count> row vector of generated names
 
 Returns **any** variable range
 
-## parameters
-
 ## parameters.SetRange
 
 **Parameters**
 
 -   `id`  
 -   `ranges`  
+
+Returns **any** nothing
+
+## parameters.DeclareGlobal
+
+**Parameters**
+
+-   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `cache` **Matrix** 
 
 Returns **any** nothing
 
@@ -947,15 +958,6 @@ Check if parameter is independent
 -   `parameter`  id of parameter to check
 
 Returns **Bool** TRUE if independent, FALSE otherwise
-
-## parameters.DeclareGlobal
-
-**Parameters**
-
--   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `cache` **Matrix** 
-
-Returns **any** nothing
 
 ## parameters.SetConstraint
 
