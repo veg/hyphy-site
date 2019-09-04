@@ -82,8 +82,8 @@
 -   [parameters.AddMultiplicativeTerm](#parametersaddmultiplicativeterm)
 -   [parameters.StringMatrixToFormulas](#parametersstringmatrixtoformulas)
 -   [parameters.GenerateAttributedNames](#parametersgenerateattributednames)
--   [parameters.GenerateSequentialNames](#parametersgeneratesequentialnames)
 -   [parameters](#parameters)
+-   [parameters.GenerateSequentialNames](#parametersgeneratesequentialnames)
 -   [parameters.GetRange](#parametersgetrange)
 -   [parameters.SetRange](#parameterssetrange)
 -   [parameters.DeclareGlobal](#parametersdeclareglobal)
@@ -911,6 +911,8 @@ Returns **any** nothing
 -   `attributes` **Dictionary** 
 -   `delimiter` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
+## parameters
+
 ## parameters.GenerateSequentialNames
 
 **Parameters**
@@ -920,8 +922,6 @@ Returns **any** nothing
 -   `delimiter` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 Returns **Matrix** 1 x <count> row vector of generated names
-
-## parameters
 
 ## parameters.GetRange
 
