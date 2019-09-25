@@ -79,3 +79,16 @@ _you will need to add the bioconda channel if you have not already done so:_
       * HyPhy's standard library of scripts/batchfiles will go into `/location/of/choice/lib/hyphy`
 
 
+### Environment Options
+
+Should you want to specify the path hyphy searches for its library sources, there are two ways it can be accomplished:
+
+1. Set `LIBPATH` argument when calling `hyphy`. For example, `hyphy LIBPATH=/usr/local/lib/hyphy`.
+2. Set environment variable `HYPHY_LIB_PATH`. For example, 
+
+```
+export HYPHY_LIB_PATH=/usr/local/lib/hyphy/
+hyphy
+```
+
+
