@@ -1,6 +1,5 @@
 # Methods
 * [General Information](/methods/general.md)
 * [Selection](/methods/selection-methods.md)
-
-## Other
+* [Stand Alone Analyses](/methods/stand-alone-analyses.md)
 * [ Evolutionary hypothesis testing](/methods/other/evo.md)

@@ -82,13 +82,13 @@
 -   [parameters.AddMultiplicativeTerm](#parametersaddmultiplicativeterm)
 -   [parameters.StringMatrixToFormulas](#parametersstringmatrixtoformulas)
 -   [parameters.GenerateAttributedNames](#parametersgenerateattributednames)
+-   [parameters](#parameters)
 -   [parameters.GenerateSequentialNames](#parametersgeneratesequentialnames)
 -   [parameters.GetRange](#parametersgetrange)
 -   [parameters.SetRange](#parameterssetrange)
--   [parameters](#parameters)
+-   [parameters.DeclareGlobal](#parametersdeclareglobal)
 -   [parameters.IsIndependent](#parametersisindependent)
 -   [parameters.SetConstraint](#parameterssetconstraint)
--   [parameters.DeclareGlobal](#parametersdeclareglobal)
 -   [parameters.SetProprtionalConstraint](#parameterssetproprtionalconstraint)
 -   [parameters.ConstrainSets](#parametersconstrainsets)
 -   [parameters.RemoveConstraint](#parametersremoveconstraint)
@@ -679,7 +679,7 @@ Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 **Parameters**
 
--   `id`  
+-   `id`  {String}
 -   `tree`  
 -   `model_list`  
 -   `rules`  
@@ -837,8 +837,10 @@ Ensures that the mean of parameters in a set is maintained
 
 **Parameters**
 
--   `set` **Dict** list of variable ids
+-   `set` **Dict/Matrix** list of variable ids
+-   `weights` **Dict/Matrix** weights to apply
 -   `mean` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** desired mean
+-   `namespace` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** desired mean
 
 Returns **any** nothing
 
@@ -909,6 +911,8 @@ Returns **any** nothing
 -   `attributes` **Dictionary** 
 -   `delimiter` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
+## parameters
+
 ## parameters.GenerateSequentialNames
 
 **Parameters**
@@ -936,7 +940,14 @@ Returns **any** variable range
 
 Returns **any** nothing
 
-## parameters
+## parameters.DeclareGlobal
+
+**Parameters**
+
+-   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `cache` **Matrix** 
+
+Returns **any** nothing
 
 ## parameters.IsIndependent
 
@@ -957,15 +968,6 @@ sets constraint on parameter
 -   `or` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** {AssociativeList} id - id(s) of parameter(s) to set constraint on
 -   `value` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** the constraint to set on the parameter
 -   `global_tag` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the global namespace of the parameter
-
-Returns **any** nothing
-
-## parameters.DeclareGlobal
-
-**Parameters**
-
--   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `cache` **Matrix** 
 
 Returns **any** nothing
 

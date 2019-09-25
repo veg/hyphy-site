@@ -1,18 +1,31 @@
 ## Using HyPhy
 
-There are four ways to use HyPhy:
+There are many ways to use HyPhy:
 
 ### Run HyPhy on our accompanying Datamonkey webserver
-This option is the **easiest**, **supports most popular analyses**, and **does not require use of the command line**. Access Datamonkey [here](http://datamonkey.org), or see this [development version of Datamonkey](http://test.datamonkey.org) for newer methods and a dramatically better user experience.
+This option is the **easiest**, **supports most popular analyses**, and **does not require use of the command line**. Access Datamonkey [here](https://datamonkey.org).
 
 
 ### Run HyPhy from the command line
-This option is the **most flexible** approach through which you can access **all available analyses and pipelines** as well as **customize** your own HyPhy analyses. Follow [these instructions](installation.md) for download and installation. 
+This option is the **most flexible** approach through which you can access **all available analyses and pipelines** as well as **customize** your own HyPhy analyses. Follow [these instructions](installation.md) for download and installation.  
+HyPhy can be run from the command line in two ways:  
+
++ Standard command line tool: additional information available [here](./tutorials/CLI-tutorial.md) 
++ Interactive command line prompt: additional information available [here](./tutorials/CL-prompt-tutorial.md)
 
 
-### Run HyPhy custom analyses without the command line
-Run a legacy graphical user interface version of HyPhy (no longer developed, but still supporting many popular analyses) Mac OS X or Windows. Follow [these instructions](http://hyphy.org/w/index.php/Download) for download and installation.
- 
+### Run HyPhy locally (on your own computer) without the command line
+Two graphical user interfaces (GUI) applications are available for running HyPhy locally: 
+
++ A new GUI application of HyPHy which is very similar to the datamonkey interface except jobs are run on your own machine rather than on the datamonkey server (only availabe on Mac). Download, installation and usage tutorial available [here](./tutorials/gui-tutorial).  
++ A legacy GUI application of HyPhy which can run on Windows as well as Mac OS X (no longer developed, but still supporting many popular analyses). Follow [these instructions](http://hyphy.org/w/index.php/Download) for download and installation.
+
+### Use HyPhy on Galaxy
+Many of the HyPhy methods are available for use as tools on a Galaxy server at [galaxy.hyphy.org](https://galaxy.hyphy.org). These tools can also be installed on any Galaxy instance from the Galaxy [tool shed](https://galaxyproject.org/admin/tools/add-tool-from-toolshed-tutorial/).
+
+### Use HyPhy from MEGA
+The popular [MEGA software package](https://www.megasoftware.net/) has begun integrating HyPhy tools into the MEGA interface. The current release has a limited set of HyPhy tools but this is expected to be expanded in the future.
+
 ### Use HyPhy for software/pipeline development
 Compile HyPhy as a library that can be accessed via Python, R, or other language bindings. Follow [these instructions](installation.md) for download and installation. 
 
@@ -27,7 +40,7 @@ HyPhy ships with a library of **standard analyses** that implement ~100 differen
 
 ## Characterizing selective pressures
 
-HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding and/or amino-acid multiple sequence alignments. Which method you select will depend on your specific question. Below we recommend several methods for different purposes, linked to more in depth descriptions. Tutorials for using these methods are also available [here](tutorials/current-release-tutorial). 
+HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding and/or amino-acid multiple sequence alignments. Which method you select will depend on your specific question. Below we recommend several methods for different purposes, linked to more in depth descriptions. Tutorials for using these methods are also available [here](tutorials/CL-prompt-tutorial). 
 
 > Note that you may find it useful to perform pre-processing on your dataset, specifically by screening for recombination breakpoints using our [GARD](./methods/selection-methods/#gard) (**G**enetic **A**lgorithm for **R**ecombination **D**etection) method before proceeding to selection analysis.
 

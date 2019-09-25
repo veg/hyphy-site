@@ -1,9 +1,19 @@
 
 Installation
 ===========
+Please note that HyPhy is not currently available for Windows.
+
+### Installing with Conda
+
+`conda install hyphy`
+
+_you will need to add the bioconda channel if you have not already done so:_  
+`conda config --add channels bioconda`
+
+### Building from source
+
 
 > Before continuing, please [register and download HyPhy](register/).
-> Please note that HyPhy is not currently available for Windows.
 
 **Once downloaded, install HyPhy as follows:**
 
@@ -17,7 +27,7 @@ Installation
     
 	* By default, HyPhy will be installed into `/usr/local/`, but it can be installed on any location of your system by specifying a custom installation path:
 
-            cmake -DINSTALL_PREFIX=/location/of/choice .
+            cmake -DCMAKE_INSTALL_PREFIX=/location/of/choice .
     
 	* If you prefer to use other build systems [supported by CMake](https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html), such as *XCode*, configure HyPhy using the generator (`-G`) switch:
     
