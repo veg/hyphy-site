@@ -1510,6 +1510,29 @@ Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ## 
 
+**Parameters**
+
+-   `filter` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** filter name
+-   `breakPoints` **Matrix** locations of breakpoints (Nx1)
+-   `trees` **Matrix** tree strings for partitions (Nx1)
+-   `file` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** write the result here
+-   `isCodon` **Bool** is the filter a codon filter?
+
+**Examples**
+
+```javascript
+GCAAAATCATTAGGGACTATGGAAAACAGA
+-AKSLGTMEN-R
+
+maps to
+
+---GCAAAATCATTAGGGACTATGGAAAAC---AGA
+```
+
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the mapped sequence
+
+## 
+
 ## ancestral.Sequences
 
 **Parameters**
