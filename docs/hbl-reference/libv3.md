@@ -8,6 +8,7 @@
 -   [math.GatherDescriptiveStats](#mathgatherdescriptivestats)
 -   [math.GetIC](#mathgetic)
 -   [math.HolmBonferroniCorrection](#mathholmbonferronicorrection)
+-   [math.BenjaminiHochbergFDR](#mathbenjaminihochbergfdr)
 -   [math.minNormalizedRange](#mathminnormalizedrange)
 -   [math.DoLRT](#mathdolrt)
 -   [math.Sum](#mathsum)
@@ -165,8 +166,9 @@
 -   [genetic_code.IsStop](#genetic_codeisstop)
 -   [genetic_code.DefineCodonToAAGivenCode](#genetic_codedefinecodontoaagivencode)
 -   [genetic_code](#genetic_code)
--   [trees.\_matrix2string](#trees_matrix2string)
+-   [trees.infer.NJ](#treesinfernj)
 -   [trees.GetTreeString](#treesgettreestring)
+-   [trees.\_matrix2string](#trees_matrix2string)
 -   [trees.PartitionTree](#treespartitiontree)
 -   [trees.LoadAnnotatedTopology](#treesloadannotatedtopology)
 -   [trees.LoadAnnotatedTopologyAndMap](#treesloadannotatedtopologyandmap)
@@ -185,7 +187,7 @@
 -   [trees.GenerateSymmetricTree](#treesgeneratesymmetrictree)
 -   [trees.GenerateSymmetricTree](#treesgeneratesymmetrictree-1)
 -   [trees](#trees)
--   [trees.infer.NJ](#treesinfernj)
+-   [trees.GenerateRandomTree](#treesgeneraterandomtree)
 
 ## math.Skewness
 
@@ -232,6 +234,14 @@ Computes small-sample AIC
 ## math.HolmBonferroniCorrection
 
 Returns Holm-Bonferroni corrected p-values
+
+**Parameters**
+
+-   `ps` **Dict** a key -> p-value (or null, for not done)
+
+## math.BenjaminiHochbergFDR
+
+Returns Benjamini-Hochberg corrected q-values (FDR)
 
 **Parameters**
 
@@ -1500,6 +1510,29 @@ Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ## 
 
+**Parameters**
+
+-   `filter` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** filter name
+-   `breakPoints` **Matrix** locations of breakpoints (Nx1)
+-   `trees` **Matrix** tree strings for partitions (Nx1)
+-   `file` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** write the result here
+-   `isCodon` **Bool** is the filter a codon filter?
+
+**Examples**
+
+```javascript
+GCAAAATCATTAGGGACTATGGAAAACAGA
+-AKSLGTMEN-R
+
+maps to
+
+---GCAAAATCATTAGGGACTATGGAAAAC---AGA
+```
+
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the mapped sequence
+
+## 
+
 ## ancestral.Sequences
 
 **Parameters**
@@ -1917,6 +1950,31 @@ Returns **any** the amino acid map
 
 ## 
 
+## trees.infer.NJ
+
+Infer a neighbor joining tree from a data filter using a specific distance
+
+**Parameters**
+
+-   `datafilter` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the ID of an existing datafilter
+-   `null` **null/String/Matrix** ,
+    null   : use the default distance calculation appropriate for the datatype
+    String : a callback which takes (filter_id, seq1, seq2) arguments and returns d(seq1,seq2)
+    Matrix : a precomputed distance matrix (same order of rows/column as datafilter names)
+
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** inferred tree string
+
+## trees.GetTreeString
+
+Looks for a newick tree in an alignment file
+
+**Parameters**
+
+-   `look_for_newick_tree` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Bool)** If a string, sanitizes and returns the string.
+    If TRUE, search the alignment file for a newick tree. If FALSE, the user will be prompted for a nwk tree file.
+
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** a newick tree string
+
 ## trees.\_matrix2string
 
 Convert a matrix representation of a tree into Newick
@@ -1930,17 +1988,6 @@ Convert a matrix representation of a tree into Newick
 -   `do_lengths` **Bool** : include branch lengths in the output
 
 Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** newick tree string
-
-## trees.GetTreeString
-
-Looks for a newick tree in an alignment file
-
-**Parameters**
-
--   `look_for_newick_tree` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Bool)** If a string, sanitizes and returns the string.
-    If TRUE, search the alignment file for a newick tree. If FALSE, the user will be prompted for a nwk tree file.
-
-Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** a newick tree string
 
 ## trees.PartitionTree
 
@@ -2156,16 +2203,16 @@ Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ## trees
 
-## trees.infer.NJ
+## trees.GenerateRandomTree
 
-Infer a neighbor joining tree from a data filter using a specific distance
+Generate a RANDOM tree on N leaves
 
 **Parameters**
 
--   `datafilter` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the ID of an existing datafilter
--   `null` **null/String/Matrix** ,
-    null   : use the default distance calculation appropriate for the datatype
-    String : a callback which takes (filter_id, seq1, seq2) arguments and returns d(seq1,seq2)
-    Matrix : a precomputed distance matrix (same order of rows/column as datafilter names)
+-   `N` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** : number of leavers
+-   `rooted` **Bool** : whether the tree is rooted
+-   `branch_name` **None/String** : if a string, then it is assumed to be a function with an integer argument (node index) that generates branch names
+    default is to use numeric names
+-   `branch_length` **None/String** : if a string, then it is assumed to be a function with no arguments that generates branch lengths
 
-Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** inferred tree string
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Newick tree string
