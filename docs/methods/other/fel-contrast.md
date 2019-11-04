@@ -46,7 +46,7 @@ The models are nested and differ by one degree of freedom. p-values are computed
 
 ### How should one interpret positive and negative test results?
 
-A significant result at a site means that dN/dS (&beta;/&alpha) is **different** between the two sets of branches, with either an **increase** or a **decrease** on the test branches _relative_ to the reference branches. A significant finding does **not** make any claims about positive (dN/dS > 1) or negative (dN / dS < 1), just that dN/dS differ among sets of branches, i.e., a difference need not change the **mode** of selection.
+A significant result at a site means that dN/dS (&beta;/&alpha;) is **different** between the two sets of branches, with either an **increase** or a **decrease** on the test branches _relative_ to the reference branches. A significant finding does **not** make any claims about positive (dN/dS > 1) or negative (dN / dS < 1), just that dN/dS differ among sets of branches, i.e., a difference need not change the **mode** of selection.
 
 Negative results do not mean that there is no difference, rather that whatever difference there may be does not rise to the level of statistical significance/
 
