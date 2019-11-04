@@ -46,7 +46,7 @@ The models are nested and differ by one degree of freedom. p-values are computed
 
 ### How should one interpret positive and negative test results?
 
-A significant result at a site means that dN/dS (&beta;/&alpha;) is **different** between the two sets of branches, with either an **increase** or a **decrease** on the test branches _relative_ to the reference branches. A significant finding does **not** make any claims about positive (dN/dS > 1) or negative (dN / dS < 1), just that dN/dS differ among sets of branches, i.e., a difference need not change the **mode** of selection.
+A significant result at a site means that dN/dS (&beta;/&alpha;) is **different** between the two sets of branches, with either an **increase** or a **decrease** on the test branches _relative_ to the reference branches. A significant finding does **not** make any claims about positive (dN/dS > 1) or negative (dN/dS < 1), just that dN/dS differ among sets of branches, i.e., a difference need not change the **mode** of selection.
 
 Negative results do not mean that there is no difference, rather that whatever difference there may be does not rise to the level of statistical significance/
 
@@ -60,7 +60,7 @@ Negative results do not mean that there is no difference, rather that whatever d
 
 We will analyze HIV-1 env sequences from a transmission pair: sequences are isolated from the putative source individual and the putative recipient individual from the 2005 study by [Frost et al](https://www.ncbi.nlm.nih.gov/pubmed/15858036).
 
-1. Partition the tree into the source and recipient (here we include the transmission branch with the source sequences), for example as described [here](/resources/#labeling-branches-with-phylotree). For convenience, [download a NEXUS](/resources-files/data/HIVtransmission.nex) file with the tree already partitioned.
+1. Partition the tree into the source and recipient (here we include the transmission branch with the source sequences), for example as described [here](/tutorials/phylotree/). For convenience, [download a NEXUS](/resources-files/data/HIVtransmission.nex) file with the tree already partitioned.
 
 2. Run `HYPHYMP` or `HYPHYMPI`, select `Evolutionary Hypothesis Testing` from the menu
 of analyses then select ` Use a FEL method to test which sites in a gene may be associated with adaptation to a different environment.` Alternatively, you can supply the path of the file as a command line argument, e.g. (by default `/path/to/hyphylib` should be `/usr/local/lib/hyphy`)
