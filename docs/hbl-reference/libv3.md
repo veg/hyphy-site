@@ -49,6 +49,7 @@
 -   [frequencies.empirical.nucleotide](#frequenciesempiricalnucleotide)
 -   [frequencies.empirical.nucleotide](#frequenciesempiricalnucleotide-1)
 -   [frequencies](#frequencies)
+-   [model.ApplyToBranch](#modelapplytobranch)
 -   [model.define_from_components](#modeldefine_from_components)
 -   [model.generic.AddLocal](#modelgenericaddlocal)
 -   [model.generic.AddGlobal](#modelgenericaddglobal)
@@ -69,7 +70,6 @@
 -   [model.MatchAlphabets](#modelmatchalphabets)
 -   [model](#model)
 -   [model.GetParameters_RegExp](#modelgetparameters_regexp)
--   [model.ApplyToBranch](#modelapplytobranch)
 -   [parameters.DeclareCategory](#parametersdeclarecategory)
 -   [parameters.NormalizeRatio](#parametersnormalizeratio)
 -   [parameters.SetValue](#parameterssetvalue)
@@ -589,6 +589,14 @@ rate matrix
 
 -   `Q` **Matrix** matrix
 
+## model.ApplyToBranch
+
+**Parameters**
+
+-   `model_id`  
+-   `tree`  
+-   `branch`  
+
 ## model.define_from_components
 
 **Parameters**
@@ -783,14 +791,6 @@ Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 -   `re`  {String} - regular expression
 
 Returns **any** a dictionary of global model parameters that match a regexp
-
-## model.ApplyToBranch
-
-**Parameters**
-
--   `model_id`  
--   `tree`  
--   `branch`  
 
 ## parameters.DeclareCategory
 
