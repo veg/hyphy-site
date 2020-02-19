@@ -10,6 +10,7 @@ Resources
       * [Getting Started with HyPhy](./resources/Getting_Started_With_HyPhy.pdf)
       * [HyPhy Book: Estimating selection pressures on alignments of coding sequences (2007)](./resources/hyphybook2007.pdf)
       * [Introduction: Compartmentalization Detection](./resources/compartmentalization_detection_ppt.pdf) 
+      * [A comprehensive selection analysis tutorial (2017)](./resources/tutorial-2017.pdf) 
 
 
 * Getting help
