@@ -55,7 +55,7 @@ pages:
   - '_________' : 'methods/selection-methods.md'
   - '_________' : 'methods/stand-alone-analyses.md'
   - '_________' : 'methods/other/evo.md'
-  - '________' : 'methods/other/fel-contrast.md'
+  - '________' : 'methods/other/contrast-fel.md'
   # '________' will hide the item from the toc
 #  - Scripting language: 'language.md'
   - '_________' : 'tutorials/CLI-tutorial.md'

@@ -4,7 +4,7 @@
 > Other places to look are [manuscript associated analyses](https://github.com/spond/pubs/),
 > and the [GitHub boards](https://github.com/veg/hyphy/issues?q=)
 
-### FEL-contrast
+### Contrast-FEL
 
 For each site in a codon alignment, estimate whether or not dN/dS ratios
 differ between sets of branches defined _a priori_. If the branches are associated with
@@ -17,4 +17,4 @@ be evolving at different rates (under different selective pressures) in these en
     host and recipient or individual anatomical compartments in HIV-1, or in between species
     with different phenotypes/traits.
 
-[Further information](fel-contrast.md)
+[Further information](contrast-fel.md)
