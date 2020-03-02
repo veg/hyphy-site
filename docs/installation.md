@@ -1,7 +1,17 @@
 
 Installation
 ===========
-Please note that HyPhy is not currently available for Windows.
+Please note that HyPhy is not currently available for Windows. 
+
+### MP and MPI versions
+
+HyPhy can be built in two main flavors:
+
+1. Multi-threaded, assuming the compiler supports OpenMP, otherwise a single-threaded version will be created. 
+2. MPI-enabled (for execution on clusters), assuming the build and execution environment proivde MPI support (e.g., through OpenMPI).
+
+Most HyPhy analyses take direct advantage of multi-threading, and a large number of common analyses (e.g. FEL, MEME, FUBAR, GARD) can dramatically benefit from an MPI environment.  
+
 
 ### Installing with Conda
 
@@ -9,6 +19,8 @@ Please note that HyPhy is not currently available for Windows.
 
 _you will need to add the bioconda channel if you have not already done so:_  
 `conda config --add channels bioconda`
+
+The Conda package includes both MP and MPI version of HyPhy as `HYPHYMP` (aliased to `hyphy`) and `HYPHYMPI`.
 
 ### Building from source
 
@@ -89,6 +101,14 @@ Should you want to specify the path hyphy searches for its library sources, ther
 ```
 export HYPHY_LIB_PATH=/usr/local/lib/hyphy/
 hyphy
+```
+
+### Notes
+
+The CMake script will build HyPhy making use of all available features on the host system (e.g. AVX and AVX-2 instructions). If you plan to execute HyPhy in a heterogenous cluster environment where not all nodes may have support for these instructions, you can specify the `-DNOAVX=ON` flag when you invoke CMake to build to a "lower denominator".
+
+```
+cmake -DNOAVX=ON ./
 ```
 
 
