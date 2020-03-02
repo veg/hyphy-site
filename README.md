@@ -1,4 +1,4 @@
-# HYPHY WEBSITE
+# HyPhy Site
 
 hyphy.org
 
