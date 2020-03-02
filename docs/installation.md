@@ -15,12 +15,12 @@ Most HyPhy analyses take direct advantage of multi-threading, and a large number
 
 ### Installing with Conda
 
-`conda install hyphy`
+`conda install -c bioconda hyphy`
 
-_you will need to add the bioconda channel if you have not already done so:_  
+_you may need to add the bioconda channel if you have not already done so:_  
 `conda config --add channels bioconda`
 
-The Conda package includes both MP and MPI version of HyPhy as `HYPHYMP` (aliased to `hyphy`) and `HYPHYMPI`.
+The [Conda package](https://anaconda.org/bioconda/hyphy/) includes both MP and MPI version of HyPhy as `HYPHYMP` (aliased to `hyphy`) and `HYPHYMPI`.
 
 ### Building from source
 
