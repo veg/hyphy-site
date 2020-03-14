@@ -1429,7 +1429,8 @@ Returns **Dict** list of possible amino-acids (as dicts) at this position
 Returns **Dict** for each reading frame F in {0, 1, 2} returnsF -> {
 terms.data.sequence: translated sequence (always choose X if available, otherwise first sense resolution)
 terms.sense_codons : N, // number of sense A/A
-terms.stop_codons : N // number of stop codons
+terms.stop_codons : N, // number of stop codons
+terms.terminal_stop : T/F // true if there is a terminal stop codon
 }
 
 ## 
