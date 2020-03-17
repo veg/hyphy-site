@@ -56,6 +56,7 @@ pages:
   - '_________' : 'methods/stand-alone-analyses.md'
   - '_________' : 'methods/other/evo.md'
   - '________' : 'methods/other/contrast-fel.md'
+  - '________' : 'methods/other/FitMultiModel.md'  
   # '________' will hide the item from the toc
 #  - Scripting language: 'language.md'
   - '_________' : 'tutorials/CLI-tutorial.md'
