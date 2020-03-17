@@ -18,3 +18,12 @@ be evolving at different rates (under different selective pressures) in these en
     with different phenotypes/traits.
 
 [Further information](contrast-fel.md)
+
+### FitMultiModel
+
+For each alignment, FitMulti model fits five models, all extenstions of the Muse and Gaut (1994) codon model allowing for multiple instantaneous nucleotide changes within a codon to occur. Then pairwise likelihood ratio tests are performed between the models. This requires a codon alignment and a tree. 
+
+- Output includes the rate estimates for each model, the LRT p values, and a list of sites that show strong preference for multiple hit models. 
+- Can be used to determine the extent of multiple hits present in a data set.
+
+[Further information](FitMultiModel.md)
