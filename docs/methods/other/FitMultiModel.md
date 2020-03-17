@@ -6,7 +6,7 @@
 | Parallel support | MP and/or MPI |
 | File path | `TBD` |
 | Standard analysis menu | `TBD` |
-
+| Citation | `TBD` |
 
 ### What biological question is the method designed to answer?
 
@@ -76,18 +76,23 @@ See the following table for a breakdown of parameters and if they are estimated 
     </tr>
 </table>
 
-
+The actual statistical test being performed are pairwise likelihood ratio test between the models such that the null is always the model with fewer parameters eg: 1H v 2H, 1H - null and 2H alternative. 
 
 ### How should one interpret positive and negative test results?
 
-TBD
+A positive result (ie p ≤ 0.05) for a likelihood ratio test between two models, H<sub>0</sub> and H<sub>A</sub>, means that we reject H<sub>0</sub>. For example, if we look at a LRT between 1H and 2H, where 1H is  H<sub>0</sub> and 2H is H<sub>A</sub>, a p value ≤ 0.05 means we can reject the hypothesis that 2H has zero rates. 
+
+A negative result (ie  p > 0.05) means we fail to reject the null. Thus in the same example as above (1H vs 2H) we would fail to reject the hypothesis that 2H has zero rates.
 
 ###  Rules of thumb for when this method is likely to work well, and when it is not.
 
-TBD
+This method is likely to work well on trees with longer branches and sequences. 
+It is not likely to work well on shorter trees. 
 
 
 ### Example
+
+For more information about running options see [here](https://github.com/veg/hyphy-analyses/tree/master/FitMultiModel)
 
 ```
 HYPHYMP FitMultiModel.bf --alignment p51.nex --triple-islands Yes
@@ -188,4 +193,4 @@ The number of omega rate classes to include in the model (permissible range = [1
 
 ### No individual sites showed sufficiently strong preference for multiple-hit models
 
-### Writing detailed analysis report to `~/FitMultiModel/p51.nex.FITTER.json'
+### Writing detailed analysis report to `/home/swisotsky/hyphy-analyses/FitMultiModel/p51.nex.FITTER.json'
