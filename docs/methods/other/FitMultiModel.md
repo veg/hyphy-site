@@ -19,10 +19,15 @@ FMM will also provide a list of sites that show strong preference for codon mode
 
 ### What is the statistical procedure and statistical test is used to establish significance for this method?
 For each alignment the following models are fit to the data:
+
 - **1H**: The standard Muse and Gaut (1994) codon model that allows for only single instantaneous nucleotide changes
+
 - **2H**: an extension of the 1H model that allows two nucleotides in a codon to be substituted instantaneously with rate &delta; relative to 1H synonymous rate
+
 - **3HSI**: the 2H model extended to allow three simultaneous nucleotide substitutions in a codon if the change is synonymous with relative rate, &psi;<sub>s</sub>
+
 - **3H**: the 2H model extend to allow any three nucleotide simultanceous substitutions with relative rate &psi; 
+
 - **3H+**: the 3HSI model extended to permit any three-nulceotide substitutions with relative rate &psi;
 
 See the following table for a breakdown of parameters and if they are estimated for each model:
