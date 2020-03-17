@@ -2,11 +2,11 @@
 
 |   |   |
 |---|---|
-| HyPhy version required   |  &geq; 2.5.1 |
-| Parallel support | MP and/or MPI |
-| File path | `TBD` |
-| Standard analysis menu | `TBD` |
-| Citation | `TBD` |
+| HyPhy version required   |  &geq; 2.5.7 |
+| Parallel support | MP |
+| File path | `TemplateBatchFiles/SelectionAnalyses/FitMultiModel.bf` |
+| Standard analysis menu | `FMM` |
+| Citation | [Preprint](http://hyphy.org/resources/fmm.pdf) |
 
 ### What biological question is the method designed to answer?
 
