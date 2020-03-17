@@ -18,3 +18,5 @@ Resources
       * The retired (as of 2014) user forum is also available for viewing [here](http://www.hyphy.org/cgi-bin/hyphy_forums/YaBB.pl).
       * You can also tweet us at [@hyphy_software](https://www.twitter.com/hyphy_software) with quick questions.
 
+* Preprints for upcomign methods:
+     * [Extra base hits: widespread empirical support for instantaneous multiple-nucleotide changes (2020)](./resources/fmm.pdf) 
