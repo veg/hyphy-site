@@ -104,6 +104,7 @@
 -   [parameters.SetLocalModelParameters](#parameterssetlocalmodelparameters)
 -   [parameters.SetLocalModelParameters](#parameterssetlocalmodelparameters-1)
 -   [parameters.ApplyNameSpace](#parametersapplynamespace)
+-   [parameters.ValidateID](#parametersvalidateid)
 -   [parameters.DeclareGlobalWithRanges](#parametersdeclareglobalwithranges)
 -   [models.protein.generic.Time](#modelsproteingenerictime)
 -   [models.protein](#modelsprotein)
@@ -1124,6 +1125,16 @@ Applies a namespace to parameter ids
 
 -   `id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `namespace` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+## parameters.ValidateID
+
+Given a set of strings, convert them to valid IDs that don't clash following renames
+
+**Parameters**
+
+-   `ids` **Array/Dict** the ids to validate (should be unique), if dict, should be i -> ID
+
+Returns **Dictionary** a dictionary containing old -> new id map
 
 ## parameters.DeclareGlobalWithRanges
 
