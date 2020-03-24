@@ -139,6 +139,7 @@
 -   [ancestral.build](#ancestralbuild)
 -   [distances.nucleotide.tn93](#distancesnucleotidetn93)
 -   [distances.nucleotide.p_distance](#distancesnucleotidep_distance)
+-   [estimators.FitCodonModel](#estimatorsfitcodonmodel)
 -   [estimators.FitMGREV](#estimatorsfitmgrev)
 -   [estimators.FitMGREV](#estimatorsfitmgrev-1)
 -   [estimators.ComputeLF](#estimatorscomputelf)
@@ -150,6 +151,7 @@
 -   [estimators.ExtractBranchInformation](#estimatorsextractbranchinformation)
 -   [estimators.branch_lengths_in_string](#estimatorsbranch_lengths_in_string)
 -   [estimators.ExtractMLEs](#estimatorsextractmles)
+-   [estimators.ExtractMLEsOptions](#estimatorsextractmlesoptions)
 -   [estimators.TraverseLocalParameters](#estimatorstraverselocalparameters)
 -   [estimators.GetGlobalMLE](#estimatorsgetglobalmle)
 -   [estimators.FitExistingLF](#estimatorsfitexistinglf)
@@ -161,7 +163,6 @@
 -   [estimators.FitSingleModel_Ext](#estimatorsfitsinglemodel_ext)
 -   [estimators.FitGTR_Ext](#estimatorsfitgtr_ext)
 -   [estimators.FitGTR](#estimatorsfitgtr)
--   [estimators.FitCodonModel](#estimatorsfitcodonmodel)
 -   [genetic_code.DefineCodonToAAMapping](#genetic_codedefinecodontoaamapping)
 -   [genetic_code.DefineCodonToAAMapping](#genetic_codedefinecodontoaamapping-1)
 -   [genetic_code.IsStop](#genetic_codeisstop)
@@ -1616,6 +1617,18 @@ Compute  all pairwise percent distances between sequences in a data set
 
 Returns **Matrix** r - pairwise TN93 distances
 
+## estimators.FitCodonModel
+
+**Parameters**
+
+-   `codon_data` **DataFilter** 
+-   `tree` **Tree** 
+-   `genetic_code` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `option` **Dictionary** 
+-   `initial_values` **Dictionary** 
+
+Returns **any** MGREV results
+
 ## estimators.FitMGREV
 
 **Parameters**
@@ -1760,6 +1773,16 @@ Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 Returns **any** results
 
+## estimators.ExtractMLEsOptions
+
+**Parameters**
+
+-   `likelihood_function_id` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `model_descriptions` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `options` **Dict** 
+
+Returns **any** results
+
 ## estimators.TraverseLocalParameters
 
 **Parameters**
@@ -1896,18 +1919,6 @@ Returns **any** results
 -   `initial_values` **Matrix** 
 
 Returns **any** results
-
-## estimators.FitCodonModel
-
-**Parameters**
-
--   `codon_data` **DataFilter** 
--   `tree` **Tree** 
--   `genetic_code` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `option` **Dictionary** 
--   `initial_values` **Dictionary** 
-
-Returns **any** MGREV results
 
 ## genetic_code.DefineCodonToAAMapping
 
