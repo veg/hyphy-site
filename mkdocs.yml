@@ -40,6 +40,7 @@ google_analytics: ['hyphy.org', 'veg.github.io']
 # Page tree
 pages:
   - Home: 'index.html'
+  - COVID : 'covid.md'
   - About : 'about.md'
   - Download : 'register.html'
   - _Real_Download : 'download.md'
