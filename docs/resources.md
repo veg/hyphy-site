@@ -1,6 +1,8 @@
 Resources
 ===================
 
+* Check out our YouTube page for video versions of our tutorials: [HyPhy YouTube](https://www.youtube.com/channel/UCIgRnbJjbOWhshe5ThhaWGw/)
+
 * Tutorials for using standard methods in HyPhy to infer selection ware available [here](./tutorials/CL-prompt-tutorial). Detailed descriptions of these methods are available [here](./getting-started/#characterizing-selective-pressures).
 
 * Current HyPhy selection analyses output JSON-formatted files, whose contents are documented [here](./resources/json-fields.pdf). 
