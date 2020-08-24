@@ -3,7 +3,7 @@
 There are many ways to use HyPhy:
 
 ### Run HyPhy on our accompanying Datamonkey webserver
-This option is the **easiest**, **supports most popular analyses**, and **does not require use of the command line**. Access Datamonkey [here](https://datamonkey.org).
+This option is the **easiest**, **supports most popular analyses**, and **does not require the use of the command line**. Access Datamonkey [here](https://datamonkey.org).
 
 
 ### Run HyPhy from the command line
@@ -17,7 +17,7 @@ HyPhy can be run from the command line in two ways:
 ### Run HyPhy locally (on your own computer) without the command line
 Two graphical user interfaces (GUI) applications are available for running HyPhy locally: 
 
-+ A new GUI application of HyPHy which is very similar to the datamonkey interface except jobs are run on your own machine rather than on the datamonkey server (only availabe on Mac). Download, installation and usage tutorial available [here](./tutorials/gui-tutorial).  
++ A new GUI application of HyPhy which is very similar to the datamonkey interface except jobs is run on your own machine rather than on the datamonkey server (only available on Mac). Download, installation, and usage tutorials available [here](./tutorials/gui-tutorial).  
 + A legacy GUI application of HyPhy which can run on Windows as well as Mac OS X (no longer developed, but still supporting many popular analyses). Follow [these instructions](http://hyphy.org/w/index.php/Download) for download and installation.
 
 ### Use HyPhy on Galaxy
@@ -40,7 +40,7 @@ HyPhy ships with a library of **standard analyses** that implement ~100 differen
 
 ## Characterizing selective pressures
 
-HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about selection in protein-coding and/or amino-acid multiple sequence alignments. Which method you select will depend on your specific question. Below we recommend several methods for different purposes, linked to more in depth descriptions. Tutorials for using these methods are also available [here](tutorials/CL-prompt-tutorial). 
+HyPhy provides a suite of diverse phylogenetic methodologies for testing specific hypotheses about the selection in protein-coding and/or amino-acid multiple sequence alignments. Which method you select will depend on your specific question. Below we recommend several methods for different purposes, linked to more in-depth descriptions. Tutorials for using these methods are also available [here](tutorials/CL-prompt-tutorial). 
 
 > Note that you may find it useful to perform pre-processing on your dataset, specifically by screening for recombination breakpoints using our [GARD](./methods/selection-methods/#gard) (**G**enetic **A**lgorithm for **R**ecombination **D**etection) method before proceeding to selection analysis.
 
@@ -57,14 +57,14 @@ HyPhy provides a suite of diverse phylogenetic methodologies for testing specifi
 
 ### Are individual branches subject to *episodic* (at a subset of sites) positive or purifying selection?
 
-* [aBSREL](./methods/selection-methods/#absrel) (**a**daptive **B**ranch-**S**ite **R**andom **E**ffects **L**ikelihood) is an improved version of the common "branch-site" class of models. aBSREL allows either for *a priori* specification of branch(es) to test for selection, or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power. **aBSREL is the preferred approach for detecting positive selection at individual branches.**
+* [aBSREL](./methods/selection-methods/#absrel) (**a**daptive **B**ranch-**S**ite **R**andom **E**ffects **L**ikelihood) is an improved version of the common "branch-site" class of models. aBSREL allows either for *a priori* specification of branch(es) to test for selection or can test each lineage for selection in an exploratory fashion. Note that the exploratory approach will sacrifice power. **aBSREL is the preferred approach for detecting positive selection at individual branches.**
 
 
 ### Has a gene experienced positive selection at any site on a particular branch or set of branches?
-* [BUSTED](./methods/selection-methods/#busted) (**B**ranch-**S**ite **U**nrestricted **S**tatistical **T**est for **E**pisodic **D**iversification) will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. **This method is not suitable for identifying specific sites subject to positive seleciton.**
+* [BUSTED](./methods/selection-methods/#busted) (**B**ranch-**S**ite **U**nrestricted **S**tatistical **T**est for **E**pisodic **D**iversification) will test for gene-wide selection at pre-specified lineages. This method is particularly useful for relatively small datasets (fewer than 10 taxa) where other methods may not have sufficient power to detect selection. **This method is not suitable for identifying specific sites subject to positive selection.**
 
-### Has gene-wide selection pressure been relaxed or intensified along a certain subset of branches?
-* [RELAX](./methods/selection-methods/#relax) tests for a relaxation (e.g. where purifying selection has become less stringent) or an intensification (e.g. where purifying selection has become stronger) of selection pressures along a specified set of "test" branches. **This method is not suitable for detecting positive selection.**
+### Has gene-wide selection pressure been relaxed or intensified along with a certain subset of branches?
+* [RELAX](./methods/selection-methods/#relax) tests for a relaxation (e.g. where purifying selection has become less stringent) or an intensification (e.g. where purifying selection has become stronger) of selection pressures along with a specified set of "test" branches. **This method is not suitable for detecting positive selection.**
 
 <!--
 ### Are individual sites within a gene subject to *directional* selection, i.e. selection pressure to evolve towards a specific set of amino acids?

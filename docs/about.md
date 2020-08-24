@@ -26,7 +26,7 @@ HyPhy was designed to allow the specification and fitting of a broad class of co
 
 
 ## Example HBL Script
-```js
+```
 /* 
    This is an example HYPHY Batch File.
    It reads in a MEGA format nucleotide dataset from data/hiv.nuc.
