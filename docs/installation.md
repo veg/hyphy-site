@@ -92,3 +92,7 @@ hyphy
 ```
 
 
+### Benchmarks
+
+Benchmarks for common HyPhy methods using mpirun and escalating number of processors can be found [here](https://observablehq.com/@stevenweaver/hyphy-benchmarks-and-profiling)
+
