@@ -5,7 +5,6 @@ const express = require('express'),
 const port = process.env.PORT || 8003;
 const app = express();
 
-app.use(express.static('.'));
 app.use(express.static('site'));
 
 app.listen(port, ()=>{
