@@ -8,9 +8,11 @@ site_url: http://veg.github.io/hyphy-site/
 copyright: null
 
 # Documentation and theme
-theme_dir: material
 
 # extra_templates
+theme:
+  name: null
+  custom_dir: material
 
 # Options
 extra:
@@ -26,42 +28,28 @@ extra:
 markdown_extensions:
   - admonition
   - toc:
-      permalink: '#'
+      permalink: "#"
   - mdx_math:
       enable_dollar_delimiter: True
 
 extra_javascript:
-    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
-    - assets/mathjaxhelper.js
+  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
+  - assets/mathjaxhelper.js
 
-# Google Analytics
-google_analytics: ['hyphy.org', 'veg.github.io']
+# Navigation
 
-# Page tree
-pages:
-  - Home: 'index.html'
-  - News and Releases : 'news.md'
-  - About : 'about.md'
-  - Download : 'register.html'
-  - _Real_Download : 'download.md'
-  - Installation: 'installation.md'
-  - Getting Started : 'getting-started.md'
-  - Methods: 'methods/index.md'
-  - Tutorials: 'tutorials/index.md'
-  - Batch Language : 'hbl-reference/index.md'
-  - _Library : 'hbl-reference/libv3.md'
-#  - Glossary: 'glossary.md'
-  - Resources: 'resources.md'
-  - '_________' : 'methods/general.md'
-  - '_________' : 'methods/selection-methods.md'
-  - '_________' : 'methods/stand-alone-analyses.md'
-  - '_________' : 'methods/other/evo.md'
-  - '________' : 'methods/other/contrast-fel.md'
-  - '________' : 'methods/other/FitMultiModel.md'  
-  # '________' will hide the item from the toc
-#  - Scripting language: 'language.md'
-  - '_________' : 'tutorials/CLI-tutorial.md'
-  - '_________' : 'tutorials/CL-prompt-tutorial.md'
-  - '_________' : 'tutorials/gui-tutorial.md'
-  - '_________' : 'tutorials/phylotree.md' 
-#    - v2.3 Quick Start : 'tutorials/dev-branch-tutorial.md'
+nav:
+  - Home: "index.html"
+  - News and Releases: "news.md"
+  - About: "about.md"
+  - Installation: "installation.md"
+  - Getting Started: "getting-started.md"
+  - Methods: "methods/general.md"
+  - Selection: "methods/selection-methods.md"
+  - Tutorials:
+      - CLI Tutorial: "tutorials/CLI-tutorial.md"
+      - CL Prompt Tutorial: "tutorials/CL-prompt-tutorial.md"
+  - Batch Language:
+      - Reference: "hbl-reference/index.md"
+      - Library: "hbl-reference/libv3.md"
+  - Resources: "resources.md"
