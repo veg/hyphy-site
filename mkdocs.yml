@@ -39,7 +39,7 @@ extra_javascript:
 # Navigation
 
 nav:
-  - Home: "index.html"
+  - Home: "index.md"
   - News and Releases: "news.md"
   - About: "about.md"
   - Installation: "installation.md"
