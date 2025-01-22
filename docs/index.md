@@ -14,7 +14,7 @@
   <h2>An open-source software package</h2>
   <p>for comparative sequence analysis</p>
   <p>using stochastic evolutionary models</p>
-  <a href="installation/" class="download-button">Download</a>
+  <a href="installation/" class="download-button">Install</a>
 </div>
 <div class="divider"></div>
 <div class="home-section02"></div>
