@@ -611,11 +611,11 @@ rate matrix
 **Examples**
 
 ```javascript
-q = {{*,t,kappa*t,t}
+q = { {*,t,kappa*t,t}
  {t,*,t,t*kappa}
  {t*kappa,t,*,t}
  {t,t*kappa,t,*}};
-evf =  {{0.4}{0.3}{0.2}{0.1}};
+evf =  { {0.4}{0.3}{0.2}{0.1}};
 model.define_from_components(q,evf,1);
 ```
 
@@ -1669,7 +1669,7 @@ prepare a Dict object suitable for seeding initial LF values
 
 **Parameters**
 
--   `values` **Dict** : "parameter_id" -> {{initial values}} [row matrix], e.g.
+-   `values` **Dict** : "parameter_id" -> { {initial values} } [row matrix], e.g.
     ...
     "busted.test.bsrel_mixture_aux_0":  {
     {0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 0.9}

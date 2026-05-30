@@ -53,7 +53,7 @@ HarvestFrequencies (observedFreqs, filteredData, 1, 1, 1);
 // elements); mu is the rate*time parameter 
 
 F81RateMatrix = 
-		{{*,mu,mu,mu}
+		{ {*,mu,mu,mu}
 		 {mu,*,mu,mu}
 		 {mu,mu,*,mu}
 		 {mu,mu,mu,*}};
