@@ -1,0 +1,49 @@
+name: Update Release Notes and Version
+
+on:
+  repository_dispatch:
+    types: [hyphy-release]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag to trigger manually (e.g. v2.5.58)'
+        required: true
+        type: string
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout hyphy-site
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Set Version Variable
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "VAL=${{ github.event.client_payload.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "VAL=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run Update Script
+        run: |
+          python scripts/update_release.py ${{ steps.version.outputs.VAL }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/about.md docs/news.md docs/assets/version.js
+          # Only commit and push if there are actual diffs
+          if ! git diff --cached --quiet; then
+            git commit -m "Automated update to HyPhy version ${{ steps.version.outputs.VAL }}"
+            git push
+          else
+            echo "No changes to commit"
+          fi

@@ -11,8 +11,7 @@ copyright: null
 
 # extra_templates
 theme:
-  name: null
-  custom_dir: material
+  name: mkdocs
 
 # Options
 extra:
@@ -32,24 +31,65 @@ markdown_extensions:
   - mdx_math:
       enable_dollar_delimiter: True
 
+extra_css:
+  - css/nextstep.css
+
 extra_javascript:
   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
   - assets/mathjaxhelper.js
+  - assets/version.js
+  - assets/custom.js
 
 # Navigation
 
 nav:
-  - Home: "index.md"
-  - News and Releases: "news.md"
-  - About: "about.md"
-  - Installation: "installation.md"
-  - Getting Started: "getting-started.md"
-  - Methods: "methods/general.md"
-  - Selection: "methods/selection-methods.md"
+  - :
+      - Home: "index.md"
+      - About HyPhy: "about.md"
+      - News and Releases: "news.md"
+      - License: "license.md"
+  - File:
+      - Home: "index.md"
+      - Installation: "installation.md"
+      - Getting Started: "getting-started.md"
+  - Methods:
+      - General / Overview: "methods/general.md"
+      - Selection Analyses:
+          - Overview: "methods/selection-methods.md"
+          - BUSTED: "methods/busted.md"
+          - aBSREL: "methods/absrel.md"
+          - FEL: "methods/fel.md"
+          - FUBAR: "methods/fubar.md"
+          - MEME: "methods/meme.md"
+          - SLAC: "methods/slac.md"
+          - Contrast-FEL: "methods/other/contrast-fel.md"
+          - PRIME: "methods/other/PRIME.md"
+          - RELAX: "methods/relax.md"
+          - GARD: "methods/gard.md"
+      - Standard & Stand-alone Analyses: "methods/stand-alone-analyses.md"
+  - Publications:
+      - Overview: "papers/index.md"
+      - Methods & Workflows:
+          - Datamonkey 3 (2026): "papers/datamonkey3.md"
+          - PRIME (2026): "papers/prime.md"
+          - BUSTED-PH (2026): "papers/busted-ph.md"
+          - B-STILL (2026): "papers/b-still.md"
+          - BUSTED+MSS (2026): "papers/busted-mss.md"
+          - CAPHEINE (2026): "papers/capheine.md"
+          - AOC (2026): "papers/aoc.md"
+          - Non-Reversible (2023): "papers/non-reversible.md"
+      - Applications:
+          - Zoonotic Outbreaks (2026): "papers/viral-selection.md"
+          - Human Y (2026): "papers/human-y.md"
   - Tutorials:
+      - Overview: "tutorials/index.md"
       - CLI Tutorial: "tutorials/CLI-tutorial.md"
       - CL Prompt Tutorial: "tutorials/CL-prompt-tutorial.md"
-  - Batch Language:
+      - Phylotree Tutorial: "tutorials/phylotree.md"
+  - HBL:
       - Reference: "hbl-reference/index.md"
       - Library: "hbl-reference/libv3.md"
-  - Resources: "resources.md"
+  - Special:
+      - Resources: "resources.md"
+      - JSON Output Fields: "resources/json-fields.md"
+      - Glossary: "glossary.md"

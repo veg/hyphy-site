@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+/*
+ * Macintosh System 6 / System 7 Retro-Clean Theme for MkDocs
+ * Designed for HyPhy Documentation
+ */
+
+/* --- Core Elements --- */
+body {
+  background-color: #555555 !important; /* System 7 dark gray base */
+  background-image: repeating-conic-gradient(#999999 0% 25%, #555555 0% 50%) !important; /* Pixel-perfect dither pattern */
+  background-size: 2px 2px !important;
+  color: #000000 !important;
+  font-family: "Geneva", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+/* --- Classic 20px System Menu Bar --- */
+.navbar,
+.navbar.bg-primary,
+.bg-primary {
+  background-color: #ECECEC !important; /* Light gray menu bar like System 7.5.3 */
+  background-image: none !important; /* Disable blue background-image gradients from Bootstrap */
+  border-bottom: 1px solid #000000 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  min-height: 22px !important;
+  height: 22px !important;
+  margin-bottom: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1030 !important;
+  box-shadow: none !important;
+  padding: 0 !important; /* Reset default Bootstrap 4 padding */
+}
+
+.navbar .container {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 15px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  max-width: 100% !important;
+  height: 22px !important;
+}
+
+.navbar-header {
+  height: 22px !important;
+}
+
+/* Hide brand to keep the clean System 6 menu bar starting with Apple/HyPhy logo */
+.navbar-brand {
+  display: none !important;
+}
+
+/* Menu Items */
+.navbar-nav {
+  margin: 0 !important;
+  height: 22px !important;
+}
+
+.navbar-nav > li {
+  height: 22px !important;
+}
+
+.navbar-nav > li > a,
+.navbar-nav > li > .nav-link,
+.navbar-dark .navbar-nav .nav-link {
+  color: #000000 !important;
+  font-family: "EB Garamond", "Apple Garamond", "Garamond", "Georgia", serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 22px !important;
+  height: 22px !important;
+  padding: 0 16px !important;
+  border: none !important;
+  margin: 0 !important;
+  transition: none !important;
+  background-color: transparent !important;
+  display: inline-block !important;
+}
+
+/* Invert colors when open or hovered */
+.navbar-nav > li > a:hover,
+.navbar-nav > li > .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-nav > li.open > a,
+.navbar-nav > li.show > a,
+.navbar-nav > li.show > .nav-link,
+.navbar-dark .navbar-nav .show > .nav-link,
+.navbar-nav > li.open > a:hover,
+.navbar-nav > li.show > a:hover,
+.navbar-nav > li.open > a:focus,
+.navbar-nav > li.show > a:focus,
+.navbar-dark .navbar-nav .nav-link:focus {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* First menu item: HyPhy Icon (Logo) instead of text */
+.navbar-nav:first-of-type > li:first-child > a,
+.navbar-nav:first-of-type > li:first-child > .nav-link {
+  background-image: url('../images/logo.png') !important;
+  background-size: 16px 16px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  width: 36px !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.navbar-nav:first-of-type > li:first-child > a .caret,
+.navbar-nav:first-of-type > li:first-child > .nav-link .caret {
+  display: none !important;
+}
+
+.navbar-nav:first-of-type > li:first-child > a:hover,
+.navbar-nav:first-of-type > li:first-child > .nav-link:hover,
+.navbar-nav:first-of-type > li:first-child.open > a,
+.navbar-nav:first-of-type > li:first-child.show > a,
+.navbar-nav:first-of-type > li:first-child.show > .nav-link,
+.navbar-nav:first-of-type > li:first-child.open > a:hover,
+.navbar-nav:first-of-type > li:first-child.show > a:hover,
+.navbar-nav:first-of-type > li:first-child.open > a:focus,
+.navbar-nav:first-of-type > li:first-child.show > a:focus {
+  background-color: #000000 !important;
+  filter: invert(100%) !important;
+}
+
+/* --- Dropdown Menus --- */
+.dropdown-menu {
+  background-color: #FFFFFF !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  box-shadow: 2px 2px 0px #000000 !important; /* Classic hard 2D shadow */
+  padding: 1px 0 !important;
+  margin-top: 0px !important;
+  overflow: visible !important; /* Ensure child submenus can fly out without clipping */
+}
+
+.dropdown-menu > li > a {
+  color: #000000 !important;
+  font-family: "EB Garamond", "Apple Garamond", "Garamond", "Georgia", serif !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  padding: 4px 20px !important;
+  border: none !important;
+}
+
+/* Invert list item colors on hover */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+/* --- Main Layout Window --- */
+body > .container {
+  max-width: 960px !important;
+  background-color: #FFFFFF !important;
+  background-image: url('../images/logo-watermark-retro.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center 150px !important;
+  background-size: 350px !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  padding: 25px !important;
+  padding-top: 45px !important; /* Make room for title bar */
+  margin-top: 60px !important; /* Offset for top fixed menu bar */
+  margin-bottom: 30px !important;
+  box-shadow: 
+    1px 1px 0px #FFFFFF inset, 
+    -1px -1px 0px #808080 inset,
+    3px 3px 6px rgba(0,0,0,0.3) !important;
+  position: relative !important;
+}
+
+/* System 7 Window Title Bar */
+body > .container::before {
+  content: "HyPhy Documentation" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 20px !important;
+  background: 
+    linear-gradient(to right, transparent 30%, #FFFFFF 30%, #FFFFFF 70%, transparent 70%),
+    repeating-linear-gradient(to bottom, #000000 0px, #000000 1px, #FFFFFF 1px, #FFFFFF 3px) !important;
+  border-bottom: 1px solid #000000 !important;
+  font-family: "Geneva", "Chicago", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  color: #000000 !important;
+  text-align: center !important;
+  line-height: 20px !important;
+  z-index: 5 !important;
+}
+
+/* System 7 Window Close Box */
+body > .container::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 4px !important;
+  left: 12px !important;
+  width: 12px !important;
+  height: 12px !important;
+  border: 1px solid #000000 !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 1px 1px 0px #FFFFFF inset, -1px -1px 0px #808080 inset !important;
+  z-index: 10 !important;
+}
+
+/* --- Content Column --- */
+.col-md-9 {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 15px !important;
+  min-height: 400px !important;
+}
+
+/* --- Sidebar/TOC Panel --- */
+.col-md-3 {
+  border-right: 1px solid #C0C0C0 !important;
+  padding-right: 20px !important;
+}
+
+.bs-sidenav {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.bs-sidenav li a {
+  color: #000000 !important;
+  font-weight: normal !important;
+  border: 1px solid transparent !important;
+  background-color: transparent !important;
+  margin-bottom: 2px !important;
+  padding: 4px 8px !important;
+  display: block !important;
+  text-decoration: none !important;
+}
+
+.bs-sidenav li a:hover {
+  background-color: #D5E0F6 !important; /* System 7 lavender folder blue hover */
+  color: #000000 !important;
+  border-color: #4A6094 !important;
+}
+
+.bs-sidenav li.active > a {
+  background-color: #4A6094 !important; /* System 7 window active dark blue selection */
+  color: #FFFFFF !important;
+  border-color: #4A6094 !important;
+  font-weight: bold !important;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  color: #000000 !important;
+  font-family: "Geneva", "Helvetica Neue", Helvetica, sans-serif !important;
+  font-weight: bold !important;
+  margin-top: 1.4em !important;
+  margin-bottom: 0.6em !important;
+}
+
+h1 {
+  border-bottom: 2px solid #000000 !important;
+  padding-bottom: 5px !important;
+  font-size: 22px !important;
+  letter-spacing: -0.5px !important;
+}
+
+h2 {
+  border-bottom: 1px dashed #000000 !important;
+  padding-bottom: 3px !important;
+  font-size: 17px !important;
+}
+
+h3 {
+  font-size: 14px !important;
+}
+
+p {
+  margin-bottom: 1.2em !important;
+}
+
+/* --- Link Styling --- */
+a {
+  color: #000000 !important;
+  text-decoration: underline !important;
+  font-weight: bold !important;
+}
+
+a:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+/* --- Code & Pre Blocks --- */
+code {
+  background-color: #F3F3F3 !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+  padding: 1px 4px !important;
+  font-size: 90% !important;
+  border-radius: 0px !important;
+}
+
+pre {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  padding: 12px !important;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.1) !important;
+  overflow-x: auto !important;
+}
+
+pre code {
+  background-color: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: 12px !important;
+}
+
+/* --- Admonitions (System Alerts) --- */
+.admonition {
+  background: #FFFFFF !important;
+  border: 1px solid #000000 !important;
+  outline: 1px solid #000000 !important;
+  outline-offset: -3px !important;
+  padding: 15px !important;
+  margin: 15px 0 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+.admonition-title {
+  font-weight: bold !important;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  border-bottom: 1px solid #000000 !important;
+  padding-bottom: 2px !important;
+  font-size: 12px !important;
+}
+
+/* --- Tables --- */
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 15px 0 !important;
+  background: #FFFFFF !important;
+  border: 1px solid #000000 !important;
+}
+
+th, td {
+  padding: 6px 10px !important;
+  border: 1px solid #000000 !important;
+}
+
+th {
+  background-color: #ECECEC !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  border-bottom: 1.5px solid #000000 !important;
+}
+
+/* --- Search Field --- */
+.navbar-form {
+  padding: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  height: 22px !important;
+}
+
+.navbar-form input.form-control {
+  border: 1px solid #000000 !important;
+  border-radius: 0px !important;
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  height: 18px !important;
+  padding: 1px 6px !important;
+  margin-top: 2px !important;
+  font-size: 11px !important;
+  box-shadow: none !important;
+}
+
+/* --- System 7 Buttons & Controls --- */
+button, input[type="button"], input[type="submit"], .btn, .btn-primary {
+  border: 1px solid #000000 !important;
+  border-radius: 3px !important; /* System 7 rounded corner look */
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  box-shadow: 1px 1px 0px #FFFFFF inset, -1px -1px 0px #808080 inset !important;
+  font-family: "Geneva", "Chicago", sans-serif !important;
+  font-weight: bold !important;
+  padding: 3px 12px !important;
+  outline: none !important;
+  cursor: pointer !important;
+}
+
+button:active, .btn:active, .btn-primary:active {
+  background-color: #4A6094 !important; /* System 7 blue select */
+  color: #FFFFFF !important;
+  box-shadow: -1px -1px 0px #FFFFFF inset, 1px 1px 0px #808080 inset !important;
+}
+
+/* --- System 7 Textured Scrollbars --- */
+::-webkit-scrollbar {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+::-webkit-scrollbar-track {
+  background-image: repeating-conic-gradient(#CCCCCC 0% 25%, #FFFFFF 0% 50%) !important; /* 50% dither pattern */
+  background-size: 2px 2px !important;
+  border: 1px solid #000000 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FFFFFF !important;
+  background-image: linear-gradient(to bottom, #808080 1px, transparent 1px) !important; /* Horizontal grab lines */
+  background-size: 100% 4px !important;
+  border: 1px solid #000000 !important;
+  box-shadow: 1px 1px 0px #FFFFFF inset, -1px -1px 0px #808080 inset !important;
+}
+
+/* --- System 7 Submenus --- */
+@media (min-width: 992px) {
+  .dropdown-submenu {
+    position: relative !important;
+  }
+  .dropdown-submenu > .dropdown-menu {
+    top: 0 !important;
+    left: 100% !important;
+    margin-top: -2px !important;
+    margin-left: -1px !important;
+    display: none !important;
+    position: absolute !important; /* Override position: fixed from base.css */
+    border: 1px solid #000000 !important;
+    border-radius: 0px !important;
+    box-shadow: 2px 2px 0px #000000 !important;
+  }
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block !important;
+  }
+  .dropdown-submenu > a::after {
+    border-left-color: #000000 !important;
+    margin-top: 6px !important;
+  }
+  .dropdown-submenu:hover > a::after {
+    border-left-color: #FFFFFF !important;
+  }
+}
+
+/* --- System About Dialog Box --- */
+.about-dialog {
+  border: 1px solid #000000 !important;
+  outline: 1px solid #000000 !important;
+  outline-offset: -3px !important;
+  padding: 15px !important;
+  margin-bottom: 25px !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+  position: relative !important;
+}
+
+.about-dialog-header {
+  font-family: "Geneva", "Chicago", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  border-bottom: 1px solid #000000 !important;
+  padding-bottom: 4px !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  color: #000000 !important;
+}
+
+.about-dialog-title {
+  font-family: "Geneva", "Helvetica Neue", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  color: #000000 !important;
+  line-height: 1.3 !important;
+}
+
+.about-dialog-meta {
+  font-family: "Geneva", sans-serif !important;
+  font-size: 11px !important;
+  margin-bottom: 4px !important;
+  color: #333333 !important;
+  line-height: 1.4 !important;
+}
+
+/* --- Retro Menu Bar Version Indicator (Clock Style) --- */
+.navbar-nav > li.hyphy-version-clock > a {
+  font-family: "Geneva", "Chicago", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+  color: #000000 !important;
+  border-left: 1px solid #000000 !important;
+  margin-left: 10px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.navbar-nav > li.hyphy-version-clock > a:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-left-color: #000000 !important; /* Keep border color consistent */
+}
+
+/* --- GitHub Link in Sidebar --- */
+.github-sidebar-link a {
+  font-family: "Geneva", "Helvetica Neue", Helvetica, sans-serif !important;
+  font-size: 12px !important;
+}
+

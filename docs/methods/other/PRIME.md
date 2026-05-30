@@ -1,4 +1,11 @@
-## PRIME
+# PRIME (Property-Informed Models of Evolution)
+
+!!! question "What question does this method answer?"
+    Does evolution at specific sites in a coding alignment preserve or alter a set of pre-defined biochemical properties?
+
+!!! info "Recommended Applications"
+
+    * **Biochemical Property Constraint:** Identify biochemical evolutionary constraints or changes with site-level resolution (e.g. site 23 is evolving to conserve residue polarity, but alter its volume).
 
 |   |   |
 |---|---|

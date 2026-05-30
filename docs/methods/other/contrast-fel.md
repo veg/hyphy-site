@@ -1,4 +1,12 @@
-## FEL-contrast
+# Contrast-FEL (Fixed Effects Likelihood - Contrast)
+
+!!! question "What question does this method answer?"
+    Which sites in a gene are subject to different selective pressures among various clades or sets of branches in a phylogenetic tree? In other words, FEL-contrast tests whether selective pressures (measured as dN/dS) at specific sites vary significantly between predefined groups of branches.
+
+!!! info "Recommended Applications"
+
+    * **Clade/Environment Comparisons:** Ideally suited to compare selective pressures when a gene is sampled from different selective environments (e.g., HIV evolution in different hosts or compartments, or species with different lifestyles/phenotypes).
+    * **Binary Environment Splits:** Test hypotheses where branches are partitioned *a priori* into two environments (**reference** vs. **test**), allowing site-level resolution for comparing selection pressures.
 
 |   |   |
 |---|---|
@@ -6,26 +14,6 @@
 | Parallel support | MP and/or MPI |
 | File path | `LIB/TemplateBatchFiles/SelectionAnalyses/FEL-contrast.bf` |
 | Standard analysis menu | `Evolutionary Hypothesis Testing > FEL-contrast` |
-
-
-### What biological question is the method designed to answer?
-
-Which sites in a gene may be associated with adaptation to a different environment. You need a tree with branches partitioned (a priori) into two sets: reference and test.
-
-### What are the recommended applications?
-
-Suppose you have a gene which was sampled from different selective environments.
-The specific example for which this tool was developed is evolution of HIV in different
-hosts or different compartments (blood vs brain) in the host. Similar situations arise
-when the gene is sampled from species living in different environment, eating different food,
-having different wavelength eye sensitivity. This division has to be binary, however, so
-that any branch in the tree is either in the **reference** environment, or the **test** environment.
-
-FEL-contrast then allows you to examine selective pressures (measured as dN/dS) at each site
-in the gene individually, and test whether or not they are different between environments.
-
-Armed with a list of such sites, you could then attempt to explore if evolution at these sites
-is associated with adaptation to the environment.
 
 ### What is the statistical procedure and statistical test is used to establish significance for this method?
 

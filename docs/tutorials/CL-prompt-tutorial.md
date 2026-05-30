@@ -88,7 +88,7 @@ We, therefore, find that there is evidence for episodic diversifying selection i
 
 ### Use FEL to find sites that have experienced pervasive diversifying selection.
 
-> See [here](../methods/selection-methods/#fel) for a description of the FEL method.
+> See [here](../methods/fel.md) for a description of the FEL method.
 
 We will demonstrate FEL use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 
@@ -111,7 +111,7 @@ Note that FEL will formally test for both positive and negative selection at eac
 
 ### Use MEME to find sites that have experienced pervasive diversifying selection.
 
-> See [here](../methods/selection-methods/#meme) for a description of the MEME method.
+> See [here](../methods/meme.md) for a description of the MEME method.
 
 We will demonstrate MEME use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 
@@ -133,7 +133,7 @@ Note that MEME will formally test only for positive, but not negative selection 
 
 ### Use SLAC to find sites that have experienced pervasive diversifying selection.
 
-> See [here](../methods/selection-methods/#slac) for a description of the SLAC method.
+> See [here](../methods/slac.md) for a description of the SLAC method.
 
 We will demonstrate SLAC use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 

@@ -23,7 +23,7 @@ aBSREL can be run in two modes:
 <!--------------------------------------------------------------------------------------->
 
 ## BGM
-The **B**ayesian **G**raphical **M**odel (BGM) method is a tool for detecting coevolutionary interactions between amino acid positions in a protein.  This method is similar to the "correlated substitutions" method described by [Shindyalov *et al.* 1994](https://academic.oup.com/peds/article-abstract/7/3/349/1469726), in which amino acid substitution events are mapped to branches in the phylogenetic tree.  BGM uses a method similar to [SLAC](selection-methods/#slac), where amino acid substitution events are mapped to the tree from the ancestral reconstruction under joint maximum likelihood for a given model of codon substitution rates.  
+The **B**ayesian **G**raphical **M**odel (BGM) method is a tool for detecting coevolutionary interactions between amino acid positions in a protein.  This method is similar to the "correlated substitutions" method described by [Shindyalov *et al.* 1994](https://academic.oup.com/peds/article-abstract/7/3/349/1469726), in which amino acid substitution events are mapped to branches in the phylogenetic tree.  BGM uses a method similar to [SLAC](slac.md), where amino acid substitution events are mapped to the tree from the ancestral reconstruction under joint maximum likelihood for a given model of codon substitution rates.  
 
 After amino acid substitutions have been mapped, the user is required to specify a filtering criterion to reduce the number of codon sites in the alignment to be analyzed.  This is an important step because the number of graphical models (networks) increases faster than exponentially with the number of variables.  You do not want to have many more codon sites than there are sequences (observations) in the alignment.  Furthermore, since the BGM analysis is essentially driven by a series of tests on 2x2 contingency tables (comprising the presence/absence of substitutions on branches), you should generally avoid including codon sites where only a single amino acid substitution was mapped to the tree.
 
@@ -43,7 +43,7 @@ BUSTED (**B**ranch-**S**ite **U**nrestricted **S**tatistical **T**est for **E**p
 
 For each phylogenetic partition (foreground and background branch sites), BUSTED fits a codon model with three rate classes, constrained as $\omega_1 \leq \omega_2 \leq 1 \leq \omega_3$. As in other methods, BUSTED simultaneously estimates the proportion of sites per partition belonging to each $\omega$  class. This model, used as the alternative model in selection testing, is referred to as the *Unconstrained* model. BUSTED then tests for positive selection by comparing this model fit to a null model where $\omega_3 = 1$ (i.e. disallowing positive selection) on the foreground branches. This null model is also referred to as the *Constrained* model. If the null hypothesis is rejected, then there is evidence that at least one site has, at least some of the time, experienced positive selection on the foreground branches. Importantly, a significant result *does not* mean that the gene evolved under positive selection along the entire foreground.
 
-BUSTED additionally calculates "Evidence Ratios" (ERs) for each site. The ER gives the likelihood ratio (reported on a log-scale) that the alternative model was a better fit to the data compared to the null model. The ER for each site thus provides *descriptive information* about whether a given site could have evolved under positive selection. The ERs *should not* be interpreted as statistical evidence for positive selection at individual sites (instead, methods like [MEME](selection-methods/#meme), [FEL](selection-methods/#fel), or [FUBAR](selection-methods/#fubar) should be used for detecting selection at individual sites). 
+BUSTED additionally calculates "Evidence Ratios" (ERs) for each site. The ER gives the likelihood ratio (reported on a log-scale) that the alternative model was a better fit to the data compared to the null model. The ER for each site thus provides *descriptive information* about whether a given site could have evolved under positive selection. The ERs *should not* be interpreted as statistical evidence for positive selection at individual sites (instead, methods like [MEME](meme.md), [FEL](fel.md), or [FUBAR](#fubar) should be used for detecting selection at individual sites). 
 
 For each site, two ERs are reported: the *Constrained Model* ER and the *Optimized Null* Model ER. The Constrained Model ER calculates the evidence ratio using model parameters inferred from the Constrained model. By contrast, the Optimized Null model ER re-optimizes parameters inferred using the Constrained model for the given site of interest. These optimized parameter values are then used to calculate the site's ER. Again, while these ERs may be helpful descriptors of selection in the data set, they do not provide statistically valid evidence for positive selection at a site.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 
@@ -64,13 +64,9 @@ Please also note that FADE has replaced older methods for detecting directional 
 <!--------------------------------------------------------------------------------------->
 ## FEL
 
+FEL (**F**ixed **E**ffects **L**ikelihood) uses a maximum-likelihood (ML) approach to infer nonsynoymous ($dN$) and synonymous ($dS$) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. This method assumes that the selection pressure for each site is constant along the entire phylogeny.
 
-FEL (**F**ixed **E**ffects **L**ikelihood) uses a maximum-likelihood (ML) approach to infer nonsynoymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. This method assumes that the selection pressure for each site is constant along the entire phylogeny. 
-
-After optimizing branch lengths and nucleotide substitution parameters, FEL fits a MG94xREV model to each codon site to infer site-specific nonsynonymous and synonymous (dN and dS, respectively) substitution rates. Hypothesis testing is then conducted on a site-specific basis, using the Likelihood Ratio Test, to ascertain if dN is significantly greater than dS.
-
-
-**If you use FEL in your analysis, please cite the following:** [`Kosakovsky Pond, SL and Frost, SDW. "Not So Different After All: A Comparison of Methods for Detecting Amino Acid Sites Under Selection." Mol. Biol. Evol. 22, 1208--1222 (2005).`](https://doi.org/10.1093/molbev/msi105)
+[Read the full FEL documentation page](./fel.md) for details on the statistical model, interactive visualization, and published applications.
 
 
 <!--------------------------------------------------------------------------------------->
@@ -100,9 +96,9 @@ If GARD detects recombination in your dataset, it will provide you with an updat
 <!--
 Methods which accept data processed by GARD include the following: 
 
-+ [FEL](./selection-methods/#fel)
-+ [FUBAR](./selection-methods/#fubar)
-+ [SLAC](./selection-methods/#slac)
++ [FEL](./fel.md)
++ [FUBAR](#fubar)
++ [SLAC](./slac.md)
 + ...more...
 -->
 
@@ -113,40 +109,9 @@ Methods which accept data processed by GARD include the following:
 <!--------------------------------------------------------------------------------------->
 ## MEME
 
-MEME (**M**ixed **E**ffects **M**odel of **E**volution) employs a mixed-effects
-maximum likelihood approach to test the hypothesis that individual sites have
-been subject to episodic positive or diversifying selection.  In other words,
-MEME aims to detect sites evolving under positive selection under a *proportion*
-of branches.
+MEME (**M**ixed **E**ffects **M**odel of **E**volution) employs a mixed-effects maximum likelihood approach to test the hypothesis that individual sites have been subject to episodic positive or diversifying selection (i.e., positive selection on a proportion of branches).
 
-
-For each site, MEME infers two $\omega$ rate classes and corresponding weights
-representing the probability that the site evolves under each respective
-$\omega$ rate class at a given branch. 
-
-To infer $\omega$ rates, MEME infers a single $\alpha$ (dS) value and two
-separate $\beta$ (dN) values, $\beta^+$ and $\beta^-$. Both $\beta^+$ and $\beta^-$
-share the same $\alpha$ per site. 
-
-**Alternative Model Rate Parameter Constraints**
-$$ \alpha\ unrestricted \\ \beta^+\ unrestricted \\ \beta^- \leq \alpha $$
-
-
-**Null Model Rate Parameter Constraints**
-$$\alpha\ unrestricted \\ \beta^+ \leq \alpha \\ \beta^- \leq \alpha$$
-
-The $\beta^+$ parameter is the key difference between the null and alternative
-models. In the null model, both $\beta^+$ and $\beta^-$ are constrained, but
-$\beta^+$ is unrestricted in the alternative model. 
-
-Positive selection for each site is inferred when $\beta^+ > \alpha$ and shown
-to be significant using the likelihood ratio test. 
- 
-
-**If you use MEME in your analysis, please cite the following:** [`Murrell, B et
-al. "Detecting individual sites subject to episodic diversifying selection."
-PLoS Genetics 8, e1002764
-(2012).`](http://dx.doi.org/10.1371/journal.pgen.1002764)
+[Read the full MEME documentation page](./meme.md) for details on the statistical model, constraints, interactive visualization, and published applications.
 
 <!--------------------------------------------------------------------------------------->
 ## RELAX
@@ -171,10 +136,8 @@ In addition to this pair of null/alternative models, RELAX fits three other mode
 <!--------------------------------------------------------------------------------------->
 ## SLAC
 
-SLAC (**S**ingle-**L**ikelihood **A**ncestor **C**ounting) uses a combination of maximum-likelihood (ML) and counting approaches to infer nonsynonymous (dN) and synonymous (dS) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. Like FEL, this method assumes that the selection pressure for each site is constant along the entire phylogeny. 
+SLAC (**S**ingle-**L**ikelihood **A**ncestor **C**ounting) uses a combination of maximum-likelihood (ML) and counting approaches to infer nonsynonymous ($dN$) and synonymous ($dS$) substitution rates on a per-site basis. It is computationally faster than FEL, but can be less accurate for highly divergent sequences.
 
-SLAC begins by optimizing branch lengths and nucleotide substitution parameters under the MG94xREV model. However, rather than using ML to fit site-specific dN and dS parameters, SLAC instead uses ML to infer the most likely ancestral sequence at each node of the phylogeny. SLAC then employs a modified version of the [Suzuki-Gojobori counting method](https://doi.org/10.1093/oxfordjournals.molbev.a026042) to directly count the total number of nonsynonymous and synonymous changes which have occurred at each site. Significance is ascertained at each site using an extended binomial distribution. Importantly, due to its counting-based approach, SLAC may not be accurate for data sets with high divergence levels.
-
-**If you use SLAC in your analysis, please cite the following:** [`Kosakovsky Pond, SL and Frost, SDW. "Not So Different After All: A Comparison of Methods for Detecting Amino Acid Sites Under Selection." Mol. Biol. Evol. 22, 1208--1222 (2005).`](https://doi.org/10.1093/molbev/msi105)
+[Read the full SLAC documentation page](./slac.md) for details on the counting-based method, interactive visualization, and published applications.
 
 

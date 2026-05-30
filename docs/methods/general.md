@@ -1,9 +1,22 @@
-<!--------------------------------------------------------------------------------------->
-## Overview
-HyPhy provides a suite of tools for analyzing phylogenetic sequence data, in particular for inferring the strength of selection from sequence data. In addition, HyPhy features a flexible batch language for implementing and customizing discrete state Markov models in a phylogenetic framework.
+# General Methods & Model Overview
 
+## Core Engine & Discrete Character Models
 
-<!--------------------------------------------------------------------------------------->
+HyPhy is a general-purpose computational engine designed to define, fit, and simulate sequence evolution under any continuous-time, discrete-state Markov model. While it is widely used for selection analyses, its core design is entirely agnostic to the state space. Researchers can specify an arbitrary set of character states, formulate a rate transition matrix, and calculate likelihoods on a phylogenetic tree.
+
+### Built-in State Spaces
+HyPhy includes native support and optimized libraries for several common biological character types:
+
+*   **Nucleotides (4 states):** Full support for all 203 reversible substitution models (e.g. JC69, HKY85, GTR) as well as non-reversible models.
+*   **Amino Acids / Proteins (20 states):** Built-in empirical substitution models (such as JTT, WAG, LG, Dayhoff, MtREV, etc.) with support for user-defined rate matrices.
+*   **Codons (61 or 64 states):** Standard and customized evolutionary codon models (including Muse-Gaut 94 (MG94) derivatives, György-Yang models, and selection testing methods).
+*   **Di-nucleotides (16 states):** Models designed for analyzing double-nucleotide substitution patterns.
+*   **Binary / Morphological (2 states):** Models for restriction sites, presence/absence data (0/1), or binary morphological traits.
+
+### Custom Characters & Arbitrary States
+Beyond the built-in state spaces, the **HyPhy Batch Language (HBL)** allows users to construct custom characters of arbitrary size. Examples include codon-pair models, multi-state morphological characters, copy-number profiles, and structural state spaces.
+
+---
 ## MG94xREV Framework
 All methods used to infer selection from coding-sequence data rely, to some extent, on the MG94xREV codon model, a generalized extension of the [MG94 model](https://www.ncbi.nlm.nih.gov/pubmed/7968485/) that allows for a full GTR mutation rate matrix. The MG94xREV *transition matrix* **Q** (also known as the *instantaneous rate matrix*), for the substitution from codon $i$ to codon $j$ is given by: 
 
@@ -29,7 +42,7 @@ Parameters in this matrix include the following:
     
 * Not explicitly seen in this model are the *equilibrium codon frequencies*, denoted $\boldsymbol{\hat{\Pi}}$. These frequencies are estimated using nine positional nucleotide frequencies for the target nucleotides in each codon substitution. Specifically, HyPhy employs the [CF3x4](http://dx.doi.org/10.1371/journal.pone.0011230) frequency estimator, a corrected version of the common F3x4 estimator (introduced in [Goldman and Yang 1994](https://www.ncbi.nlm.nih.gov/pubmed/7968486)) which accounts for biases in nucleotide composition induced by stop codons. 
 
-Most methods <!--(except FADE, which does not use codon data)--> will perform a global MG94xREV fit to optimize branch length and nucleotide substitution parameters before proceeding to hypothesis testing. Several methods ([FEL](./selection-methods/#fel), [FUBAR](./selection-methods/#fubar), and [MEME](./selection-methods/#meme)) additionally pre-fit a GTR nucleotide model to the data, using the estimated parameters as starting values for the global MG94xREV fit, as a computational speed-up. Resulting branch length and nucleotide substitution parameters are subsequently used as initial parameter values during model fitting for hypothesis testing.
+Most methods <!--(except FADE, which does not use codon data)--> will perform a global MG94xREV fit to optimize branch length and nucleotide substitution parameters before proceeding to hypothesis testing. Several methods ([FEL](./fel.md), [FUBAR](./selection-methods/#fubar), and [MEME](./meme.md)) additionally pre-fit a GTR nucleotide model to the data, using the estimated parameters as starting values for the global MG94xREV fit, as a computational speed-up. Resulting branch length and nucleotide substitution parameters are subsequently used as initial parameter values during model fitting for hypothesis testing.
 
 <!--------------------------------------------------------------------------------------->
 ## Synonymous Rate Variation

@@ -2,7 +2,7 @@
 
 **MIT License**
 
-Copyright (c) 2016 Martin Donath
+Copyright (c) 1997-2026 Sergei L. Kosakovsky Pond and Spencer V. Muse
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to

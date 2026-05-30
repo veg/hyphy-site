@@ -1,6 +1,11 @@
 Using HyPhy-GUI to detect selection.
 =================================
 
+!!! warning "Deprecation Notice"
+    The HyPhy-GUI desktop application is out of date and is no longer supported. For running analyses through a graphical user interface, please use our web server at [datamonkey.org](https://www.datamonkey.org) or run analyses locally via the command-line interface.
+
+
+
 
 These tutorials outline how to use the HyPhy Graphical User Interface (GUI) desktop application [(HyPhy-GUI)](https://github.com/veg/hyphy-gui) to detect natural selection in protein-coding alignments. Information applicable to all analyses is provided in the General Information section followed by method specific tutorials for each of the available analyses:
 
@@ -81,7 +86,7 @@ When the analysis is completed the results page will automatically open displayi
 
 ### Use FEL to find sites which have experienced pervasive diversifying selection.
 
-> See [here](../methods/selection-methods/#fel) for a description of the FEL method.
+> See [here](../methods/fel.md) for a description of the FEL method.
 
 We will demonstrate FEL use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 
@@ -96,7 +101,7 @@ Once the desired branches have been selected, click `Save Branch Selection` and 
 
 ### Use MEME to find sites which have experienced pervasive diversifying selection.
 
-> See [here](../methods/selection-methods/#meme) for a description of the MEME method.
+> See [here](../methods/meme.md) for a description of the MEME method.
 
 We will demonstrate MEME use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 
@@ -111,7 +116,7 @@ MEME will formally test only for positive, but not negative, selection at each s
 
 ### Use SLAC to find sites which have experienced pervasive diversifying selection.
 
-> See [here](../methods/selection-methods/#slac) for a description of the SLAC method.
+> See [here](../methods/slac.md) for a description of the SLAC method.
 
 We will demonstrate SLAC use with an alignment of abalone sperm lysin sequences. This dataset is in the file `lysin.fna`.
 
