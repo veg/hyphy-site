@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     // 1. Add version number to top right of navbar (clock style)
-    var navs = document.querySelectorAll("ul.navbar-nav.ml-auto");
+    var navs = document.querySelectorAll("ul.navbar-nav.ml-auto, ul.navbar-nav.ms-md-auto, ul.navbar-nav.ms-auto");
+    if (navs.length === 0) {
+        var allNavs = document.querySelectorAll("ul.navbar-nav");
+        if (allNavs.length > 0) {
+            navs = [allNavs[allNavs.length - 1]];
+        }
+    }
     if (navs.length > 0) {
         var versionLi = document.createElement("li");
         versionLi.className = "nav-item hyphy-version-clock";
