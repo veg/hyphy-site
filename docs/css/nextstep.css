@@ -7,7 +7,9 @@
 
 /* --- Core Elements --- */
 body {
-  background-color: #777777 !important; /* System 7 solid gray base to prevent scrolling flicker */
+  background-color: #777777 !important;
+  background-image: url('../images/9695.png') !important;
+  background-repeat: repeat !important;
   color: #000000 !important;
   font-family: "Geneva", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 13px !important;
