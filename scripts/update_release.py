@@ -10,33 +10,42 @@ def main():
         sys.exit(1)
         
     version = sys.argv[1].strip()
-    if not version.startswith('v'):
-        version_tag = 'v' + version
+    if version.startswith('v'):
+        clean_version = version[1:]
     else:
-        version_tag = version
-        version = version[1:] # strip 'v'
+        clean_version = version
         
-    print(f"Updating site to version: {version_tag}")
+    version_display = 'v' + clean_version
+    print(f"Updating site to version: {version_display}")
     
     # 1. Fetch release info from GitHub API
-    url = f"https://api.github.com/repos/veg/hyphy/releases/tags/{version_tag}"
-    req = urllib.request.Request(
-        url, 
-        headers={'User-Agent': 'Mozilla/5.0'}
-    )
-    
+    # Try querying the tag as-is first (e.g. 2.5.100), then fallback to v-prefixed (v2.5.100)
+    tag_options = [clean_version, 'v' + clean_version]
     body = ""
-    name = f"HyPhy {version_tag}"
-    html_url = f"https://github.com/veg/hyphy/releases/tag/{version_tag}"
+    name = f"HyPhy {version_display}"
+    html_url = f"https://github.com/veg/hyphy/releases/tag/{clean_version}"
     
-    try:
-        with urllib.request.urlopen(req) as response:
-            data = json.loads(response.read().decode())
-            body = data.get('body', '')
-            name = data.get('name', f"HyPhy {version_tag}")
-            html_url = data.get('html_url', '')
-    except Exception as e:
-        print(f"Error fetching release notes: {e}")
+    success = False
+    last_error = None
+    for tag in tag_options:
+        url = f"https://api.github.com/repos/veg/hyphy/releases/tags/{tag}"
+        req = urllib.request.Request(
+            url, 
+            headers={'User-Agent': 'Mozilla/5.0'}
+        )
+        try:
+            with urllib.request.urlopen(req) as response:
+                data = json.loads(response.read().decode())
+                body = data.get('body', '')
+                name = data.get('name', f"HyPhy {version_display}")
+                html_url = data.get('html_url', f"https://github.com/veg/hyphy/releases/tag/{tag}")
+                success = True
+                break
+        except Exception as e:
+            last_error = e
+            
+    if not success:
+        print(f"Error fetching release notes: {last_error}")
         body = f"Release notes are available on [GitHub]({html_url})."
 
     # 2. Update docs/about.md (version string)
@@ -48,7 +57,7 @@ def main():
         # Replace "is currently at version 2.5.X"
         updated_content = re.sub(
             r'is currently at version [\d\w\-\.]+',
-            f'is currently at version {version}',
+            f'is currently at version {clean_version}',
             content
         )
         with open(about_path, 'w', encoding='utf-8') as f:
@@ -62,7 +71,7 @@ def main():
             content = f.read()
             
         latest_release_md = f"""<!-- START_LATEST_RELEASE -->
-## <img src="images/logo.png" width="16" height="16" style="vertical-align: middle; margin-right: 6px;" alt="" /> Latest Release: {version_tag} ({name})
+## <img src="images/logo.png" width="16" height="16" style="vertical-align: middle; margin-right: 6px;" alt="" /> Latest Release: {version_display} ({name})
 
 {body}
 
@@ -96,7 +105,7 @@ For full details, visit the [GitHub Release Page]({html_url}).
     version_js_path = 'docs/assets/version.js'
     os.makedirs(os.path.dirname(version_js_path), exist_ok=True)
     with open(version_js_path, 'w', encoding='utf-8') as f:
-        f.write(f'window.HYPHY_VERSION = "v{version}";\n')
+        f.write(f'window.HYPHY_VERSION = "{version_display}";\n')
     print("Updated docs/assets/version.js")
 
 if __name__ == '__main__':
