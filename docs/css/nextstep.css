@@ -7,9 +7,7 @@
 
 /* --- Core Elements --- */
 body {
-  background-color: #555555 !important; /* System 7 dark gray base */
-  background-image: repeating-conic-gradient(#999999 0% 25%, #555555 0% 50%) !important; /* Pixel-perfect dither pattern */
-  background-size: 2px 2px !important;
+  background-color: #777777 !important; /* System 7 solid gray base to prevent scrolling flicker */
   color: #000000 !important;
   font-family: "Geneva", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 13px !important;
