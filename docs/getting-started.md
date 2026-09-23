@@ -13,6 +13,15 @@ HyPhy can be run from the command line in two ways:
 + Standard command line tool: additional information available [here](./tutorials/CLI-tutorial.md) 
 + Interactive command line prompt: additional information available [here](./tutorials/CL-prompt-tutorial.md)
 
+#### Reproducible runs
+
+Stochastic steps (e.g. random restarts in RELAX or BUSTED) make repeated runs of the same command differ slightly. For a bit-for-bit reproducible run, fix **both** the random seed and the thread count:
+
++ Set the seed inside a driver batch file with `SetParameter (RANDOM_SEED, <n>, 0);`, or (HyPhy &ge; 2.5.101) on the command line with `ENV=RANDOM_SEED=<n>`. On earlier versions the command-line form sets the variable but does **not** seed the generator.
++ Pin the thread count, e.g. `hyphy CPU=1 ...`. If `CPU` is not given, HyPhy picks a thread count by wall-clock benchmarking, which varies between runs and changes floating-point summation order.
+
+Reporting the seed, HyPhy version, and thread count in a methods section makes published analyses repeatable. See [veg/hyphy#2024](https://github.com/veg/hyphy/issues/2024) for background.
+
 
 ### Run HyPhy locally (on your own computer) without the command line
 *Note: The local desktop GUI applications (HyPhy-GUI and the legacy GUI) are out of date and are no longer supported. If you wish to run HyPhy analyses through a graphical user interface, please use the Datamonkey web server at [datamonkey.org](https://www.datamonkey.org).*
